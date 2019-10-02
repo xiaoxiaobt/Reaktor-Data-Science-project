@@ -3,6 +3,38 @@ import glob
 import re
 import pandas as pd
 import matplotlib.pyplot as plt
+from collections import defaultdict
+
+def drop_columns(df):
+    """
+    This function clean the last part of the name of the column,
+    by removing the pattern (AA). Then it renames the columns
+    of the dataframe and counts how many times each column appears.
+    We drop the duplicates and keep only one of the duplicate columns.
+    :param df: the dataframe to clean
+    :return: the cleaned dataframe
+    """
+    # Dropping duplicates columns
+    new_columns = {x: x for x in df.columns}
+    for key, value in new_columns.items():
+        # Removing pattern (AA) from the columns' names
+        new_columns[key] = re.sub('\([^)]{2}\)', '', value)
+
+    df.rename(columns=new_columns, inplace=True)
+
+    # Count columns with same name
+    count = defaultdict(int)
+    for col in new_columns.values():
+        count[col] += 1
+
+    # Collect columns to delete
+    for col, num in count.items():
+        if num >= 2:
+            safecopy = df[col].values[:, 0]
+            df.drop(columns=df[col], inplace=True)
+            df[col] = safecopy
+
+    return df
 
 
 def clean_df(df):
@@ -42,6 +74,8 @@ def clean_df(df):
         if td in df.columns:
             df.drop(columns=td, inplace=True)
 
+    df = drop_columns(df)
+
     # Replace missing values with 0
     df.replace({'..': 0, '.': 0}, inplace=True)
 
@@ -53,8 +87,8 @@ def clean_df(df):
             df[key] = df[key].astype('float')
 
     # Print a summary of the dataframe
-    print(df.describe())
-    print(df.shape)
+    # print(df.describe())
+    # print(df.shape)
 
     return df
 
@@ -81,7 +115,7 @@ def bulk_load():
     """
     This function loads all the datafiles that have been
     downloaded by pxweb_get_data.py (Version: 29.09.2019)
-    and organizes them into dataframes accordin to the years.
+    and organizes them into dataframes according to the years.
     The function also calls clean_df to clean the dataframe
     and pairwise_correlation to plot the correlation.
     :return: df_dic, a dictionary where the keys are the years
@@ -118,3 +152,5 @@ def bulk_load():
         # pairwise_correlation(df)
 
     return df_dic
+
+bulk_load()

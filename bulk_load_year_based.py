@@ -125,7 +125,7 @@ def bulk_load():
     file_list = glob.glob("paavo_data/*.csv")
 
     # Create a sorted list of the years
-    years_list = sorted({re.sub('[A-Öa-ö_.,:; ()\\-]+', '', y) for y in file_list})
+    years_list = sorted({re.sub('[A-Öa-ö_.,:; /()\\-]+', '', y) for y in file_list})
 
     # Build a dictionary of DataFrames:
     # to each year, it is associated one DataFrame

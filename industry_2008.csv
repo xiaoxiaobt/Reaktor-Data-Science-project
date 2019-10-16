@@ -1,9 +1,9 @@
 "Postitoimipaikka"	"Toimiala2008"	Postinumeroittainen toimipaikkalaskuri
-"00100  HELSINKI"	"A  Maatalous, mets‰talous ja kalatalous"	15
-"00100  HELSINKI"	"01     Kasvinviljely, kotiel‰in- ja riistatalous"	4
+"00100  HELSINKI"	"A  Maatalous, mets√§talous ja kalatalous"	15
+"00100  HELSINKI"	"01     Kasvinviljely, kotiel√§in- ja riistatalous"	4
 "00100  HELSINKI"	"011    Yksivuotisten kasvien viljely"	1
-"00100  HELSINKI"	"0111   Vilja- , palko- ja ˆljysiemenkasvien viljely (pl. riisi)"	1
-"00100  HELSINKI"	"01110  Vilja- , palko- ja ˆljysiemenkasvien viljely (pl. riisi)"	1
+"00100  HELSINKI"	"0111   Vilja- , palko- ja √∂ljysiemenkasvien viljely (pl. riisi)"	1
+"00100  HELSINKI"	"01110  Vilja- , palko- ja √∂ljysiemenkasvien viljely (pl. riisi)"	1
 "00100  HELSINKI"	"0112   Riisin viljely"	-
 "00100  HELSINKI"	"01120  Riisin viljely"	-
 "00100  HELSINKI"	"0113   Vihannesten ja melonien, juuresten ja mukulakasvien viljely"	-
@@ -17,30 +17,30 @@
 "00100  HELSINKI"	"01191  Koristekasvien viljely"	-
 "00100  HELSINKI"	"01199  Muiden yksivuotisten kasvien viljely"	-
 "00100  HELSINKI"	"012    Monivuotisten kasvien viljely"	1
-"00100  HELSINKI"	"0121   Ryp‰leiden viljely"	-
-"00100  HELSINKI"	"01210  Ryp‰leiden viljely"	-
+"00100  HELSINKI"	"0121   Ryp√§leiden viljely"	-
+"00100  HELSINKI"	"01210  Ryp√§leiden viljely"	-
 "00100  HELSINKI"	"0123   Sitrushedelmien viljely"	-
 "00100  HELSINKI"	"01230  Sitrushedelmien viljely"	-
 "00100  HELSINKI"	"0124   Omenoiden, kirsikoiden ym. kota- ja kivihedelmien viljely"	-
 "00100  HELSINKI"	"01240  Omenoiden, kirsikoiden ym. kota- ja kivihedelmien viljely"	-
 "00100  HELSINKI"	"0125   Marjojen ym. puissa ja pensaissa kasvavien hedelmien viljely"	-
 "00100  HELSINKI"	"01250  Marjojen ym. puissa ja pensaissa kasvavien hedelmien viljely"	-
-"00100  HELSINKI"	"0128   Mauste-, aromi-, rohdos- ja l‰‰kekasvien viljely"	1
-"00100  HELSINKI"	"01280  Mauste-, aromi-, rohdos- ja l‰‰kekasvien viljely"	1
+"00100  HELSINKI"	"0128   Mauste-, aromi-, rohdos- ja l√§√§kekasvien viljely"	1
+"00100  HELSINKI"	"01280  Mauste-, aromi-, rohdos- ja l√§√§kekasvien viljely"	1
 "00100  HELSINKI"	"0129   Muu monivuotisten kasvien viljely"	-
 "00100  HELSINKI"	"01290  Muu monivuotisten kasvien viljely"	-
-"00100  HELSINKI"	"013    Taimien kasvatus ja muu kasvien lis‰‰minen"	-
-"00100  HELSINKI"	"0130   Taimien kasvatus ja muu kasvien lis‰‰minen"	-
-"00100  HELSINKI"	"01300  Taimien kasvatus ja muu kasvien lis‰‰minen"	-
-"00100  HELSINKI"	"014    Kotiel‰intalous"	1
+"00100  HELSINKI"	"013    Taimien kasvatus ja muu kasvien lis√§√§minen"	-
+"00100  HELSINKI"	"0130   Taimien kasvatus ja muu kasvien lis√§√§minen"	-
+"00100  HELSINKI"	"01300  Taimien kasvatus ja muu kasvien lis√§√§minen"	-
+"00100  HELSINKI"	"014    Kotiel√§intalous"	1
 "00100  HELSINKI"	"0141   Lypsykarjan kasvatus"	-
 "00100  HELSINKI"	"01410  Lypsykarjan kasvatus"	-
 "00100  HELSINKI"	"0142   Muun nautakarjan ja puhvelien kasvatus"	-
 "00100  HELSINKI"	"01420  Muun nautakarjan ja puhvelien kasvatus"	-
-"00100  HELSINKI"	"0143   Hevosten ja muiden hevosel‰inten kasvatus"	-
-"00100  HELSINKI"	"01430  Hevosten ja muiden hevosel‰inten kasvatus"	-
-"00100  HELSINKI"	"0144   Kamelien ja kameliel‰inten kasvatus"	-
-"00100  HELSINKI"	"01440  Kamelien ja kameliel‰inten kasvatus"	-
+"00100  HELSINKI"	"0143   Hevosten ja muiden hevosel√§inten kasvatus"	-
+"00100  HELSINKI"	"01430  Hevosten ja muiden hevosel√§inten kasvatus"	-
+"00100  HELSINKI"	"0144   Kamelien ja kameliel√§inten kasvatus"	-
+"00100  HELSINKI"	"01440  Kamelien ja kameliel√§inten kasvatus"	-
 "00100  HELSINKI"	"0145   Lampaiden ja vuohien kasvatus"	-
 "00100  HELSINKI"	"01450  Lampaiden ja vuohien kasvatus"	-
 "00100  HELSINKI"	"0146   Sikojen kasvatus"	-
@@ -50,58 +50,58 @@
 "00100  HELSINKI"	"01471  Kananmunien tuotanto"	-
 "00100  HELSINKI"	"01472  Broilerien tuotanto"	-
 "00100  HELSINKI"	"01479  Muu siipikarjatalous"	-
-"00100  HELSINKI"	"0149   Muiden el‰inten kasvatus"	1
+"00100  HELSINKI"	"0149   Muiden el√§inten kasvatus"	1
 "00100  HELSINKI"	"01491  Turkistarhaus"	-
 "00100  HELSINKI"	"01492  Poronhoito"	-
-"00100  HELSINKI"	"01499  Muu el‰inten hoito"	1
-"00100  HELSINKI"	"015    Yhdistetty kasvinviljely ja kotiel‰intalous (sekatilat)"	-
-"00100  HELSINKI"	"0150   Yhdistetty kasvinviljely ja kotiel‰intalous (sekatilat)"	-
-"00100  HELSINKI"	"01500  Yhdistetty kasvinviljely ja kotiel‰intalous (sekatilat)"	-
+"00100  HELSINKI"	"01499  Muu el√§inten hoito"	1
+"00100  HELSINKI"	"015    Yhdistetty kasvinviljely ja kotiel√§intalous (sekatilat)"	-
+"00100  HELSINKI"	"0150   Yhdistetty kasvinviljely ja kotiel√§intalous (sekatilat)"	-
+"00100  HELSINKI"	"01500  Yhdistetty kasvinviljely ja kotiel√§intalous (sekatilat)"	-
 "00100  HELSINKI"	"016    Maataloutta palveleva toiminta"	1
-"00100  HELSINKI"	"0161   Kasvinviljely‰ palveleva toiminta"	-
+"00100  HELSINKI"	"0161   Kasvinviljely√§ palveleva toiminta"	-
 "00100  HELSINKI"	"01611  Kasvinviljelyn tukipalvelut"	-
-"00100  HELSINKI"	"01612  Maatalousmaan pit‰minen viljelykelpoisena"	-
-"00100  HELSINKI"	"0162   Kotiel‰intaloutta palveleva toiminta"	1
-"00100  HELSINKI"	"01620  Kotiel‰intaloutta palveleva toiminta"	1
-"00100  HELSINKI"	"0163   Sadon jatkok‰sittely"	-
-"00100  HELSINKI"	"01630  Sadon jatkok‰sittely"	-
-"00100  HELSINKI"	"0164   Siementen k‰sittely kasvinviljely‰ varten"	-
-"00100  HELSINKI"	"01640  Siementen k‰sittely kasvinviljely‰ varten"	-
-"00100  HELSINKI"	"017    Mets‰stys ja sit‰ palveleva toiminta"	-
-"00100  HELSINKI"	"0170   Mets‰stys ja sit‰ palveleva toiminta"	-
-"00100  HELSINKI"	"01700  Mets‰stys ja sit‰ palveleva toiminta"	-
-"00100  HELSINKI"	"02     Mets‰talous ja puunkorjuu"	10
-"00100  HELSINKI"	"021    Mets‰nhoito"	-
-"00100  HELSINKI"	"0210   Mets‰nhoito"	-
-"00100  HELSINKI"	"02100  Mets‰nhoito"	-
+"00100  HELSINKI"	"01612  Maatalousmaan pit√§minen viljelykelpoisena"	-
+"00100  HELSINKI"	"0162   Kotiel√§intaloutta palveleva toiminta"	1
+"00100  HELSINKI"	"01620  Kotiel√§intaloutta palveleva toiminta"	1
+"00100  HELSINKI"	"0163   Sadon jatkok√§sittely"	-
+"00100  HELSINKI"	"01630  Sadon jatkok√§sittely"	-
+"00100  HELSINKI"	"0164   Siementen k√§sittely kasvinviljely√§ varten"	-
+"00100  HELSINKI"	"01640  Siementen k√§sittely kasvinviljely√§ varten"	-
+"00100  HELSINKI"	"017    Mets√§stys ja sit√§ palveleva toiminta"	-
+"00100  HELSINKI"	"0170   Mets√§stys ja sit√§ palveleva toiminta"	-
+"00100  HELSINKI"	"01700  Mets√§stys ja sit√§ palveleva toiminta"	-
+"00100  HELSINKI"	"02     Mets√§talous ja puunkorjuu"	10
+"00100  HELSINKI"	"021    Mets√§nhoito"	-
+"00100  HELSINKI"	"0210   Mets√§nhoito"	-
+"00100  HELSINKI"	"02100  Mets√§nhoito"	-
 "00100  HELSINKI"	"022    Puunkorjuu"	-
 "00100  HELSINKI"	"0220   Puunkorjuu"	-
 "00100  HELSINKI"	"02200  Puunkorjuu"	-
 "00100  HELSINKI"	"023    Luonnon tuotteiden keruu (pl. polttopuu)"	-
 "00100  HELSINKI"	"0230   Luonnon tuotteiden keruu (pl. polttopuu)"	-
 "00100  HELSINKI"	"02300  Luonnon tuotteiden keruu (pl. polttopuu)"	-
-"00100  HELSINKI"	"024    Mets‰taloutta palveleva toiminta"	10
-"00100  HELSINKI"	"0240   Mets‰taloutta palveleva toiminta"	10
-"00100  HELSINKI"	"02400  Mets‰taloutta palveleva toiminta"	10
+"00100  HELSINKI"	"024    Mets√§taloutta palveleva toiminta"	10
+"00100  HELSINKI"	"0240   Mets√§taloutta palveleva toiminta"	10
+"00100  HELSINKI"	"02400  Mets√§taloutta palveleva toiminta"	10
 "00100  HELSINKI"	"03     Kalastus ja vesiviljely"	1
 "00100  HELSINKI"	"031    Kalastus"	-
 "00100  HELSINKI"	"0311   Merikalastus"	-
 "00100  HELSINKI"	"03110  Merikalastus"	-
-"00100  HELSINKI"	"0312   Sis‰vesikalastus"	-
-"00100  HELSINKI"	"03120  Sis‰vesikalastus"	-
+"00100  HELSINKI"	"0312   Sis√§vesikalastus"	-
+"00100  HELSINKI"	"03120  Sis√§vesikalastus"	-
 "00100  HELSINKI"	"032    Vesiviljely"	1
-"00100  HELSINKI"	"0321   Kalanviljely meress‰"	-
-"00100  HELSINKI"	"03210  Kalanviljely meress‰"	-
-"00100  HELSINKI"	"0322   Kalanviljely sis‰vesiss‰"	1
-"00100  HELSINKI"	"03220  Kalanviljely sis‰vesiss‰"	1
+"00100  HELSINKI"	"0321   Kalanviljely meress√§"	-
+"00100  HELSINKI"	"03210  Kalanviljely meress√§"	-
+"00100  HELSINKI"	"0322   Kalanviljely sis√§vesiss√§"	1
+"00100  HELSINKI"	"03220  Kalanviljely sis√§vesiss√§"	1
 "00100  HELSINKI"	"B  Kaivostoiminta ja louhinta"	4
 "00100  HELSINKI"	"07     Metallimalmien louhinta"	-
 "00100  HELSINKI"	"071    Rautamalmien louhinta"	-
 "00100  HELSINKI"	"0710   Rautamalmien louhinta"	-
 "00100  HELSINKI"	"07100  Rautamalmien louhinta"	-
-"00100  HELSINKI"	"072    V‰rimetallimalmien louhinta"	-
-"00100  HELSINKI"	"0729   Muiden v‰rimetallimalmien louhinta"	-
-"00100  HELSINKI"	"07290  Muiden v‰rimetallimalmien louhinta"	-
+"00100  HELSINKI"	"072    V√§rimetallimalmien louhinta"	-
+"00100  HELSINKI"	"0729   Muiden v√§rimetallimalmien louhinta"	-
+"00100  HELSINKI"	"07290  Muiden v√§rimetallimalmien louhinta"	-
 "00100  HELSINKI"	"08     Muu kaivostoiminta ja louhinta"	1
 "00100  HELSINKI"	"081    Kiven louhinta, hiekan ja saven otto"	-
 "00100  HELSINKI"	"0811   Koriste-, rakennus- ja kalkkikiven, kipsin, liidun louhinta"	-
@@ -121,43 +121,43 @@
 "00100  HELSINKI"	"09900  Muuta kaivostoimintaa ja louhintaa palveleva toiminta"	3
 "00100  HELSINKI"	"C  Teollisuus"	155
 "00100  HELSINKI"	"10     Elintarvikkeiden valmistus"	13
-"00100  HELSINKI"	"101    Teurastus, lihan s‰ilyvyysk‰sittely, lihatuott. valmistus"	-
-"00100  HELSINKI"	"1011   Teurastus ja lihan s‰ilyvyysk‰sittely (pl. siipikarja)"	-
-"00100  HELSINKI"	"10110  Teurastus ja lihan s‰ilyvyysk‰sittely (pl. siipikarja)"	-
-"00100  HELSINKI"	"1012   Siipikarjan teurastus ja lihan s‰ilyvyysk‰sittely"	-
-"00100  HELSINKI"	"10120  Siipikarjan teurastus ja lihan s‰ilyvyysk‰sittely"	-
+"00100  HELSINKI"	"101    Teurastus, lihan s√§ilyvyysk√§sittely, lihatuott. valmistus"	-
+"00100  HELSINKI"	"1011   Teurastus ja lihan s√§ilyvyysk√§sittely (pl. siipikarja)"	-
+"00100  HELSINKI"	"10110  Teurastus ja lihan s√§ilyvyysk√§sittely (pl. siipikarja)"	-
+"00100  HELSINKI"	"1012   Siipikarjan teurastus ja lihan s√§ilyvyysk√§sittely"	-
+"00100  HELSINKI"	"10120  Siipikarjan teurastus ja lihan s√§ilyvyysk√§sittely"	-
 "00100  HELSINKI"	"1013   Liha- ja siipikarjatuotteiden valmistus"	-
 "00100  HELSINKI"	"10130  Liha- ja siipikarjatuotteiden valmistus"	-
-"00100  HELSINKI"	"102    Kalan, ‰yri‰isten ja nilvi‰isten jalostus ja s‰ilˆnt‰"	-
-"00100  HELSINKI"	"1020   Kalan, ‰yri‰isten ja nilvi‰isten jalostus ja s‰ilˆnt‰"	-
-"00100  HELSINKI"	"10200  Kalan, ‰yri‰isten ja nilvi‰isten jalostus ja s‰ilˆnt‰"	-
-"00100  HELSINKI"	"103    Hedelmien ja kasvisten jalostus ja s‰ilˆnt‰"	1
-"00100  HELSINKI"	"1031   Perunoiden jalostus ja s‰ilˆnt‰"	-
-"00100  HELSINKI"	"10310  Perunoiden jalostus ja s‰ilˆnt‰"	-
-"00100  HELSINKI"	"1032   Hedelm‰-, marja- ja kasvismehujen valmistus"	-
-"00100  HELSINKI"	"10320  Hedelm‰-, marja- ja kasvismehujen valmistus"	-
-"00100  HELSINKI"	"1039   Muu hedelmien, marjojen ja kasvisten jalostus ja s‰ilˆnt‰"	1
-"00100  HELSINKI"	"10390  Muu hedelmien, marjojen ja kasvisten jalostus ja s‰ilˆnt‰"	1
-"00100  HELSINKI"	"104    Kasvi- ja el‰inˆljyjen ja -rasvojen valmistus"	-
-"00100  HELSINKI"	"1041   Kasvi- ja el‰inˆljyjen ja -rasvojen valm.(pl. ravintorasvat)"	-
-"00100  HELSINKI"	"10410  Kasvi- ja el‰inˆljyjen ja -rasvojen valm.(pl. ravintorasvat)"	-
+"00100  HELSINKI"	"102    Kalan, √§yri√§isten ja nilvi√§isten jalostus ja s√§il√∂nt√§"	-
+"00100  HELSINKI"	"1020   Kalan, √§yri√§isten ja nilvi√§isten jalostus ja s√§il√∂nt√§"	-
+"00100  HELSINKI"	"10200  Kalan, √§yri√§isten ja nilvi√§isten jalostus ja s√§il√∂nt√§"	-
+"00100  HELSINKI"	"103    Hedelmien ja kasvisten jalostus ja s√§il√∂nt√§"	1
+"00100  HELSINKI"	"1031   Perunoiden jalostus ja s√§il√∂nt√§"	-
+"00100  HELSINKI"	"10310  Perunoiden jalostus ja s√§il√∂nt√§"	-
+"00100  HELSINKI"	"1032   Hedelm√§-, marja- ja kasvismehujen valmistus"	-
+"00100  HELSINKI"	"10320  Hedelm√§-, marja- ja kasvismehujen valmistus"	-
+"00100  HELSINKI"	"1039   Muu hedelmien, marjojen ja kasvisten jalostus ja s√§il√∂nt√§"	1
+"00100  HELSINKI"	"10390  Muu hedelmien, marjojen ja kasvisten jalostus ja s√§il√∂nt√§"	1
+"00100  HELSINKI"	"104    Kasvi- ja el√§in√∂ljyjen ja -rasvojen valmistus"	-
+"00100  HELSINKI"	"1041   Kasvi- ja el√§in√∂ljyjen ja -rasvojen valm.(pl. ravintorasvat)"	-
+"00100  HELSINKI"	"10410  Kasvi- ja el√§in√∂ljyjen ja -rasvojen valm.(pl. ravintorasvat)"	-
 "00100  HELSINKI"	"1042   Margariinin ja sen kaltaisten ravintorasvojen valmistus"	-
 "00100  HELSINKI"	"10420  Margariinin ja sen kaltaisten ravintorasvojen valmistus"	-
 "00100  HELSINKI"	"105    Maitotaloustuotteiden valmistus"	1
 "00100  HELSINKI"	"1051   Maitotaloustuotteiden ja juuston valmistus"	1
 "00100  HELSINKI"	"10510  Maitotaloustuotteiden ja juuston valmistus"	1
-"00100  HELSINKI"	"1052   J‰‰telˆn valmistus"	-
-"00100  HELSINKI"	"10520  J‰‰telˆn valmistus"	-
-"00100  HELSINKI"	"106    Mylly- ja t‰rkkelystuotteiden valmistus"	1
+"00100  HELSINKI"	"1052   J√§√§tel√∂n valmistus"	-
+"00100  HELSINKI"	"10520  J√§√§tel√∂n valmistus"	-
+"00100  HELSINKI"	"106    Mylly- ja t√§rkkelystuotteiden valmistus"	1
 "00100  HELSINKI"	"1061   Myllytuotteiden valmistus"	1
 "00100  HELSINKI"	"10610  Myllytuotteiden valmistus"	1
-"00100  HELSINKI"	"1062   T‰rkkelyksen ja t‰rkkelystuotteiden valmistus"	-
-"00100  HELSINKI"	"10620  T‰rkkelyksen ja t‰rkkelystuotteiden valmistus"	-
+"00100  HELSINKI"	"1062   T√§rkkelyksen ja t√§rkkelystuotteiden valmistus"	-
+"00100  HELSINKI"	"10620  T√§rkkelyksen ja t√§rkkelystuotteiden valmistus"	-
 "00100  HELSINKI"	"107    Leipomotuotteiden, makaronien yms. valmistus"	6
-"00100  HELSINKI"	"1071   Leiv‰n, tuoreiden leivonnaisten ja kakkujen valmistus"	6
-"00100  HELSINKI"	"10710  Leiv‰n, tuoreiden leivonnaisten ja kakkujen valmistus"	6
-"00100  HELSINKI"	"1072   N‰kkileiv‰n, keksien ja s‰ilyvien leivonnaisten valmistus"	-
-"00100  HELSINKI"	"10720  N‰kkileiv‰n, keksien ja s‰ilyvien leivonnaisten valmistus"	-
+"00100  HELSINKI"	"1071   Leiv√§n, tuoreiden leivonnaisten ja kakkujen valmistus"	6
+"00100  HELSINKI"	"10710  Leiv√§n, tuoreiden leivonnaisten ja kakkujen valmistus"	6
+"00100  HELSINKI"	"1072   N√§kkileiv√§n, keksien ja s√§ilyvien leivonnaisten valmistus"	-
+"00100  HELSINKI"	"10720  N√§kkileiv√§n, keksien ja s√§ilyvien leivonnaisten valmistus"	-
 "00100  HELSINKI"	"1073   Makaronin, nuudelien ja vastaavien jauhotuotteiden valmistus"	-
 "00100  HELSINKI"	"10730  Makaronin, nuudelien ja vastaavien jauhotuotteiden valmistus"	-
 "00100  HELSINKI"	"108    Muiden elintarvikkeiden valmistus"	4
@@ -175,19 +175,19 @@
 "00100  HELSINKI"	"10860  Homogenoitujen ravintovalmisteiden, dieettiruokien valmistus"	-
 "00100  HELSINKI"	"1089   Muualla luokittelematon elintarvikkeiden valmistus"	2
 "00100  HELSINKI"	"10890  Muualla luokittelematon elintarvikkeiden valmistus"	2
-"00100  HELSINKI"	"109    El‰inten ruokien valmistus"	-
-"00100  HELSINKI"	"1091   Kotiel‰inten rehujen valmistus"	-
-"00100  HELSINKI"	"10910  Kotiel‰inten rehujen valmistus"	-
-"00100  HELSINKI"	"1092   Lemmikkiel‰inten ruokien valmistus"	-
-"00100  HELSINKI"	"10920  Lemmikkiel‰inten ruokien valmistus"	-
+"00100  HELSINKI"	"109    El√§inten ruokien valmistus"	-
+"00100  HELSINKI"	"1091   Kotiel√§inten rehujen valmistus"	-
+"00100  HELSINKI"	"10910  Kotiel√§inten rehujen valmistus"	-
+"00100  HELSINKI"	"1092   Lemmikkiel√§inten ruokien valmistus"	-
+"00100  HELSINKI"	"10920  Lemmikkiel√§inten ruokien valmistus"	-
 "00100  HELSINKI"	"11     Juomien valmistus"	7
 "00100  HELSINKI"	"110    Juomien valmistus"	7
 "00100  HELSINKI"	"1101   Alkoholijuomien tislaus ja sekoittaminen; etanolin valmistus"	2
 "00100  HELSINKI"	"11010  Alkoholijuomien tislaus ja sekoittaminen; etanolin valmistus"	2
-"00100  HELSINKI"	"1103   Siiderin, hedelm‰- ja marjaviinien valmistus"	-
-"00100  HELSINKI"	"11030  Siiderin, hedelm‰- ja marjaviinien valmistus"	-
-"00100  HELSINKI"	"1104   Muiden tislaamattomien juomien valmistus k‰ymisteitse"	-
-"00100  HELSINKI"	"11040  Muiden tislaamattomien juomien valmistus k‰ymisteitse"	-
+"00100  HELSINKI"	"1103   Siiderin, hedelm√§- ja marjaviinien valmistus"	-
+"00100  HELSINKI"	"11030  Siiderin, hedelm√§- ja marjaviinien valmistus"	-
+"00100  HELSINKI"	"1104   Muiden tislaamattomien juomien valmistus k√§ymisteitse"	-
+"00100  HELSINKI"	"11040  Muiden tislaamattomien juomien valmistus k√§ymisteitse"	-
 "00100  HELSINKI"	"1105   Oluen valmistus"	3
 "00100  HELSINKI"	"11050  Oluen valmistus"	3
 "00100  HELSINKI"	"1106   Maltaiden valmistus"	-
@@ -224,8 +224,8 @@
 "00100  HELSINKI"	"141    Vaatteiden valmistus (pl. turkisvaatteet)"	25
 "00100  HELSINKI"	"1411   Nahkavaatteiden valmistus"	1
 "00100  HELSINKI"	"14110  Nahkavaatteiden valmistus"	1
-"00100  HELSINKI"	"1412   Tyˆvaatteiden valmistus"	-
-"00100  HELSINKI"	"14120  Tyˆvaatteiden valmistus"	-
+"00100  HELSINKI"	"1412   Ty√∂vaatteiden valmistus"	-
+"00100  HELSINKI"	"14120  Ty√∂vaatteiden valmistus"	-
 "00100  HELSINKI"	"1413   Muu takkien, pukujen, housujen, hameiden yms. valmistus"	14
 "00100  HELSINKI"	"14130  Muu takkien, pukujen, housujen, hameiden yms. valmistus"	14
 "00100  HELSINKI"	"1414   Alusvaatteiden valmistus"	-
@@ -241,18 +241,18 @@
 "00100  HELSINKI"	"1439   Muiden neulevaatteiden valmistus"	-
 "00100  HELSINKI"	"14390  Muiden neulevaatteiden valmistus"	-
 "00100  HELSINKI"	"15     Nahan ja nahkatuotteiden valmistus"	-
-"00100  HELSINKI"	"151    Nahan parkitseminen, muokkaus; turkisten muokkaus ja v‰rj‰ys"	-
-"00100  HELSINKI"	"1511   Turkisten ja nahan muokkaus ja v‰rj‰ys"	-
-"00100  HELSINKI"	"15110  Turkisten ja nahan muokkaus ja v‰rj‰ys"	-
+"00100  HELSINKI"	"151    Nahan parkitseminen, muokkaus; turkisten muokkaus ja v√§rj√§ys"	-
+"00100  HELSINKI"	"1511   Turkisten ja nahan muokkaus ja v√§rj√§ys"	-
+"00100  HELSINKI"	"15110  Turkisten ja nahan muokkaus ja v√§rj√§ys"	-
 "00100  HELSINKI"	"1512   Matka-, ym. laukkujen, satuloiden ja valjaiden valmistus"	-
 "00100  HELSINKI"	"15120  Matka-, ym. laukkujen, satuloiden ja valjaiden valmistus"	-
 "00100  HELSINKI"	"152    Jalkineiden valmistus"	-
 "00100  HELSINKI"	"1520   Jalkineiden valmistus"	-
 "00100  HELSINKI"	"15200  Jalkineiden valmistus"	-
 "00100  HELSINKI"	"16     Sahatavaran, puu- ja korkkituotteiden valm. (pl. huonekalut)"	4
-"00100  HELSINKI"	"161    Puun sahaus, hˆyl‰ys ja kyll‰stys"	-
-"00100  HELSINKI"	"1610   Puun sahaus, hˆyl‰ys ja kyll‰stys"	-
-"00100  HELSINKI"	"16100  Puun sahaus, hˆyl‰ys ja kyll‰stys"	-
+"00100  HELSINKI"	"161    Puun sahaus, h√∂yl√§ys ja kyll√§stys"	-
+"00100  HELSINKI"	"1610   Puun sahaus, h√∂yl√§ys ja kyll√§stys"	-
+"00100  HELSINKI"	"16100  Puun sahaus, h√∂yl√§ys ja kyll√§stys"	-
 "00100  HELSINKI"	"162    Puu-, korkki-, olki- ja punontatuotteiden valmistus"	4
 "00100  HELSINKI"	"1621   Vaneriviilun ja puupaneelien valmistus"	1
 "00100  HELSINKI"	"16211  Vanerin ja vaneriviilun valmistus"	1
@@ -260,9 +260,9 @@
 "00100  HELSINKI"	"16213  Kuitulevyn valmistus"	-
 "00100  HELSINKI"	"1622   Asennettavien parkettilevyjen valmistus"	-
 "00100  HELSINKI"	"16220  Asennettavien parkettilevyjen valmistus"	-
-"00100  HELSINKI"	"1623   Muiden rakennuspuusep‰ntuotteiden valmistus"	2
+"00100  HELSINKI"	"1623   Muiden rakennuspuusep√§ntuotteiden valmistus"	2
 "00100  HELSINKI"	"16231  Puutalojen valmistus"	2
-"00100  HELSINKI"	"16239  Muu rakennuspuusep‰ntuotteiden valmistus"	-
+"00100  HELSINKI"	"16239  Muu rakennuspuusep√§ntuotteiden valmistus"	-
 "00100  HELSINKI"	"1624   Puupakkausten valmistus"	-
 "00100  HELSINKI"	"16240  Puupakkausten valmistus"	-
 "00100  HELSINKI"	"1629   Muiden puutuotteiden valmistus"	1
@@ -275,8 +275,8 @@
 "00100  HELSINKI"	"17120  Paperin, kartongin ja pahvin valmistus"	5
 "00100  HELSINKI"	"172    Paperi-, kartonki- ja pahvituotteiden valmistus"	2
 "00100  HELSINKI"	"1721   Aaltopaperin ja -pahvin, paperi-ja pahvipakkausten valmistus"	-
-"00100  HELSINKI"	"17211  Paperis‰kkien ja -pussien valmistus"	-
-"00100  HELSINKI"	"17212  Aaltopahvin sek‰ paperi- ja kartonkipakkausten valmistus"	-
+"00100  HELSINKI"	"17211  Paperis√§kkien ja -pussien valmistus"	-
+"00100  HELSINKI"	"17212  Aaltopahvin sek√§ paperi- ja kartonkipakkausten valmistus"	-
 "00100  HELSINKI"	"1722   Paperisten talous- ja hygieniatarvikkeiden valmistus"	-
 "00100  HELSINKI"	"17220  Paperisten talous- ja hygieniatarvikkeiden valmistus"	-
 "00100  HELSINKI"	"1723   Paperikauppatavaroiden valmistus"	-
@@ -285,34 +285,34 @@
 "00100  HELSINKI"	"17240  Tapettien valmistus"	-
 "00100  HELSINKI"	"1729   Muiden paperi-, kartonki- ja pahvituotteiden valmistus"	2
 "00100  HELSINKI"	"17290  Muiden paperi-, kartonki- ja pahvituotteiden valmistus"	2
-"00100  HELSINKI"	"18     Painaminen ja tallenteiden j‰ljent‰minen"	8
-"00100  HELSINKI"	"181    Painaminen ja siihen liittyv‰t palvelut"	6
+"00100  HELSINKI"	"18     Painaminen ja tallenteiden j√§ljent√§minen"	8
+"00100  HELSINKI"	"181    Painaminen ja siihen liittyv√§t palvelut"	6
 "00100  HELSINKI"	"1811   Sanomalehtien painaminen"	-
 "00100  HELSINKI"	"18110  Sanomalehtien painaminen"	-
 "00100  HELSINKI"	"1812   Muu painaminen"	6
 "00100  HELSINKI"	"18120  Muu painaminen"	6
-"00100  HELSINKI"	"1813   Painamista ja julkaisemista edelt‰v‰t palvelut"	-
-"00100  HELSINKI"	"18130  Painamista ja julkaisemista edelt‰v‰t palvelut"	-
-"00100  HELSINKI"	"1814   Sidonta ja siihen liittyv‰t palvelut"	-
-"00100  HELSINKI"	"18140  Sidonta ja siihen liittyv‰t palvelut"	-
-"00100  HELSINKI"	"182    ƒ‰ni-, kuva- ja atk-tallenteiden tuotanto"	2
-"00100  HELSINKI"	"1820   ƒ‰ni-, kuva- ja atk-tallenteiden tuotanto"	2
-"00100  HELSINKI"	"18200  ƒ‰ni-, kuva- ja atk-tallenteiden tuotanto"	2
-"00100  HELSINKI"	"19     Koksin ja jalostettujen ˆljytuotteiden valmistus"	1
+"00100  HELSINKI"	"1813   Painamista ja julkaisemista edelt√§v√§t palvelut"	-
+"00100  HELSINKI"	"18130  Painamista ja julkaisemista edelt√§v√§t palvelut"	-
+"00100  HELSINKI"	"1814   Sidonta ja siihen liittyv√§t palvelut"	-
+"00100  HELSINKI"	"18140  Sidonta ja siihen liittyv√§t palvelut"	-
+"00100  HELSINKI"	"182    √Ñ√§ni-, kuva- ja atk-tallenteiden tuotanto"	2
+"00100  HELSINKI"	"1820   √Ñ√§ni-, kuva- ja atk-tallenteiden tuotanto"	2
+"00100  HELSINKI"	"18200  √Ñ√§ni-, kuva- ja atk-tallenteiden tuotanto"	2
+"00100  HELSINKI"	"19     Koksin ja jalostettujen √∂ljytuotteiden valmistus"	1
 "00100  HELSINKI"	"191    Koksituotteiden valmistus"	-
 "00100  HELSINKI"	"1910   Koksituotteiden valmistus"	-
 "00100  HELSINKI"	"19100  Koksituotteiden valmistus"	-
-"00100  HELSINKI"	"192    Jalostettujen ˆljytuotteiden valmistus"	1
-"00100  HELSINKI"	"1920   Jalostettujen ˆljytuotteiden valmistus"	1
-"00100  HELSINKI"	"19200  Jalostettujen ˆljytuotteiden valmistus"	1
+"00100  HELSINKI"	"192    Jalostettujen √∂ljytuotteiden valmistus"	1
+"00100  HELSINKI"	"1920   Jalostettujen √∂ljytuotteiden valmistus"	1
+"00100  HELSINKI"	"19200  Jalostettujen √∂ljytuotteiden valmistus"	1
 "00100  HELSINKI"	"20     Kemikaalien ja kemiallisten tuotteiden valmistus"	6
 "00100  HELSINKI"	"201    Peruskemikaalien, mm. lannoitteiden, muoviaineiden valmistus"	1
 "00100  HELSINKI"	"2011   Teollisuuskaasujen valmistus"	-
 "00100  HELSINKI"	"20110  Teollisuuskaasujen valmistus"	-
-"00100  HELSINKI"	"2012   V‰rien ja pigmenttien valmistus"	-
-"00100  HELSINKI"	"20120  V‰rien ja pigmenttien valmistus"	-
-"00100  HELSINKI"	"2013   Muiden ep‰orgaanisten peruskemikaalien valmistus"	1
-"00100  HELSINKI"	"20130  Muiden ep‰orgaanisten peruskemikaalien valmistus"	1
+"00100  HELSINKI"	"2012   V√§rien ja pigmenttien valmistus"	-
+"00100  HELSINKI"	"20120  V√§rien ja pigmenttien valmistus"	-
+"00100  HELSINKI"	"2013   Muiden ep√§orgaanisten peruskemikaalien valmistus"	1
+"00100  HELSINKI"	"20130  Muiden ep√§orgaanisten peruskemikaalien valmistus"	1
 "00100  HELSINKI"	"2014   Muiden orgaanisten peruskemikaalien valmistus"	-
 "00100  HELSINKI"	"20140  Muiden orgaanisten peruskemikaalien valmistus"	-
 "00100  HELSINKI"	"2015   Lannoitteiden ja typpiyhdisteiden valmistus"	-
@@ -324,33 +324,33 @@
 "00100  HELSINKI"	"202    Torjunta-aineiden ja muiden maatalouskemikaalien valmistus"	-
 "00100  HELSINKI"	"2020   Torjunta-aineiden ja muiden maatalouskemikaalien valmistus"	-
 "00100  HELSINKI"	"20200  Torjunta-aineiden ja muiden maatalouskemikaalien valmistus"	-
-"00100  HELSINKI"	"203    Maalien, lakan, painov‰rien yms. valmistus"	-
-"00100  HELSINKI"	"2030   Maalien, lakan, painov‰rien yms. valmistus"	-
-"00100  HELSINKI"	"20300  Maalien, lakan, painov‰rien yms. valmistus"	-
+"00100  HELSINKI"	"203    Maalien, lakan, painov√§rien yms. valmistus"	-
+"00100  HELSINKI"	"2030   Maalien, lakan, painov√§rien yms. valmistus"	-
+"00100  HELSINKI"	"20300  Maalien, lakan, painov√§rien yms. valmistus"	-
 "00100  HELSINKI"	"204    Saippuan, hajuvesien ja ym. hygieniatuotteiden valmistus"	2
 "00100  HELSINKI"	"2041   Saippuan, pesu-, puhdistus- ja kiillotusaineiden valmistus"	1
 "00100  HELSINKI"	"20410  Saippuan, pesu-, puhdistus- ja kiillotusaineiden valmistus"	1
 "00100  HELSINKI"	"2042   Hajuvesien ja hygieniatuotteiden valmistus"	1
 "00100  HELSINKI"	"20420  Hajuvesien ja hygieniatuotteiden valmistus"	1
 "00100  HELSINKI"	"205    Muiden kemiallisten tuotteiden valmistus"	3
-"00100  HELSINKI"	"2051   R‰j‰hdysaineiden valmistus"	-
-"00100  HELSINKI"	"20510  R‰j‰hdysaineiden valmistus"	-
+"00100  HELSINKI"	"2051   R√§j√§hdysaineiden valmistus"	-
+"00100  HELSINKI"	"20510  R√§j√§hdysaineiden valmistus"	-
 "00100  HELSINKI"	"2052   Liimojen valmistus"	-
 "00100  HELSINKI"	"20520  Liimojen valmistus"	-
-"00100  HELSINKI"	"2053   Eteeristen ˆljyjen valmistus"	-
-"00100  HELSINKI"	"20530  Eteeristen ˆljyjen valmistus"	-
+"00100  HELSINKI"	"2053   Eteeristen √∂ljyjen valmistus"	-
+"00100  HELSINKI"	"20530  Eteeristen √∂ljyjen valmistus"	-
 "00100  HELSINKI"	"2059   Muualla luokittelematon kemiallisten tuotteiden valmistus"	3
 "00100  HELSINKI"	"20590  Muualla luokittelematon kemiallisten tuotteiden valmistus"	3
 "00100  HELSINKI"	"206    Tekokuitujen valmistus"	-
 "00100  HELSINKI"	"2060   Tekokuitujen valmistus"	-
 "00100  HELSINKI"	"20600  Tekokuitujen valmistus"	-
-"00100  HELSINKI"	"21     L‰‰keaineiden ja l‰‰kkeiden valmistus"	3
-"00100  HELSINKI"	"211    L‰‰keaineiden valmistus"	-
-"00100  HELSINKI"	"2110   L‰‰keaineiden valmistus"	-
-"00100  HELSINKI"	"21100  L‰‰keaineiden valmistus"	-
-"00100  HELSINKI"	"212    L‰‰kkeiden ja muiden l‰‰kevalmisteiden valmistus"	3
-"00100  HELSINKI"	"2120   L‰‰kkeiden ja muiden l‰‰kevalmisteiden valmistus"	3
-"00100  HELSINKI"	"21200  L‰‰kkeiden ja muiden l‰‰kevalmisteiden valmistus"	3
+"00100  HELSINKI"	"21     L√§√§keaineiden ja l√§√§kkeiden valmistus"	3
+"00100  HELSINKI"	"211    L√§√§keaineiden valmistus"	-
+"00100  HELSINKI"	"2110   L√§√§keaineiden valmistus"	-
+"00100  HELSINKI"	"21100  L√§√§keaineiden valmistus"	-
+"00100  HELSINKI"	"212    L√§√§kkeiden ja muiden l√§√§kevalmisteiden valmistus"	3
+"00100  HELSINKI"	"2120   L√§√§kkeiden ja muiden l√§√§kevalmisteiden valmistus"	3
+"00100  HELSINKI"	"21200  L√§√§kkeiden ja muiden l√§√§kevalmisteiden valmistus"	3
 "00100  HELSINKI"	"22     Kumi- ja muovituotteiden valmistus"	2
 "00100  HELSINKI"	"221    Kumituotteiden valmistus"	-
 "00100  HELSINKI"	"2211   Renkaiden valmistus ja uudelleenpinnoitus"	-
@@ -378,9 +378,9 @@
 "00100  HELSINKI"	"23140  Lasikuitujen valmistus"	1
 "00100  HELSINKI"	"2319   Muu lasin valmistus ja muokkaus ml. tekniset lasituotteet"	-
 "00100  HELSINKI"	"23190  Muu lasin valmistus ja muokkaus ml. tekniset lasituotteet"	-
-"00100  HELSINKI"	"232    Tulenkest‰vien keraamisten tuotteiden valmistus"	-
-"00100  HELSINKI"	"2320   Tulenkest‰vien keraamisten tuotteiden valmistus"	-
-"00100  HELSINKI"	"23200  Tulenkest‰vien keraamisten tuotteiden valmistus"	-
+"00100  HELSINKI"	"232    Tulenkest√§vien keraamisten tuotteiden valmistus"	-
+"00100  HELSINKI"	"2320   Tulenkest√§vien keraamisten tuotteiden valmistus"	-
+"00100  HELSINKI"	"23200  Tulenkest√§vien keraamisten tuotteiden valmistus"	-
 "00100  HELSINKI"	"233    Keraamisten rakennusaineiden valmistus"	-
 "00100  HELSINKI"	"2331   Keraamisten tiilien ja laattojen valmistus"	-
 "00100  HELSINKI"	"23310  Keraamisten tiilien ja laattojen valmistus"	-
@@ -424,20 +424,20 @@
 "00100  HELSINKI"	"2399   Muiden ei-metallisten mineraalituotteiden valmistus"	-
 "00100  HELSINKI"	"23990  Muiden ei-metallisten mineraalituotteiden valmistus"	-
 "00100  HELSINKI"	"24     Metallien jalostus"	-
-"00100  HELSINKI"	"241    Raudan, ter‰ksen ja rautaseosten valmistus"	-
-"00100  HELSINKI"	"2410   Raudan, ter‰ksen ja rautaseosten valmistus"	-
-"00100  HELSINKI"	"24100  Raudan, ter‰ksen ja rautaseosten valmistus"	-
-"00100  HELSINKI"	"242    Putkien ja niihin liittyvien tarvikkeiden valm. ter‰ksest‰"	-
-"00100  HELSINKI"	"2420   Putkien ja niihin liittyvien tarvikkeiden valm. ter‰ksest‰"	-
-"00100  HELSINKI"	"24200  Putkien ja niihin liittyvien tarvikkeiden valm. ter‰ksest‰"	-
-"00100  HELSINKI"	"243    Muu ter‰ksen jalostus"	-
-"00100  HELSINKI"	"2431   Raudan ja ter‰ksen kylm‰vet‰minen"	-
-"00100  HELSINKI"	"24310  Raudan ja ter‰ksen kylm‰vet‰minen"	-
-"00100  HELSINKI"	"2433   Kylm‰muovaus tai kylm‰taitto"	-
-"00100  HELSINKI"	"24330  Kylm‰muovaus tai kylm‰taitto"	-
-"00100  HELSINKI"	"2434   Ter‰slangan veto"	-
-"00100  HELSINKI"	"24340  Ter‰slangan veto"	-
-"00100  HELSINKI"	"244    Jalometallien ja muiden v‰rimetallien valmistus"	-
+"00100  HELSINKI"	"241    Raudan, ter√§ksen ja rautaseosten valmistus"	-
+"00100  HELSINKI"	"2410   Raudan, ter√§ksen ja rautaseosten valmistus"	-
+"00100  HELSINKI"	"24100  Raudan, ter√§ksen ja rautaseosten valmistus"	-
+"00100  HELSINKI"	"242    Putkien ja niihin liittyvien tarvikkeiden valm. ter√§ksest√§"	-
+"00100  HELSINKI"	"2420   Putkien ja niihin liittyvien tarvikkeiden valm. ter√§ksest√§"	-
+"00100  HELSINKI"	"24200  Putkien ja niihin liittyvien tarvikkeiden valm. ter√§ksest√§"	-
+"00100  HELSINKI"	"243    Muu ter√§ksen jalostus"	-
+"00100  HELSINKI"	"2431   Raudan ja ter√§ksen kylm√§vet√§minen"	-
+"00100  HELSINKI"	"24310  Raudan ja ter√§ksen kylm√§vet√§minen"	-
+"00100  HELSINKI"	"2433   Kylm√§muovaus tai kylm√§taitto"	-
+"00100  HELSINKI"	"24330  Kylm√§muovaus tai kylm√§taitto"	-
+"00100  HELSINKI"	"2434   Ter√§slangan veto"	-
+"00100  HELSINKI"	"24340  Ter√§slangan veto"	-
+"00100  HELSINKI"	"244    Jalometallien ja muiden v√§rimetallien valmistus"	-
 "00100  HELSINKI"	"2441   Jalometallien valmistus"	-
 "00100  HELSINKI"	"24410  Jalometallien valmistus"	-
 "00100  HELSINKI"	"2442   Alumiinin valmistus"	-
@@ -446,49 +446,49 @@
 "00100  HELSINKI"	"24430  Lyijyn, sinkin ja tinan valmistus"	-
 "00100  HELSINKI"	"2444   Kuparin valmistus"	-
 "00100  HELSINKI"	"24440  Kuparin valmistus"	-
-"00100  HELSINKI"	"2445   Muiden v‰rimetallien valmistus"	-
-"00100  HELSINKI"	"24450  Muiden v‰rimetallien valmistus"	-
+"00100  HELSINKI"	"2445   Muiden v√§rimetallien valmistus"	-
+"00100  HELSINKI"	"24450  Muiden v√§rimetallien valmistus"	-
 "00100  HELSINKI"	"245    Metallien valu"	-
 "00100  HELSINKI"	"2451   Raudan valu"	-
 "00100  HELSINKI"	"24510  Raudan valu"	-
-"00100  HELSINKI"	"2452   Ter‰ksen valu"	-
-"00100  HELSINKI"	"24520  Ter‰ksen valu"	-
+"00100  HELSINKI"	"2452   Ter√§ksen valu"	-
+"00100  HELSINKI"	"24520  Ter√§ksen valu"	-
 "00100  HELSINKI"	"2453   Kevytmetallien valu"	-
 "00100  HELSINKI"	"24530  Kevytmetallien valu"	-
-"00100  HELSINKI"	"2454   Muiden v‰rimetallien valu"	-
-"00100  HELSINKI"	"24540  Muiden v‰rimetallien valu"	-
+"00100  HELSINKI"	"2454   Muiden v√§rimetallien valu"	-
+"00100  HELSINKI"	"24540  Muiden v√§rimetallien valu"	-
 "00100  HELSINKI"	"25     Metallituotteiden valmistus (pl. koneet ja laitteet)"	2
 "00100  HELSINKI"	"251    Metallirakenteiden valmistus"	1
 "00100  HELSINKI"	"2511   Metallirakenteiden ja niiden osien valmistus"	1
 "00100  HELSINKI"	"25110  Metallirakenteiden ja niiden osien valmistus"	1
 "00100  HELSINKI"	"2512   Metalliovien ja -ikkunoiden valmistus"	-
 "00100  HELSINKI"	"25120  Metalliovien ja -ikkunoiden valmistus"	-
-"00100  HELSINKI"	"252    Metallis‰iliˆiden ja -altaiden yms. valmistus"	-
-"00100  HELSINKI"	"2521   Keskusl‰mmityspatterien ja kuumavesivaraajien valmistus"	-
-"00100  HELSINKI"	"25210  Keskusl‰mmityspatterien ja kuumavesivaraajien valmistus"	-
-"00100  HELSINKI"	"2529   Muiden metallis‰iliˆiden ja -altaiden yms. valmistus"	-
-"00100  HELSINKI"	"25290  Muiden metallis‰iliˆiden ja -altaiden yms. valmistus"	-
-"00100  HELSINKI"	"253    Hˆyrykattiloiden valmistus (pl. keskusl‰mmityslaitteet)"	-
-"00100  HELSINKI"	"2530   Hˆyrykattiloiden valmistus (pl. keskusl‰mmityslaitteet)"	-
-"00100  HELSINKI"	"25300  Hˆyrykattiloiden valmistus (pl. keskusl‰mmityslaitteet)"	-
+"00100  HELSINKI"	"252    Metallis√§ili√∂iden ja -altaiden yms. valmistus"	-
+"00100  HELSINKI"	"2521   Keskusl√§mmityspatterien ja kuumavesivaraajien valmistus"	-
+"00100  HELSINKI"	"25210  Keskusl√§mmityspatterien ja kuumavesivaraajien valmistus"	-
+"00100  HELSINKI"	"2529   Muiden metallis√§ili√∂iden ja -altaiden yms. valmistus"	-
+"00100  HELSINKI"	"25290  Muiden metallis√§ili√∂iden ja -altaiden yms. valmistus"	-
+"00100  HELSINKI"	"253    H√∂yrykattiloiden valmistus (pl. keskusl√§mmityslaitteet)"	-
+"00100  HELSINKI"	"2530   H√∂yrykattiloiden valmistus (pl. keskusl√§mmityslaitteet)"	-
+"00100  HELSINKI"	"25300  H√∂yrykattiloiden valmistus (pl. keskusl√§mmityslaitteet)"	-
 "00100  HELSINKI"	"254    Aseiden ja ammusten valmistus"	-
 "00100  HELSINKI"	"2540   Aseiden ja ammusten valmistus"	-
 "00100  HELSINKI"	"25400  Aseiden ja ammusten valmistus"	-
-"00100  HELSINKI"	"255    Metallin tyˆst‰minen esim. valsaaminen; jauhemetallurgia"	-
-"00100  HELSINKI"	"2550   Metallin tyˆst‰minen esim. valsaaminen; jauhemetallurgia"	-
-"00100  HELSINKI"	"25500  Metallin tyˆst‰minen esim. valsaaminen; jauhemetallurgia"	-
-"00100  HELSINKI"	"256    Metallien k‰sittely, p‰‰llyst‰minen ja tyˆstˆ"	-
-"00100  HELSINKI"	"2561   Metallien k‰sittely ja p‰‰llyst‰minen"	-
-"00100  HELSINKI"	"25610  Metallien k‰sittely ja p‰‰llyst‰minen"	-
-"00100  HELSINKI"	"2562   Metallien tyˆstˆ"	-
-"00100  HELSINKI"	"25620  Metallien tyˆstˆ"	-
-"00100  HELSINKI"	"257    Ruokailuv‰lineiden sek‰ tyˆkalujen ja rautatavaran valmistus"	-
-"00100  HELSINKI"	"2571   Ruokailu- ja leikkuuv‰lineiden yms. valmistus"	-
-"00100  HELSINKI"	"25710  Ruokailu- ja leikkuuv‰lineiden yms. valmistus"	-
+"00100  HELSINKI"	"255    Metallin ty√∂st√§minen esim. valsaaminen; jauhemetallurgia"	-
+"00100  HELSINKI"	"2550   Metallin ty√∂st√§minen esim. valsaaminen; jauhemetallurgia"	-
+"00100  HELSINKI"	"25500  Metallin ty√∂st√§minen esim. valsaaminen; jauhemetallurgia"	-
+"00100  HELSINKI"	"256    Metallien k√§sittely, p√§√§llyst√§minen ja ty√∂st√∂"	-
+"00100  HELSINKI"	"2561   Metallien k√§sittely ja p√§√§llyst√§minen"	-
+"00100  HELSINKI"	"25610  Metallien k√§sittely ja p√§√§llyst√§minen"	-
+"00100  HELSINKI"	"2562   Metallien ty√∂st√∂"	-
+"00100  HELSINKI"	"25620  Metallien ty√∂st√∂"	-
+"00100  HELSINKI"	"257    Ruokailuv√§lineiden sek√§ ty√∂kalujen ja rautatavaran valmistus"	-
+"00100  HELSINKI"	"2571   Ruokailu- ja leikkuuv√§lineiden yms. valmistus"	-
+"00100  HELSINKI"	"25710  Ruokailu- ja leikkuuv√§lineiden yms. valmistus"	-
 "00100  HELSINKI"	"2572   Lukkojen ja saranoiden valmistus"	-
 "00100  HELSINKI"	"25720  Lukkojen ja saranoiden valmistus"	-
-"00100  HELSINKI"	"2573   Tyˆkalujen valmistus"	-
-"00100  HELSINKI"	"25730  Tyˆkalujen valmistus"	-
+"00100  HELSINKI"	"2573   Ty√∂kalujen valmistus"	-
+"00100  HELSINKI"	"25730  Ty√∂kalujen valmistus"	-
 "00100  HELSINKI"	"259    Muu metallituotteiden valmistus"	1
 "00100  HELSINKI"	"2591   Metallipakkausten ja -astioiden valmistus"	-
 "00100  HELSINKI"	"25910  Metallipakkausten ja -astioiden valmistus"	-
@@ -509,55 +509,55 @@
 "00100  HELSINKI"	"262    Tietokoneiden ja niiden oheislaitteiden valmistus"	2
 "00100  HELSINKI"	"2620   Tietokoneiden ja niiden oheislaitteiden valmistus"	2
 "00100  HELSINKI"	"26200  Tietokoneiden ja niiden oheislaitteiden valmistus"	2
-"00100  HELSINKI"	"263    Viestint‰laitteiden valmistus"	3
-"00100  HELSINKI"	"2630   Viestint‰laitteiden valmistus"	3
-"00100  HELSINKI"	"26300  Viestint‰laitteiden valmistus"	3
+"00100  HELSINKI"	"263    Viestint√§laitteiden valmistus"	3
+"00100  HELSINKI"	"2630   Viestint√§laitteiden valmistus"	3
+"00100  HELSINKI"	"26300  Viestint√§laitteiden valmistus"	3
 "00100  HELSINKI"	"264    Viihde-elektroniikan valmistus"	-
 "00100  HELSINKI"	"2640   Viihde-elektroniikan valmistus"	-
 "00100  HELSINKI"	"26400  Viihde-elektroniikan valmistus"	-
-"00100  HELSINKI"	"265    Mittaus-, testaus- ja navigointiv‰lineiden valmistus; kellot"	2
-"00100  HELSINKI"	"2651   Mittaus-, testaus- ja navigointiv‰lineiden valmistus"	2
-"00100  HELSINKI"	"26510  Mittaus-, testaus- ja navigointiv‰lineiden valmistus"	2
+"00100  HELSINKI"	"265    Mittaus-, testaus- ja navigointiv√§lineiden valmistus; kellot"	2
+"00100  HELSINKI"	"2651   Mittaus-, testaus- ja navigointiv√§lineiden valmistus"	2
+"00100  HELSINKI"	"26510  Mittaus-, testaus- ja navigointiv√§lineiden valmistus"	2
 "00100  HELSINKI"	"2652   Kellojen valmistus"	-
 "00100  HELSINKI"	"26520  Kellojen valmistus"	-
-"00100  HELSINKI"	"266    S‰teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
-"00100  HELSINKI"	"2660   S‰teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
-"00100  HELSINKI"	"26600  S‰teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
-"00100  HELSINKI"	"267    Optisten instrumenttien ja valokuvausv‰lineiden valmistus"	-
-"00100  HELSINKI"	"2670   Optisten instrumenttien ja valokuvausv‰lineiden valmistus"	-
-"00100  HELSINKI"	"26700  Optisten instrumenttien ja valokuvausv‰lineiden valmistus"	-
-"00100  HELSINKI"	"268    Tallennev‰lineiden valmistus"	-
-"00100  HELSINKI"	"2680   Tallennev‰lineiden valmistus"	-
-"00100  HELSINKI"	"26800  Tallennev‰lineiden valmistus"	-
-"00100  HELSINKI"	"27     S‰hkˆlaitteiden valmistus"	2
-"00100  HELSINKI"	"271    S‰hkˆmoottorien, muuntajien, s‰hkˆnjakelu valmistus"	-
-"00100  HELSINKI"	"2711   S‰hkˆmoottorien, generaattorien ja muuntajien valmistus"	-
-"00100  HELSINKI"	"27110  S‰hkˆmoottorien, generaattorien ja muuntajien valmistus"	-
-"00100  HELSINKI"	"2712   S‰hkˆnjakelu- ja valvontalaitteiden valmistus"	-
-"00100  HELSINKI"	"27120  S‰hkˆnjakelu- ja valvontalaitteiden valmistus"	-
+"00100  HELSINKI"	"266    S√§teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
+"00100  HELSINKI"	"2660   S√§teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
+"00100  HELSINKI"	"26600  S√§teilylaitteiden, elektronisten terapialaitteiden valmistus"	1
+"00100  HELSINKI"	"267    Optisten instrumenttien ja valokuvausv√§lineiden valmistus"	-
+"00100  HELSINKI"	"2670   Optisten instrumenttien ja valokuvausv√§lineiden valmistus"	-
+"00100  HELSINKI"	"26700  Optisten instrumenttien ja valokuvausv√§lineiden valmistus"	-
+"00100  HELSINKI"	"268    Tallennev√§lineiden valmistus"	-
+"00100  HELSINKI"	"2680   Tallennev√§lineiden valmistus"	-
+"00100  HELSINKI"	"26800  Tallennev√§lineiden valmistus"	-
+"00100  HELSINKI"	"27     S√§hk√∂laitteiden valmistus"	2
+"00100  HELSINKI"	"271    S√§hk√∂moottorien, muuntajien, s√§hk√∂njakelu valmistus"	-
+"00100  HELSINKI"	"2711   S√§hk√∂moottorien, generaattorien ja muuntajien valmistus"	-
+"00100  HELSINKI"	"27110  S√§hk√∂moottorien, generaattorien ja muuntajien valmistus"	-
+"00100  HELSINKI"	"2712   S√§hk√∂njakelu- ja valvontalaitteiden valmistus"	-
+"00100  HELSINKI"	"27120  S√§hk√∂njakelu- ja valvontalaitteiden valmistus"	-
 "00100  HELSINKI"	"272    Paristojen ja akkujen valmistus"	-
 "00100  HELSINKI"	"2720   Paristojen ja akkujen valmistus"	-
 "00100  HELSINKI"	"27200  Paristojen ja akkujen valmistus"	-
-"00100  HELSINKI"	"273    S‰hkˆjohtojen ja kytkent‰laitteiden valmistus"	-
+"00100  HELSINKI"	"273    S√§hk√∂johtojen ja kytkent√§laitteiden valmistus"	-
 "00100  HELSINKI"	"2731   Optisten kuitukaapelien valmistus"	-
 "00100  HELSINKI"	"27310  Optisten kuitukaapelien valmistus"	-
-"00100  HELSINKI"	"2732   Muiden elektronisten ja s‰hkˆjohtojen sek‰ -kaapelien valm."	-
-"00100  HELSINKI"	"27320  Muiden elektronisten ja s‰hkˆjohtojen sek‰ -kaapelien valm."	-
-"00100  HELSINKI"	"2733   Kytkent‰laitteiden valmistus"	-
-"00100  HELSINKI"	"27330  Kytkent‰laitteiden valmistus"	-
-"00100  HELSINKI"	"274    S‰hkˆlamppujen ja valaisimien valmistus"	1
-"00100  HELSINKI"	"2740   S‰hkˆlamppujen ja valaisimien valmistus"	1
-"00100  HELSINKI"	"27400  S‰hkˆlamppujen ja valaisimien valmistus"	1
+"00100  HELSINKI"	"2732   Muiden elektronisten ja s√§hk√∂johtojen sek√§ -kaapelien valm."	-
+"00100  HELSINKI"	"27320  Muiden elektronisten ja s√§hk√∂johtojen sek√§ -kaapelien valm."	-
+"00100  HELSINKI"	"2733   Kytkent√§laitteiden valmistus"	-
+"00100  HELSINKI"	"27330  Kytkent√§laitteiden valmistus"	-
+"00100  HELSINKI"	"274    S√§hk√∂lamppujen ja valaisimien valmistus"	1
+"00100  HELSINKI"	"2740   S√§hk√∂lamppujen ja valaisimien valmistus"	1
+"00100  HELSINKI"	"27400  S√§hk√∂lamppujen ja valaisimien valmistus"	1
 "00100  HELSINKI"	"275    Kodinkoneiden valmistus"	1
-"00100  HELSINKI"	"2751   S‰hkˆisten kodinkoneiden valmistus"	1
-"00100  HELSINKI"	"27510  S‰hkˆisten kodinkoneiden valmistus"	1
-"00100  HELSINKI"	"2752   S‰hkˆist‰m‰ttˆmien kodinkoneiden valmistus"	-
-"00100  HELSINKI"	"27520  S‰hkˆist‰m‰ttˆmien kodinkoneiden valmistus"	-
-"00100  HELSINKI"	"279    Muiden s‰hkˆlaitteiden valmistus"	-
-"00100  HELSINKI"	"2790   Muiden s‰hkˆlaitteiden valmistus"	-
-"00100  HELSINKI"	"27900  Muiden s‰hkˆlaitteiden valmistus"	-
+"00100  HELSINKI"	"2751   S√§hk√∂isten kodinkoneiden valmistus"	1
+"00100  HELSINKI"	"27510  S√§hk√∂isten kodinkoneiden valmistus"	1
+"00100  HELSINKI"	"2752   S√§hk√∂ist√§m√§tt√∂mien kodinkoneiden valmistus"	-
+"00100  HELSINKI"	"27520  S√§hk√∂ist√§m√§tt√∂mien kodinkoneiden valmistus"	-
+"00100  HELSINKI"	"279    Muiden s√§hk√∂laitteiden valmistus"	-
+"00100  HELSINKI"	"2790   Muiden s√§hk√∂laitteiden valmistus"	-
+"00100  HELSINKI"	"27900  Muiden s√§hk√∂laitteiden valmistus"	-
 "00100  HELSINKI"	"28     Muiden koneiden ja laitteiden valmistus"	14
-"00100  HELSINKI"	"281    Yleisk‰yttˆˆn tarkoitettujen voimakoneiden valmistus"	3
+"00100  HELSINKI"	"281    Yleisk√§ytt√∂√∂n tarkoitettujen voimakoneiden valmistus"	3
 "00100  HELSINKI"	"2811   Moottorien ja turbiinien valm. (pl. lentokoneet, ajoneuvot)"	-
 "00100  HELSINKI"	"28110  Moottorien ja turbiinien valm. (pl. lentokoneet, ajoneuvot)"	-
 "00100  HELSINKI"	"2812   Hydraulisten voimalaitteiden valmistus"	-
@@ -568,27 +568,27 @@
 "00100  HELSINKI"	"28140  Muiden hanojen ja venttiilien valmistus"	1
 "00100  HELSINKI"	"2815   Laakereiden,  vaihteisto- ja ohjauselementtien valmistus"	1
 "00100  HELSINKI"	"28150  Laakereiden,  vaihteisto- ja ohjauselementtien valmistus"	1
-"00100  HELSINKI"	"282    Muiden yleisk‰yttˆˆn tarkoitettujen koneiden valmistus"	3
-"00100  HELSINKI"	"2821   Teollisuusuunien, l‰mmitysj‰rj. ja tulipes‰polttimien valm."	-
-"00100  HELSINKI"	"28210  Teollisuusuunien, l‰mmitysj‰rj. ja tulipes‰polttimien valm."	-
+"00100  HELSINKI"	"282    Muiden yleisk√§ytt√∂√∂n tarkoitettujen koneiden valmistus"	3
+"00100  HELSINKI"	"2821   Teollisuusuunien, l√§mmitysj√§rj. ja tulipes√§polttimien valm."	-
+"00100  HELSINKI"	"28210  Teollisuusuunien, l√§mmitysj√§rj. ja tulipes√§polttimien valm."	-
 "00100  HELSINKI"	"2822   Nosto- ja siirtolaitteiden valmistus"	1
 "00100  HELSINKI"	"28220  Nosto- ja siirtolaitteiden valmistus"	1
 "00100  HELSINKI"	"2823   Konttorikoneiden ja -laitteiden valmistus (pl. tietokoneet)"	-
 "00100  HELSINKI"	"28230  Konttorikoneiden ja -laitteiden valmistus (pl. tietokoneet)"	-
-"00100  HELSINKI"	"2824   Voimak‰yttˆisten k‰sityˆkalujen valmistus"	-
-"00100  HELSINKI"	"28240  Voimak‰yttˆisten k‰sityˆkalujen valmistus"	-
-"00100  HELSINKI"	"2825   J‰‰hdytys- ja tuuletuslaitteiden valm. (ei kotitalousk‰ytt.)"	1
-"00100  HELSINKI"	"28250  J‰‰hdytys- ja tuuletuslaitteiden valm. (ei kotitalousk‰ytt.)"	1
-"00100  HELSINKI"	"2829   Yleisk‰yttˆˆn tarkoitettujen koneiden valmistus"	1
-"00100  HELSINKI"	"28290  Yleisk‰yttˆˆn tarkoitettujen koneiden valmistus"	1
-"00100  HELSINKI"	"283    Maa- ja mets‰talouskoneiden valmistus"	1
-"00100  HELSINKI"	"2830   Maa- ja mets‰talouskoneiden valmistus"	1
-"00100  HELSINKI"	"28300  Maa- ja mets‰talouskoneiden valmistus"	1
-"00100  HELSINKI"	"284    Metallin tyˆstˆkoneiden ja konetyˆkalujen valmistus"	1
-"00100  HELSINKI"	"2841   Metallin tyˆstˆkoneiden valmistus"	-
-"00100  HELSINKI"	"28410  Metallin tyˆstˆkoneiden valmistus"	-
-"00100  HELSINKI"	"2849   Muiden konetyˆkalujen valmistus"	1
-"00100  HELSINKI"	"28490  Muiden konetyˆkalujen valmistus"	1
+"00100  HELSINKI"	"2824   Voimak√§ytt√∂isten k√§sity√∂kalujen valmistus"	-
+"00100  HELSINKI"	"28240  Voimak√§ytt√∂isten k√§sity√∂kalujen valmistus"	-
+"00100  HELSINKI"	"2825   J√§√§hdytys- ja tuuletuslaitteiden valm. (ei kotitalousk√§ytt.)"	1
+"00100  HELSINKI"	"28250  J√§√§hdytys- ja tuuletuslaitteiden valm. (ei kotitalousk√§ytt.)"	1
+"00100  HELSINKI"	"2829   Yleisk√§ytt√∂√∂n tarkoitettujen koneiden valmistus"	1
+"00100  HELSINKI"	"28290  Yleisk√§ytt√∂√∂n tarkoitettujen koneiden valmistus"	1
+"00100  HELSINKI"	"283    Maa- ja mets√§talouskoneiden valmistus"	1
+"00100  HELSINKI"	"2830   Maa- ja mets√§talouskoneiden valmistus"	1
+"00100  HELSINKI"	"28300  Maa- ja mets√§talouskoneiden valmistus"	1
+"00100  HELSINKI"	"284    Metallin ty√∂st√∂koneiden ja konety√∂kalujen valmistus"	1
+"00100  HELSINKI"	"2841   Metallin ty√∂st√∂koneiden valmistus"	-
+"00100  HELSINKI"	"28410  Metallin ty√∂st√∂koneiden valmistus"	-
+"00100  HELSINKI"	"2849   Muiden konety√∂kalujen valmistus"	1
+"00100  HELSINKI"	"28490  Muiden konety√∂kalujen valmistus"	1
 "00100  HELSINKI"	"289    Muiden erikoiskoneiden valmistus"	6
 "00100  HELSINKI"	"2891   Metallinjalostuskoneiden valmistus"	-
 "00100  HELSINKI"	"28910  Metallinjalostuskoneiden valmistus"	-
@@ -604,16 +604,16 @@
 "00100  HELSINKI"	"28960  Muovi- ja kumiteollisuuden koneiden valmistus"	-
 "00100  HELSINKI"	"2899   Muualla luokittelematon erikoiskoneiden valmistus"	4
 "00100  HELSINKI"	"28990  Muualla luokittelematon erikoiskoneiden valmistus"	4
-"00100  HELSINKI"	"29     Moottoriajoneuvojen, per‰vaunujen ja puoliper‰vaunujen valm."	-
+"00100  HELSINKI"	"29     Moottoriajoneuvojen, per√§vaunujen ja puoliper√§vaunujen valm."	-
 "00100  HELSINKI"	"291    Moottoriajoneuvojen valmistus"	-
 "00100  HELSINKI"	"2910   Moottoriajoneuvojen valmistus"	-
 "00100  HELSINKI"	"29100  Moottoriajoneuvojen valmistus"	-
-"00100  HELSINKI"	"292    Moottoriajoneuvojen ja per‰vaunujen korien valmistus"	-
-"00100  HELSINKI"	"2920   Moottoriajoneuvojen ja per‰vaunujen korien valmistus"	-
-"00100  HELSINKI"	"29200  Moottoriajoneuvojen ja per‰vaunujen korien valmistus"	-
+"00100  HELSINKI"	"292    Moottoriajoneuvojen ja per√§vaunujen korien valmistus"	-
+"00100  HELSINKI"	"2920   Moottoriajoneuvojen ja per√§vaunujen korien valmistus"	-
+"00100  HELSINKI"	"29200  Moottoriajoneuvojen ja per√§vaunujen korien valmistus"	-
 "00100  HELSINKI"	"293    Osien ja tarvikkeiden valmistus moottoriajoneuvoihin"	-
-"00100  HELSINKI"	"2931   S‰hkˆ- ja elektroniikkalaitteiden valm.moottoriajoneuvoihin"	-
-"00100  HELSINKI"	"29310  S‰hkˆ- ja elektroniikkalaitteiden valm.moottoriajoneuvoihin"	-
+"00100  HELSINKI"	"2931   S√§hk√∂- ja elektroniikkalaitteiden valm.moottoriajoneuvoihin"	-
+"00100  HELSINKI"	"29310  S√§hk√∂- ja elektroniikkalaitteiden valm.moottoriajoneuvoihin"	-
 "00100  HELSINKI"	"2932   Muiden osien ja tarvikkeiden valmistus moottoriajoneuvoihin"	-
 "00100  HELSINKI"	"29320  Muiden osien ja tarvikkeiden valmistus moottoriajoneuvoihin"	-
 "00100  HELSINKI"	"30     Muiden kulkuneuvojen valmistus"	4
@@ -632,42 +632,42 @@
 "00100  HELSINKI"	"3040   Taisteluajoneuvojen valmistus"	1
 "00100  HELSINKI"	"30400  Taisteluajoneuvojen valmistus"	1
 "00100  HELSINKI"	"309    Muualla luokittelematon kulkuneuvojen valmistus"	-
-"00100  HELSINKI"	"3091   Moottoripyˆrien valmistus"	-
-"00100  HELSINKI"	"30910  Moottoripyˆrien valmistus"	-
-"00100  HELSINKI"	"3092   Polkupyˆrien ja invalidiajoneuvojen valmistus"	-
-"00100  HELSINKI"	"30920  Polkupyˆrien ja invalidiajoneuvojen valmistus"	-
+"00100  HELSINKI"	"3091   Moottoripy√∂rien valmistus"	-
+"00100  HELSINKI"	"30910  Moottoripy√∂rien valmistus"	-
+"00100  HELSINKI"	"3092   Polkupy√∂rien ja invalidiajoneuvojen valmistus"	-
+"00100  HELSINKI"	"30920  Polkupy√∂rien ja invalidiajoneuvojen valmistus"	-
 "00100  HELSINKI"	"3099   Muiden muualla luokittelemattomien kulkuneuvojen valmistus"	-
 "00100  HELSINKI"	"30990  Muiden muualla luokittelemattomien kulkuneuvojen valmistus"	-
 "00100  HELSINKI"	"31     Huonekalujen valmistus"	7
 "00100  HELSINKI"	"310    Huonekalujen valmistus"	7
-"00100  HELSINKI"	"3101   Konttori- ja myym‰l‰kalusteiden valmistus"	1
-"00100  HELSINKI"	"31010  Konttori- ja myym‰l‰kalusteiden valmistus"	1
-"00100  HELSINKI"	"3102   Keittiˆkalusteiden valmistus"	-
-"00100  HELSINKI"	"31020  Keittiˆkalusteiden valmistus"	-
+"00100  HELSINKI"	"3101   Konttori- ja myym√§l√§kalusteiden valmistus"	1
+"00100  HELSINKI"	"31010  Konttori- ja myym√§l√§kalusteiden valmistus"	1
+"00100  HELSINKI"	"3102   Keitti√∂kalusteiden valmistus"	-
+"00100  HELSINKI"	"31020  Keitti√∂kalusteiden valmistus"	-
 "00100  HELSINKI"	"3103   Patjojen valmistus"	-
 "00100  HELSINKI"	"31030  Patjojen valmistus"	-
 "00100  HELSINKI"	"3109   Muiden huonekalujen valmistus"	6
 "00100  HELSINKI"	"31090  Muiden huonekalujen valmistus"	6
 "00100  HELSINKI"	"32     Muu valmistus"	23
-"00100  HELSINKI"	"321    Korujen, kultasep‰n- ja muiden vastaavien tuotteiden valm."	11
+"00100  HELSINKI"	"321    Korujen, kultasep√§n- ja muiden vastaavien tuotteiden valm."	11
 "00100  HELSINKI"	"3211   Kolikoiden ja mitalien valmistus"	-
 "00100  HELSINKI"	"32110  Kolikoiden ja mitalien valmistus"	-
-"00100  HELSINKI"	"3212   Jalokivikorujen ja muiden kultasep‰ntuotteiden valmistus"	11
-"00100  HELSINKI"	"32120  Jalokivikorujen ja muiden kultasep‰ntuotteiden valmistus"	11
-"00100  HELSINKI"	"3213   J‰ljitelm‰korujen ja muiden vastaavien tuotteiden valmistus"	-
-"00100  HELSINKI"	"32130  J‰ljitelm‰korujen ja muiden vastaavien tuotteiden valmistus"	-
+"00100  HELSINKI"	"3212   Jalokivikorujen ja muiden kultasep√§ntuotteiden valmistus"	11
+"00100  HELSINKI"	"32120  Jalokivikorujen ja muiden kultasep√§ntuotteiden valmistus"	11
+"00100  HELSINKI"	"3213   J√§ljitelm√§korujen ja muiden vastaavien tuotteiden valmistus"	-
+"00100  HELSINKI"	"32130  J√§ljitelm√§korujen ja muiden vastaavien tuotteiden valmistus"	-
 "00100  HELSINKI"	"322    Soitinten valmistus"	1
 "00100  HELSINKI"	"3220   Soitinten valmistus"	1
 "00100  HELSINKI"	"32200  Soitinten valmistus"	1
-"00100  HELSINKI"	"323    Urheiluv‰lineiden valmistus"	1
-"00100  HELSINKI"	"3230   Urheiluv‰lineiden valmistus"	1
-"00100  HELSINKI"	"32300  Urheiluv‰lineiden valmistus"	1
+"00100  HELSINKI"	"323    Urheiluv√§lineiden valmistus"	1
+"00100  HELSINKI"	"3230   Urheiluv√§lineiden valmistus"	1
+"00100  HELSINKI"	"32300  Urheiluv√§lineiden valmistus"	1
 "00100  HELSINKI"	"324    Pelien ja leikkikalujen valmistus"	2
 "00100  HELSINKI"	"3240   Pelien ja leikkikalujen valmistus"	2
 "00100  HELSINKI"	"32400  Pelien ja leikkikalujen valmistus"	2
-"00100  HELSINKI"	"325    L‰‰kint‰- ja hammasl‰‰kint‰kojeiden ja -tarvikkeiden valm."	3
-"00100  HELSINKI"	"3250   L‰‰kint‰- ja hammasl‰‰kint‰kojeiden ja -tarvikkeiden valm."	3
-"00100  HELSINKI"	"32501  L‰‰kint‰kojeiden ja -tarvikkeiden valm. (pl. hammasprot.)"	3
+"00100  HELSINKI"	"325    L√§√§kint√§- ja hammasl√§√§kint√§kojeiden ja -tarvikkeiden valm."	3
+"00100  HELSINKI"	"3250   L√§√§kint√§- ja hammasl√§√§kint√§kojeiden ja -tarvikkeiden valm."	3
+"00100  HELSINKI"	"32501  L√§√§kint√§kojeiden ja -tarvikkeiden valm. (pl. hammasprot.)"	3
 "00100  HELSINKI"	"32502  Hammasproteesien, keinohampaiden ym. valmistus"	-
 "00100  HELSINKI"	"329    Muualla luokittelematon valmistus"	5
 "00100  HELSINKI"	"3291   Luutien ja harjojen valmistus"	-
@@ -680,14 +680,14 @@
 "00100  HELSINKI"	"3311   Metallituotteiden korjaus ja huolto"	-
 "00100  HELSINKI"	"33110  Metallituotteiden korjaus ja huolto"	-
 "00100  HELSINKI"	"3312   Teollisuuden koneiden ja laitteiden korjaus ja huolto"	-
-"00100  HELSINKI"	"33121  Yleisk‰yttˆˆn tarkoitettujen koneiden korjaus ja huolto"	-
-"00100  HELSINKI"	"33122  Maa- ja mets‰talouskoneiden korjaus ja huolto"	-
-"00100  HELSINKI"	"33123  Metallintyˆstˆkoneiden ja konetyˆkalujen korjaus ja huolto"	-
+"00100  HELSINKI"	"33121  Yleisk√§ytt√∂√∂n tarkoitettujen koneiden korjaus ja huolto"	-
+"00100  HELSINKI"	"33122  Maa- ja mets√§talouskoneiden korjaus ja huolto"	-
+"00100  HELSINKI"	"33123  Metallinty√∂st√∂koneiden ja konety√∂kalujen korjaus ja huolto"	-
 "00100  HELSINKI"	"33129  Muiden erikoiskoneiden korjaus ja huolto"	-
 "00100  HELSINKI"	"3313   Elektronisten ja optisten laitteiden korjaus ja huolto"	1
 "00100  HELSINKI"	"33130  Elektronisten ja optisten laitteiden korjaus ja huolto"	1
-"00100  HELSINKI"	"3314   S‰hkˆlaitteiden korjaus ja huolto"	-
-"00100  HELSINKI"	"33140  S‰hkˆlaitteiden korjaus ja huolto"	-
+"00100  HELSINKI"	"3314   S√§hk√∂laitteiden korjaus ja huolto"	-
+"00100  HELSINKI"	"33140  S√§hk√∂laitteiden korjaus ja huolto"	-
 "00100  HELSINKI"	"3315   Laivojen ja veneiden korjaus ja huolto"	1
 "00100  HELSINKI"	"33150  Laivojen ja veneiden korjaus ja huolto"	1
 "00100  HELSINKI"	"3316   Ilma- ja avaruusalusten korjaus ja huolto"	4
@@ -699,21 +699,21 @@
 "00100  HELSINKI"	"332    Teollisuuden koneiden ja laitteiden ym. asennus"	2
 "00100  HELSINKI"	"3320   Teollisuuden koneiden ja laitteiden ym. asennus"	2
 "00100  HELSINKI"	"33200  Teollisuuden koneiden ja laitteiden ym. asennus"	2
-"00100  HELSINKI"	"D  S‰hkˆ-, kaasu- ja l‰mpˆhuolto, j‰‰hdytysliiketoiminta"	53
-"00100  HELSINKI"	"35     S‰hkˆ-, kaasu- ja l‰mpˆhuolto, j‰‰hdytysliiketoiminta"	53
-"00100  HELSINKI"	"351    S‰hkˆvoiman tuotanto, siirto ja jakelu"	53
-"00100  HELSINKI"	"3511   S‰hkˆn tuotanto"	40
-"00100  HELSINKI"	"35111  S‰hkˆn tuotanto vesi- ja tuulivoimalla"	37
-"00100  HELSINKI"	"35112  S‰hkˆn erillistuotanto l‰mpˆvoimalla"	-
-"00100  HELSINKI"	"35113  S‰hkˆn ja kaukol‰mmˆn yhteistuotanto"	1
-"00100  HELSINKI"	"35114  S‰hkˆn tuotanto ydinvoimalla"	2
-"00100  HELSINKI"	"35115  Teollisuutta palveleva s‰hkˆn ja l‰mmˆn tuotanto"	-
-"00100  HELSINKI"	"3512   S‰hkˆn siirto"	-
-"00100  HELSINKI"	"35120  S‰hkˆn siirto"	-
-"00100  HELSINKI"	"3513   S‰hkˆn jakelu"	1
-"00100  HELSINKI"	"35130  S‰hkˆn jakelu"	1
-"00100  HELSINKI"	"3514   S‰hkˆn kauppa"	12
-"00100  HELSINKI"	"35140  S‰hkˆn kauppa"	12
+"00100  HELSINKI"	"D  S√§hk√∂-, kaasu- ja l√§mp√∂huolto, j√§√§hdytysliiketoiminta"	53
+"00100  HELSINKI"	"35     S√§hk√∂-, kaasu- ja l√§mp√∂huolto, j√§√§hdytysliiketoiminta"	53
+"00100  HELSINKI"	"351    S√§hk√∂voiman tuotanto, siirto ja jakelu"	53
+"00100  HELSINKI"	"3511   S√§hk√∂n tuotanto"	40
+"00100  HELSINKI"	"35111  S√§hk√∂n tuotanto vesi- ja tuulivoimalla"	37
+"00100  HELSINKI"	"35112  S√§hk√∂n erillistuotanto l√§mp√∂voimalla"	-
+"00100  HELSINKI"	"35113  S√§hk√∂n ja kaukol√§mm√∂n yhteistuotanto"	1
+"00100  HELSINKI"	"35114  S√§hk√∂n tuotanto ydinvoimalla"	2
+"00100  HELSINKI"	"35115  Teollisuutta palveleva s√§hk√∂n ja l√§mm√∂n tuotanto"	-
+"00100  HELSINKI"	"3512   S√§hk√∂n siirto"	-
+"00100  HELSINKI"	"35120  S√§hk√∂n siirto"	-
+"00100  HELSINKI"	"3513   S√§hk√∂n jakelu"	1
+"00100  HELSINKI"	"35130  S√§hk√∂n jakelu"	1
+"00100  HELSINKI"	"3514   S√§hk√∂n kauppa"	12
+"00100  HELSINKI"	"35140  S√§hk√∂n kauppa"	12
 "00100  HELSINKI"	"352    Kaasun tuotanto; kaasum. polttoaineiden jakelu putkiverkossa"	-
 "00100  HELSINKI"	"3521   Kaasun tuotanto"	-
 "00100  HELSINKI"	"35210  Kaasun tuotanto"	-
@@ -721,44 +721,44 @@
 "00100  HELSINKI"	"35220  Kaasumaisten polttoaineiden jakelu putkiverkossa"	-
 "00100  HELSINKI"	"3523   Kaasun kauppa putkiverkossa"	-
 "00100  HELSINKI"	"35230  Kaasun kauppa putkiverkossa"	-
-"00100  HELSINKI"	"353    L‰mmˆn ja kylm‰n tuotanto ja jakelu"	-
-"00100  HELSINKI"	"3530   L‰mmˆn ja kylm‰n tuotanto ja jakelu"	-
-"00100  HELSINKI"	"35301  Kaukol‰mmˆn ja -kylm‰n erillistuotanto ja jakelu"	-
-"00100  HELSINKI"	"35302  Teollisuutta palveleva l‰mmˆn ja kylm‰n erillistuotanto"	-
-"00100  HELSINKI"	"E  Viem‰ri- ja j‰tevesihuolto; muu ymp‰ristˆn puhtaanapito"	5
+"00100  HELSINKI"	"353    L√§mm√∂n ja kylm√§n tuotanto ja jakelu"	-
+"00100  HELSINKI"	"3530   L√§mm√∂n ja kylm√§n tuotanto ja jakelu"	-
+"00100  HELSINKI"	"35301  Kaukol√§mm√∂n ja -kylm√§n erillistuotanto ja jakelu"	-
+"00100  HELSINKI"	"35302  Teollisuutta palveleva l√§mm√∂n ja kylm√§n erillistuotanto"	-
+"00100  HELSINKI"	"E  Viem√§ri- ja j√§tevesihuolto; muu ymp√§rist√∂n puhtaanapito"	5
 "00100  HELSINKI"	"36     Veden otto, puhdistus ja jakelu"	2
 "00100  HELSINKI"	"360    Veden otto, puhdistus ja jakelu"	2
 "00100  HELSINKI"	"3600   Veden otto, puhdistus ja jakelu"	2
 "00100  HELSINKI"	"36000  Veden otto, puhdistus ja jakelu"	2
-"00100  HELSINKI"	"37     Viem‰ri- ja j‰tevesihuolto"	-
-"00100  HELSINKI"	"370    Viem‰ri- ja j‰tevesihuolto"	-
-"00100  HELSINKI"	"3700   Viem‰ri- ja j‰tevesihuolto"	-
-"00100  HELSINKI"	"37000  Viem‰ri- ja j‰tevesihuolto"	-
-"00100  HELSINKI"	"38     J‰tteen keruu, k‰sittely ja loppusijoitus; kierr‰tys"	3
-"00100  HELSINKI"	"381    J‰tteen keruu"	-
-"00100  HELSINKI"	"3811   Tavanomaisen j‰tteen keruu"	-
-"00100  HELSINKI"	"38110  Tavanomaisen j‰tteen keruu"	-
-"00100  HELSINKI"	"3812   Ongelmaj‰tteen keruu"	-
-"00100  HELSINKI"	"38120  Ongelmaj‰tteen keruu"	-
-"00100  HELSINKI"	"382    J‰tteen k‰sittely ja loppusijoitus"	2
-"00100  HELSINKI"	"3821   Tavanomaisen j‰tteen k‰sittely ja loppusijoitus"	2
-"00100  HELSINKI"	"38210  Tavanomaisen j‰tteen k‰sittely ja loppusijoitus"	2
-"00100  HELSINKI"	"3822   Ongelmaj‰tteen k‰sittely, loppusijoitus ja h‰vitt‰minen"	-
-"00100  HELSINKI"	"38220  Ongelmaj‰tteen k‰sittely, loppusijoitus ja h‰vitt‰minen"	-
-"00100  HELSINKI"	"383    Materiaalien kierr‰tys"	1
+"00100  HELSINKI"	"37     Viem√§ri- ja j√§tevesihuolto"	-
+"00100  HELSINKI"	"370    Viem√§ri- ja j√§tevesihuolto"	-
+"00100  HELSINKI"	"3700   Viem√§ri- ja j√§tevesihuolto"	-
+"00100  HELSINKI"	"37000  Viem√§ri- ja j√§tevesihuolto"	-
+"00100  HELSINKI"	"38     J√§tteen keruu, k√§sittely ja loppusijoitus; kierr√§tys"	3
+"00100  HELSINKI"	"381    J√§tteen keruu"	-
+"00100  HELSINKI"	"3811   Tavanomaisen j√§tteen keruu"	-
+"00100  HELSINKI"	"38110  Tavanomaisen j√§tteen keruu"	-
+"00100  HELSINKI"	"3812   Ongelmaj√§tteen keruu"	-
+"00100  HELSINKI"	"38120  Ongelmaj√§tteen keruu"	-
+"00100  HELSINKI"	"382    J√§tteen k√§sittely ja loppusijoitus"	2
+"00100  HELSINKI"	"3821   Tavanomaisen j√§tteen k√§sittely ja loppusijoitus"	2
+"00100  HELSINKI"	"38210  Tavanomaisen j√§tteen k√§sittely ja loppusijoitus"	2
+"00100  HELSINKI"	"3822   Ongelmaj√§tteen k√§sittely, loppusijoitus ja h√§vitt√§minen"	-
+"00100  HELSINKI"	"38220  Ongelmaj√§tteen k√§sittely, loppusijoitus ja h√§vitt√§minen"	-
+"00100  HELSINKI"	"383    Materiaalien kierr√§tys"	1
 "00100  HELSINKI"	"3831   Romujen purkaminen"	1
 "00100  HELSINKI"	"38310  Romujen purkaminen"	1
-"00100  HELSINKI"	"3832   Lajiteltujen materiaalien kierr‰tys"	-
-"00100  HELSINKI"	"38320  Lajiteltujen materiaalien kierr‰tys"	-
-"00100  HELSINKI"	"39     Maaper‰n ja vesistˆjen kunnostus, ymp‰ristˆnhuoltopalvelut"	-
-"00100  HELSINKI"	"390    Maaper‰n ja vesistˆjen kunnostus, ymp‰ristˆnhuoltopalvelut"	-
-"00100  HELSINKI"	"3900   Maaper‰n ja vesistˆjen kunnostus, ymp‰ristˆnhuoltopalvelut"	-
-"00100  HELSINKI"	"39000  Maaper‰n ja vesistˆjen kunnostus, ymp‰ristˆnhuoltopalvelut"	-
+"00100  HELSINKI"	"3832   Lajiteltujen materiaalien kierr√§tys"	-
+"00100  HELSINKI"	"38320  Lajiteltujen materiaalien kierr√§tys"	-
+"00100  HELSINKI"	"39     Maaper√§n ja vesist√∂jen kunnostus, ymp√§rist√∂nhuoltopalvelut"	-
+"00100  HELSINKI"	"390    Maaper√§n ja vesist√∂jen kunnostus, ymp√§rist√∂nhuoltopalvelut"	-
+"00100  HELSINKI"	"3900   Maaper√§n ja vesist√∂jen kunnostus, ymp√§rist√∂nhuoltopalvelut"	-
+"00100  HELSINKI"	"39000  Maaper√§n ja vesist√∂jen kunnostus, ymp√§rist√∂nhuoltopalvelut"	-
 "00100  HELSINKI"	"F  Rakentaminen"	119
 "00100  HELSINKI"	"41     Talonrakentaminen"	66
-"00100  HELSINKI"	"411    Rakennuttaminen ja rakennushankkeiden kehitt‰minen"	10
-"00100  HELSINKI"	"4110   Rakennuttaminen ja rakennushankkeiden kehitt‰minen"	10
-"00100  HELSINKI"	"41100  Rakennuttaminen ja rakennushankkeiden kehitt‰minen"	10
+"00100  HELSINKI"	"411    Rakennuttaminen ja rakennushankkeiden kehitt√§minen"	10
+"00100  HELSINKI"	"4110   Rakennuttaminen ja rakennushankkeiden kehitt√§minen"	10
+"00100  HELSINKI"	"41100  Rakennuttaminen ja rakennushankkeiden kehitt√§minen"	10
 "00100  HELSINKI"	"412    Asuin- ja muiden rakennusten rakentaminen"	56
 "00100  HELSINKI"	"4120   Asuin- ja muiden rakennusten rakentaminen"	56
 "00100  HELSINKI"	"41200  Asuin- ja muiden rakennusten rakentaminen"	56
@@ -773,8 +773,8 @@
 "00100  HELSINKI"	"422    Yleisten jakeluverkkojen rakentaminen"	12
 "00100  HELSINKI"	"4221   Jakeluverkkojen rakentaminen nestem. ja kaasum. aineille"	-
 "00100  HELSINKI"	"42210  Jakeluverkkojen rakentaminen nestem. ja kaasum. aineille"	-
-"00100  HELSINKI"	"4222   S‰hkˆ- ja tietoliikenneverkkojen rakentaminen"	12
-"00100  HELSINKI"	"42220  S‰hkˆ- ja tietoliikenneverkkojen rakentaminen"	12
+"00100  HELSINKI"	"4222   S√§hk√∂- ja tietoliikenneverkkojen rakentaminen"	12
+"00100  HELSINKI"	"42220  S√§hk√∂- ja tietoliikenneverkkojen rakentaminen"	12
 "00100  HELSINKI"	"429    Muu maa- ja vesirakentaminen"	1
 "00100  HELSINKI"	"4291   Vesirakentaminen"	-
 "00100  HELSINKI"	"42910  Vesirakentaminen"	-
@@ -782,29 +782,29 @@
 "00100  HELSINKI"	"42991  Maa- ja vesirakennushankkeiden kehitt. ja rakennuttaminen"	-
 "00100  HELSINKI"	"42999  Muu muualla luokittelematon maa- ja vesirakentaminen"	1
 "00100  HELSINKI"	"43     Erikoistunut rakennustoiminta"	35
-"00100  HELSINKI"	"431    Rakennusten purku ja rakennuspaikan valmistelutyˆt"	2
+"00100  HELSINKI"	"431    Rakennusten purku ja rakennuspaikan valmisteluty√∂t"	2
 "00100  HELSINKI"	"4311   Rakennusten ja rakennelmien purku"	1
 "00100  HELSINKI"	"43110  Rakennusten ja rakennelmien purku"	1
-"00100  HELSINKI"	"4312   Rakennuspaikan valmistelutyˆt"	1
-"00100  HELSINKI"	"43120  Rakennuspaikan valmistelutyˆt"	1
+"00100  HELSINKI"	"4312   Rakennuspaikan valmisteluty√∂t"	1
+"00100  HELSINKI"	"43120  Rakennuspaikan valmisteluty√∂t"	1
 "00100  HELSINKI"	"4313   Koeporaus"	-
 "00100  HELSINKI"	"43130  Koeporaus"	-
-"00100  HELSINKI"	"432    S‰hkˆ-, vesijohto- ja muu rakennusasennus"	14
-"00100  HELSINKI"	"4321   S‰hkˆasennus"	3
-"00100  HELSINKI"	"43210  S‰hkˆasennus"	3
-"00100  HELSINKI"	"4322   L‰mpˆ-, vesijohto- ja ilmastointiasennus"	9
-"00100  HELSINKI"	"43220  L‰mpˆ-, vesijohto- ja ilmastointiasennus"	9
+"00100  HELSINKI"	"432    S√§hk√∂-, vesijohto- ja muu rakennusasennus"	14
+"00100  HELSINKI"	"4321   S√§hk√∂asennus"	3
+"00100  HELSINKI"	"43210  S√§hk√∂asennus"	3
+"00100  HELSINKI"	"4322   L√§mp√∂-, vesijohto- ja ilmastointiasennus"	9
+"00100  HELSINKI"	"43220  L√§mp√∂-, vesijohto- ja ilmastointiasennus"	9
 "00100  HELSINKI"	"4329   Muu rakennusasennus"	2
-"00100  HELSINKI"	"43291  L‰mpˆ-, ‰‰ni- ja t‰rin‰eristeiden asennus"	-
+"00100  HELSINKI"	"43291  L√§mp√∂-, √§√§ni- ja t√§rin√§eristeiden asennus"	-
 "00100  HELSINKI"	"43292  Hissien ja liukuportaiden asennus"	-
 "00100  HELSINKI"	"43299  Muualla luokittelematon rakennusasennus"	2
 "00100  HELSINKI"	"433    Rakennusten ja rakennelmien viimeistely"	8
 "00100  HELSINKI"	"4331   Rappaus"	-
 "00100  HELSINKI"	"43310  Rappaus"	-
-"00100  HELSINKI"	"4332   Rakennuspuusep‰n asennustyˆt"	2
-"00100  HELSINKI"	"43320  Rakennuspuusep‰n asennustyˆt"	2
-"00100  HELSINKI"	"4333   Lattianp‰‰llystys ja seinien verhoilu"	-
-"00100  HELSINKI"	"43330  Lattianp‰‰llystys ja seinien verhoilu"	-
+"00100  HELSINKI"	"4332   Rakennuspuusep√§n asennusty√∂t"	2
+"00100  HELSINKI"	"43320  Rakennuspuusep√§n asennusty√∂t"	2
+"00100  HELSINKI"	"4333   Lattianp√§√§llystys ja seinien verhoilu"	-
+"00100  HELSINKI"	"43330  Lattianp√§√§llystys ja seinien verhoilu"	-
 "00100  HELSINKI"	"4334   Maalaus ja lasitus"	5
 "00100  HELSINKI"	"43341  Maalaus"	4
 "00100  HELSINKI"	"43342  Lasitus"	1
@@ -814,37 +814,37 @@
 "00100  HELSINKI"	"4391   Kattorakenteiden asennus ja kattaminen"	1
 "00100  HELSINKI"	"43910  Kattorakenteiden asennus ja kattaminen"	1
 "00100  HELSINKI"	"4399   Muualla luokittelematon erikoistunut rakennustoiminta"	10
-"00100  HELSINKI"	"43991  Rakennuskonevuokraus k‰ytt‰jineen"	1
+"00100  HELSINKI"	"43991  Rakennuskonevuokraus k√§ytt√§jineen"	1
 "00100  HELSINKI"	"43999  Muu muualla luokittelematon erikoistunut rakennustoiminta"	9
-"00100  HELSINKI"	"G  Tukku- ja v‰h. kaup., moott.ajoneuv. ja -pyˆr. kaup. ja korj"	941
-"00100  HELSINKI"	"45     Moottoriajoneuvojen ja -pyˆrien kauppa sek‰ korjaus"	21
+"00100  HELSINKI"	"G  Tukku- ja v√§h. kaup., moott.ajoneuv. ja -py√∂r. kaup. ja korj"	941
+"00100  HELSINKI"	"45     Moottoriajoneuvojen ja -py√∂rien kauppa sek√§ korjaus"	21
 "00100  HELSINKI"	"451    Moottoriajoneuvojen kauppa"	6
-"00100  HELSINKI"	"4511   Henkilˆautojen ja kevyiden moottoriajoneuvojen kauppa"	6
-"00100  HELSINKI"	"45111  Henkilˆautojen ja kevyiden moottoriajoneuvojen tukkukauppa"	1
-"00100  HELSINKI"	"45112  Henkilˆautojen ja kevyiden moottoriajoneuvojen v‰h.kauppa"	5
+"00100  HELSINKI"	"4511   Henkil√∂autojen ja kevyiden moottoriajoneuvojen kauppa"	6
+"00100  HELSINKI"	"45111  Henkil√∂autojen ja kevyiden moottoriajoneuvojen tukkukauppa"	1
+"00100  HELSINKI"	"45112  Henkil√∂autojen ja kevyiden moottoriajoneuvojen v√§h.kauppa"	5
 "00100  HELSINKI"	"4519   Muiden moottoriajoneuvojen myynti"	-
 "00100  HELSINKI"	"45191  Kuorma-autojen ja raskaiden moottoriajoneuvojen tukkukauppa"	-
-"00100  HELSINKI"	"45192  Muualla luokittelemattomien moottoriajoneuvojen v‰h.kauppa"	-
-"00100  HELSINKI"	"452    Moottoriajoneuvojen huolto ja korjaus (pl. moottoripyˆr‰t)"	8
-"00100  HELSINKI"	"4520   Moottoriajoneuvojen huolto ja korjaus (pl. moottoripyˆr‰t)"	8
+"00100  HELSINKI"	"45192  Muualla luokittelemattomien moottoriajoneuvojen v√§h.kauppa"	-
+"00100  HELSINKI"	"452    Moottoriajoneuvojen huolto ja korjaus (pl. moottoripy√∂r√§t)"	8
+"00100  HELSINKI"	"4520   Moottoriajoneuvojen huolto ja korjaus (pl. moottoripy√∂r√§t)"	8
 "00100  HELSINKI"	"45201  Moottoriajoneuvojen huolto ja korjaus (pl. renkaat)"	8
 "00100  HELSINKI"	"45202  Renkaiden korjaus"	-
 "00100  HELSINKI"	"453    Moottoriajoneuvojen osien ja varusteiden kauppa"	6
 "00100  HELSINKI"	"4531   Moottoriajoneuvojen osien ja varusteiden tukkukauppa"	4
 "00100  HELSINKI"	"45311  Moottoriajoneuvot;osat ja varusteet tukkukauppa (pl.renkaat)"	3
 "00100  HELSINKI"	"45312  Renkaiden tukkukauppa"	1
-"00100  HELSINKI"	"4532   Moottoriajoneuvojen osien ja varusteiden v‰hitt‰iskauppa"	2
-"00100  HELSINKI"	"45321  Moottoriajoneuvot; osat ja varusteet v‰h.kauppa (pl.renkaat)"	1
-"00100  HELSINKI"	"45322  Renkaiden v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"454    Moottoripyˆr‰t, osat ja varusteet; myynti, huolto ja korjaus"	1
-"00100  HELSINKI"	"4540   Moottoripyˆr‰t, osat ja varusteet; myynti, huolto ja korjaus"	1
-"00100  HELSINKI"	"45401  Moottoripyˆrien sek‰ niiden osien ja varusteiden tukkukauppa"	-
-"00100  HELSINKI"	"45402  Moottoripyˆrien sek‰ niiden osien ja varusteiden v‰hit.kaup."	1
-"00100  HELSINKI"	"45403  Moottoripyˆrien huolto ja korjaus"	-
-"00100  HELSINKI"	"46     Tukkukauppa (pl. moottoriajoneuvojen ja -pyˆrien kauppa)"	266
+"00100  HELSINKI"	"4532   Moottoriajoneuvojen osien ja varusteiden v√§hitt√§iskauppa"	2
+"00100  HELSINKI"	"45321  Moottoriajoneuvot; osat ja varusteet v√§h.kauppa (pl.renkaat)"	1
+"00100  HELSINKI"	"45322  Renkaiden v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"454    Moottoripy√∂r√§t, osat ja varusteet; myynti, huolto ja korjaus"	1
+"00100  HELSINKI"	"4540   Moottoripy√∂r√§t, osat ja varusteet; myynti, huolto ja korjaus"	1
+"00100  HELSINKI"	"45401  Moottoripy√∂rien sek√§ niiden osien ja varusteiden tukkukauppa"	-
+"00100  HELSINKI"	"45402  Moottoripy√∂rien sek√§ niiden osien ja varusteiden v√§hit.kaup."	1
+"00100  HELSINKI"	"45403  Moottoripy√∂rien huolto ja korjaus"	-
+"00100  HELSINKI"	"46     Tukkukauppa (pl. moottoriajoneuvojen ja -py√∂rien kauppa)"	266
 "00100  HELSINKI"	"461    Agentuuritoiminta"	45
-"00100  HELSINKI"	"4611   Maatal., tekst.raaka-ain., el‰inten, puolivalm. agent.toim"	-
-"00100  HELSINKI"	"46110  Maatal., tekst.raaka-ain., el‰inten, puolivalm. agent.toim"	-
+"00100  HELSINKI"	"4611   Maatal., tekst.raaka-ain., el√§inten, puolivalm. agent.toim"	-
+"00100  HELSINKI"	"46110  Maatal., tekst.raaka-ain., el√§inten, puolivalm. agent.toim"	-
 "00100  HELSINKI"	"4612   Polttoain., malmien, metall., teoll.kemikaal. agentuuritoimi"	2
 "00100  HELSINKI"	"46120  Polttoain., malmien, metall., teoll.kemikaal. agentuuritoimi"	2
 "00100  HELSINKI"	"4613   Puutavaran ja rakennusmateriaalien agentuuritoiminta"	-
@@ -862,22 +862,22 @@
 "00100  HELSINKI"	"46189  Muualla luokittelematon erikoistunut agentuuritoiminta"	9
 "00100  HELSINKI"	"4619   Yleisagentuuritoiminta"	9
 "00100  HELSINKI"	"46190  Yleisagentuuritoiminta"	9
-"00100  HELSINKI"	"462    Maatalousp. raaka-aineiden ja el‰vien el‰inten tukkukauppa"	5
-"00100  HELSINKI"	"4621   Viljan, raakatupakan, siementen ja el‰inrehujen tukkukauppa"	1
-"00100  HELSINKI"	"46210  Viljan, raakatupakan, siementen ja el‰inrehujen tukkukauppa"	1
+"00100  HELSINKI"	"462    Maatalousp. raaka-aineiden ja el√§vien el√§inten tukkukauppa"	5
+"00100  HELSINKI"	"4621   Viljan, raakatupakan, siementen ja el√§inrehujen tukkukauppa"	1
+"00100  HELSINKI"	"46210  Viljan, raakatupakan, siementen ja el√§inrehujen tukkukauppa"	1
 "00100  HELSINKI"	"4622   Kukkien ja taimien tukkukauppa"	4
 "00100  HELSINKI"	"46220  Kukkien ja taimien tukkukauppa"	4
-"00100  HELSINKI"	"4623   El‰vien el‰inten tukkukauppa"	-
-"00100  HELSINKI"	"46230  El‰vien el‰inten tukkukauppa"	-
+"00100  HELSINKI"	"4623   El√§vien el√§inten tukkukauppa"	-
+"00100  HELSINKI"	"46230  El√§vien el√§inten tukkukauppa"	-
 "00100  HELSINKI"	"4624   Turkisten ja nahkojen tukkukauppa"	-
 "00100  HELSINKI"	"46240  Turkisten ja nahkojen tukkukauppa"	-
 "00100  HELSINKI"	"463    Elintarvikkeiden, juomien ja tupakan tukkukauppa"	31
-"00100  HELSINKI"	"4631   Juures-, vihannes- marja- ja hedelm‰tukkukauppa"	-
-"00100  HELSINKI"	"46310  Juures-, vihannes- marja- ja hedelm‰tukkukauppa"	-
+"00100  HELSINKI"	"4631   Juures-, vihannes- marja- ja hedelm√§tukkukauppa"	-
+"00100  HELSINKI"	"46310  Juures-, vihannes- marja- ja hedelm√§tukkukauppa"	-
 "00100  HELSINKI"	"4632   Lihan ja lihatuotteiden tukkukauppa"	-
 "00100  HELSINKI"	"46320  Lihan ja lihatuotteiden tukkukauppa"	-
-"00100  HELSINKI"	"4633   Maitotaloustuot., munien, rav.ˆljyjen ja -rasvojen tukkukaup"	-
-"00100  HELSINKI"	"46331  Maitotaloustuotteiden, ravintoˆljyjen, -rasvojen tukkukauppa"	-
+"00100  HELSINKI"	"4633   Maitotaloustuot., munien, rav.√∂ljyjen ja -rasvojen tukkukaup"	-
+"00100  HELSINKI"	"46331  Maitotaloustuotteiden, ravinto√∂ljyjen, -rasvojen tukkukauppa"	-
 "00100  HELSINKI"	"46332  Munatukkukauppa"	-
 "00100  HELSINKI"	"4634   Alkoholi- ja muiden juomien tukkukauppa"	12
 "00100  HELSINKI"	"46340  Alkoholi- ja muiden juomien tukkukauppa"	12
@@ -890,7 +890,7 @@
 "00100  HELSINKI"	"4638   Kalan, luontaistuotteiden ja elintarvikkeiden tukkukauppa"	9
 "00100  HELSINKI"	"46381  Kalatukkukauppa"	-
 "00100  HELSINKI"	"46382  Luontaistuotteiden tukkukauppa"	3
-"00100  HELSINKI"	"46383  Lemmikkiel‰inten ruokien tukkukauppa"	1
+"00100  HELSINKI"	"46383  Lemmikkiel√§inten ruokien tukkukauppa"	1
 "00100  HELSINKI"	"46389  Muualla luokittelematon elintarvikkeiden tukkukauppa"	5
 "00100  HELSINKI"	"4639   Elintarvikkeiden, juomien ja tupakan yleistukkukauppa"	6
 "00100  HELSINKI"	"46390  Elintarvikkeiden, juomien ja tupakan yleistukkukauppa"	6
@@ -902,9 +902,9 @@
 "00100  HELSINKI"	"46421  Vaatteiden tukkukauppa"	14
 "00100  HELSINKI"	"46422  Jalkineiden tukkukauppa"	-
 "00100  HELSINKI"	"4643   Kodinkoneiden tukkukauppa"	6
-"00100  HELSINKI"	"46431  Kodinkoneiden ja kodin s‰hkˆlaitteiden tukkukauppa"	1
+"00100  HELSINKI"	"46431  Kodinkoneiden ja kodin s√§hk√∂laitteiden tukkukauppa"	1
 "00100  HELSINKI"	"46432  Viihde-elektroniikan tukkukauppa"	2
-"00100  HELSINKI"	"46433  Valokuvausv‰lineiden ja -tarvikkeiden tukkukauppa"	1
+"00100  HELSINKI"	"46433  Valokuvausv√§lineiden ja -tarvikkeiden tukkukauppa"	1
 "00100  HELSINKI"	"46434  Optisen alan tukkukauppa"	2
 "00100  HELSINKI"	"4644   Posliini- ja taloustavaroiden, puhdistusaineiden tukkukauppa"	3
 "00100  HELSINKI"	"46441  Taloustavaroiden ja -tarvikkeiden tukkukauppa"	3
@@ -912,8 +912,8 @@
 "00100  HELSINKI"	"4645   Hajuvesien ja kosmetiikan tukkukauppa"	12
 "00100  HELSINKI"	"46450  Hajuvesien ja kosmetiikan tukkukauppa"	12
 "00100  HELSINKI"	"4646   Farmaseuttisten tuotteiden tukkukauppa"	17
-"00100  HELSINKI"	"46461  L‰‰ketukkukauppa"	4
-"00100  HELSINKI"	"46462  Laboratorio- ja sairaanhoitov‰lineiden tukkukauppa"	13
+"00100  HELSINKI"	"46461  L√§√§ketukkukauppa"	4
+"00100  HELSINKI"	"46462  Laboratorio- ja sairaanhoitov√§lineiden tukkukauppa"	13
 "00100  HELSINKI"	"4647   Huonekalujen, mattojen ja valaisimien tukkukauppa"	2
 "00100  HELSINKI"	"46470  Huonekalujen, mattojen ja valaisimien tukkukauppa"	2
 "00100  HELSINKI"	"4648   Kellojen ja korujen tukkukauppa"	5
@@ -926,17 +926,17 @@
 "00100  HELSINKI"	"46495  Veneiden ja veneilytarvikkeiden tukkukauppa"	1
 "00100  HELSINKI"	"46496  Lelujen ja pelien tukkukauppa"	2
 "00100  HELSINKI"	"46499  Muu kotitaloustavaroiden tukkukauppa"	7
-"00100  HELSINKI"	"465    Tieto- ja viestint‰teknisten laitteiden tukkukauppa"	23
+"00100  HELSINKI"	"465    Tieto- ja viestint√§teknisten laitteiden tukkukauppa"	23
 "00100  HELSINKI"	"4651   Tietokoneiden, oheislaitteiden ja ohjelmistojen tukkukauppa"	20
 "00100  HELSINKI"	"46510  Tietokoneiden, oheislaitteiden ja ohjelmistojen tukkukauppa"	20
-"00100  HELSINKI"	"4652   Elektroniikka- ja viestint‰laitteiden ja osien tukkukauppa"	3
-"00100  HELSINKI"	"46521  Viestint‰laitteiden tukkukauppa"	1
+"00100  HELSINKI"	"4652   Elektroniikka- ja viestint√§laitteiden ja osien tukkukauppa"	3
+"00100  HELSINKI"	"46521  Viestint√§laitteiden tukkukauppa"	1
 "00100  HELSINKI"	"46522  Elektronisten komponenttien tukkukauppa"	2
 "00100  HELSINKI"	"466    Muiden koneiden, laitteiden ja tarvikkeiden tukkukauppa"	22
-"00100  HELSINKI"	"4661   Maa- ja mets‰talouskoneiden ja -tarvikkeiden tukkukauppa"	1
-"00100  HELSINKI"	"46610  Maa- ja mets‰talouskoneiden ja -tarvikkeiden tukkukauppa"	1
-"00100  HELSINKI"	"4662   Tyˆstˆkoneiden tukkukauppa"	-
-"00100  HELSINKI"	"46620  Tyˆstˆkoneiden tukkukauppa"	-
+"00100  HELSINKI"	"4661   Maa- ja mets√§talouskoneiden ja -tarvikkeiden tukkukauppa"	1
+"00100  HELSINKI"	"46610  Maa- ja mets√§talouskoneiden ja -tarvikkeiden tukkukauppa"	1
+"00100  HELSINKI"	"4662   Ty√∂st√∂koneiden tukkukauppa"	-
+"00100  HELSINKI"	"46620  Ty√∂st√∂koneiden tukkukauppa"	-
 "00100  HELSINKI"	"4663   Kaivos- ja rakennuskoneiden tukkukauppa"	-
 "00100  HELSINKI"	"46630  Kaivos- ja rakennuskoneiden tukkukauppa"	-
 "00100  HELSINKI"	"4664   Tekstiiliteollisuuden, ompelu- ja kutomakoneiden tukkukauppa"	1
@@ -946,12 +946,12 @@
 "00100  HELSINKI"	"4666   Muiden konttorikoneiden ja -laitteiden tukkukauppa"	-
 "00100  HELSINKI"	"46660  Muiden konttorikoneiden ja -laitteiden tukkukauppa"	-
 "00100  HELSINKI"	"4669   Muiden koneiden, laitteiden ja tarvikkeiden tukkukauppa"	16
-"00100  HELSINKI"	"46691  S‰hkˆtarviketukkukauppa"	7
-"00100  HELSINKI"	"46692  Teollisuudessa k‰ytett‰vien muiden koneiden tukkukauppa"	3
+"00100  HELSINKI"	"46691  S√§hk√∂tarviketukkukauppa"	7
+"00100  HELSINKI"	"46692  Teollisuudessa k√§ytett√§vien muiden koneiden tukkukauppa"	3
 "00100  HELSINKI"	"46699  Luokittelemattomien koneiden ja laitteiden tukkukauppa"	6
 "00100  HELSINKI"	"467    Muu erikoistunut tukkukauppa"	36
 "00100  HELSINKI"	"4671   Kiinteiden, nestem. ja kaasum. polttoaineiden tukkukauppa"	3
-"00100  HELSINKI"	"46711  Nestem‰isten ja kaasumaisten polttoaineiden tukkukauppa"	3
+"00100  HELSINKI"	"46711  Nestem√§isten ja kaasumaisten polttoaineiden tukkukauppa"	3
 "00100  HELSINKI"	"46719  Muiden polttoaineiden tukkukauppa"	-
 "00100  HELSINKI"	"4672   Raakametallien ja metallimalmien tukkukauppa"	3
 "00100  HELSINKI"	"46720  Raakametallien ja metallimalmien tukkukauppa"	3
@@ -960,164 +960,164 @@
 "00100  HELSINKI"	"46732  Puutavaratuotetukkukauppa"	3
 "00100  HELSINKI"	"46733  Metalli- ja mineraalituotteiden tukkukauppa"	2
 "00100  HELSINKI"	"46734  Kylpyhuonekalusteiden ja -tarvikkeiden tukkukauppa"	-
-"00100  HELSINKI"	"46735  Lattianp‰‰llysteiden ja tapettien tukkukauppa"	2
+"00100  HELSINKI"	"46735  Lattianp√§√§llysteiden ja tapettien tukkukauppa"	2
 "00100  HELSINKI"	"46739  Rakennustarvikkeiden yleistukkukauppa"	1
 "00100  HELSINKI"	"4674   Rautakauppatavaroiden, LVI-laitteiden ja -tarvikk. tukkukaup"	8
-"00100  HELSINKI"	"46741  Tyˆkalu- ja tarviketukkukauppa"	5
-"00100  HELSINKI"	"46742  L‰mpˆ-, vesi-, ilmastointilaitteiden ja -tarvikk. Tukkukaupp"	3
+"00100  HELSINKI"	"46741  Ty√∂kalu- ja tarviketukkukauppa"	5
+"00100  HELSINKI"	"46742  L√§mp√∂-, vesi-, ilmastointilaitteiden ja -tarvikk. Tukkukaupp"	3
 "00100  HELSINKI"	"4675   Peruskemikaalien, lannoitteiden yms. tukkukauppa"	7
 "00100  HELSINKI"	"46750  Peruskemikaalien, lannoitteiden yms. tukkukauppa"	7
-"00100  HELSINKI"	"4676   Muiden v‰lituotteiden tukkukauppa"	5
-"00100  HELSINKI"	"46760  Muiden v‰lituotteiden tukkukauppa"	5
-"00100  HELSINKI"	"4677   J‰tteen ja romun tukkukauppa"	-
-"00100  HELSINKI"	"46770  J‰tteen ja romun tukkukauppa"	-
+"00100  HELSINKI"	"4676   Muiden v√§lituotteiden tukkukauppa"	5
+"00100  HELSINKI"	"46760  Muiden v√§lituotteiden tukkukauppa"	5
+"00100  HELSINKI"	"4677   J√§tteen ja romun tukkukauppa"	-
+"00100  HELSINKI"	"46770  J√§tteen ja romun tukkukauppa"	-
 "00100  HELSINKI"	"469    Muu tukkukauppa"	18
 "00100  HELSINKI"	"4690   Muu tukkukauppa"	18
 "00100  HELSINKI"	"46901  Yleistukkukauppa"	-
 "00100  HELSINKI"	"46909  Muualla luokittelematon tukkukauppa"	18
-"00100  HELSINKI"	"47     V‰hitt‰iskauppa (pl. moottoriajoneuvojen kauppa)"	654
-"00100  HELSINKI"	"471    V‰hitt‰iskauppa erikoistumattomissa myym‰lˆiss‰"	61
-"00100  HELSINKI"	"4711   Elintarvikk., juomien ja tupakan erikoistumaton v‰hitt.kaup"	51
-"00100  HELSINKI"	"47111  Isot supermarketit (yli 1000 m≤)"	6
-"00100  HELSINKI"	"47112  Pienet supermarketit (yli 400 m≤, enint‰‰n 1000 m≤)"	4
-"00100  HELSINKI"	"47113  Valintamyym‰l‰t (yli 100 m≤, enint‰‰n 400 m≤)"	18
-"00100  HELSINKI"	"47114  Elintarvike-, makeis- ym. kioskit (enint‰‰n 100 m≤)"	23
-"00100  HELSINKI"	"4719   Muu v‰hitt‰iskauppa erikoistumattomissa myym‰lˆiss‰"	10
-"00100  HELSINKI"	"47191  Itsepalvelutavaratalot (yli 2500 m≤)"	-
-"00100  HELSINKI"	"47192  Tavaratalot (yli 2500 m≤)"	4
-"00100  HELSINKI"	"47199  Pienoistavaratalot, erikoistumatt.myym‰l‰t (enint. 2500 m≤)"	6
-"00100  HELSINKI"	"472    Elintarvikk., juomien, tupakan v‰hit.kaup. erikoismyym‰lˆiss"	40
-"00100  HELSINKI"	"4721   Hedelmien, marjojen ja vihannesten v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47210  Hedelmien, marjojen ja vihannesten v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"4722   Lihan ja lihatuotteiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"47220  Lihan ja lihatuotteiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"4723   Kalan, ‰yri‰isten ja nilvi‰isten v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"47230  Kalan, ‰yri‰isten ja nilvi‰isten v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"4724   Leipomotuotteiden ja makeisten v‰hitt‰iskauppa"	6
-"00100  HELSINKI"	"47241  Leipomotuotteiden v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47242  Makeisten v‰hitt‰iskauppa"	5
-"00100  HELSINKI"	"4725   Alkoholi- ja muiden juomien v‰hitt‰iskauppa"	7
-"00100  HELSINKI"	"47250  Alkoholi- ja muiden juomien v‰hitt‰iskauppa"	7
-"00100  HELSINKI"	"4726   Tupakkatuotteiden v‰hitt‰iskauppa"	2
-"00100  HELSINKI"	"47260  Tupakkatuotteiden v‰hitt‰iskauppa"	2
-"00100  HELSINKI"	"4729   Muu v‰hitt‰iskauppa erikoismyym‰lˆiss‰"	21
-"00100  HELSINKI"	"47291  J‰‰telˆkioskit"	1
-"00100  HELSINKI"	"47292  Luontaistuotteiden v‰hitt‰iskauppa"	12
-"00100  HELSINKI"	"47299  Muu p‰ivitt‰istavaroiden erikoisv‰hitt‰iskauppa"	8
-"00100  HELSINKI"	"473    Ajoneuvojen polttoaineen v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"4730   Ajoneuvojen polttoaineen v‰hitt‰iskauppa"	-
+"00100  HELSINKI"	"47     V√§hitt√§iskauppa (pl. moottoriajoneuvojen kauppa)"	654
+"00100  HELSINKI"	"471    V√§hitt√§iskauppa erikoistumattomissa myym√§l√∂iss√§"	61
+"00100  HELSINKI"	"4711   Elintarvikk., juomien ja tupakan erikoistumaton v√§hitt.kaup"	51
+"00100  HELSINKI"	"47111  Isot supermarketit (yli 1000 m¬≤)"	6
+"00100  HELSINKI"	"47112  Pienet supermarketit (yli 400 m¬≤, enint√§√§n 1000 m¬≤)"	4
+"00100  HELSINKI"	"47113  Valintamyym√§l√§t (yli 100 m¬≤, enint√§√§n 400 m¬≤)"	18
+"00100  HELSINKI"	"47114  Elintarvike-, makeis- ym. kioskit (enint√§√§n 100 m¬≤)"	23
+"00100  HELSINKI"	"4719   Muu v√§hitt√§iskauppa erikoistumattomissa myym√§l√∂iss√§"	10
+"00100  HELSINKI"	"47191  Itsepalvelutavaratalot (yli 2500 m¬≤)"	-
+"00100  HELSINKI"	"47192  Tavaratalot (yli 2500 m¬≤)"	4
+"00100  HELSINKI"	"47199  Pienoistavaratalot, erikoistumatt.myym√§l√§t (enint. 2500 m¬≤)"	6
+"00100  HELSINKI"	"472    Elintarvikk., juomien, tupakan v√§hit.kaup. erikoismyym√§l√∂iss"	40
+"00100  HELSINKI"	"4721   Hedelmien, marjojen ja vihannesten v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47210  Hedelmien, marjojen ja vihannesten v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"4722   Lihan ja lihatuotteiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"47220  Lihan ja lihatuotteiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"4723   Kalan, √§yri√§isten ja nilvi√§isten v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"47230  Kalan, √§yri√§isten ja nilvi√§isten v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"4724   Leipomotuotteiden ja makeisten v√§hitt√§iskauppa"	6
+"00100  HELSINKI"	"47241  Leipomotuotteiden v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47242  Makeisten v√§hitt√§iskauppa"	5
+"00100  HELSINKI"	"4725   Alkoholi- ja muiden juomien v√§hitt√§iskauppa"	7
+"00100  HELSINKI"	"47250  Alkoholi- ja muiden juomien v√§hitt√§iskauppa"	7
+"00100  HELSINKI"	"4726   Tupakkatuotteiden v√§hitt√§iskauppa"	2
+"00100  HELSINKI"	"47260  Tupakkatuotteiden v√§hitt√§iskauppa"	2
+"00100  HELSINKI"	"4729   Muu v√§hitt√§iskauppa erikoismyym√§l√∂iss√§"	21
+"00100  HELSINKI"	"47291  J√§√§tel√∂kioskit"	1
+"00100  HELSINKI"	"47292  Luontaistuotteiden v√§hitt√§iskauppa"	12
+"00100  HELSINKI"	"47299  Muu p√§ivitt√§istavaroiden erikoisv√§hitt√§iskauppa"	8
+"00100  HELSINKI"	"473    Ajoneuvojen polttoaineen v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"4730   Ajoneuvojen polttoaineen v√§hitt√§iskauppa"	-
 "00100  HELSINKI"	"47301  Huoltamotoiminta"	-
-"00100  HELSINKI"	"47302  Polttoaineiden v‰hitt‰iskauppa automaateista"	-
-"00100  HELSINKI"	"474    Tieto- ja viestint‰tekn. laitt. v‰h.kauppa erik.myym‰lˆiss‰"	28
-"00100  HELSINKI"	"4741   Tietokoneiden, oheislaitteiden ja ohjelmistojen v‰h.kauppa"	4
-"00100  HELSINKI"	"47410  Tietokoneiden, oheislaitteiden ja ohjelmistojen v‰h.kauppa"	4
-"00100  HELSINKI"	"4742   Televiestint‰laitteiden v‰hitt‰iskauppa"	15
-"00100  HELSINKI"	"47420  Televiestint‰laitteiden v‰hitt‰iskauppa"	15
-"00100  HELSINKI"	"4743   Viihde-elektroniikan v‰hitt‰iskauppa"	9
-"00100  HELSINKI"	"47430  Viihde-elektroniikan v‰hitt‰iskauppa"	9
-"00100  HELSINKI"	"475    Muiden kotitaloustavaroiden v‰h.kauppa erikoismyym‰lˆiss‰"	62
-"00100  HELSINKI"	"4751   Tekstiilien v‰hitt‰iskauppa"	10
-"00100  HELSINKI"	"47511  Kankaiden v‰hitt‰iskauppa"	9
-"00100  HELSINKI"	"47512  Lankojen ja k‰sityˆtarvikkeiden v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"4752   Rautakauppatavaran, maalien ja lasin v‰hitt‰iskauppa"	11
-"00100  HELSINKI"	"47521  Rauta- ja rakennustarvikkeiden yleisv‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47522  Maalien v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47523  Keittiˆ- ja saniteettitilojen kalusteiden v‰hitt‰iskauppa"	9
-"00100  HELSINKI"	"47529  Muu rauta- ja rakennusalan v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"4753   Mattojen, tapettien ja lattianp‰‰llysteiden v‰hitt‰iskauppa"	4
-"00100  HELSINKI"	"47531  Mattojen ja verhojen v‰hitt‰iskauppa"	4
-"00100  HELSINKI"	"47532  Tapettien ja lattianp‰‰llysteiden v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"4754   S‰hkˆisten kodinkoneiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"47540  S‰hkˆisten kodinkoneiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"4759   Huonekalujen,luokitt. taloustarvikk. v‰h.kauppa erikoismyym."	34
-"00100  HELSINKI"	"47591  Huonekalujen v‰hitt‰iskauppa"	11
-"00100  HELSINKI"	"47592  S‰hkˆtarvikkeiden ja valaisimien v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47593  Kumi- ja muovitavaroiden v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47594  Taloustavaroiden v‰hitt‰iskauppa"	8
-"00100  HELSINKI"	"47595  Soittimien ja musiikkitarvikkeiden v‰hitt‰iskauppa"	6
-"00100  HELSINKI"	"47596  Lukkosepp‰- ja avainliikkeet"	3
-"00100  HELSINKI"	"47599  Luokittelemattomien kotitaloustarvikkeiden v‰hitt‰iskauppa"	4
-"00100  HELSINKI"	"476    Kulttuuri- ja vapaa-ajan tuott. v‰h.kauppa erik.myym‰lˆiss‰"	48
-"00100  HELSINKI"	"4761   Kirjojen v‰hitt‰iskauppa"	13
-"00100  HELSINKI"	"47610  Kirjojen v‰hitt‰iskauppa"	13
-"00100  HELSINKI"	"4762   Sanomalehtien ja paperitavaran v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"47621  Paperi- ja toimistotarvikkeiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"47622  Aikakausjulkaisujen ja lehtien v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"4763   Musiikki- ja videotallenteiden v‰hitt‰iskauppa"	4
-"00100  HELSINKI"	"47630  Musiikki- ja videotallenteiden v‰hitt‰iskauppa"	4
-"00100  HELSINKI"	"4764   Urheiluv‰lineiden v‰hitt‰iskauppa"	22
-"00100  HELSINKI"	"47641  Urheiluv‰lineiden ja polkupyˆrien v‰hitt‰iskauppa"	20
-"00100  HELSINKI"	"47642  Veneiden ja veneilytarvikkeiden v‰hitt‰iskauppa"	2
-"00100  HELSINKI"	"4765   Pelien ja leikkikalujen v‰hitt‰iskauppa"	6
-"00100  HELSINKI"	"47650  Pelien ja leikkikalujen v‰hitt‰iskauppa"	6
-"00100  HELSINKI"	"477    Muiden tavaroiden v‰hitt‰iskauppa erikoismyym‰lˆiss‰"	371
-"00100  HELSINKI"	"4771   Vaatteiden v‰hitt‰iskauppa"	157
-"00100  HELSINKI"	"47711  Naisten vaatteiden v‰hitt‰iskauppa"	28
-"00100  HELSINKI"	"47712  Miesten vaatteiden v‰hitt‰iskauppa"	19
-"00100  HELSINKI"	"47713  Lastenvaatteiden v‰hitt‰iskauppa"	10
-"00100  HELSINKI"	"47714  Turkisten ja nahkavaatteiden v‰hitt‰iskauppa"	3
-"00100  HELSINKI"	"47715  Lakkien ja hattujen v‰hitt‰iskauppa"	-
-"00100  HELSINKI"	"47719  Vaatteiden yleisv‰hitt‰iskauppa"	97
-"00100  HELSINKI"	"4772   Jalkineiden ja nahkatavaroiden v‰hitt‰iskauppa"	22
-"00100  HELSINKI"	"47721  Jalkineiden v‰hitt‰iskauppa"	13
-"00100  HELSINKI"	"47722  Laukkujen v‰hitt‰iskauppa"	9
+"00100  HELSINKI"	"47302  Polttoaineiden v√§hitt√§iskauppa automaateista"	-
+"00100  HELSINKI"	"474    Tieto- ja viestint√§tekn. laitt. v√§h.kauppa erik.myym√§l√∂iss√§"	28
+"00100  HELSINKI"	"4741   Tietokoneiden, oheislaitteiden ja ohjelmistojen v√§h.kauppa"	4
+"00100  HELSINKI"	"47410  Tietokoneiden, oheislaitteiden ja ohjelmistojen v√§h.kauppa"	4
+"00100  HELSINKI"	"4742   Televiestint√§laitteiden v√§hitt√§iskauppa"	15
+"00100  HELSINKI"	"47420  Televiestint√§laitteiden v√§hitt√§iskauppa"	15
+"00100  HELSINKI"	"4743   Viihde-elektroniikan v√§hitt√§iskauppa"	9
+"00100  HELSINKI"	"47430  Viihde-elektroniikan v√§hitt√§iskauppa"	9
+"00100  HELSINKI"	"475    Muiden kotitaloustavaroiden v√§h.kauppa erikoismyym√§l√∂iss√§"	62
+"00100  HELSINKI"	"4751   Tekstiilien v√§hitt√§iskauppa"	10
+"00100  HELSINKI"	"47511  Kankaiden v√§hitt√§iskauppa"	9
+"00100  HELSINKI"	"47512  Lankojen ja k√§sity√∂tarvikkeiden v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"4752   Rautakauppatavaran, maalien ja lasin v√§hitt√§iskauppa"	11
+"00100  HELSINKI"	"47521  Rauta- ja rakennustarvikkeiden yleisv√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47522  Maalien v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47523  Keitti√∂- ja saniteettitilojen kalusteiden v√§hitt√§iskauppa"	9
+"00100  HELSINKI"	"47529  Muu rauta- ja rakennusalan v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"4753   Mattojen, tapettien ja lattianp√§√§llysteiden v√§hitt√§iskauppa"	4
+"00100  HELSINKI"	"47531  Mattojen ja verhojen v√§hitt√§iskauppa"	4
+"00100  HELSINKI"	"47532  Tapettien ja lattianp√§√§llysteiden v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"4754   S√§hk√∂isten kodinkoneiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"47540  S√§hk√∂isten kodinkoneiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"4759   Huonekalujen,luokitt. taloustarvikk. v√§h.kauppa erikoismyym."	34
+"00100  HELSINKI"	"47591  Huonekalujen v√§hitt√§iskauppa"	11
+"00100  HELSINKI"	"47592  S√§hk√∂tarvikkeiden ja valaisimien v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47593  Kumi- ja muovitavaroiden v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47594  Taloustavaroiden v√§hitt√§iskauppa"	8
+"00100  HELSINKI"	"47595  Soittimien ja musiikkitarvikkeiden v√§hitt√§iskauppa"	6
+"00100  HELSINKI"	"47596  Lukkosepp√§- ja avainliikkeet"	3
+"00100  HELSINKI"	"47599  Luokittelemattomien kotitaloustarvikkeiden v√§hitt√§iskauppa"	4
+"00100  HELSINKI"	"476    Kulttuuri- ja vapaa-ajan tuott. v√§h.kauppa erik.myym√§l√∂iss√§"	48
+"00100  HELSINKI"	"4761   Kirjojen v√§hitt√§iskauppa"	13
+"00100  HELSINKI"	"47610  Kirjojen v√§hitt√§iskauppa"	13
+"00100  HELSINKI"	"4762   Sanomalehtien ja paperitavaran v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"47621  Paperi- ja toimistotarvikkeiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"47622  Aikakausjulkaisujen ja lehtien v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"4763   Musiikki- ja videotallenteiden v√§hitt√§iskauppa"	4
+"00100  HELSINKI"	"47630  Musiikki- ja videotallenteiden v√§hitt√§iskauppa"	4
+"00100  HELSINKI"	"4764   Urheiluv√§lineiden v√§hitt√§iskauppa"	22
+"00100  HELSINKI"	"47641  Urheiluv√§lineiden ja polkupy√∂rien v√§hitt√§iskauppa"	20
+"00100  HELSINKI"	"47642  Veneiden ja veneilytarvikkeiden v√§hitt√§iskauppa"	2
+"00100  HELSINKI"	"4765   Pelien ja leikkikalujen v√§hitt√§iskauppa"	6
+"00100  HELSINKI"	"47650  Pelien ja leikkikalujen v√§hitt√§iskauppa"	6
+"00100  HELSINKI"	"477    Muiden tavaroiden v√§hitt√§iskauppa erikoismyym√§l√∂iss√§"	371
+"00100  HELSINKI"	"4771   Vaatteiden v√§hitt√§iskauppa"	157
+"00100  HELSINKI"	"47711  Naisten vaatteiden v√§hitt√§iskauppa"	28
+"00100  HELSINKI"	"47712  Miesten vaatteiden v√§hitt√§iskauppa"	19
+"00100  HELSINKI"	"47713  Lastenvaatteiden v√§hitt√§iskauppa"	10
+"00100  HELSINKI"	"47714  Turkisten ja nahkavaatteiden v√§hitt√§iskauppa"	3
+"00100  HELSINKI"	"47715  Lakkien ja hattujen v√§hitt√§iskauppa"	-
+"00100  HELSINKI"	"47719  Vaatteiden yleisv√§hitt√§iskauppa"	97
+"00100  HELSINKI"	"4772   Jalkineiden ja nahkatavaroiden v√§hitt√§iskauppa"	22
+"00100  HELSINKI"	"47721  Jalkineiden v√§hitt√§iskauppa"	13
+"00100  HELSINKI"	"47722  Laukkujen v√§hitt√§iskauppa"	9
 "00100  HELSINKI"	"4773   Apteekit"	9
 "00100  HELSINKI"	"47730  Apteekit"	9
-"00100  HELSINKI"	"4774   Terveydenhoitotarvikkeiden v‰hitt‰iskauppa"	10
-"00100  HELSINKI"	"47740  Terveydenhoitotarvikkeiden v‰hitt‰iskauppa"	10
-"00100  HELSINKI"	"4775   Kosmetiikka- ja hygieniatuotteiden v‰hitt‰iskauppa"	21
-"00100  HELSINKI"	"47750  Kosmetiikka- ja hygieniatuotteiden v‰hitt‰iskauppa"	21
-"00100  HELSINKI"	"4776   Kasvien, lemmikkiel‰inten ja niiden ruokien v‰hitt‰iskauppa"	14
-"00100  HELSINKI"	"47761  Kukkien v‰hitt‰iskauppa"	9
+"00100  HELSINKI"	"4774   Terveydenhoitotarvikkeiden v√§hitt√§iskauppa"	10
+"00100  HELSINKI"	"47740  Terveydenhoitotarvikkeiden v√§hitt√§iskauppa"	10
+"00100  HELSINKI"	"4775   Kosmetiikka- ja hygieniatuotteiden v√§hitt√§iskauppa"	21
+"00100  HELSINKI"	"47750  Kosmetiikka- ja hygieniatuotteiden v√§hitt√§iskauppa"	21
+"00100  HELSINKI"	"4776   Kasvien, lemmikkiel√§inten ja niiden ruokien v√§hitt√§iskauppa"	14
+"00100  HELSINKI"	"47761  Kukkien v√§hitt√§iskauppa"	9
 "00100  HELSINKI"	"47762  Kukkakioskit"	-
-"00100  HELSINKI"	"47763  Puutarha-alan v‰hitt‰iskauppa"	1
-"00100  HELSINKI"	"47764  Lemmikkiel‰inten, niiden ruokien ja tarvikkeiden v‰h.kauppa"	4
-"00100  HELSINKI"	"4777   Kultasep‰nteosten ja kellojen v‰hitt‰iskauppa"	34
-"00100  HELSINKI"	"47770  Kultasep‰nteosten ja kellojen v‰hitt‰iskauppa"	34
-"00100  HELSINKI"	"4778   Muu uusien tavaroiden v‰hitt‰iskauppa"	87
+"00100  HELSINKI"	"47763  Puutarha-alan v√§hitt√§iskauppa"	1
+"00100  HELSINKI"	"47764  Lemmikkiel√§inten, niiden ruokien ja tarvikkeiden v√§h.kauppa"	4
+"00100  HELSINKI"	"4777   Kultasep√§nteosten ja kellojen v√§hitt√§iskauppa"	34
+"00100  HELSINKI"	"47770  Kultasep√§nteosten ja kellojen v√§hitt√§iskauppa"	34
+"00100  HELSINKI"	"4778   Muu uusien tavaroiden v√§hitt√§iskauppa"	87
 "00100  HELSINKI"	"47781  Taideliikkeet"	20
-"00100  HELSINKI"	"47782  Valokuvausalan v‰hitt‰iskauppa"	6
-"00100  HELSINKI"	"47783  Optisen alan v‰hitt‰iskauppa"	22
-"00100  HELSINKI"	"47784  Lastenvaunujen ja -tarvikkeiden v‰hitt‰iskauppa"	2
-"00100  HELSINKI"	"47785  Lahjatavaroiden ja askartelutarvikkeiden v‰hitt‰iskauppa"	19
-"00100  HELSINKI"	"47789  Muiden uusien tavaroiden v‰hitt‰iskauppa"	18
-"00100  HELSINKI"	"4779   K‰ytettyjen tavaroiden v‰hitt‰iskauppa myym‰lˆiss‰"	17
+"00100  HELSINKI"	"47782  Valokuvausalan v√§hitt√§iskauppa"	6
+"00100  HELSINKI"	"47783  Optisen alan v√§hitt√§iskauppa"	22
+"00100  HELSINKI"	"47784  Lastenvaunujen ja -tarvikkeiden v√§hitt√§iskauppa"	2
+"00100  HELSINKI"	"47785  Lahjatavaroiden ja askartelutarvikkeiden v√§hitt√§iskauppa"	19
+"00100  HELSINKI"	"47789  Muiden uusien tavaroiden v√§hitt√§iskauppa"	18
+"00100  HELSINKI"	"4779   K√§ytettyjen tavaroiden v√§hitt√§iskauppa myym√§l√∂iss√§"	17
 "00100  HELSINKI"	"47791  Antiikkiliikkeet"	4
 "00100  HELSINKI"	"47792  Antikvariaattikauppa"	5
 "00100  HELSINKI"	"47793  Huutokauppakamarit"	-
-"00100  HELSINKI"	"47799  Muiden k‰ytettyjen tavaroiden v‰hitt‰iskauppa"	8
+"00100  HELSINKI"	"47799  Muiden k√§ytettyjen tavaroiden v√§hitt√§iskauppa"	8
 "00100  HELSINKI"	"478    Tori- ja markkinakauppa"	1
-"00100  HELSINKI"	"4781   Elintarvikk. ja tupakkatuott. v‰h.kauppa kojuista, toreilla"	-
-"00100  HELSINKI"	"47810  Elintarvikk. ja tupakkatuott. v‰h.kauppa kojuista, toreilla"	-
-"00100  HELSINKI"	"4782   Tekstiilien ja jalkineiden v‰h.kauppa kojuista ja toreilla"	-
-"00100  HELSINKI"	"47820  Tekstiilien ja jalkineiden v‰h.kauppa kojuista ja toreilla"	-
-"00100  HELSINKI"	"4789   Muiden tavaroiden v‰hitt‰iskauppa kojuista ja toreilla"	1
-"00100  HELSINKI"	"47890  Muiden tavaroiden v‰hitt‰iskauppa kojuista ja toreilla"	1
-"00100  HELSINKI"	"479    V‰h.kauppa muualla kuin myym‰l.(pl. tori- ja markkinakauppa)"	43
-"00100  HELSINKI"	"4791   V‰h.kauppa postimyyntiliikkeiden tai Internetin v‰lityksell‰"	33
+"00100  HELSINKI"	"4781   Elintarvikk. ja tupakkatuott. v√§h.kauppa kojuista, toreilla"	-
+"00100  HELSINKI"	"47810  Elintarvikk. ja tupakkatuott. v√§h.kauppa kojuista, toreilla"	-
+"00100  HELSINKI"	"4782   Tekstiilien ja jalkineiden v√§h.kauppa kojuista ja toreilla"	-
+"00100  HELSINKI"	"47820  Tekstiilien ja jalkineiden v√§h.kauppa kojuista ja toreilla"	-
+"00100  HELSINKI"	"4789   Muiden tavaroiden v√§hitt√§iskauppa kojuista ja toreilla"	1
+"00100  HELSINKI"	"47890  Muiden tavaroiden v√§hitt√§iskauppa kojuista ja toreilla"	1
+"00100  HELSINKI"	"479    V√§h.kauppa muualla kuin myym√§l.(pl. tori- ja markkinakauppa)"	43
+"00100  HELSINKI"	"4791   V√§h.kauppa postimyyntiliikkeiden tai Internetin v√§lityksell√§"	33
 "00100  HELSINKI"	"47911  Kirjojen, musiikki-, videotall. postimyynti ja verkkokauppa"	3
 "00100  HELSINKI"	"47912  Vaatteiden postimyynti ja verkkokauppa"	3
 "00100  HELSINKI"	"47913  Laajan valikoiman postimyynti ja verkkokauppa"	10
 "00100  HELSINKI"	"47919  Muu postimyynti ja verkkokauppa"	17
-"00100  HELSINKI"	"4799   Muu v‰hitt‰iskauppa muualla kuin myym‰lˆiss‰"	10
-"00100  HELSINKI"	"47990  Muu v‰hitt‰iskauppa muualla kuin myym‰lˆiss‰"	10
+"00100  HELSINKI"	"4799   Muu v√§hitt√§iskauppa muualla kuin myym√§l√∂iss√§"	10
+"00100  HELSINKI"	"47990  Muu v√§hitt√§iskauppa muualla kuin myym√§l√∂iss√§"	10
 "00100  HELSINKI"	"H  Kuljetus ja varastointi"	65
 "00100  HELSINKI"	"49     Maaliikenne ja putkijohtokuljetus"	27
-"00100  HELSINKI"	"491    Rautateiden henkilˆliikenne, kaukoliikenne"	4
-"00100  HELSINKI"	"4910   Rautateiden henkilˆliikenne, kaukoliikenne"	4
-"00100  HELSINKI"	"49100  Rautateiden henkilˆliikenne, kaukoliikenne"	4
+"00100  HELSINKI"	"491    Rautateiden henkil√∂liikenne, kaukoliikenne"	4
+"00100  HELSINKI"	"4910   Rautateiden henkil√∂liikenne, kaukoliikenne"	4
+"00100  HELSINKI"	"49100  Rautateiden henkil√∂liikenne, kaukoliikenne"	4
 "00100  HELSINKI"	"492    Rautateiden tavaraliikenne"	1
 "00100  HELSINKI"	"4920   Rautateiden tavaraliikenne"	1
 "00100  HELSINKI"	"49200  Rautateiden tavaraliikenne"	1
-"00100  HELSINKI"	"493    Muu maaliikenteen henkilˆliikenne"	15
+"00100  HELSINKI"	"493    Muu maaliikenteen henkil√∂liikenne"	15
 "00100  HELSINKI"	"4931   Paikallisliikenne"	-
 "00100  HELSINKI"	"49310  Paikallisliikenne"	-
 "00100  HELSINKI"	"4932   Taksiliikenne"	11
 "00100  HELSINKI"	"49320  Taksiliikenne"	11
-"00100  HELSINKI"	"4939   Muualla luokittelematon maaliikenteen henkilˆliikenne"	4
-"00100  HELSINKI"	"49391  S‰‰nnˆllinen linja-autojen kaukoliikenne"	-
+"00100  HELSINKI"	"4939   Muualla luokittelematon maaliikenteen henkil√∂liikenne"	4
+"00100  HELSINKI"	"49391  S√§√§nn√∂llinen linja-autojen kaukoliikenne"	-
 "00100  HELSINKI"	"49392  Linja-autojen tilausliikenne"	1
-"00100  HELSINKI"	"49399  Muualla luokittelematon muu maaliikenteen henkilˆliikenne"	3
+"00100  HELSINKI"	"49399  Muualla luokittelematon muu maaliikenteen henkil√∂liikenne"	3
 "00100  HELSINKI"	"494    Tieliikenteen tavarankuljetus ja muuttopalvelut"	7
 "00100  HELSINKI"	"4941   Tieliikenteen tavarankuljetus"	5
 "00100  HELSINKI"	"49410  Tieliikenteen tavarankuljetus"	5
@@ -1127,48 +1127,48 @@
 "00100  HELSINKI"	"4950   Putkijohtokuljetus"	-
 "00100  HELSINKI"	"49500  Putkijohtokuljetus"	-
 "00100  HELSINKI"	"50     Vesiliikenne"	4
-"00100  HELSINKI"	"501    Meri- ja rannikkovesiliikenteen henkilˆkuljetus"	2
-"00100  HELSINKI"	"5010   Meri- ja rannikkovesiliikenteen henkilˆkuljetus"	2
-"00100  HELSINKI"	"50101  Meriliikenteen henkilˆkuljetus"	2
-"00100  HELSINKI"	"50102  Rannikkovesiliikenteen henkilˆkuljetus"	-
+"00100  HELSINKI"	"501    Meri- ja rannikkovesiliikenteen henkil√∂kuljetus"	2
+"00100  HELSINKI"	"5010   Meri- ja rannikkovesiliikenteen henkil√∂kuljetus"	2
+"00100  HELSINKI"	"50101  Meriliikenteen henkil√∂kuljetus"	2
+"00100  HELSINKI"	"50102  Rannikkovesiliikenteen henkil√∂kuljetus"	-
 "00100  HELSINKI"	"502    Meri- ja rannikkovesiliikenteen tavarankuljetus"	2
 "00100  HELSINKI"	"5020   Meri- ja rannikkovesiliikenteen tavarankuljetus"	2
 "00100  HELSINKI"	"50201  Meriliikenteen tavarankuljetus"	2
 "00100  HELSINKI"	"50202  Rannikkovesiliikenteen tavarankuljetus"	-
-"00100  HELSINKI"	"503    Sis‰vesiliikenteen henkilˆkuljetus"	-
-"00100  HELSINKI"	"5030   Sis‰vesiliikenteen henkilˆkuljetus"	-
-"00100  HELSINKI"	"50300  Sis‰vesiliikenteen henkilˆkuljetus"	-
-"00100  HELSINKI"	"504    Sis‰vesiliikenteen tavarankuljetus"	-
-"00100  HELSINKI"	"5040   Sis‰vesiliikenteen tavarankuljetus"	-
-"00100  HELSINKI"	"50400  Sis‰vesiliikenteen tavarankuljetus"	-
+"00100  HELSINKI"	"503    Sis√§vesiliikenteen henkil√∂kuljetus"	-
+"00100  HELSINKI"	"5030   Sis√§vesiliikenteen henkil√∂kuljetus"	-
+"00100  HELSINKI"	"50300  Sis√§vesiliikenteen henkil√∂kuljetus"	-
+"00100  HELSINKI"	"504    Sis√§vesiliikenteen tavarankuljetus"	-
+"00100  HELSINKI"	"5040   Sis√§vesiliikenteen tavarankuljetus"	-
+"00100  HELSINKI"	"50400  Sis√§vesiliikenteen tavarankuljetus"	-
 "00100  HELSINKI"	"51     Ilmaliikenne"	2
 "00100  HELSINKI"	"511    Matkustajalentoliikenne"	2
 "00100  HELSINKI"	"5110   Matkustajalentoliikenne"	2
-"00100  HELSINKI"	"51101  S‰‰nnˆllinen lentoliikenne"	1
+"00100  HELSINKI"	"51101  S√§√§nn√∂llinen lentoliikenne"	1
 "00100  HELSINKI"	"51102  Tilauslentoliikenne"	1
 "00100  HELSINKI"	"512    Lentoliikenteen tavarankuljetus ja avaruusliikenne"	-
 "00100  HELSINKI"	"5121   Lentoliikenteen tavarankuljetus"	-
 "00100  HELSINKI"	"51210  Lentoliikenteen tavarankuljetus"	-
-"00100  HELSINKI"	"52     Varastointi ja liikennett‰ palveleva toiminta"	28
+"00100  HELSINKI"	"52     Varastointi ja liikennett√§ palveleva toiminta"	28
 "00100  HELSINKI"	"521    Varastointi"	2
 "00100  HELSINKI"	"5210   Varastointi"	2
 "00100  HELSINKI"	"52100  Varastointi"	2
-"00100  HELSINKI"	"522    Liikennett‰ palveleva toiminta"	26
-"00100  HELSINKI"	"5221   Maaliikennett‰ palveleva toiminta"	10
+"00100  HELSINKI"	"522    Liikennett√§ palveleva toiminta"	26
+"00100  HELSINKI"	"5221   Maaliikennett√§ palveleva toiminta"	10
 "00100  HELSINKI"	"52211  Linja-autoasemat"	1
 "00100  HELSINKI"	"52212  Tieliikenteen terminaalitoiminta"	-
-"00100  HELSINKI"	"52213  Maksullinen pys‰kˆinti"	8
-"00100  HELSINKI"	"52219  Muu maaliikennett‰ palveleva toiminta"	1
-"00100  HELSINKI"	"5222   Vesiliikennett‰ palveleva toiminta"	2
+"00100  HELSINKI"	"52213  Maksullinen pys√§k√∂inti"	8
+"00100  HELSINKI"	"52219  Muu maaliikennett√§ palveleva toiminta"	1
+"00100  HELSINKI"	"5222   Vesiliikennett√§ palveleva toiminta"	2
 "00100  HELSINKI"	"52221  Satamat"	-
-"00100  HELSINKI"	"52229  Muu vesiliikennett‰ palveleva toiminta"	2
-"00100  HELSINKI"	"5223   Ilmaliikennett‰ palveleva toiminta"	-
-"00100  HELSINKI"	"52230  Ilmaliikennett‰ palveleva toiminta"	-
-"00100  HELSINKI"	"5224   Lastink‰sittely"	-
-"00100  HELSINKI"	"52240  Lastink‰sittely"	-
-"00100  HELSINKI"	"5229   Muu liikennett‰ palveleva toiminta"	14
+"00100  HELSINKI"	"52229  Muu vesiliikennett√§ palveleva toiminta"	2
+"00100  HELSINKI"	"5223   Ilmaliikennett√§ palveleva toiminta"	-
+"00100  HELSINKI"	"52230  Ilmaliikennett√§ palveleva toiminta"	-
+"00100  HELSINKI"	"5224   Lastink√§sittely"	-
+"00100  HELSINKI"	"52240  Lastink√§sittely"	-
+"00100  HELSINKI"	"5229   Muu liikennett√§ palveleva toiminta"	14
 "00100  HELSINKI"	"52291  Huolinta ja rahtaus"	8
-"00100  HELSINKI"	"52299  Muu kuljetusv‰litys"	6
+"00100  HELSINKI"	"52299  Muu kuljetusv√§litys"	6
 "00100  HELSINKI"	"53     Posti- ja kuriiritoiminta"	4
 "00100  HELSINKI"	"531    Postin yleispalvelu"	2
 "00100  HELSINKI"	"5310   Postin yleispalvelu"	2
@@ -1182,18 +1182,18 @@
 "00100  HELSINKI"	"5510   Hotellit ja vastaavat majoitusliikkeet"	31
 "00100  HELSINKI"	"55101  Hotellit"	28
 "00100  HELSINKI"	"55109  Motellit, matkustajakodit ja vastaavat majoitusliikkeet"	3
-"00100  HELSINKI"	"552    Lomakyl‰t, retkeilymajat yms. majoitus"	-
-"00100  HELSINKI"	"5520   Lomakyl‰t, retkeilymajat yms. majoitus"	-
+"00100  HELSINKI"	"552    Lomakyl√§t, retkeilymajat yms. majoitus"	-
+"00100  HELSINKI"	"5520   Lomakyl√§t, retkeilymajat yms. majoitus"	-
 "00100  HELSINKI"	"55201  Retkeilymajat"	-
-"00100  HELSINKI"	"55209  Lomakyl‰t yms. majoitus"	-
-"00100  HELSINKI"	"553    Leirint‰alueet, asuntovaunu- ja matkailuvaunualueet"	-
-"00100  HELSINKI"	"5530   Leirint‰alueet, asuntovaunu- ja matkailuvaunualueet"	-
-"00100  HELSINKI"	"55300  Leirint‰alueet, asuntovaunu- ja matkailuvaunualueet"	-
+"00100  HELSINKI"	"55209  Lomakyl√§t yms. majoitus"	-
+"00100  HELSINKI"	"553    Leirint√§alueet, asuntovaunu- ja matkailuvaunualueet"	-
+"00100  HELSINKI"	"5530   Leirint√§alueet, asuntovaunu- ja matkailuvaunualueet"	-
+"00100  HELSINKI"	"55300  Leirint√§alueet, asuntovaunu- ja matkailuvaunualueet"	-
 "00100  HELSINKI"	"559    Muu majoitus"	8
 "00100  HELSINKI"	"5590   Muu majoitus"	8
-"00100  HELSINKI"	"55901  Asuntolat ja t‰ysihoitolat yms."	-
+"00100  HELSINKI"	"55901  Asuntolat ja t√§ysihoitolat yms."	-
 "00100  HELSINKI"	"55902  Maatilamatkailu, bed & breakfast"	1
-"00100  HELSINKI"	"55903  Lomamˆkkien vuokraus"	2
+"00100  HELSINKI"	"55903  Lomam√∂kkien vuokraus"	2
 "00100  HELSINKI"	"55909  Muualla luokittelematon majoitustoiminta"	5
 "00100  HELSINKI"	"56     Ravitsemistoiminta"	455
 "00100  HELSINKI"	"561    Ravintolat ja vastaava ravitsemistoiminta"	361
@@ -1204,13 +1204,13 @@
 "00100  HELSINKI"	"562    Ateriapalvelut ja muut ravitsemispalvelut"	37
 "00100  HELSINKI"	"5621   Pitopalvelu"	6
 "00100  HELSINKI"	"56210  Pitopalvelu"	6
-"00100  HELSINKI"	"5629   Henkilˆstˆ- ja laitosruokalat"	31
-"00100  HELSINKI"	"56290  Henkilˆstˆ- ja laitosruokalat"	31
+"00100  HELSINKI"	"5629   Henkil√∂st√∂- ja laitosruokalat"	31
+"00100  HELSINKI"	"56290  Henkil√∂st√∂- ja laitosruokalat"	31
 "00100  HELSINKI"	"563    Baarit ja kahvilat"	57
 "00100  HELSINKI"	"5630   Baarit ja kahvilat"	57
 "00100  HELSINKI"	"56301  Olut- ja drinkkibaarit"	21
 "00100  HELSINKI"	"56302  Kahvilat ja kahvibaarit"	36
-"00100  HELSINKI"	"J  Informaatio ja viestint‰"	705
+"00100  HELSINKI"	"J  Informaatio ja viestint√§"	705
 "00100  HELSINKI"	"58     Kustannustoiminta"	73
 "00100  HELSINKI"	"581    Kirjojen ja lehtien kustantaminen ja muu kustannustoiminta"	66
 "00100  HELSINKI"	"5811   Kirjojen kustantaminen"	17
@@ -1229,54 +1229,54 @@
 "00100  HELSINKI"	"58210  Tietokonepelien kustantaminen"	3
 "00100  HELSINKI"	"5829   Muu ohjelmistojen kustantaminen"	4
 "00100  HELSINKI"	"58290  Muu ohjelmistojen kustantaminen"	4
-"00100  HELSINKI"	"59     Elokuva- ja tv-ohjelmatuotanto, ‰‰nitt. ja musiikin kustant."	99
+"00100  HELSINKI"	"59     Elokuva- ja tv-ohjelmatuotanto, √§√§nitt. ja musiikin kustant."	99
 "00100  HELSINKI"	"591    Elokuva-, video- ja televisio-ohjelmatoiminta"	71
 "00100  HELSINKI"	"5911   Elokuvien, videoiden ja televisio-ohjelmien tuotanto"	56
 "00100  HELSINKI"	"59110  Elokuvien, videoiden ja televisio-ohjelmien tuotanto"	56
-"00100  HELSINKI"	"5912   Elokuvien, video- ja televisio-ohjelmien j‰lkituotanto"	4
-"00100  HELSINKI"	"59120  Elokuvien, video- ja televisio-ohjelmien j‰lkituotanto"	4
+"00100  HELSINKI"	"5912   Elokuvien, video- ja televisio-ohjelmien j√§lkituotanto"	4
+"00100  HELSINKI"	"59120  Elokuvien, video- ja televisio-ohjelmien j√§lkituotanto"	4
 "00100  HELSINKI"	"5913   Elokuvien, videoiden ja televisio-ohjelmien levitys"	6
 "00100  HELSINKI"	"59130  Elokuvien, videoiden ja televisio-ohjelmien levitys"	6
-"00100  HELSINKI"	"5914   Elokuvien esitt‰minen"	5
-"00100  HELSINKI"	"59140  Elokuvien esitt‰minen"	5
-"00100  HELSINKI"	"592    ƒ‰nitysstudiot; ‰‰nitteiden ja musiikin kustantaminen"	28
-"00100  HELSINKI"	"5920   ƒ‰nitysstudiot; ‰‰nitteiden ja musiikin kustantaminen"	28
-"00100  HELSINKI"	"59200  ƒ‰nitysstudiot; ‰‰nitteiden ja musiikin kustantaminen"	28
+"00100  HELSINKI"	"5914   Elokuvien esitt√§minen"	5
+"00100  HELSINKI"	"59140  Elokuvien esitt√§minen"	5
+"00100  HELSINKI"	"592    √Ñ√§nitysstudiot; √§√§nitteiden ja musiikin kustantaminen"	28
+"00100  HELSINKI"	"5920   √Ñ√§nitysstudiot; √§√§nitteiden ja musiikin kustantaminen"	28
+"00100  HELSINKI"	"59200  √Ñ√§nitysstudiot; √§√§nitteiden ja musiikin kustantaminen"	28
 "00100  HELSINKI"	"60     Radio- ja televisiotoiminta"	6
-"00100  HELSINKI"	"601    Radio-ohjelmien tuottaminen ja l‰hett‰minen"	2
-"00100  HELSINKI"	"6010   Radio-ohjelmien tuottaminen ja l‰hett‰minen"	2
-"00100  HELSINKI"	"60100  Radio-ohjelmien tuottaminen ja l‰hett‰minen"	2
-"00100  HELSINKI"	"602    Televisio-ohjelmien tuottaminen ja l‰hett‰minen"	4
-"00100  HELSINKI"	"6020   Televisio-ohjelmien tuottaminen ja l‰hett‰minen"	4
-"00100  HELSINKI"	"60201  Tv-ohjelmien tuottaminen ja l‰hett‰minen(pl.maks.tv-kanavat)"	4
+"00100  HELSINKI"	"601    Radio-ohjelmien tuottaminen ja l√§hett√§minen"	2
+"00100  HELSINKI"	"6010   Radio-ohjelmien tuottaminen ja l√§hett√§minen"	2
+"00100  HELSINKI"	"60100  Radio-ohjelmien tuottaminen ja l√§hett√§minen"	2
+"00100  HELSINKI"	"602    Televisio-ohjelmien tuottaminen ja l√§hett√§minen"	4
+"00100  HELSINKI"	"6020   Televisio-ohjelmien tuottaminen ja l√§hett√§minen"	4
+"00100  HELSINKI"	"60201  Tv-ohjelmien tuottaminen ja l√§hett√§minen(pl.maks.tv-kanavat)"	4
 "00100  HELSINKI"	"60202  Maksulliset tv-kanavat"	-
-"00100  HELSINKI"	"61     Televiestint‰"	25
+"00100  HELSINKI"	"61     Televiestint√§"	25
 "00100  HELSINKI"	"611    Langallisen verkon hallinta ja palvelut"	3
 "00100  HELSINKI"	"6110   Langallisen verkon hallinta ja palvelut"	3
 "00100  HELSINKI"	"61100  Langallisen verkon hallinta ja palvelut"	3
 "00100  HELSINKI"	"612    Langattoman verkon hallinta ja palvelut"	14
 "00100  HELSINKI"	"6120   Langattoman verkon hallinta ja palvelut"	14
 "00100  HELSINKI"	"61200  Langattoman verkon hallinta ja palvelut"	14
-"00100  HELSINKI"	"613    Satelliittiviestint‰"	-
-"00100  HELSINKI"	"6130   Satelliittiviestint‰"	-
-"00100  HELSINKI"	"61300  Satelliittiviestint‰"	-
-"00100  HELSINKI"	"619    Muut televiestint‰palvelut"	8
-"00100  HELSINKI"	"6190   Muut televiestint‰palvelut"	8
-"00100  HELSINKI"	"61900  Muut televiestint‰palvelut"	8
-"00100  HELSINKI"	"62     Ohjelmistot, konsultointi ja siihen liittyv‰ toiminta"	421
-"00100  HELSINKI"	"620    Ohjelmistot, konsultointi ja siihen liittyv‰ toiminta"	421
+"00100  HELSINKI"	"613    Satelliittiviestint√§"	-
+"00100  HELSINKI"	"6130   Satelliittiviestint√§"	-
+"00100  HELSINKI"	"61300  Satelliittiviestint√§"	-
+"00100  HELSINKI"	"619    Muut televiestint√§palvelut"	8
+"00100  HELSINKI"	"6190   Muut televiestint√§palvelut"	8
+"00100  HELSINKI"	"61900  Muut televiestint√§palvelut"	8
+"00100  HELSINKI"	"62     Ohjelmistot, konsultointi ja siihen liittyv√§ toiminta"	421
+"00100  HELSINKI"	"620    Ohjelmistot, konsultointi ja siihen liittyv√§ toiminta"	421
 "00100  HELSINKI"	"6201   Ohjelmistojen suunnittelu ja valmistus"	313
 "00100  HELSINKI"	"62010  Ohjelmistojen suunnittelu ja valmistus"	313
 "00100  HELSINKI"	"6202   Atk-laitteisto- ja ohjelmistokonsultointi"	93
 "00100  HELSINKI"	"62020  Atk-laitteisto- ja ohjelmistokonsultointi"	93
-"00100  HELSINKI"	"6203   Tietojenk‰sittelyn ja laitteistojen k‰yttˆ- ja hallintapalv."	4
-"00100  HELSINKI"	"62030  Tietojenk‰sittelyn ja laitteistojen k‰yttˆ- ja hallintapalv."	4
+"00100  HELSINKI"	"6203   Tietojenk√§sittelyn ja laitteistojen k√§ytt√∂- ja hallintapalv."	4
+"00100  HELSINKI"	"62030  Tietojenk√§sittelyn ja laitteistojen k√§ytt√∂- ja hallintapalv."	4
 "00100  HELSINKI"	"6209   Muu laitteisto- ja tietotekninen palvelutoiminta"	11
 "00100  HELSINKI"	"62090  Muu laitteisto- ja tietotekninen palvelutoiminta"	11
 "00100  HELSINKI"	"63     Tietopalvelutoiminta"	81
-"00100  HELSINKI"	"631    Tietojenk‰sittely, palvelintilan vuokraus ja liitepalvelut"	60
-"00100  HELSINKI"	"6311   Tietojenk‰sittely, palvelintilan vuokraus ja liitepalvelut"	32
-"00100  HELSINKI"	"63110  Tietojenk‰sittely, palvelintilan vuokraus ja liitepalvelut"	32
+"00100  HELSINKI"	"631    Tietojenk√§sittely, palvelintilan vuokraus ja liitepalvelut"	60
+"00100  HELSINKI"	"6311   Tietojenk√§sittely, palvelintilan vuokraus ja liitepalvelut"	32
+"00100  HELSINKI"	"63110  Tietojenk√§sittely, palvelintilan vuokraus ja liitepalvelut"	32
 "00100  HELSINKI"	"6312   Verkkoportaalit"	28
 "00100  HELSINKI"	"63120  Verkkoportaalit"	28
 "00100  HELSINKI"	"639    Muu tietopalvelutoiminta"	21
@@ -1285,72 +1285,72 @@
 "00100  HELSINKI"	"6399   Muualla luokittelematon tietopalvelutoiminta"	18
 "00100  HELSINKI"	"63990  Muualla luokittelematon tietopalvelutoiminta"	18
 "00100  HELSINKI"	"K  Rahoitus- ja vakuutustoiminta"	374
-"00100  HELSINKI"	"64     Rahoituspalvelut (pl. vakuutus- ja el‰kevakuutustoiminta)"	214
+"00100  HELSINKI"	"64     Rahoituspalvelut (pl. vakuutus- ja el√§kevakuutustoiminta)"	214
 "00100  HELSINKI"	"641    Pankkitoiminta"	35
 "00100  HELSINKI"	"6411   Keskuspankkitoiminta"	-
 "00100  HELSINKI"	"64110  Keskuspankkitoiminta"	-
 "00100  HELSINKI"	"6419   Muu pankkitoiminta"	35
 "00100  HELSINKI"	"64190  Muu pankkitoiminta"	35
-"00100  HELSINKI"	"642    Rahoitusalan holdingyhtiˆiden toiminta"	23
-"00100  HELSINKI"	"6420   Rahoitusalan holdingyhtiˆiden toiminta"	23
-"00100  HELSINKI"	"64200  Rahoitusalan holdingyhtiˆiden toiminta"	23
+"00100  HELSINKI"	"642    Rahoitusalan holdingyhti√∂iden toiminta"	23
+"00100  HELSINKI"	"6420   Rahoitusalan holdingyhti√∂iden toiminta"	23
+"00100  HELSINKI"	"64200  Rahoitusalan holdingyhti√∂iden toiminta"	23
 "00100  HELSINKI"	"643    Rahastotoiminta"	13
 "00100  HELSINKI"	"6430   Rahastotoiminta"	13
 "00100  HELSINKI"	"64300  Rahastotoiminta"	13
-"00100  HELSINKI"	"649    Muut rahoituspalvelut (pl. vakuutus- ja el‰kevakuutustoim.)"	143
+"00100  HELSINKI"	"649    Muut rahoituspalvelut (pl. vakuutus- ja el√§kevakuutustoim.)"	143
 "00100  HELSINKI"	"6491   Rahoitusleasing"	1
 "00100  HELSINKI"	"64910  Rahoitusleasing"	1
 "00100  HELSINKI"	"6492   Muu luotonanto"	16
 "00100  HELSINKI"	"64920  Muu luotonanto"	16
-"00100  HELSINKI"	"6499   Luokitt. rahoituspalv. (pl. vakuutus- ja el‰kevakuutustoim.)"	126
-"00100  HELSINKI"	"64990  Luokitt. rahoituspalv. (pl. vakuutus- ja el‰kevakuutustoim.)"	126
+"00100  HELSINKI"	"6499   Luokitt. rahoituspalv. (pl. vakuutus- ja el√§kevakuutustoim.)"	126
+"00100  HELSINKI"	"64990  Luokitt. rahoituspalv. (pl. vakuutus- ja el√§kevakuutustoim.)"	126
 "00100  HELSINKI"	"65     Vakuutusvakuutustoiminta (pl. pakollinen sosiaalivakuutus)"	21
 "00100  HELSINKI"	"651    Vakuutustoiminta"	19
 "00100  HELSINKI"	"6511   Henkivakuutustoiminta"	2
 "00100  HELSINKI"	"65110  Henkivakuutustoiminta"	2
 "00100  HELSINKI"	"6512   Muu vakuutustoiminta"	17
-"00100  HELSINKI"	"65121  Vahinkovakuutusyhtiˆt"	16
+"00100  HELSINKI"	"65121  Vahinkovakuutusyhti√∂t"	16
 "00100  HELSINKI"	"65122  Vakuutusyhdistykset"	-
 "00100  HELSINKI"	"65129  Muu vahinkovakuutus"	1
-"00100  HELSINKI"	"652    J‰lleenvakuutustoiminta"	1
-"00100  HELSINKI"	"6520   J‰lleenvakuutustoiminta"	1
-"00100  HELSINKI"	"65200  J‰lleenvakuutustoiminta"	1
-"00100  HELSINKI"	"653    El‰kevakuutustoiminta"	1
-"00100  HELSINKI"	"6530   El‰kevakuutustoiminta"	1
-"00100  HELSINKI"	"65300  El‰kevakuutustoiminta"	1
+"00100  HELSINKI"	"652    J√§lleenvakuutustoiminta"	1
+"00100  HELSINKI"	"6520   J√§lleenvakuutustoiminta"	1
+"00100  HELSINKI"	"65200  J√§lleenvakuutustoiminta"	1
+"00100  HELSINKI"	"653    El√§kevakuutustoiminta"	1
+"00100  HELSINKI"	"6530   El√§kevakuutustoiminta"	1
+"00100  HELSINKI"	"65300  El√§kevakuutustoiminta"	1
 "00100  HELSINKI"	"66     Rahoitusta ja vakuuttamista palveleva toiminta"	139
-"00100  HELSINKI"	"661    Rahoitusta ja vak. palv. toim. (pl.vak.- ja el‰kevak.toim.)"	82
-"00100  HELSINKI"	"6611   Pˆrssitoiminta ja rahoitusmarkkinoiden hallinn. tukipalvelut"	4
-"00100  HELSINKI"	"66110  Pˆrssitoiminta ja rahoitusmarkkinoiden hallinn. tukipalvelut"	4
-"00100  HELSINKI"	"6612   Arvopaperien ja raaka-ainesopimusten v‰litt‰minen"	15
-"00100  HELSINKI"	"66120  Arvopaperien ja raaka-ainesopimusten v‰litt‰minen"	15
-"00100  HELSINKI"	"6619   Muu rahoitusta palv. toim. (pl. vak.- ja el‰kevak.toiminta)"	63
-"00100  HELSINKI"	"66190  Muu rahoitusta palv. toim. (pl. vak.- ja el‰kevak.toiminta)"	63
-"00100  HELSINKI"	"662    Vakuutus- ja el‰kevakuutustoimintaa avustava toiminta"	14
+"00100  HELSINKI"	"661    Rahoitusta ja vak. palv. toim. (pl.vak.- ja el√§kevak.toim.)"	82
+"00100  HELSINKI"	"6611   P√∂rssitoiminta ja rahoitusmarkkinoiden hallinn. tukipalvelut"	4
+"00100  HELSINKI"	"66110  P√∂rssitoiminta ja rahoitusmarkkinoiden hallinn. tukipalvelut"	4
+"00100  HELSINKI"	"6612   Arvopaperien ja raaka-ainesopimusten v√§litt√§minen"	15
+"00100  HELSINKI"	"66120  Arvopaperien ja raaka-ainesopimusten v√§litt√§minen"	15
+"00100  HELSINKI"	"6619   Muu rahoitusta palv. toim. (pl. vak.- ja el√§kevak.toiminta)"	63
+"00100  HELSINKI"	"66190  Muu rahoitusta palv. toim. (pl. vak.- ja el√§kevak.toiminta)"	63
+"00100  HELSINKI"	"662    Vakuutus- ja el√§kevakuutustoimintaa avustava toiminta"	14
 "00100  HELSINKI"	"6621   Riskin- ja vahingonarviointi"	2
 "00100  HELSINKI"	"66210  Riskin- ja vahingonarviointi"	2
-"00100  HELSINKI"	"6622   Vakuutusasiamiesten ja -v‰litt‰jien toiminta"	10
-"00100  HELSINKI"	"66220  Vakuutusasiamiesten ja -v‰litt‰jien toiminta"	10
-"00100  HELSINKI"	"6629   Muu vakuutus- ja el‰kevakuutustoimintaa avustava toiminta"	2
-"00100  HELSINKI"	"66290  Muu vakuutus- ja el‰kevakuutustoimintaa avustava toiminta"	2
+"00100  HELSINKI"	"6622   Vakuutusasiamiesten ja -v√§litt√§jien toiminta"	10
+"00100  HELSINKI"	"66220  Vakuutusasiamiesten ja -v√§litt√§jien toiminta"	10
+"00100  HELSINKI"	"6629   Muu vakuutus- ja el√§kevakuutustoimintaa avustava toiminta"	2
+"00100  HELSINKI"	"66290  Muu vakuutus- ja el√§kevakuutustoimintaa avustava toiminta"	2
 "00100  HELSINKI"	"663    Omaisuudenhoitotoiminta"	43
 "00100  HELSINKI"	"6630   Omaisuudenhoitotoiminta"	43
 "00100  HELSINKI"	"66300  Omaisuudenhoitotoiminta"	43
-"00100  HELSINKI"	"L  Kiinteistˆalan toiminta"	371
-"00100  HELSINKI"	"68     Kiinteistˆalan toiminta"	371
-"00100  HELSINKI"	"681    Omien kiinteistˆjen kauppa"	35
-"00100  HELSINKI"	"6810   Omien kiinteistˆjen kauppa"	35
-"00100  HELSINKI"	"68100  Omien kiinteistˆjen kauppa"	35
-"00100  HELSINKI"	"682    Omien tai leasing-kiinteistˆjen vuokraus ja hallinta"	269
-"00100  HELSINKI"	"6820   Omien tai leasing-kiinteistˆjen vuokraus ja hallinta"	269
+"00100  HELSINKI"	"L  Kiinteist√∂alan toiminta"	371
+"00100  HELSINKI"	"68     Kiinteist√∂alan toiminta"	371
+"00100  HELSINKI"	"681    Omien kiinteist√∂jen kauppa"	35
+"00100  HELSINKI"	"6810   Omien kiinteist√∂jen kauppa"	35
+"00100  HELSINKI"	"68100  Omien kiinteist√∂jen kauppa"	35
+"00100  HELSINKI"	"682    Omien tai leasing-kiinteist√∂jen vuokraus ja hallinta"	269
+"00100  HELSINKI"	"6820   Omien tai leasing-kiinteist√∂jen vuokraus ja hallinta"	269
 "00100  HELSINKI"	"68201  Asuntojen vuokraus"	25
-"00100  HELSINKI"	"68202  Asuntojen ja asuinkiinteistˆjen hallinta"	78
-"00100  HELSINKI"	"68209  Muiden kiinteistˆjen vuokraus ja hallinta"	166
-"00100  HELSINKI"	"683    Kiinteistˆalan toiminta palkkio- tai sopimusperusteisesti"	67
-"00100  HELSINKI"	"6831   Kiinteistˆnv‰litys"	40
-"00100  HELSINKI"	"68310  Kiinteistˆnv‰litys"	40
-"00100  HELSINKI"	"6832   Kiinteistˆjen is‰nnˆinti"	27
-"00100  HELSINKI"	"68320  Kiinteistˆjen is‰nnˆinti"	27
+"00100  HELSINKI"	"68202  Asuntojen ja asuinkiinteist√∂jen hallinta"	78
+"00100  HELSINKI"	"68209  Muiden kiinteist√∂jen vuokraus ja hallinta"	166
+"00100  HELSINKI"	"683    Kiinteist√∂alan toiminta palkkio- tai sopimusperusteisesti"	67
+"00100  HELSINKI"	"6831   Kiinteist√∂nv√§litys"	40
+"00100  HELSINKI"	"68310  Kiinteist√∂nv√§litys"	40
+"00100  HELSINKI"	"6832   Kiinteist√∂jen is√§nn√∂inti"	27
+"00100  HELSINKI"	"68320  Kiinteist√∂jen is√§nn√∂inti"	27
 "00100  HELSINKI"	"M  Ammatillinen, tieteellinen ja tekninen toiminta"	1503
 "00100  HELSINKI"	"69     Lakiasiain- ja laskentatoimen palvelut"	258
 "00100  HELSINKI"	"691    Lakiasiainpalvelut"	168
@@ -1361,28 +1361,28 @@
 "00100  HELSINKI"	"69109  Muu lakiasiain palvelu"	14
 "00100  HELSINKI"	"692    Laskentatoimi, kirjanpito ja tilintarkastus; veroneuvonta"	90
 "00100  HELSINKI"	"6920   Laskentatoimi, kirjanpito ja tilintarkastus; veroneuvonta"	90
-"00100  HELSINKI"	"69201  Kirjanpito- ja tilinp‰‰tˆspalvelu"	72
+"00100  HELSINKI"	"69201  Kirjanpito- ja tilinp√§√§t√∂spalvelu"	72
 "00100  HELSINKI"	"69202  Tilintarkastuspalvelu"	14
 "00100  HELSINKI"	"69209  Muu laskentatoimen palvelu"	4
-"00100  HELSINKI"	"70     P‰‰konttorien toiminta; liikkeenjohdon konsultointi"	699
-"00100  HELSINKI"	"701    P‰‰konttorien toiminta"	-
-"00100  HELSINKI"	"7010   P‰‰konttorien toiminta"	-
-"00100  HELSINKI"	"70100  P‰‰konttorien toiminta"	-
+"00100  HELSINKI"	"70     P√§√§konttorien toiminta; liikkeenjohdon konsultointi"	699
+"00100  HELSINKI"	"701    P√§√§konttorien toiminta"	-
+"00100  HELSINKI"	"7010   P√§√§konttorien toiminta"	-
+"00100  HELSINKI"	"70100  P√§√§konttorien toiminta"	-
 "00100  HELSINKI"	"702    Liikkeenjohdon konsultointi"	699
-"00100  HELSINKI"	"7021   Suhdetoiminta ja viestint‰"	53
-"00100  HELSINKI"	"70210  Suhdetoiminta ja viestint‰"	53
+"00100  HELSINKI"	"7021   Suhdetoiminta ja viestint√§"	53
+"00100  HELSINKI"	"70210  Suhdetoiminta ja viestint√§"	53
 "00100  HELSINKI"	"7022   Muu liikkeenjohdon konsultointi"	646
 "00100  HELSINKI"	"70220  Muu liikkeenjohdon konsultointi"	646
 "00100  HELSINKI"	"71     Arkkitehti- ja ins.palvelut; tekninen testaus ja analysointi"	136
 "00100  HELSINKI"	"711    Arkkitehti- ja ins.palvelut; tekninen konsultointi"	129
 "00100  HELSINKI"	"7111   Arkkitehtipalvelut"	62
 "00100  HELSINKI"	"71110  Arkkitehtipalvelut"	62
-"00100  HELSINKI"	"7112   Insinˆˆripalvelut ja niihin liittyv‰ tekninen konsultointi"	67
+"00100  HELSINKI"	"7112   Insin√∂√∂ripalvelut ja niihin liittyv√§ tekninen konsultointi"	67
 "00100  HELSINKI"	"71121  Yhdyskuntasuunnittelu"	7
 "00100  HELSINKI"	"71122  Maa- ja vesirakentamisen tekninen palvelu"	4
 "00100  HELSINKI"	"71123  Rakennetekninen palvelu"	6
 "00100  HELSINKI"	"71124  LVI-tekninen suunnittelu"	5
-"00100  HELSINKI"	"71125  S‰hkˆtekninen suunnittelu"	4
+"00100  HELSINKI"	"71125  S√§hk√∂tekninen suunnittelu"	4
 "00100  HELSINKI"	"71126  Muu rakennustekninen palvelu"	15
 "00100  HELSINKI"	"71127  Kone- ja prosessisuunnittelu"	15
 "00100  HELSINKI"	"71129  Muu tekninen palvelu"	11
@@ -1390,17 +1390,17 @@
 "00100  HELSINKI"	"7120   Tekninen testaus ja analysointi"	7
 "00100  HELSINKI"	"71201  Autokatsastus"	-
 "00100  HELSINKI"	"71202  Muu tekninen testaus ja analysointi"	7
-"00100  HELSINKI"	"72     Tieteellinen tutkimus ja kehitt‰minen"	26
-"00100  HELSINKI"	"721    Luonnontieteen ja tekniikan tutkimus ja kehitt‰minen"	22
-"00100  HELSINKI"	"7211   Biotekninen tutkimus ja kehitt‰minen"	1
-"00100  HELSINKI"	"72110  Biotekninen tutkimus ja kehitt‰minen"	1
-"00100  HELSINKI"	"7219   Muu luonnontieteellinen ja tekninen tutkimus ja kehitt‰minen"	21
-"00100  HELSINKI"	"72191  L‰‰ketieteellinen tutkimus ja kehitt‰minen"	8
-"00100  HELSINKI"	"72192  Muu luonnontieteellinen tutkimus ja kehitt‰minen"	2
-"00100  HELSINKI"	"72193  Tekniikan tutkimus ja kehitt‰minen"	11
-"00100  HELSINKI"	"722    Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt‰minen"	4
-"00100  HELSINKI"	"7220   Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt‰minen"	4
-"00100  HELSINKI"	"72200  Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt‰minen"	4
+"00100  HELSINKI"	"72     Tieteellinen tutkimus ja kehitt√§minen"	26
+"00100  HELSINKI"	"721    Luonnontieteen ja tekniikan tutkimus ja kehitt√§minen"	22
+"00100  HELSINKI"	"7211   Biotekninen tutkimus ja kehitt√§minen"	1
+"00100  HELSINKI"	"72110  Biotekninen tutkimus ja kehitt√§minen"	1
+"00100  HELSINKI"	"7219   Muu luonnontieteellinen ja tekninen tutkimus ja kehitt√§minen"	21
+"00100  HELSINKI"	"72191  L√§√§ketieteellinen tutkimus ja kehitt√§minen"	8
+"00100  HELSINKI"	"72192  Muu luonnontieteellinen tutkimus ja kehitt√§minen"	2
+"00100  HELSINKI"	"72193  Tekniikan tutkimus ja kehitt√§minen"	11
+"00100  HELSINKI"	"722    Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt√§minen"	4
+"00100  HELSINKI"	"7220   Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt√§minen"	4
+"00100  HELSINKI"	"72200  Yhteiskuntatieteellinen, humanistinen tutk. ja kehitt√§minen"	4
 "00100  HELSINKI"	"73     Mainostoiminta ja markkinatutkimus"	136
 "00100  HELSINKI"	"731    Mainostoiminta"	128
 "00100  HELSINKI"	"7311   Mainostoimistot ja mainospalvelu"	122
@@ -1412,7 +1412,7 @@
 "00100  HELSINKI"	"732    Markkina- ja mielipidetutkimukset"	8
 "00100  HELSINKI"	"7320   Markkina- ja mielipidetutkimukset"	8
 "00100  HELSINKI"	"73200  Markkina- ja mielipidetutkimukset"	8
-"00100  HELSINKI"	"74     Muut erikoistuneet palvelut liike-el‰m‰lle"	243
+"00100  HELSINKI"	"74     Muut erikoistuneet palvelut liike-el√§m√§lle"	243
 "00100  HELSINKI"	"741    Taideteollinen muotoilu ja suunnittelu"	84
 "00100  HELSINKI"	"7410   Taideteollinen muotoilu ja suunnittelu"	84
 "00100  HELSINKI"	"74101  Graafinen muotoilu"	32
@@ -1421,18 +1421,18 @@
 "00100  HELSINKI"	"742    Valokuvaustoiminta"	35
 "00100  HELSINKI"	"7420   Valokuvaustoiminta"	35
 "00100  HELSINKI"	"74201  Valokuvaamot ja muu kuvaustoiminta"	35
-"00100  HELSINKI"	"74202  Valokuvien kehitt‰minen"	-
-"00100  HELSINKI"	"743    K‰‰nt‰minen ja tulkkaus"	32
-"00100  HELSINKI"	"7430   K‰‰nt‰minen ja tulkkaus"	32
-"00100  HELSINKI"	"74300  K‰‰nt‰minen ja tulkkaus"	32
-"00100  HELSINKI"	"749    Luokittelemattomat erikoistuneet palvelut liike-el‰m‰lle"	92
-"00100  HELSINKI"	"7490   Luokittelemattomat erikoistuneet palvelut liike-el‰m‰lle"	92
+"00100  HELSINKI"	"74202  Valokuvien kehitt√§minen"	-
+"00100  HELSINKI"	"743    K√§√§nt√§minen ja tulkkaus"	32
+"00100  HELSINKI"	"7430   K√§√§nt√§minen ja tulkkaus"	32
+"00100  HELSINKI"	"74300  K√§√§nt√§minen ja tulkkaus"	32
+"00100  HELSINKI"	"749    Luokittelemattomat erikoistuneet palvelut liike-el√§m√§lle"	92
+"00100  HELSINKI"	"7490   Luokittelemattomat erikoistuneet palvelut liike-el√§m√§lle"	92
 "00100  HELSINKI"	"74901  Ohjelmatoimistot ja manageripalvelut"	32
 "00100  HELSINKI"	"74909  Muu ammatillinen, tieteellinen ja tekninen toiminta"	60
-"00100  HELSINKI"	"75     El‰inl‰‰kint‰palvelut"	5
-"00100  HELSINKI"	"750    El‰inl‰‰kint‰palvelut"	5
-"00100  HELSINKI"	"7500   El‰inl‰‰kint‰palvelut"	5
-"00100  HELSINKI"	"75000  El‰inl‰‰kint‰palvelut"	5
+"00100  HELSINKI"	"75     El√§inl√§√§kint√§palvelut"	5
+"00100  HELSINKI"	"750    El√§inl√§√§kint√§palvelut"	5
+"00100  HELSINKI"	"7500   El√§inl√§√§kint√§palvelut"	5
+"00100  HELSINKI"	"75000  El√§inl√§√§kint√§palvelut"	5
 "00100  HELSINKI"	"N  Hallinto- ja tukipalvelutoiminta"	345
 "00100  HELSINKI"	"77     Vuokraus- ja leasingtoiminta"	18
 "00100  HELSINKI"	"771    Moottoriajoneuvojen vuokraus ja leasing"	8
@@ -1441,8 +1441,8 @@
 "00100  HELSINKI"	"7712   Kuorma-autojen ja raskaiden ajoneuvojen vuokraus ja leasing"	-
 "00100  HELSINKI"	"77120  Kuorma-autojen ja raskaiden ajoneuvojen vuokraus ja leasing"	-
 "00100  HELSINKI"	"772    Henk.koht. ja kotitaloustavaroiden vuokraus ja leasing"	3
-"00100  HELSINKI"	"7721   Vapaa-ajan ja urheiluv‰lineiden vuokraus ja leasing"	-
-"00100  HELSINKI"	"77210  Vapaa-ajan ja urheiluv‰lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"7721   Vapaa-ajan ja urheiluv√§lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"77210  Vapaa-ajan ja urheiluv√§lineiden vuokraus ja leasing"	-
 "00100  HELSINKI"	"7722   Videofilmien vuokraus"	-
 "00100  HELSINKI"	"77220  Videofilmien vuokraus"	-
 "00100  HELSINKI"	"7729   Muiden henk.koht. ja kotitaloustavaroiden vuokr. ja leasing"	3
@@ -1454,51 +1454,51 @@
 "00100  HELSINKI"	"77320  Rakennuskoneiden ja -laitteiden vuokraus ja leasing"	-
 "00100  HELSINKI"	"7733   Tstokoneiden ja -laitteiden, tietokoneiden vuokr. ja leasing"	1
 "00100  HELSINKI"	"77330  Tstokoneiden ja -laitteiden, tietokoneiden vuokr. ja leasing"	1
-"00100  HELSINKI"	"7734   Vesiliikennev‰lineiden vuokraus ja leasing"	-
-"00100  HELSINKI"	"77340  Vesiliikennev‰lineiden vuokraus ja leasing"	-
-"00100  HELSINKI"	"7735   Ilmaliikennev‰lineiden vuokraus ja leasing"	-
-"00100  HELSINKI"	"77350  Ilmaliikennev‰lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"7734   Vesiliikennev√§lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"77340  Vesiliikennev√§lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"7735   Ilmaliikennev√§lineiden vuokraus ja leasing"	-
+"00100  HELSINKI"	"77350  Ilmaliikennev√§lineiden vuokraus ja leasing"	-
 "00100  HELSINKI"	"7739   Muiden koneiden ja laitteiden vuokraus ja leasing"	1
 "00100  HELSINKI"	"77390  Muiden koneiden ja laitteiden vuokraus ja leasing"	1
 "00100  HELSINKI"	"774    Henk. omaisuuden ja vast.tuott. leasing (pl. Teosto-teokset)"	5
 "00100  HELSINKI"	"7740   Henk. omaisuuden ja vast.tuott. leasing (pl. Teosto-teokset)"	5
 "00100  HELSINKI"	"77400  Henk. omaisuuden ja vast.tuott. leasing (pl. Teosto-teokset)"	5
-"00100  HELSINKI"	"78     Tyˆllist‰mistoiminta"	142
-"00100  HELSINKI"	"781    Tyˆnv‰litystoiminta"	16
-"00100  HELSINKI"	"7810   Tyˆnv‰litystoiminta"	16
-"00100  HELSINKI"	"78100  Tyˆnv‰litystoiminta"	16
-"00100  HELSINKI"	"782    Tyˆvoiman vuokraus"	108
-"00100  HELSINKI"	"7820   Tyˆvoiman vuokraus"	108
-"00100  HELSINKI"	"78200  Tyˆvoiman vuokraus"	108
-"00100  HELSINKI"	"783    Muut henkilˆstˆn hankintapalvelut"	18
-"00100  HELSINKI"	"7830   Muut henkilˆstˆn hankintapalvelut"	18
-"00100  HELSINKI"	"78300  Muut henkilˆstˆn hankintapalvelut"	18
-"00100  HELSINKI"	"79     Matkatoimistojen ja -j‰rjest‰jien toiminta; varauspalvelut"	54
-"00100  HELSINKI"	"791    Matkatoimistojen ja matkanj‰rjest‰jien toiminta"	36
+"00100  HELSINKI"	"78     Ty√∂llist√§mistoiminta"	142
+"00100  HELSINKI"	"781    Ty√∂nv√§litystoiminta"	16
+"00100  HELSINKI"	"7810   Ty√∂nv√§litystoiminta"	16
+"00100  HELSINKI"	"78100  Ty√∂nv√§litystoiminta"	16
+"00100  HELSINKI"	"782    Ty√∂voiman vuokraus"	108
+"00100  HELSINKI"	"7820   Ty√∂voiman vuokraus"	108
+"00100  HELSINKI"	"78200  Ty√∂voiman vuokraus"	108
+"00100  HELSINKI"	"783    Muut henkil√∂st√∂n hankintapalvelut"	18
+"00100  HELSINKI"	"7830   Muut henkil√∂st√∂n hankintapalvelut"	18
+"00100  HELSINKI"	"78300  Muut henkil√∂st√∂n hankintapalvelut"	18
+"00100  HELSINKI"	"79     Matkatoimistojen ja -j√§rjest√§jien toiminta; varauspalvelut"	54
+"00100  HELSINKI"	"791    Matkatoimistojen ja matkanj√§rjest√§jien toiminta"	36
 "00100  HELSINKI"	"7911   Matkatoimistojen toiminta"	24
 "00100  HELSINKI"	"79110  Matkatoimistojen toiminta"	24
-"00100  HELSINKI"	"7912   Matkanj‰rjest‰jien toiminta"	12
-"00100  HELSINKI"	"79120  Matkanj‰rjest‰jien toiminta"	12
+"00100  HELSINKI"	"7912   Matkanj√§rjest√§jien toiminta"	12
+"00100  HELSINKI"	"79120  Matkanj√§rjest√§jien toiminta"	12
 "00100  HELSINKI"	"799    Varauspalvelut, matkaoppaiden palvelut ym."	18
 "00100  HELSINKI"	"7990   Varauspalvelut, matkaoppaiden palvelut ym."	18
 "00100  HELSINKI"	"79900  Varauspalvelut, matkaoppaiden palvelut ym."	18
-"00100  HELSINKI"	"80     Turvallisuus-, vartiointi- ja etsiv‰palvelut"	6
+"00100  HELSINKI"	"80     Turvallisuus-, vartiointi- ja etsiv√§palvelut"	6
 "00100  HELSINKI"	"801    Yksityiset turvallisuuspalvelut"	5
 "00100  HELSINKI"	"8010   Yksityiset turvallisuuspalvelut"	5
 "00100  HELSINKI"	"80100  Yksityiset turvallisuuspalvelut"	5
-"00100  HELSINKI"	"802    Turvallisuusj‰rjestelm‰t"	1
-"00100  HELSINKI"	"8020   Turvallisuusj‰rjestelm‰t"	1
-"00100  HELSINKI"	"80200  Turvallisuusj‰rjestelm‰t"	1
-"00100  HELSINKI"	"803    Etsiv‰toiminta"	-
-"00100  HELSINKI"	"8030   Etsiv‰toiminta"	-
-"00100  HELSINKI"	"80300  Etsiv‰toiminta"	-
-"00100  HELSINKI"	"81     Kiinteistˆn- ja maisemanhoito"	38
-"00100  HELSINKI"	"811    Kiinteistˆnhoito"	18
-"00100  HELSINKI"	"8110   Kiinteistˆnhoito"	18
-"00100  HELSINKI"	"81100  Kiinteistˆnhoito"	18
+"00100  HELSINKI"	"802    Turvallisuusj√§rjestelm√§t"	1
+"00100  HELSINKI"	"8020   Turvallisuusj√§rjestelm√§t"	1
+"00100  HELSINKI"	"80200  Turvallisuusj√§rjestelm√§t"	1
+"00100  HELSINKI"	"803    Etsiv√§toiminta"	-
+"00100  HELSINKI"	"8030   Etsiv√§toiminta"	-
+"00100  HELSINKI"	"80300  Etsiv√§toiminta"	-
+"00100  HELSINKI"	"81     Kiinteist√∂n- ja maisemanhoito"	38
+"00100  HELSINKI"	"811    Kiinteist√∂nhoito"	18
+"00100  HELSINKI"	"8110   Kiinteist√∂nhoito"	18
+"00100  HELSINKI"	"81100  Kiinteist√∂nhoito"	18
 "00100  HELSINKI"	"812    Siivouspalvelut"	18
-"00100  HELSINKI"	"8121   Kiinteistˆjen siivous"	15
-"00100  HELSINKI"	"81210  Kiinteistˆjen siivous"	15
+"00100  HELSINKI"	"8121   Kiinteist√∂jen siivous"	15
+"00100  HELSINKI"	"81210  Kiinteist√∂jen siivous"	15
 "00100  HELSINKI"	"8122   Muu rakennus- ja teollisuussiivous"	2
 "00100  HELSINKI"	"81220  Muu rakennus- ja teollisuussiivous"	2
 "00100  HELSINKI"	"8129   Muu siivoustoiminta"	1
@@ -1507,7 +1507,7 @@
 "00100  HELSINKI"	"813    Maisemanhoitopalvelut"	2
 "00100  HELSINKI"	"8130   Maisemanhoitopalvelut"	2
 "00100  HELSINKI"	"81300  Maisemanhoitopalvelut"	2
-"00100  HELSINKI"	"82     Hallinto- ja tukipalvelut liike-el‰m‰lle"	87
+"00100  HELSINKI"	"82     Hallinto- ja tukipalvelut liike-el√§m√§lle"	87
 "00100  HELSINKI"	"821    Hallinto- ja toimistopalvelut"	26
 "00100  HELSINKI"	"8211   Yhdistetyt toimistopalvelut"	25
 "00100  HELSINKI"	"82110  Yhdistetyt toimistopalvelut"	25
@@ -1517,16 +1517,16 @@
 "00100  HELSINKI"	"822    Puhelinpalvelukeskusten toiminta"	5
 "00100  HELSINKI"	"8220   Puhelinpalvelukeskusten toiminta"	5
 "00100  HELSINKI"	"82200  Puhelinpalvelukeskusten toiminta"	5
-"00100  HELSINKI"	"823    Messujen ja kongressien j‰rjest‰minen"	10
-"00100  HELSINKI"	"8230   Messujen ja kongressien j‰rjest‰minen"	10
-"00100  HELSINKI"	"82300  Messujen ja kongressien j‰rjest‰minen"	10
-"00100  HELSINKI"	"829    Muu liike-el‰m‰‰ palveleva toiminta"	46
-"00100  HELSINKI"	"8291   Perint‰- ja luottotietopalvelut"	9
-"00100  HELSINKI"	"82910  Perint‰- ja luottotietopalvelut"	9
+"00100  HELSINKI"	"823    Messujen ja kongressien j√§rjest√§minen"	10
+"00100  HELSINKI"	"8230   Messujen ja kongressien j√§rjest√§minen"	10
+"00100  HELSINKI"	"82300  Messujen ja kongressien j√§rjest√§minen"	10
+"00100  HELSINKI"	"829    Muu liike-el√§m√§√§ palveleva toiminta"	46
+"00100  HELSINKI"	"8291   Perint√§- ja luottotietopalvelut"	9
+"00100  HELSINKI"	"82910  Perint√§- ja luottotietopalvelut"	9
 "00100  HELSINKI"	"8292   Pakkauspalvelut"	-
 "00100  HELSINKI"	"82920  Pakkauspalvelut"	-
-"00100  HELSINKI"	"8299   Muut palvelut liike-el‰m‰lle"	37
-"00100  HELSINKI"	"82990  Muut palvelut liike-el‰m‰lle"	37
+"00100  HELSINKI"	"8299   Muut palvelut liike-el√§m√§lle"	37
+"00100  HELSINKI"	"82990  Muut palvelut liike-el√§m√§lle"	37
 "00100  HELSINKI"	"O  Julkishallinto ja maanpuolustus, pakollinen sosiaalivakuutus"	11
 "00100  HELSINKI"	"84     Julkishallinto ja maanpuolustus, pakollinen sosiaalivakuutus"	11
 "00100  HELSINKI"	"841    Julkinen hallinto"	1
@@ -1535,21 +1535,21 @@
 "00100  HELSINKI"	"8412   Terv.huollon, opet., kultt., muiden yhteiskuntapalv. hallint"	-
 "00100  HELSINKI"	"84121  Opetuksen ja kulttuuriasiain hallinto"	-
 "00100  HELSINKI"	"84122  Terveydenhuollon ja sosiaaliturvan hallinto"	-
-"00100  HELSINKI"	"8413   Tyˆvoima- ja elinkeinoasiain hallinto"	-
-"00100  HELSINKI"	"84130  Tyˆvoima- ja elinkeinoasiain hallinto"	-
-"00100  HELSINKI"	"842    Ulkoasiain hallinto, maanpuolustus ja j‰rjestystoimi"	-
+"00100  HELSINKI"	"8413   Ty√∂voima- ja elinkeinoasiain hallinto"	-
+"00100  HELSINKI"	"84130  Ty√∂voima- ja elinkeinoasiain hallinto"	-
+"00100  HELSINKI"	"842    Ulkoasiain hallinto, maanpuolustus ja j√§rjestystoimi"	-
 "00100  HELSINKI"	"8422   Maanpuolustus"	-
 "00100  HELSINKI"	"84220  Maanpuolustus"	-
 "00100  HELSINKI"	"8423   Oikeustoimi"	-
 "00100  HELSINKI"	"84231  Oikeudenhoito"	-
 "00100  HELSINKI"	"8424   Poliisitoimi ja rajojen vartiointi"	-
-"00100  HELSINKI"	"84242  Rajojen vartiointi ja v‰estˆnsuojelu"	-
+"00100  HELSINKI"	"84242  Rajojen vartiointi ja v√§est√∂nsuojelu"	-
 "00100  HELSINKI"	"8425   Palo- ja pelastustoimi"	-
 "00100  HELSINKI"	"84250  Palo- ja pelastustoimi"	-
 "00100  HELSINKI"	"843    Pakollinen sosiaalivakuutustoiminta"	10
 "00100  HELSINKI"	"8430   Pakollinen sosiaalivakuutustoiminta"	10
-"00100  HELSINKI"	"84301  Kansanel‰kelaitoksen vakuutustoiminta"	1
-"00100  HELSINKI"	"84302  Lakis‰‰teinen tyˆel‰kevakuutus"	5
+"00100  HELSINKI"	"84301  Kansanel√§kelaitoksen vakuutustoiminta"	1
+"00100  HELSINKI"	"84302  Lakis√§√§teinen ty√∂el√§kevakuutus"	5
 "00100  HELSINKI"	"84309  Muu pakollinen sosiaalivakuutustoiminta"	4
 "00100  HELSINKI"	"P  Koulutus"	160
 "00100  HELSINKI"	"85     Koulutus"	160
@@ -1559,9 +1559,9 @@
 "00100  HELSINKI"	"852    Alemman perusasteen koulutus"	2
 "00100  HELSINKI"	"8520   Alemman perusasteen koulutus"	2
 "00100  HELSINKI"	"85200  Alemman perusasteen koulutus"	2
-"00100  HELSINKI"	"853    Ylemm‰n perusasteen ja keskiasteen koulutus"	6
-"00100  HELSINKI"	"8531   Ylemm‰n perusasteen koulutus ja lukiokoulutus"	1
-"00100  HELSINKI"	"85311  Ylemm‰n perusasteen koulutus"	-
+"00100  HELSINKI"	"853    Ylemm√§n perusasteen ja keskiasteen koulutus"	6
+"00100  HELSINKI"	"8531   Ylemm√§n perusasteen koulutus ja lukiokoulutus"	1
+"00100  HELSINKI"	"85311  Ylemm√§n perusasteen koulutus"	-
 "00100  HELSINKI"	"85312  Lukiokoulutus"	1
 "00100  HELSINKI"	"8532   Keskiasteen ammatillinen koulutus"	5
 "00100  HELSINKI"	"85320  Keskiasteen ammatillinen koulutus"	5
@@ -1578,10 +1578,10 @@
 "00100  HELSINKI"	"8553   Kuljettajakoulutus"	5
 "00100  HELSINKI"	"85530  Kuljettajakoulutus"	5
 "00100  HELSINKI"	"8559   Muualla luokittelematon koulutus"	79
-"00100  HELSINKI"	"85591  Kansanopistot, kansalaisopistot, tyˆv‰enopistot yms."	2
+"00100  HELSINKI"	"85591  Kansanopistot, kansalaisopistot, ty√∂v√§enopistot yms."	2
 "00100  HELSINKI"	"85592  Koulutuskeskukset"	7
 "00100  HELSINKI"	"85593  Kielikoulut ja -opistot"	14
-"00100  HELSINKI"	"85599  Muut koulutusta antavat yksikˆt"	56
+"00100  HELSINKI"	"85599  Muut koulutusta antavat yksik√∂t"	56
 "00100  HELSINKI"	"856    Koulutusta palveleva toiminta"	20
 "00100  HELSINKI"	"8560   Koulutusta palveleva toiminta"	20
 "00100  HELSINKI"	"85600  Koulutusta palveleva toiminta"	20
@@ -1591,13 +1591,13 @@
 "00100  HELSINKI"	"8610   Terveydenhuollon laitospalvelut"	1
 "00100  HELSINKI"	"86101  Varsinaiset sairaalapalvelut"	1
 "00100  HELSINKI"	"86102  Kuntoutuslaitokset ja sairaskodit"	-
-"00100  HELSINKI"	"862    L‰‰k‰ri- ja hammasl‰‰k‰ripalvelut"	110
-"00100  HELSINKI"	"8621   Terveyskeskus- ja vastaavat yleisl‰‰k‰ripalvelut"	-
-"00100  HELSINKI"	"86210  Terveyskeskus- ja vastaavat yleisl‰‰k‰ripalvelut"	-
-"00100  HELSINKI"	"8622   L‰‰k‰riasemat, yksityisl‰‰k‰rit ja erikoisl‰‰k‰ripalvelut"	71
-"00100  HELSINKI"	"86220  L‰‰k‰riasemat, yksityisl‰‰k‰rit ja erikoisl‰‰k‰ripalvelut"	71
-"00100  HELSINKI"	"8623   Hammasl‰‰k‰ripalvelut"	39
-"00100  HELSINKI"	"86230  Hammasl‰‰k‰ripalvelut"	39
+"00100  HELSINKI"	"862    L√§√§k√§ri- ja hammasl√§√§k√§ripalvelut"	110
+"00100  HELSINKI"	"8621   Terveyskeskus- ja vastaavat yleisl√§√§k√§ripalvelut"	-
+"00100  HELSINKI"	"86210  Terveyskeskus- ja vastaavat yleisl√§√§k√§ripalvelut"	-
+"00100  HELSINKI"	"8622   L√§√§k√§riasemat, yksityisl√§√§k√§rit ja erikoisl√§√§k√§ripalvelut"	71
+"00100  HELSINKI"	"86220  L√§√§k√§riasemat, yksityisl√§√§k√§rit ja erikoisl√§√§k√§ripalvelut"	71
+"00100  HELSINKI"	"8623   Hammasl√§√§k√§ripalvelut"	39
+"00100  HELSINKI"	"86230  Hammasl√§√§k√§ripalvelut"	39
 "00100  HELSINKI"	"869    Muut terveydenhuoltopalvelut"	110
 "00100  HELSINKI"	"8690   Muut terveydenhuoltopalvelut"	110
 "00100  HELSINKI"	"86901  Fysioterapia"	11
@@ -1608,17 +1608,17 @@
 "00100  HELSINKI"	"87     Sosiaalihuollon laitospalvelut"	10
 "00100  HELSINKI"	"871    Sosiaalihuollon hoitolaitokset"	2
 "00100  HELSINKI"	"8710   Sosiaalihuollon hoitolaitokset"	2
-"00100  HELSINKI"	"87101  Ik‰‰ntyneiden hoitolaitokset"	2
+"00100  HELSINKI"	"87101  Ik√§√§ntyneiden hoitolaitokset"	2
 "00100  HELSINKI"	"87102  Vammaisten hoitolaitokset (pl. kehitysvammaisten laitosp.)"	-
-"00100  HELSINKI"	"872    Kehitysvamm., mielenterveys- ja p‰ihdeongelm. asumispalv."	3
-"00100  HELSINKI"	"8720   Kehitysvamm., mielenterveys- ja p‰ihdeongelm. asumispalv."	3
+"00100  HELSINKI"	"872    Kehitysvamm., mielenterveys- ja p√§ihdeongelm. asumispalv."	3
+"00100  HELSINKI"	"8720   Kehitysvamm., mielenterveys- ja p√§ihdeongelm. asumispalv."	3
 "00100  HELSINKI"	"87201  Kehitysvammaisten laitokset ja asumispalvelut"	1
 "00100  HELSINKI"	"87202  Mielenterveysongelmaisten asumispalvelut"	1
-"00100  HELSINKI"	"87203  P‰ihdeongelmaisten laitokset"	-
-"00100  HELSINKI"	"87204  P‰ihdeongelmaisten asumispalvelut"	1
+"00100  HELSINKI"	"87203  P√§ihdeongelmaisten laitokset"	-
+"00100  HELSINKI"	"87204  P√§ihdeongelmaisten asumispalvelut"	1
 "00100  HELSINKI"	"873    Vanhusten ja vammaisten asumispalvelut"	4
 "00100  HELSINKI"	"8730   Vanhusten ja vammaisten asumispalvelut"	4
-"00100  HELSINKI"	"87301  Ik‰‰ntyneiden palveluasuminen"	4
+"00100  HELSINKI"	"87301  Ik√§√§ntyneiden palveluasuminen"	4
 "00100  HELSINKI"	"87302  Vammaisten palveluasuminen (pl. kehitysvamm. palv.asuminen)"	-
 "00100  HELSINKI"	"879    Muut sosiaalihuollon laitospalvelut"	1
 "00100  HELSINKI"	"8790   Muut sosiaalihuollon laitospalvelut"	1
@@ -1628,26 +1628,26 @@
 "00100  HELSINKI"	"88     Sosiaalihuollon avopalvelut"	33
 "00100  HELSINKI"	"881    Vanhusten ja vammaisten sosiaalihuollon avopalvelut"	3
 "00100  HELSINKI"	"8810   Vanhusten ja vammaisten sosiaalihuollon avopalvelut"	3
-"00100  HELSINKI"	"88101  Kotipalvelut ik‰‰ntyneille ja vammaisille"	1
-"00100  HELSINKI"	"88102  Ik‰‰ntyneiden p‰iv‰toiminta"	-
-"00100  HELSINKI"	"88103  Vammaisten p‰iv‰- ja tyˆtoiminta"	-
+"00100  HELSINKI"	"88101  Kotipalvelut ik√§√§ntyneille ja vammaisille"	1
+"00100  HELSINKI"	"88102  Ik√§√§ntyneiden p√§iv√§toiminta"	-
+"00100  HELSINKI"	"88103  Vammaisten p√§iv√§- ja ty√∂toiminta"	-
 "00100  HELSINKI"	"88109  Muut vanhusten ja vammaisten avopalvelut"	2
 "00100  HELSINKI"	"889    Muut sosiaalihuollon avopalvelut"	30
-"00100  HELSINKI"	"8891   Lasten p‰iv‰hoitopalvelut"	10
-"00100  HELSINKI"	"88911  Lasten p‰iv‰kodit"	7
-"00100  HELSINKI"	"88919  Muu lasten p‰iv‰hoito"	3
+"00100  HELSINKI"	"8891   Lasten p√§iv√§hoitopalvelut"	10
+"00100  HELSINKI"	"88911  Lasten p√§iv√§kodit"	7
+"00100  HELSINKI"	"88919  Muu lasten p√§iv√§hoito"	3
 "00100  HELSINKI"	"8899   Muualla luokittelemattomat sosiaalihuollon avopalvelut"	20
-"00100  HELSINKI"	"88991  Kotipalvelut muille kuin ik‰‰ntyneille ja vammaisille"	1
-"00100  HELSINKI"	"88992  P‰iv‰- ja tyˆtoiminta muille kuin ik‰‰ntyneille ja vamm."	3
-"00100  HELSINKI"	"88993  Avomuotoinen p‰ihdekuntoutus"	-
+"00100  HELSINKI"	"88991  Kotipalvelut muille kuin ik√§√§ntyneille ja vammaisille"	1
+"00100  HELSINKI"	"88992  P√§iv√§- ja ty√∂toiminta muille kuin ik√§√§ntyneille ja vamm."	3
+"00100  HELSINKI"	"88993  Avomuotoinen p√§ihdekuntoutus"	-
 "00100  HELSINKI"	"88999  Muut muualla luokittelemattomat sosiaalihuollon avopalvelut"	16
 "00100  HELSINKI"	"R  Taiteet, viihde ja virkistys"	238
 "00100  HELSINKI"	"90     Kulttuuri- ja viihdetoiminta"	151
 "00100  HELSINKI"	"900    Kulttuuri- ja viihdetoiminta"	151
-"00100  HELSINKI"	"9001   Esitt‰v‰t taiteet"	64
-"00100  HELSINKI"	"90010  Esitt‰v‰t taiteet"	64
-"00100  HELSINKI"	"9002   Esitt‰vi‰ taiteita palveleva toiminta"	34
-"00100  HELSINKI"	"90020  Esitt‰vi‰ taiteita palveleva toiminta"	34
+"00100  HELSINKI"	"9001   Esitt√§v√§t taiteet"	64
+"00100  HELSINKI"	"90010  Esitt√§v√§t taiteet"	64
+"00100  HELSINKI"	"9002   Esitt√§vi√§ taiteita palveleva toiminta"	34
+"00100  HELSINKI"	"90020  Esitt√§vi√§ taiteita palveleva toiminta"	34
 "00100  HELSINKI"	"9003   Taiteellinen luominen"	52
 "00100  HELSINKI"	"90030  Taiteellinen luominen"	52
 "00100  HELSINKI"	"9004   Taidelaitosten toiminta"	1
@@ -1658,15 +1658,15 @@
 "00100  HELSINKI"	"91010  Kirjastojen ja arkistojen toiminta"	5
 "00100  HELSINKI"	"9102   Museoiden toiminta"	8
 "00100  HELSINKI"	"91020  Museoiden toiminta"	8
-"00100  HELSINKI"	"9103   Historiall. n‰ht‰vyyksien ja vastaavien kohteiden toiminta"	-
-"00100  HELSINKI"	"91030  Historiall. n‰ht‰vyyksien ja vastaavien kohteiden toiminta"	-
-"00100  HELSINKI"	"9104   Kasvitieteell. puu-, el‰intarhojen ja luonnonpuistojen toim."	-
-"00100  HELSINKI"	"91040  Kasvitieteell. puu-, el‰intarhojen ja luonnonpuistojen toim."	-
-"00100  HELSINKI"	"92     Rahapeli- ja vedonlyˆntipalvelut"	6
-"00100  HELSINKI"	"920    Rahapeli- ja vedonlyˆntipalvelut"	6
-"00100  HELSINKI"	"9200   Rahapeli- ja vedonlyˆntipalvelut"	6
-"00100  HELSINKI"	"92000  Rahapeli- ja vedonlyˆntipalvelut"	6
-"00100  HELSINKI"	"93     Urheilutoiminta sek‰ huvi- ja virkistyspalvelut"	68
+"00100  HELSINKI"	"9103   Historiall. n√§ht√§vyyksien ja vastaavien kohteiden toiminta"	-
+"00100  HELSINKI"	"91030  Historiall. n√§ht√§vyyksien ja vastaavien kohteiden toiminta"	-
+"00100  HELSINKI"	"9104   Kasvitieteell. puu-, el√§intarhojen ja luonnonpuistojen toim."	-
+"00100  HELSINKI"	"91040  Kasvitieteell. puu-, el√§intarhojen ja luonnonpuistojen toim."	-
+"00100  HELSINKI"	"92     Rahapeli- ja vedonly√∂ntipalvelut"	6
+"00100  HELSINKI"	"920    Rahapeli- ja vedonly√∂ntipalvelut"	6
+"00100  HELSINKI"	"9200   Rahapeli- ja vedonly√∂ntipalvelut"	6
+"00100  HELSINKI"	"92000  Rahapeli- ja vedonly√∂ntipalvelut"	6
+"00100  HELSINKI"	"93     Urheilutoiminta sek√§ huvi- ja virkistyspalvelut"	68
 "00100  HELSINKI"	"931    Urheilutoiminta"	58
 "00100  HELSINKI"	"9311   Urheilulaitosten toiminta"	5
 "00100  HELSINKI"	"93110  Urheilulaitosten toiminta"	5
@@ -1683,30 +1683,30 @@
 "00100  HELSINKI"	"93291  Hiihto- ja laskettelukeskukset"	-
 "00100  HELSINKI"	"93299  Muualla luokittelematon huvi- ja virkistystoiminta"	9
 "00100  HELSINKI"	"S  Muu palvelutoiminta"	776
-"00100  HELSINKI"	"94     J‰rjestˆjen toiminta"	264
-"00100  HELSINKI"	"941    Elinkeinoel‰m‰n, tyˆnantaja- ja ammattialaj‰rjestˆjen toim."	61
-"00100  HELSINKI"	"9411   Elinkeinoel‰m‰n ja tyˆnantajaj‰rjestˆjen toiminta"	18
-"00100  HELSINKI"	"94110  Elinkeinoel‰m‰n ja tyˆnantajaj‰rjestˆjen toiminta"	18
-"00100  HELSINKI"	"9412   Ammattialaj‰rjestˆjen toiminta"	43
-"00100  HELSINKI"	"94120  Ammattialaj‰rjestˆjen toiminta"	43
+"00100  HELSINKI"	"94     J√§rjest√∂jen toiminta"	264
+"00100  HELSINKI"	"941    Elinkeinoel√§m√§n, ty√∂nantaja- ja ammattialaj√§rjest√∂jen toim."	61
+"00100  HELSINKI"	"9411   Elinkeinoel√§m√§n ja ty√∂nantajaj√§rjest√∂jen toiminta"	18
+"00100  HELSINKI"	"94110  Elinkeinoel√§m√§n ja ty√∂nantajaj√§rjest√∂jen toiminta"	18
+"00100  HELSINKI"	"9412   Ammattialaj√§rjest√∂jen toiminta"	43
+"00100  HELSINKI"	"94120  Ammattialaj√§rjest√∂jen toiminta"	43
 "00100  HELSINKI"	"942    Ammattiyhdistysten toiminta"	12
 "00100  HELSINKI"	"9420   Ammattiyhdistysten toiminta"	12
 "00100  HELSINKI"	"94200  Ammattiyhdistysten toiminta"	12
-"00100  HELSINKI"	"949    Muiden j‰rjestˆjen toiminta"	191
-"00100  HELSINKI"	"9491   Seurakunnat ja uskonnolliset j‰rjestˆt"	11
-"00100  HELSINKI"	"94910  Seurakunnat ja uskonnolliset j‰rjestˆt"	11
-"00100  HELSINKI"	"9492   Poliittiset j‰rjestˆt"	28
-"00100  HELSINKI"	"94920  Poliittiset j‰rjestˆt"	28
-"00100  HELSINKI"	"9499   Muut j‰rjestˆt"	152
-"00100  HELSINKI"	"94991  Tutkimusta ja kulttuuria palvelevat j‰rjestˆt"	25
-"00100  HELSINKI"	"94999  Muualla luokittelemattomat muut j‰rjestˆt"	127
+"00100  HELSINKI"	"949    Muiden j√§rjest√∂jen toiminta"	191
+"00100  HELSINKI"	"9491   Seurakunnat ja uskonnolliset j√§rjest√∂t"	11
+"00100  HELSINKI"	"94910  Seurakunnat ja uskonnolliset j√§rjest√∂t"	11
+"00100  HELSINKI"	"9492   Poliittiset j√§rjest√∂t"	28
+"00100  HELSINKI"	"94920  Poliittiset j√§rjest√∂t"	28
+"00100  HELSINKI"	"9499   Muut j√§rjest√∂t"	152
+"00100  HELSINKI"	"94991  Tutkimusta ja kulttuuria palvelevat j√§rjest√∂t"	25
+"00100  HELSINKI"	"94999  Muualla luokittelemattomat muut j√§rjest√∂t"	127
 "00100  HELSINKI"	"95     Tietokoneiden, henk.koht. ja kotitaloustavaroiden korjaus"	22
-"00100  HELSINKI"	"951    Tietokoneiden ja viestint‰laitteiden korjaus"	4
+"00100  HELSINKI"	"951    Tietokoneiden ja viestint√§laitteiden korjaus"	4
 "00100  HELSINKI"	"9511   Tietokoneiden ja niiden oheislaitteiden korjaus"	1
 "00100  HELSINKI"	"95110  Tietokoneiden ja niiden oheislaitteiden korjaus"	1
-"00100  HELSINKI"	"9512   Viestint‰laitteiden korjaus"	3
-"00100  HELSINKI"	"95120  Viestint‰laitteiden korjaus"	3
-"00100  HELSINKI"	"952    Henkilˆkohtaisten ja kotitaloustavaroiden korjaus"	18
+"00100  HELSINKI"	"9512   Viestint√§laitteiden korjaus"	3
+"00100  HELSINKI"	"95120  Viestint√§laitteiden korjaus"	3
+"00100  HELSINKI"	"952    Henkil√∂kohtaisten ja kotitaloustavaroiden korjaus"	18
 "00100  HELSINKI"	"9521   Viihde-elektroniikan korjaus"	2
 "00100  HELSINKI"	"95210  Viihde-elektroniikan korjaus"	2
 "00100  HELSINKI"	"9522   Kotitalouskoneiden, kodin ja puutarhan laitteiden korjaus"	1
@@ -1717,10 +1717,10 @@
 "00100  HELSINKI"	"95240  Huonekalujen ja kodin kalusteiden korjaus"	2
 "00100  HELSINKI"	"9525   Kellojen ja korujen korjaus"	3
 "00100  HELSINKI"	"95250  Kellojen ja korujen korjaus"	3
-"00100  HELSINKI"	"9529   Muiden henkilˆkohtaisten ja kotitaloustavaroiden korjaus"	4
-"00100  HELSINKI"	"95290  Muiden henkilˆkohtaisten ja kotitaloustavaroiden korjaus"	4
-"00100  HELSINKI"	"96     Muut henkilˆkohtaiset palvelut"	490
-"00100  HELSINKI"	"960    Muut henkilˆkohtaiset palvelut"	490
+"00100  HELSINKI"	"9529   Muiden henkil√∂kohtaisten ja kotitaloustavaroiden korjaus"	4
+"00100  HELSINKI"	"95290  Muiden henkil√∂kohtaisten ja kotitaloustavaroiden korjaus"	4
+"00100  HELSINKI"	"96     Muut henkil√∂kohtaiset palvelut"	490
+"00100  HELSINKI"	"960    Muut henkil√∂kohtaiset palvelut"	490
 "00100  HELSINKI"	"9601   Pesulapalvelut"	7
 "00100  HELSINKI"	"96011  Pesulapalvelut yrityksille"	1
 "00100  HELSINKI"	"96012  Pesulapalvelut kotitalouksille"	6
@@ -1731,22 +1731,22 @@
 "00100  HELSINKI"	"96030  Hautaustoimistojen palvelut"	4
 "00100  HELSINKI"	"9604   Kylpylaitokset, saunat, solariumit yms. palvelut"	12
 "00100  HELSINKI"	"96040  Kylpylaitokset, saunat, solariumit yms. palvelut"	12
-"00100  HELSINKI"	"9609   Muualla luokittelemattomat henkilˆkohtaiset palvelut"	52
-"00100  HELSINKI"	"96090  Muualla luokittelemattomat henkilˆkohtaiset palvelut"	52
-"00100  HELSINKI"	"T  Kotitalouksien toim. kotitaloustyˆntekijˆiden tyˆnantajina"	-
-"00100  HELSINKI"	"97     Kotitalouksien toim. kotitaloustyˆntekijˆiden tyˆnantajina"	-
-"00100  HELSINKI"	"970    Kotitalouksien toim. kotitaloustyˆntekijˆiden tyˆnantajina"	-
-"00100  HELSINKI"	"9700   Kotitalouksien toim. kotitaloustyˆntekijˆiden tyˆnantajina"	-
-"00100  HELSINKI"	"97000  Kotitalouksien toim. kotitaloustyˆntekijˆiden tyˆnantajina"	-
-"00100  HELSINKI"	"98     Kotitaloudet; tavaroiden ja palv. tuottaminen omaan k‰yttˆˆn"	-
-"00100  HELSINKI"	"982    Kotitaloudet; palvelujen tuottaminen omaan k‰yttˆˆn"	-
-"00100  HELSINKI"	"9820   Kotitaloudet; palvelujen tuottaminen omaan k‰yttˆˆn"	-
-"00100  HELSINKI"	"98200  Kotitaloudet; palvelujen tuottaminen omaan k‰yttˆˆn"	-
-"00100  HELSINKI"	"U  Kansainv‰listen organisaatioiden ja toimielinten toiminta"	1
-"00100  HELSINKI"	"99     Kansainv‰listen organisaatioiden ja toimielinten toiminta"	1
-"00100  HELSINKI"	"990    Kansainv‰listen organisaatioiden ja toimielinten toiminta"	1
-"00100  HELSINKI"	"9900   Kansainv‰listen organisaatioiden ja toimielinten toiminta"	1
-"00100  HELSINKI"	"99000  Kansainv‰listen organisaatioiden ja toimielinten toiminta"	1
+"00100  HELSINKI"	"9609   Muualla luokittelemattomat henkil√∂kohtaiset palvelut"	52
+"00100  HELSINKI"	"96090  Muualla luokittelemattomat henkil√∂kohtaiset palvelut"	52
+"00100  HELSINKI"	"T  Kotitalouksien toim. kotitalousty√∂ntekij√∂iden ty√∂nantajina"	-
+"00100  HELSINKI"	"97     Kotitalouksien toim. kotitalousty√∂ntekij√∂iden ty√∂nantajina"	-
+"00100  HELSINKI"	"970    Kotitalouksien toim. kotitalousty√∂ntekij√∂iden ty√∂nantajina"	-
+"00100  HELSINKI"	"9700   Kotitalouksien toim. kotitalousty√∂ntekij√∂iden ty√∂nantajina"	-
+"00100  HELSINKI"	"97000  Kotitalouksien toim. kotitalousty√∂ntekij√∂iden ty√∂nantajina"	-
+"00100  HELSINKI"	"98     Kotitaloudet; tavaroiden ja palv. tuottaminen omaan k√§ytt√∂√∂n"	-
+"00100  HELSINKI"	"982    Kotitaloudet; palvelujen tuottaminen omaan k√§ytt√∂√∂n"	-
+"00100  HELSINKI"	"9820   Kotitaloudet; palvelujen tuottaminen omaan k√§ytt√∂√∂n"	-
+"00100  HELSINKI"	"98200  Kotitaloudet; palvelujen tuottaminen omaan k√§ytt√∂√∂n"	-
+"00100  HELSINKI"	"U  Kansainv√§listen organisaatioiden ja toimielinten toiminta"	1
+"00100  HELSINKI"	"99     Kansainv√§listen organisaatioiden ja toimielinten toiminta"	1
+"00100  HELSINKI"	"990    Kansainv√§listen organisaatioiden ja toimielinten toiminta"	1
+"00100  HELSINKI"	"9900   Kansainv√§listen organisaatioiden ja toimielinten toiminta"	1
+"00100  HELSINKI"	"99000  Kansainv√§listen organisaatioiden ja toimielinten toiminta"	1
 "00100  HELSINKI"	"X  Toimiala tuntematon"	8
 "00100  HELSINKI"	"00     Toimiala tuntematon"	8
 "00100  HELSINKI"	"000    Toimiala tuntematon"	8

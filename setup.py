@@ -10,5 +10,5 @@ setup(
     author_email='',
     description='',
     install_requires=['pandas', 'matplotlib', 'requests', 'numpy', 'dash', 'dash-daq', 'scikit-learn', 'scipy',
-                      'plotly']
+                      'plotly', 'herepy']
 )

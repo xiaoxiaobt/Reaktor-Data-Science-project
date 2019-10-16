@@ -2,23 +2,23 @@
 ################################################################################
 # Copyright 2014 Ujaval Gandhi
 #
-#This program is free software; you can redistribute it and/or
-#modify it under the terms of the GNU General Public License
-#as published by the Free Software Foundation; either version 2
-#of the License, or (at your option) any later version.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
 #
-#This program is distributed in the hope that it will be useful,
-#but WITHOUT ANY WARRANTY; without even the implied warranty of
-#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-#You should have received a copy of the GNU General Public License
-#along with this program; if not, write to the Free Software
-#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 ################################################################################
-from qgis.utils import iface
-from PyQt5.QtCore import QVariant
+# from qgis.utils import iface
+# from PyQt5.QtCore import QVariant
 
 # Replace the values below with values from your layer.
 # For example, if your identifier field is called 'XYZ', then change the line
@@ -39,8 +39,8 @@ layer = iface.activeLayer()
 # of the chosen field.
 layer.startEditing()
 layer.dataProvider().addAttributes(
-        [QgsField(_NEW_NEIGHBORS_FIELD, QVariant.String),
-         QgsField(_NEW_SUM_FIELD, QVariant.Int)])
+    [QgsField(_NEW_NEIGHBORS_FIELD, QVariant.String),
+     QgsField(_NEW_SUM_FIELD, QVariant.Int)])
 layer.updateFields()
 # Create a dictionary of all features
 feature_dict = {f.id(): f for f in layer.getFeatures()}
@@ -68,8 +68,7 @@ for f in feature_dict.values():
         # For our purpose we consider a feature as 'neighbor' if it touches or
         # intersects a feature. We use the 'disjoint' predicate to satisfy
         # these conditions. So if a feature is not disjoint, it is a neighbor.
-        if (f != intersecting_f and
-            not intersecting_f.geometry().disjoint(geom)):
+        if f != intersecting_f and not intersecting_f.geometry().disjoint(geom):
             neighbors.append(intersecting_f[_NAME_FIELD])
             neighbors_sum += int(intersecting_f[_SUM_FIELD])
     f[_NEW_NEIGHBORS_FIELD] = ','.join(neighbors)

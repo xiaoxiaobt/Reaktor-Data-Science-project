@@ -5,15 +5,15 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 import json
-from classifier_dict import return_dict
+from temp.classifier_dict import return_dict
 
 
 def main():
     """Run the main interface in web browser"""
 
     # Initialize file path
-    name_geojson = "idchanged.json"
-    name_paavo_dataframe = "paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
+    name_geojson = "./data/idchanged.json"
+    name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
 
     # Initialize variables
     polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"

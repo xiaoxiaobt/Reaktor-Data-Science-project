@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
+
 def drop_columns(df):
     """
     This function clean the last part of the name of the column,
@@ -69,7 +70,7 @@ def clean_df(df):
     df["Postal code"] = content
 
     # Drop unnecessary columns that might have been copied while building the dataframe
-    to_drop=['Postal code area', 'Postialue']
+    to_drop = ['Postal code area', 'Postialue']
     for td in to_drop:
         if td in df.columns:
             df.drop(columns=td, inplace=True)
@@ -92,6 +93,7 @@ def clean_df(df):
 
     return df
 
+
 def pairwise_correlation(df):
     """
     This function plots the pairwise correlation
@@ -111,6 +113,7 @@ def pairwise_correlation(df):
     plt.title('Correlation Matrix', fontsize=10)
     plt.show()
 
+
 def bulk_load():
     """
     This function loads all the datafiles that have been
@@ -126,6 +129,11 @@ def bulk_load():
 
     # Create a sorted list of the years
     years_list = sorted({re.sub('[A-Öa-ö_.,:; /()\\-]+', '', y) for y in file_list})
+
+    # Remove because of missing data (at least for now)
+    years_list.remove('2012')
+    years_list.remove('2016')
+    years_list.remove('2017')
 
     # Build a dictionary of DataFrames:
     # to each year, it is associated one DataFrame
@@ -148,9 +156,126 @@ def bulk_load():
     for df in iter(df_dic.values()):
         # Clean each dataframe
         df = clean_df(df)
+        scale(df)
         # Plot pairwise correlation
         # pairwise_correlation(df)
 
     return df_dic
+
+
+def scale(df):
+    """
+    This function scales all the attributes according to
+    their properties.
+    :param df: the dataframe to scale
+    """
+    columns_with_year = df.columns
+
+    # Strip out the year from every column
+    # The columns with the same content have the same name, regardless of the year
+    columns_without_year = [re.sub(r" \d{4}", "", title) for title in columns_with_year]
+    df.columns = columns_without_year
+
+    labels_scale_by_labour_force = {
+        "Employed, ", "Unemployed, "
+    }
+    labels_scale_by_outside_labour = {
+        "Children aged 0 to 14, ", "Pensioners, ", "Others, "
+    }
+
+    # Labels scaled by labour force and outside labour force are scaled first
+    # labour force and outside labour force are later modified
+    for key in columns_without_year:
+        if key in labels_scale_by_labour_force:
+            df[key] = df[key] / df["Labour force, "]
+        elif key in labels_scale_by_outside_labour:
+            df[key] = df[key] / df["Persons outside the labour force, "]
+
+    labels_scale_by_inhabitants = {
+        "Males, ", "Females, ", "Average age of inhabitants, ",
+        "0 - 2 years, ", "3 - 6 years, ",
+        "7 - 12 years, ", "13 - 15 years, ", "16 - 17 years, ", "18 - 19 years, ", "20 - 24 years, ",
+        "25 - 29 years, ", "30 - 34 years, ", "35 - 39 years, ", "40 - 44 years, ", "45 - 49 years, ",
+        "50 - 54 years, ", "55 - 59 years, ", "60 - 64 years, ", "65 - 69 years, ", "70 - 74 years, ",
+        "75 - 79 years, ", "80 - 84 years, ", "85 years or over, ", "Aged 18 or over, total, ",
+        "Basic level studies, ", "With education, total, ", "Matriculation examination, ",
+        "Vocational diploma, ", "Academic degree - Lower level university degree, ",
+        "Academic degree - Higher level university degree, ",
+        "Inhabintants belonging to the lowest income category, ",
+        "Inhabitants belonging to the middle income category, ",
+        "Inhabintants belonging to the highest income category, ",
+        "Labour force, ", "Persons outside the labour force, ", "Students, "
+    }
+    labels_scale_by_households = {
+        "Average size of households, ", "Young single persons, ", "Young couples without children, ",
+        "Households with children, ", "Households with small children, ",
+        "Households with children under school age, ", "Households with school-age children, ",
+        "Households with teenagers, ", "Adult households, ", "Pensioner households, ",
+        "Households living in owner-occupied dwellings, ", "Households living in rented dwellings, ",
+        "Households living in other dwellings, ", "Households belonging to the lowest income category, ",
+        "Households belonging to the middle income category, ",
+        "Households belonging to the highest income category, "
+    }
+    labels_scale_by_buildings = {
+        "Free - time residences, ", "Other buildings, ", "Residential buildings, "
+    }
+    labels_scale_by_dwellings = {
+        "Dwellings in small houses, ", "Dwellings in blocks of flats, "
+    }
+
+    # Scale the four sets above
+    for key in columns_without_year:
+        if key in labels_scale_by_inhabitants:
+            df[key] = df[key] / df["Inhabitants, total, "]
+        elif key in labels_scale_by_households:
+            df[key] = df[key] / df["Households, total, "]
+        elif key in labels_scale_by_buildings:
+            df[key] = df[key] / df["Buildings, total, "]
+        elif key in labels_scale_by_dwellings:
+            df[key] = df[key] / df["Dwellings, "]
+
+    labels_combine_scale_by_inhabitants = {
+        "Primary production, ", "Processing, ", "Services, "
+    }
+    labels_combine_scale_by_workplaces = {
+        "A Agriculture, forestry and fishing, ",
+        "B Mining and quarrying, ", "C Manufacturing, ", "D Electricity, gas, steam and air conditioning supply, ",
+        "E Water supply; sewerage, waste management and remediation activities, ", "F Construction, ",
+        "G Wholesale and retail trade; repair of motor vehicles and motorcycles, ", "H Transportation and storage, ",
+        "I Accommodation and food service activities, ", "J Information and communication, ",
+        "K Financial and insurance activities, ", "L Real estate activities, ",
+        "M Professional, scientific and technical activities, ", "N Administrative and support service activities, ",
+        "O Public administration and defence; compulsory social security, ", "P Education, ",
+        "Q Human health and social work activities, ", "R Arts, entertainment and recreation, ",
+        "S Other service activities, ", "T Activities of households as employers; " +
+        "undifferentiated goods- and services-producing activities of households for own use, ",
+        "U Activities of extraterritorial organisations and bodies, "
+    }
+
+    # Sum the selected attributes for each area with the similar postal code
+    # In other words, postal codes with the same first 3 digits
+    df_combine = df[
+        ["Postal code", "Inhabitants, total, ", "Workplaces, "] +
+        list(labels_combine_scale_by_inhabitants) + list(labels_combine_scale_by_workplaces)
+    ].copy()
+    df_combine["Postal code"] = df_combine["Postal code"].map(lambda x: x[:-2])
+    df_combine = df_combine.groupby("Postal code", as_index=False).agg("sum")
+
+    # Scale the combined columns
+    for key in df_combine.columns:
+        if key in labels_combine_scale_by_inhabitants:
+            df_combine[key] = df_combine[key] / df_combine["Inhabitants, total, "]
+        elif key in labels_combine_scale_by_workplaces:
+            df_combine[key] = df_combine[key] / df_combine["Workplaces, "]
+
+    # Replace the combined and scaled values into the original dataframe
+    for _, row in df_combine.iterrows():
+        code = row["Postal code"]
+        df_rows = df["Postal code"].str.startswith(code)
+        # Postal code, Inhabitants and workplaces remain unchanged
+        columns = row.index.drop(["Postal code", "Inhabitants, total, ", "Workplaces, "])
+        for column in columns:
+            df.loc[df_rows, column] = row[column]
+
 
 bulk_load()

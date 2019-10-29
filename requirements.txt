@@ -69,8 +69,6 @@ pyrsistent
 python-dateutil
 pytz
 PyWavelets
-pywin32
-pywinpty
 pyzmq
 qtconsole
 requests

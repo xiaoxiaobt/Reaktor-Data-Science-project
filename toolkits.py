@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 
 
 def toutf8():
@@ -7,7 +8,7 @@ def toutf8():
     OUTPUT_NAME = "./temp/industry_2008_u.csv"
     file = open(FILE_NAME, encoding='iso-8859-1')
     file_write = open(OUTPUT_NAME, "w", encoding='utf-8')
-    [file_write.write(_) for _ in file.readlines()]
+    file_write.writelines(file.readlines())
 
 
 def industry_data_cleaner():
@@ -49,22 +50,8 @@ def add_id():
             wait_4_write = False
         else:
             file_write.write(line)
-
-
-def change_precision():
-    return
-    file = open("./data/idchanged.json", "r")
-    PRECISION = 4
-    file_write = open("./temp/map_w_id_precision.json", "w")
-    for line in file.readlines():
-        if "                                    " in line:
-            if ',' in line:
-                temp = str(round(float(line.strip().split(',')[0]), PRECISION)) + ','
-            else:
-                temp = str(round(float(line.strip().split(',')[0]), PRECISION))
-            file_write.write("                                    " + temp + '\n')
-        else:
-            file_write.write(line)
+    file.close()
+    file_write.close()
 
 
 def fix_dataframe():
@@ -92,3 +79,39 @@ def fix_dataframe():
     df.insert(loc=2, column='neighbour', value=df_neighbour.NEIGHBORS)
     # Save file
     df.to_csv("./data/paavo_9_koko.tsv", sep="\t", encoding="utf-8", index=False)
+
+
+def add_id_for_geojson():
+    file = open("./data/finland_2016_p4_utf8_simp.geojson", "r")
+    file_write = open("./data/finland_2016_p4_utf8_simp_wid.geojson", "w+")
+    for line in file.readlines():
+        if 'properties": { "posti_alue' in line:
+            line = line.replace('properties": { "posti_alue', 'id')
+            line = line.replace('" }, "geometry"', '", "geometry"')
+        file_write.write(line)
+    file.close()
+    file_write.close()
+
+
+def generate_requirements():
+    os.system("pip freeze>requirements.txt")
+    file = open("requirements.txt", "r+")
+    lines = file.readlines()
+    for x in range(len(lines)):
+        lines[x] = lines[x].split("==")[0] + "\n" if "ywin" not in lines[x] else ""
+    file.close()
+    file = open("requirements.txt", "w")
+    file.writelines(lines)
+    file.close()
+
+
+def main():
+    try:
+        eval(input("Input the name of function you would like to execute, without the bracket:\n").lower() + "()")
+        print("Executed successfully.")
+    except Exception:
+        print("Function name not found. Please check your input.")
+
+
+if __name__ == "__main__":
+    main()

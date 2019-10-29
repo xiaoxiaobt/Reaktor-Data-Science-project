@@ -256,7 +256,6 @@ body {
     background-color: white;
     opacity: 0.7;
     -webkit-backdrop-filter: blur(8px);
-
 }
 
 
@@ -527,18 +526,15 @@ input[type="button"].button-primary:focus {
 #stitching-tabs > div:nth-child(2),
 #stitching-tabs > div:nth-child(3),
 #stitching-tabs > div:nth-child(4) {
-    background-color: white;
     border-color: transparent;
-}
-
-#stitching-tabs > div.jsx-2137964197.tab.tab--selected {
-    color: #4181FF !important;
-    border-top-color: initial !important;
     background-color: white;
 }
 
-#stitching-tabs > div:nth-child(3) > span {
-    font-size: 11px;
+#stitching-tabs > div.jsx-1653633250.tab.tab--selected {
+    color: white !important;
+    border-top-color: #4181FF !important;
+    background-color: lightskyblue;
+    opacity: 1;
 }
 
 
@@ -1185,7 +1181,8 @@ there.
 
     #stitching-tabs > div:nth-child(1),
     #stitching-tabs > div:nth-child(2),
-    #stitching-tabs > div:nth-child(3) {
+    #stitching-tabs > div:nth-child(3),
+    #stitching-tabs > div:nth-child(4) {
         background-color: white;
         border-color: gray;
     }

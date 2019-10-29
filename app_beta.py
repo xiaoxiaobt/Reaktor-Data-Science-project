@@ -2,15 +2,12 @@ import pandas as pd
 import json
 import dash
 import plotly.graph_objs as go
-from dash.exceptions import PreventUpdate
 from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
-import dash_table
 
 print("Loading data...")
-
-name_geojson = "./data/idchanged.json"
+name_geojson = "./data/finland_2016_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
 # Initialize variables
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"

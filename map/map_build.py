@@ -4,8 +4,9 @@ import triangle as tr
 import utm
 
 
-INPUT_FILENAME = 'Paavo-postinumeroalueet 2019.geojson'
-OUTPUT_FILENAME = 'map.npz'
+input_filename = 'Paavo-postinumeroalueet 2019.geojson'
+output_filename_code = 'map_code.npz'
+output_filename_mesh = 'map_mesh.npz'
 
 
 def parse_feature_collection(feature_collection):
@@ -109,13 +110,9 @@ def project_mesh(mesh):
 
 def main():
 
-    print('Building...')
-    print(f'* Input file: {INPUT_FILENAME}')
-    print(f'* Output file: {OUTPUT_FILENAME}')
-
     print('Parsing...')
 
-    with open(INPUT_FILENAME) as file:
+    with open(input_filename) as file:
         data = parse_feature_collection(json.load(file))
 
     print('Projecting...')
@@ -129,11 +126,14 @@ def main():
     face_offset = np.insert(np.cumsum([len(it[1][1]) for it in data]), 0, 0)
     edge_offset = np.insert(np.cumsum([len(it[1][2]) for it in data]), 0, 0)
 
+    code_array = np.empty(len(data), dtype='|S5')
     vertex_array = np.empty(vertex_offset[-1], dtype='2f4, <u2')
     face_array = np.empty(face_offset[-1], dtype='3<u4')
     edge_array = np.empty(edge_offset[-1], dtype='2<u4')
 
-    for i, (_, mesh) in enumerate(data):
+    for i, (code, mesh) in enumerate(data):
+        code_array[i] = code
+
         mesh_vertex_array = np.array(mesh[0])
         mesh_face_array = np.array(mesh[1])
         mesh_edge_array = np.array(mesh[2])
@@ -145,7 +145,8 @@ def main():
 
     print('Saving...')
 
-    np.savez_compressed(OUTPUT_FILENAME, v=vertex_array, f=face_array, e=edge_array)
+    np.savez_compressed(output_filename_code, code_array)
+    np.savez_compressed(output_filename_mesh, vertex_array, face_array, edge_array)
 
     print(f'* Areas: {len(data)}')
     print(f'* Vertices: {vertex_array.shape[0]}')

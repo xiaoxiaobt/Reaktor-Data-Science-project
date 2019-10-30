@@ -6,7 +6,7 @@ import numpy as np
 from ctypes import *
 import sys
 import math
-from random import random
+import random
 
 config = pyglet.gl.Config(sample_buffers=1, samples=8, double_buffer=True)
 window = pyglet.window.Window(config=config, resizable=True)
@@ -46,11 +46,15 @@ void main()
 }
 '''
 
-data = np.load('map.npz')
+data = np.load('map_mesh.npz')
 
-vertex_array = data['v']
-face_array = data['f']
-edge_array = data['e']
+vertex_array = data['arr_0']
+face_array = data['arr_1']
+edge_array = data['arr_2']
+
+data = np.load('map_code.npz')
+
+code_array = data['arr_0']
 
 if sys.byteorder == 'big':
     vertex_array.byteswap()
@@ -59,7 +63,14 @@ if sys.byteorder == 'big':
 
 color_table_array = np.empty(3026, dtype='4=f4')
 for i in range(color_table_array.shape[0]):
-    color_table_array[i] = random() * 0.4 + 0.3, 0.4, random() * 0.6 + 0.4, 1.0
+    seed = 0
+    for j in range(3):
+        seed = 10 * seed + code_array[i][j] - 48
+    random.seed(seed)
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    color_table_array[i] = r, g, b, 1.0
 
 vertex_buffer = GLuint()
 vertex_buffer_data = vertex_array.ctypes.data_as(POINTER(GLvoid))

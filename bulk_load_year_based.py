@@ -4,6 +4,7 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 from collections import defaultdict
+from pathlib import Path
 
 
 def drop_columns(df):
@@ -66,7 +67,8 @@ def clean_df(df):
     # Strip out the letters and symbols from the content of the first column:
     # only the postal code, in numerical form, will remain.
     content = df["Postal code"]
-    content = content.apply(lambda x: re.sub('[A-Öa-ö_ ()\\-]+', '', x))
+    # A-Öa-ö_ ()\\-
+    content = content.apply(lambda x: re.sub('[\D]+', '', x))
     df["Postal code"] = content
 
     # Drop unnecessary columns that might have been copied while building the dataframe
@@ -127,19 +129,21 @@ def bulk_load():
     # Read all the files with the data
     file_list = glob.glob("paavo_data/*.csv")
 
-    # Create a sorted list of the years
-    years_list = sorted({re.sub('[A-Öa-ö_.,:; /()\\-]+', '', y) for y in file_list})
+    # Create a sorted list of the years: remove A-Öa-ö_.,:; /()\\-
+    years_list = sorted({re.sub('[\D]+', '', y) for y in file_list})
+    print(years_list)
 
     # Remove because of missing data (at least for now)
-    years_list.remove('2012')
-    years_list.remove('2016')
-    years_list.remove('2017')
+    # years_list.remove('2012')
+    # years_list.remove('2016')
+    # years_list.remove('2017')
 
     # Build a dictionary of DataFrames:
     # to each year, it is associated one DataFrame
     df_dic = {y: pd.DataFrame() for y in years_list}
 
     # Fill the DataFrames with the data from the correct files
+    #
     for file in file_list:
         for y in years_list:
             if y in file:
@@ -156,11 +160,26 @@ def bulk_load():
     for df in iter(df_dic.values()):
         # Clean each dataframe
         df = clean_df(df)
-        scale(df)
+        # scale(df)
         # Plot pairwise correlation
         # pairwise_correlation(df)
 
     return df_dic
+
+
+def drop_postalcodes(df):
+    """
+    Drop unexisting postalcodes.
+    Yes, I know. We should use the values.
+    No, I don't have time.
+    :param df: the dataframe
+    :return: the dataframe
+    """
+    to_open = Path("dataframes/") / 'df2017.tsv'
+    postalcodes_list = pd.read_csv(to_open, sep='\t', encoding='utf-8', dtype={'Postal code': object})['Postal code'].values
+    df = df.loc[df['Postal code'].isin(postalcodes_list)]
+    print(df.shape)
+    return df
 
 
 def scale(df):
@@ -278,4 +297,12 @@ def scale(df):
             df.loc[df_rows, column] = row[column]
 
 
-bulk_load()
+# RUN THIS TO HAVE THE tsv FILES
+df_dic = bulk_load()
+for y, df in df_dic.items():
+    print(df.head())
+    df.to_csv(r'dataframes//df'+str(y)+'.tsv', sep='\t', index=False, encoding='utf-8')
+
+for y, df in df_dic.items():
+    df = drop_postalcodes(df)
+    df.to_csv(r'dataframes//df' + str(y) + '.tsv', sep='\t', index=False, encoding='utf-8')

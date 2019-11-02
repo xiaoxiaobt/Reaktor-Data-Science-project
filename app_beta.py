@@ -5,11 +5,13 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
+import toolkits
 
 print("Loading data...")
 name_geojson = "./data/finland_2016_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
 # Initialize variables
+
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"id": str})  # The dtype CANNOT be removed!
 paavo_df['text'] = '<b>' + paavo_df.location.astype(str) + '</b><br>' + \
@@ -164,9 +166,7 @@ app.layout = html.Div(
 
 @app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
 def change_focus(click):
-    if click:
-        return "result-tab"
-    return "canvas-tab"
+    return "result-tab" if click else "canvas-tab"
 
 
 @app.callback(
@@ -175,8 +175,8 @@ def change_focus(click):
 def fill_tab(tab):
     if tab == "result-tab":
         polar_plot = go.Scatterpolar(r=[0, 2, 1, 5, 0],
-                                     theta=['Education index', 'Price', 'Environment', 'Average Income',
-                                            'Transportation'],
+                                     theta=['Education index', 'Num of service', 'Environment', 'Average Income',
+                                            'Density'],
                                      fill='toself')
         polar_html = html.Div(
             children=[

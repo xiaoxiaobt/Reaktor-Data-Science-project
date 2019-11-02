@@ -12,7 +12,7 @@ def main():
     """Run the main interface in web browser"""
 
     # Initialize file path
-    name_geojson = "./data/idchanged.json"
+    name_geojson = "./data/finland_2016_p4_utf8_simp_wid.geojson"
     name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
 
     # Initialize variables

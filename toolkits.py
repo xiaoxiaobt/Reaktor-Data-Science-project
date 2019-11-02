@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import numpy as np
 import os
@@ -9,6 +10,8 @@ def toutf8():
     file = open(FILE_NAME, encoding='iso-8859-1')
     file_write = open(OUTPUT_NAME, "w", encoding='utf-8')
     file_write.writelines(file.readlines())
+    file.close()
+    file_write.close()
 
 
 def industry_data_cleaner():
@@ -25,8 +28,10 @@ def industry_data_cleaner():
 
 
 def add_id():
-    """This function add "id" feature to .json file. The id feature works as identifier (key) to access
-     corresponding shape, only works for postinumeroalueet 2016.json"""
+    """
+    This function add "id" feature to .json file. The id feature works as identifier (key) to access
+     corresponding shape, only works for postinumeroalueet 2016.json
+    """
     file = open("./data/postinumeroalueet 2016.json", "r")
     file_write = open("./data/idchanged.json", "w")
     wait_4_write = False
@@ -45,7 +50,7 @@ def add_id():
         elif '"vuosi"' in line:
             continue
         elif wait_4_write and ("}" in line):
-            file_write.write(line.rstrip("\n") + "," + "\n")
+            file_write.write(line.rstrip("\n") + ",\n")
             file_write.write('            "id": "' + number + '"\n')
             wait_4_write = False
         else:
@@ -102,14 +107,48 @@ def generate_requirements():
     file.close()
     file = open("requirements.txt", "w")
     file.writelines(lines)
+    file.write("gunicorn")
     file.close()
+
+
+def feature_selection(list_of_post_code=None):
+    if list_of_post_code is None:
+        list_of_post_code = ["02150", "76120", "00900", "33720"]
+    file = open("./data/finland_2016_p4_utf8_simp_wid.geojson", 'r')
+    lines = file.readlines()
+    file.close()
+    match = []
+    [[match.append(line.rstrip(",\n")) for line in lines if item in line] for item in list_of_post_code]
+    selected = open("./data/selected.geojson", 'w')
+    head = '{\n"type": "FeatureCollection", \n"name": "selected", \n"crs": {"type": "name", ' \
+           '"properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, \n"features": [\n'
+    tail = "\n]\n}"
+    selected.writelines(head)
+    selected.writelines(",\n".join(match))
+    selected.writelines(tail)
+    selected.close()
+    alltext = head + ",\n".join(match) + tail
+    polygons = json.loads(alltext)
+    # polygons = json.load(open("./data/selected.geojson", "r"))
+    # print(polygons)
+    return polygons
+
+
+def find_num_of_points():
+    if os.name == 'nt':
+        print("This part cannot run on Windows. ")
+        return
+    from shapely.geometry import Point
+    from shapely.geometry.polygon import Polygon
+    FILE_NAME = "./data/paavo_9_koko.csv"
+    postal_code = pd.read_table("FILE_NAME", 'r').id
 
 
 def main():
     try:
         eval(input("Input the name of function you would like to execute, without the bracket:\n").lower() + "()")
         print("Executed successfully.")
-    except Exception:
+    except IOError:
         print("Function name not found. Please check your input.")
 
 

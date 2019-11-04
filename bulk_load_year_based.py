@@ -3,11 +3,59 @@ import glob
 import re
 import pandas as pd
 import matplotlib.pyplot as plt
-from collections import defaultdict
 from pathlib import Path
 
 
-def drop_columns(df):
+def first_columns(df):
+    """
+    Split the column "Postal code area" into Postal code (the numerical postal code)
+    and Area (the name of the area)
+    :param df: the dataframe
+    :return: the dataframe
+    """
+    # Rename the first column
+    df.rename(columns={df.columns[0]: "Postal code"}, inplace=True)
+
+    for c in df.columns:
+        drop_double_columns(df, c)
+
+    # Duplicate the first column and add it as the second column
+    # df.insert(1, 'Area', df['Postal code'])
+    df['Area'] = [''] * len(df.index)
+
+    # Strip out numbers from the content of the second column:
+    # only the name of the area will remain.
+    content = df["Postal code"].copy()
+    content = content.apply(lambda x: re.sub('[0-9_]+', '', x))
+    df["Area"] = content
+
+    # Strip out the letters and symbols from the content of the first column:
+    # only the postal code, in numerical form, will remain.
+    content = df["Postal code"]
+    content = content.apply(lambda x: re.sub('[\D]+', '', x))
+    df["Postal code"] = content
+
+    return df
+
+
+def drop_double_columns(df, header_to_drop):
+    """
+    Drops duplicate columns whose header is 'header_to_drop' in a dataframe.
+    :param df: the dataframe
+    :param header_to_drop: the column name
+    :return: None (the dataframe is edited inplace)
+    """
+    col_list = df.columns.tolist()
+    to_drop = getIndexPositions(col_list, header_to_drop)
+    if len(to_drop) > 1:
+        to_drop = to_drop[1:]
+        for i in to_drop:
+            col_list[i] = 'todrop'
+        df.columns = col_list
+        df.drop(columns=['todrop'], inplace=True)
+
+
+def clean_columns(df):
     """
     This function clean the last part of the name of the column,
     by removing the pattern (AA). Then it renames the columns
@@ -24,17 +72,8 @@ def drop_columns(df):
 
     df.rename(columns=new_columns, inplace=True)
 
-    # Count columns with same name
-    count = defaultdict(int)
-    for col in new_columns.values():
-        count[col] += 1
-
-    # Collect columns to delete
-    for col, num in count.items():
-        if num >= 2:
-            safecopy = df[col].values[:, 0]
-            df.drop(columns=df[col], inplace=True)
-            df[col] = safecopy
+    for c in df.columns:
+        drop_double_columns(df, c)
 
     return df
 
@@ -42,57 +81,34 @@ def drop_columns(df):
 def clean_df(df):
     """
     This function cleans the dataframe, by dropping the row 0 (Finland),
-    splitting the column "Postal code area" into Postal code (the numerical postal code)
-    and Area (the name of the area), dropping remaining duplicate columns,
-    replacing missing values with 0, and finally converting each column to
-    the correct format.
+    dropping remaining duplicate columns, and replacing missing values with 0.
     :param df: the dataframe to clean
     :return: the cleaned dataframe
     """
     # Drop row 0: Finland
     df.drop(index=0, inplace=True)
 
-    # Rename the first column
-    df.rename(columns={df.columns[0]: "Postal code"}, inplace=True)
-
-    # Duplicate the first column and add it as the second column
-    df.insert(1, 'Area', df['Postal code'])
-
-    # Strip out numbers from the content of the second column:
-    # only the name of the area will remain.
-    content = df["Area"]
-    content = content.apply(lambda x: re.sub('[0-9_]+', '', x))
-    df["Area"] = content
-
-    # Strip out the letters and symbols from the content of the first column:
-    # only the postal code, in numerical form, will remain.
-    content = df["Postal code"]
-    # A-Öa-ö_ ()\\-
-    content = content.apply(lambda x: re.sub('[\D]+', '', x))
-    df["Postal code"] = content
-
     # Drop unnecessary columns that might have been copied while building the dataframe
-    to_drop = ['Postal code area', 'Postialue']
-    for td in to_drop:
-        if td in df.columns:
-            df.drop(columns=td, inplace=True)
-
-    df = drop_columns(df)
+    for c in df.columns:
+        drop_double_columns(df, c)
 
     # Replace missing values with 0
     df.replace({'..': 0, '.': 0}, inplace=True)
 
-    # Convert each column to the correct format
+    return df
+
+
+def data_format(df):
+    """
+    Convert each column to the correct format.
+    :param df: the dataframe
+    :return: the dataframe
+    """
     for key in df.columns:
         if key == 'Postal code' or key == 'Area':
             df[key] = df[key].astype('object')
         else:
             df[key] = df[key].astype('float')
-
-    # Print a summary of the dataframe
-    # print(df.describe())
-    # print(df.shape)
-
     return df
 
 
@@ -133,53 +149,83 @@ def bulk_load():
     years_list = sorted({re.sub('[\D]+', '', y) for y in file_list})
     print(years_list)
 
-    # Remove because of missing data (at least for now)
-    # years_list.remove('2012')
-    # years_list.remove('2016')
-    # years_list.remove('2017')
-
     # Build a dictionary of DataFrames:
     # to each year, it is associated one DataFrame
     df_dic = {y: pd.DataFrame() for y in years_list}
 
+    # Dataframe 2017 --> we'll get postal codes and areas from this
+    for file in file_list:
+        if '2017' in file:
+            if df_dic['2017'].size == 0:
+                df_dic['2017'] = pd.read_csv(file, sep=',', skiprows=0, encoding='iso-8859-1')
+            else:
+                # Open the file in a temporary dataframe
+                temp = pd.read_csv(file, sep=',', skiprows=0, encoding='iso-8859-1')
+                # Merge the temporary dataframe to the main one
+                df_dic['2017'] = df_dic['2017'].join(temp, lsuffix='_caller')
+
+    df_dic['2017'] = clean_df(df_dic['2017'])
+    df_dic['2017'] = first_columns(df_dic['2017'])
+
+    # print('-----------------------------\n2017:\n')
+    # print(df_dic['2017'].head())
+    # print(df_dic['2017'].columns)
+
+    postalcodes_list = df_dic['2017']['Postal code'].values
+
+    years_list.remove('2017')
     # Fill the DataFrames with the data from the correct files
-    #
     for file in file_list:
         for y in years_list:
+            if df_dic[y].size == 0:
+                df_dic[y]['Postal code'] = df_dic['2017']['Postal code'].copy()
+                df_dic[y]['Area'] = df_dic['2017']['Area'].copy()
+                # df_dic[y].set_index('Postal code', inplace=True)
             if y in file:
-                if df_dic[y].size == 0:
-                    df_dic[y] = pd.read_csv(file, sep=',', skiprows=0, encoding='iso-8859-1')
-                else:
-                    # Open the file in a temporary dataframe
-                    temp = pd.read_csv(file, sep=',', skiprows=0, encoding='iso-8859-1')
-                    # Merge the temporary dataframe to the main one
-                    df_dic[y] = df_dic[y].join(temp, lsuffix='_caller')
-                    # Try to locate eventual duplicated columns
-                    df_dic[y] = df_dic[y].loc[:, ~df_dic[y].columns.duplicated()]
+                # Open the file in a temporary dataframe
+                temp = pd.read_csv(file, sep=',', skiprows=0, encoding='iso-8859-1')
+                temp = clean_df(temp)
+                temp = first_columns(temp)
+                temp = data_format(temp)
+                idx = pd.Index(temp['Postal code'].values)
+                old_pc = list(set(idx) - set(postalcodes_list))
+                temp = temp[~temp['Postal code'].isin(old_pc)]
+                df_dic[y] = pd.merge(df_dic[y], temp.copy(), on='Postal code')
 
-    for df in iter(df_dic.values()):
-        # Clean each dataframe
-        df = clean_df(df)
-        # scale(df)
-        # Plot pairwise correlation
-        # pairwise_correlation(df)
+    for year, dfy in df_dic.items():
+        dfy = clean_columns(dfy)
+        dfy.drop(columns=['Postal code area', 'Postialue', 'Area_x', 'Area_y'], inplace=True, errors='ignore')
+        dfy = data_format(dfy)
+
+        print('FINALLY, ' + year + ':')
+        # print(dfy.head())
+        # print(dfy.columns)
+        print(dfy.shape)
+        # print(dfy.describe())
 
     return df_dic
 
 
-def drop_postalcodes(df):
+def getIndexPositions(listOfElements, element):
     """
-    Drop unexisting postalcodes.
-    Yes, I know. We should use the values.
-    No, I don't have time.
-    :param df: the dataframe
-    :return: the dataframe
+    Returns the indexes of all occurrences of the given element in the list listOfElements
+    :param listOfElements: a list
+    :param element: the element to find
+    :return: list of indexes
     """
-    to_open = Path("dataframes/") / 'df2017.tsv'
-    postalcodes_list = pd.read_csv(to_open, sep='\t', encoding='utf-8', dtype={'Postal code': object})['Postal code'].values
-    df = df.loc[df['Postal code'].isin(postalcodes_list)]
-    print(df.shape)
-    return df
+    indexPosList = []
+    indexPos = 0
+    while True:
+        try:
+            # Search for item in list from indexPos to the end of list
+            indexPos = listOfElements.index(element, indexPos)
+            # Add the index position in list
+            indexPosList.append(indexPos)
+            indexPos += 1
+        except ValueError as e:
+            break
+
+    return indexPosList
 
 
 def scale(df):
@@ -297,12 +343,36 @@ def scale(df):
             df.loc[df_rows, column] = row[column]
 
 
-# RUN THIS TO HAVE THE tsv FILES
-df_dic = bulk_load()
-for y, df in df_dic.items():
-    print(df.head())
-    df.to_csv(r'dataframes//df'+str(y)+'.tsv', sep='\t', index=False, encoding='utf-8')
+def get_tsv_files(scaled=False):
+    """
+    Call bulk_load and save each year on a file
+    :param scaled: bool, if true, the data are scaled to percentages
+    :return: None
+    """
+    df_dic = bulk_load()
+    if scaled:
+        # Read all the files with the data
+        file_list = glob.glob("paavo_data/*.csv")
 
-for y, df in df_dic.items():
-    df = drop_postalcodes(df)
-    df.to_csv(r'dataframes//df' + str(y) + '.tsv', sep='\t', index=False, encoding='utf-8')
+        # Create a sorted list of the years: remove A-Öa-ö_.,:; /()\\-
+        years_list = sorted({re.sub('[\D]+', '', y) for y in file_list})
+
+        # Remove because of missing data (at least for now)
+        # years_list.remove('2012')
+        # years_list.remove('2016')
+        # years_list.remove('2017')
+
+    for y, df in df_dic.items():
+        do_we_have = ['Inhabitants, total', 'Labour force', 'Services']
+        for sub in do_we_have:
+            print(y, sub, any(sub in cols for cols in df.columns))
+        print('--------')
+
+        if scaled: scale(df)
+
+        filename = 'df'+str(y)+'.tsv'
+        df.to_csv(Path('dataframes') / filename, sep='\t', index=False, encoding='utf-8')
+
+
+if __name__ == '__main__':
+    get_tsv_files(scaled=False)

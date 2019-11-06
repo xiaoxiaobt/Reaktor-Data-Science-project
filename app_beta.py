@@ -175,8 +175,8 @@ def change_focus(click):
 def fill_tab(tab):
     if tab == "result-tab":
         polar_plot = go.Scatterpolar(r=[0, 2, 1, 5, 0],
-                                     theta=['Education index', 'Num of service', 'Environment', 'Average Income',
-                                            'Density'],
+                                     theta=['Education', 'Services', 'Transportation', 'Average Income',
+                                            'Population Density'],
                                      fill='toself')
         polar_html = html.Div(
             children=[

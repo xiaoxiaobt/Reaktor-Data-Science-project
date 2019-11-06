@@ -29,9 +29,12 @@ def industry_data_cleaner():
 
 def add_id():
     """
+    DEPRECATED
     This function add "id" feature to .json file. The id feature works as identifier (key) to access
      corresponding shape, only works for postinumeroalueet 2016.json
     """
+    return
+
     file = open("./data/postinumeroalueet 2016.json", "r")
     file_write = open("./data/idchanged.json", "w")
     wait_4_write = False
@@ -103,12 +106,16 @@ def generate_requirements():
     file = open("requirements.txt", "r+")
     lines = file.readlines()
     for x in range(len(lines)):
-        lines[x] = lines[x].split("==")[0] + "\n" if "ywin" not in lines[x] else ""
+        if "ywin" in lines[x]:
+            lines[x] = ""
+        elif "pygobject" in lines[x]:
+            lines[x] = ""
+        else:
+            lines[x] = lines[x].split("==")[0] + "\n"
     file.close()
-    file = open("requirements.txt", "w")
-    file.writelines(lines)
-    file.write("gunicorn")
-    file.close()
+    with open("requirements.txt", "w") as file:
+        file.writelines(lines)
+        file.write("gunicorn")
 
 
 def feature_selection(list_of_post_code=None):
@@ -134,21 +141,47 @@ def feature_selection(list_of_post_code=None):
     return polygons
 
 
-def find_num_of_points():
+def read_stops():
+    file = pd.read_csv("./data/stops.txt", sep=",", usecols={"stop_lat", "stop_lon"})
+    dic = zip(file.stop_lon, file.stop_lat)
+    result = [(float(line[1]), float(line[0])) for line in dic]
+    print(find_num_of_points(result))
+
+
+def find_num_of_points(points):
+    # points = "./temp/tieliikenne_2017.shp"
     if os.name == 'nt':
-        print("This part cannot run on Windows. ")
+        print("This part cannot be run on Windows. ")
         return
-    from shapely.geometry import Point
-    from shapely.geometry.polygon import Polygon
-    FILE_NAME = "./data/paavo_9_koko.csv"
-    postal_code = pd.read_table("FILE_NAME", 'r').id
+    exec("from shapely import wkt")
+    exec("from shapely.geometry import Point")
+    point_dict = dict()
+    polygon_dict = dict()
+    FILE_NAME = "./data/zip_polygon.csv"
+    with open(FILE_NAME) as f:
+        for line in f.readlines():
+            polygon, code = [x.strip("\"") for x in line.strip().split("\t")]
+            polygon_dict[code] = wkt.loads(polygon)
+            point_dict[code] = 0
+    # If the input is a list of points:
+
+    if isinstance(points, list):
+        current = 0
+        for code in polygon_dict.keys():
+            current += 1
+            print("Progress: " + str(current) + "\t/ 3026")
+            for y, x in points:
+                if polygon_dict[code].contains(Point(x, y)):
+                    points.remove((y, x))
+                    point_dict[code] += 1
+    return point_dict
 
 
 def main():
     try:
         eval(input("Input the name of function you would like to execute, without the bracket:\n").lower() + "()")
         print("Executed successfully.")
-    except IOError:
+    except Exception:
         print("Function name not found. Please check your input.")
 
 

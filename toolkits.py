@@ -90,8 +90,8 @@ def fix_dataframe():
 
 
 def add_id_for_geojson():
-    file = open("./data/finland_2016_p4_utf8_simp.geojson", "r")
-    file_write = open("./data/finland_2016_p4_utf8_simp_wid.geojson", "w+")
+    file = open("./data/finland_2019_p4_utf8_simp.geojson", "r")
+    file_write = open("./data/finland_2019_p4_utf8_simp_wid.geojson", "w+")
     for line in file.readlines():
         if 'properties": { "posti_alue' in line:
             line = line.replace('properties": { "posti_alue', 'id')
@@ -121,7 +121,7 @@ def generate_requirements():
 def feature_selection(list_of_post_code=None):
     if list_of_post_code is None:
         list_of_post_code = ["02150", "76120", "00900", "33720"]
-    file = open("./data/finland_2016_p4_utf8_simp_wid.geojson", 'r')
+    file = open("./data/finland_2019_p4_utf8_simp_wid.geojson", 'r')
     lines = file.readlines()
     file.close()
     match = []

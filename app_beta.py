@@ -8,7 +8,7 @@ import dash_core_components as dcc
 import toolkits
 
 print("Loading data...")
-name_geojson = "./data/finland_2016_p4_utf8_simp_wid.geojson"
+name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
 # Initialize variables
 

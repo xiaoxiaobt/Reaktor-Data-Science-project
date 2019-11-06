@@ -148,6 +148,22 @@ def main():
     np.savez_compressed(output_filename_code, code_array)
     np.savez_compressed(output_filename_mesh, vertex_array, face_array, edge_array)
 
+    # save in different format for WebGL
+    webgl_vertex_position_array_le = np.empty(vertex_array.shape[0], dtype='2<f4')
+    webgl_vertex_color_index_array_le = np.empty(vertex_array.shape[0], dtype='<u2')
+    webgl_face_array_le = face_array
+    webgl_edge_array_le = edge_array
+
+    for i in range(vertex_array.shape[0]):
+        (x, y), c = vertex_array[i]
+        webgl_vertex_position_array_le[i] = (x, y)
+        webgl_vertex_color_index_array_le[i] = c
+
+    webgl_vertex_position_array_le.tofile('map_vertex_position.dat')
+    webgl_vertex_color_index_array_le.tofile('map_vertex_color_index.dat')
+    webgl_face_array_le.tofile('map_face.dat')
+    webgl_edge_array_le.tofile('map_edge.dat')
+
     print(f'* Areas: {len(data)}')
     print(f'* Vertices: {vertex_array.shape[0]}')
     print(f'* Faces: {face_array.shape[0]}')
@@ -156,4 +172,5 @@ def main():
     print('DONE!')
 
 
-main()
+if __name__ == '__main__':
+    main()

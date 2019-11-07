@@ -4,6 +4,8 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
+import numpy as np
+from housing_price import list_sold, list_rent
 
 
 def first_columns(df):
@@ -93,7 +95,9 @@ def clean_df(df):
         drop_double_columns(df, c)
 
     # Replace missing values with 0
-    df.replace({'..': 0, '.': 0}, inplace=True)
+    df.replace({'..': np.nan, '.': np.nan}, inplace=True)
+    df.replace({None: 0}, inplace=True)
+    df.fillna(0, inplace=True)
 
     return df
 
@@ -190,12 +194,53 @@ def bulk_load():
                 idx = pd.Index(temp['Postal code'].values)
                 old_pc = list(set(idx) - set(postalcodes_list))
                 temp = temp[~temp['Postal code'].isin(old_pc)]
-                df_dic[y] = pd.merge(df_dic[y], temp.copy(), on='Postal code')
+                df_dic[y] = pd.concat([df_dic[y], temp.copy()], axis=1, sort=False).reindex(df_dic[y].index)
+
+    sold_df = pd.DataFrame({'Sell price': list_sold()}, dtype=np.float64)
+    rentARA_df = pd.DataFrame({'Rent price with ARA': list_rent()[0]}, dtype=np.float64)
+    rentnoAra_df = pd.DataFrame({'Rent price without ARA': list_rent()[1]}, dtype=np.float64)
 
     for year, dfy in df_dic.items():
+        # Here we add the columns 'Bus stops', 'Sold', 'Rented', 'Population density'
+        # Therefore, the column 'Inhabitants total' becomes useless.
+        # We can remove it after scaling
         dfy = clean_columns(dfy)
         dfy.drop(columns=['Postal code area', 'Postialue', 'Area_x', 'Area_y'], inplace=True, errors='ignore')
         dfy = data_format(dfy)
+        dfy.reset_index(inplace=True)
+        # Add bus stops
+        dfy['Bus stops'] = add_buses()
+
+        # Add population density
+        dfy.drop(columns=['index'], inplace=True)
+        dens_df = add_density(year=year, pclist=postalcodes_list)
+
+        mydensitylist = []
+        for pc in postalcodes_list:
+            if pc in dens_df.keys():
+                mydensitylist.append(dens_df[pc])
+            else:
+                mydensitylist.append(0)
+
+        print(len(mydensitylist))
+        dfy['Density'] = [0] * len(dfy.index)
+        new_df = pd.DataFrame({'Density': mydensitylist})
+        dfy.update(new_df)
+
+        # Add avg selling prices in the last 12 months
+        dfy['Sell price'] = [0] * len(dfy.index)
+        # sold_df = pd.DataFrame({'Sell price': list_sold()}, dtype=np.float64)
+        dfy.update(sold_df)
+
+        # Add avg renting prices with ARA in the last 12 months
+        dfy['Rent price with ARA'] = [0] * len(dfy.index)
+        # rentARA_df = pd.DataFrame({'Rent price with ARA': list_rent()[0]}, dtype=np.float64)
+        dfy.update(rentARA_df)
+
+        # Add avg renting prices without ARA in the last 12 months
+        dfy['Rent price without ARA'] = [0] * len(dfy.index)
+        # rentnoAra_df = pd.DataFrame({'Rent price without ARA': list_rent()[1]}, dtype=np.float64)
+        dfy.update(rentnoAra_df)
 
         print('FINALLY, ' + year + ':')
         # print(dfy.head())
@@ -343,6 +388,37 @@ def scale(df):
             df.loc[df_rows, column] = row[column]
 
 
+def add_buses():
+    """
+    Open the file and return the column to add to the dataframe
+    :return: list of values as a pandas Series
+    """
+    bus_df = pd.read_csv(Path('temp/') / 'bus.tsv', sep='\t', usecols=['Bus stops'])
+    return bus_df['Bus stops'].copy()
+
+
+def add_density(year, pclist):
+    """
+    Open the file and return the column to add to the dataframe.
+    There is no density 2012. Where asking for 2012, the column 2013
+    will be returned.
+    :param year: string, the year to read
+    :param pclist: list of strings, each element is a postal code to take
+    :return: list of values as a dictionary
+    """
+    if year == '2012': year = '2013'
+    if year not in ['2012', '2013', '2014', '2015', '2016', '2017']:
+        print('WARNING: wrong year! Empty Series returned')
+        return {}
+    else:
+        col_name = 'Density (' + year + ')'
+        dens_df = pd.read_csv(Path('data/') / 'density.tsv', sep='\t', usecols=['Postal code', col_name], dtype={'Postal code': object})
+        dens_df.fillna(0)
+        dens_df = dens_df[dens_df['Postal code'].isin(pclist)]
+        print(dens_df[col_name].head())
+        return dens_df.copy().set_index('Postal code').to_dict()[col_name]
+
+
 def get_tsv_files(scaled=False):
     """
     Call bulk_load and save each year on a file
@@ -363,13 +439,15 @@ def get_tsv_files(scaled=False):
         # years_list.remove('2017')
 
     for y, df in df_dic.items():
-        do_we_have = ['Inhabitants, total', 'Labour force', 'Services']
+        do_we_have = ['Density', 'Surface', 'Inhabitants, total', 'Labour force', 'Services', 'Area',
+                      'Average income', 'Average size of households', 'Average age']
         for sub in do_we_have:
             print(y, sub, any(sub in cols for cols in df.columns))
         print('--------')
 
         if scaled: scale(df)
 
+        df.fillna(0, inplace=True)
         filename = 'df'+str(y)+'.tsv'
         df.to_csv(Path('dataframes') / filename, sep='\t', index=False, encoding='utf-8')
 

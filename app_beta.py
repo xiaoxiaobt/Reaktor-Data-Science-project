@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
-import toolkits
+from toolkits import *
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
@@ -30,7 +30,7 @@ def instructions():
     - Alternatively, search an area by its name or postal code
     """
         ],
-        className="instructions-sidebar",
+        className="instructions-sidebar"
     )
 
 
@@ -148,14 +148,10 @@ app.layout = html.Div(
                 ),
                 html.Div(
                     id="tabs-content-example",
-                    className="canvas",
-                    style={"text-align": "left", "margin": "auto", "opacity": 0.8, 'paper_bgcolor': 'rgba(0,0,0,0)',
-                           "plot_bgcolor": 'rgba(0,0,0,0)'}
-                ),
-                html.Div(className="upload_zone", id="upload-stitch", children=[]),
-                html.Div(id="sh_x", hidden=False),
-                html.Div(id="stitched-res", hidden=False),
-                dcc.Store(id="memory-stitch")
+                    style={'display': 'block', "text-align": "left", "margin": "auto",
+                           'paper_bgcolor': 'rgba(0,0,0,0)', "plot_bgcolor": 'rgba(0,0,0,0)'},
+                    className="canvas"
+                )
             ],
             className="eight columns result"
         ),
@@ -205,23 +201,33 @@ def fill_tab(tab):
                                        marker_line_width=0,
                                        showscale=False,
                                        )
-        map_layout = go.Layout(  # width=300,
+        map_layout = go.Layout(
+            width=360,
             height=600,
             mapbox_style="carto-positron",
-            mapbox_zoom=7,
-            mapbox_center={"lat": 60.552778, "lon": 24.966389},
+            mapbox_zoom=4,
+            mapbox_center={"lat": 65.361064, "lon": 26.985940},
             margin={"r": 0, "t": 0, "l": 0, "b": 0}
         )
-        map_html = html.Div(
-            children=[
-                dcc.Graph(
+        graph = dcc.Graph(
                     id='main_plot',
                     config={'displayModeBar': False},
                     figure={
                         'layout': map_layout,
                         'data': [map_plot]
-                    }
+                    },
+            style={'display': 'inline-block'},
+            className="left_zone"
                 )
+        k = html.Div([
+            html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
+            html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
+            html.H4(str(get_amount_of_service()), id="main_info")
+        ], style={'display': 'inline-block', 'width': 500}
+        )
+        map_html = html.Div(
+            children=[
+                graph, k
             ]
         )
         return map_html

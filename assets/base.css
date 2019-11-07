@@ -512,15 +512,6 @@ input[type="button"].button-primary:focus {
     border-color: #1EAEDB;
 }
 
-
-#tabs-content-example > div > div,
-.lower-canvas,
-.upper-canvas,
-.canvas-container {
-    width: 65vw !important;
-}
-
-
 /* Selection tabs */
 #stitching-tabs > div:nth-child(1),
 #stitching-tabs > div:nth-child(2),
@@ -1165,14 +1156,24 @@ there.
 
     .canvas {
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
         margin-left: 0;
+    }
+
+    .left_zone {
+        width: 100%;
+        display: inline-block !important;
+    }
+
+    .right_zone {
+        width: 50%;
+        display: inline-block !important;
     }
 
     /* Canvas Div */
     #_dash-app-content > div > div.eight.columns.result {
         margin-left: 0;
-        opacity: 0.6;
+        opacity: 0.8;
     }
 
     #table-stitch > div {
@@ -1251,6 +1252,11 @@ there.
 
     .upload_zone {
         width: 100vw;
+    }
+
+    .comeon {
+        display: inherit;
+        text-align: center;
     }
 
     /*Zoom In svg*/

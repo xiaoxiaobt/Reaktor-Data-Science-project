@@ -452,5 +452,25 @@ def get_tsv_files(scaled=False):
         df.to_csv(Path('dataframes') / filename, sep='\t', index=False, encoding='utf-8')
 
 
+def common_columns():
+    df_dic = bulk_load()
+    col_dic = {}
+    for y, df in df_dic.items():
+        # Strip out the year from every column
+        # The columns with the same content have the same name, regardless of the year
+        columns_without_year = [re.sub(r" \d{4}", "", title) for title in df.columns]
+        col_dic[y] = set(columns_without_year)
+
+    years = list(df_dic.keys())
+    # 2012 is years[0]
+    print(years)
+    y0 = years[1]
+    years = years[2:]
+    common = set(col_dic[y0])
+    for y in years:
+        common = common.intersection(col_dic[y])
+    return common
+
+
 if __name__ == '__main__':
     get_tsv_files(scaled=False)

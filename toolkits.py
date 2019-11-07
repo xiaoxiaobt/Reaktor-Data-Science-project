@@ -2,13 +2,14 @@ import json
 import pandas as pd
 import numpy as np
 import os
+import requests
+import random
+from bs4 import BeautifulSoup
 
 
-def toutf8():
-    FILE_NAME = "./temp/industry_2008.csv"
-    OUTPUT_NAME = "./temp/industry_2008_u.csv"
-    file = open(FILE_NAME, encoding='iso-8859-1')
-    file_write = open(OUTPUT_NAME, "w", encoding='utf-8')
+def toutf8(input_name="./temp/industry_2008.csv", output_name="./temp/industry_2008_u.csv"):
+    file = open(input_name, encoding='iso-8859-1')
+    file_write = open(output_name, "w", encoding='utf-8')
     file_write.writelines(file.readlines())
     file.close()
     file_write.close()
@@ -34,7 +35,6 @@ def add_id():
      corresponding shape, only works for postinumeroalueet 2016.json
     """
     return
-
     file = open("./data/postinumeroalueet 2016.json", "r")
     file_write = open("./data/idchanged.json", "w")
     wait_4_write = False
@@ -149,12 +149,13 @@ def read_stops():
 
 
 def find_num_of_points(points):
-    # points = "./temp/tieliikenne_2017.shp"
     if os.name == 'nt':
         print("This part cannot be run on Windows. ")
         return
-    exec("from shapely import wkt")
-    exec("from shapely.geometry import Point")
+    else:
+        print("This algorithm should work on your computer. Remember to remove the exec() function call. ")
+        exec("from shapely import wkt")
+        exec("from shapely.geometry import Point")
     point_dict = dict()
     polygon_dict = dict()
     FILE_NAME = "./data/zip_polygon.csv"
@@ -164,7 +165,6 @@ def find_num_of_points(points):
             polygon_dict[code] = wkt.loads(polygon)
             point_dict[code] = 0
     # If the input is a list of points:
-
     if isinstance(points, list):
         current = 0
         for code in polygon_dict.keys():
@@ -177,9 +177,28 @@ def find_num_of_points(points):
     return point_dict
 
 
+def get_amount_of_service(zip="02150"):
+    """
+    Get number of services of a postal code
+    :param zip: zip_code (str)
+    :return:  dictionary("service_name" -> number)
+    """
+    service_list = ["ruokakauppa", "ravintola", "kirjasto", "terveys", "kuntosali", "hotelli", "pubit ja baarit"]
+    counts = dict()
+    random.shuffle(service_list)
+    for service in service_list:
+        URL = "https://www.finder.fi/search?what=" + service + "%20" + str(zip) + "&type=company"
+        soup = BeautifulSoup(requests.get(URL).content, features="html.parser")
+        main_content = soup.find('span', attrs={'class': 'SearchResultList__TabBar__Count'})
+        num = str(main_content).split("-->")[3].split("<!--")[0]
+        counts[service] = int(num)
+        print(service, num)
+    return counts
+
+
 def main():
     try:
-        eval(input("Input the name of function you would like to execute, without the bracket:\n").lower() + "()")
+        eval(input("Input the name of function you would like to execute: \n").lower())
         print("Executed successfully.")
     except Exception:
         print("Function name not found. Please check your input.")

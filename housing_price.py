@@ -9,6 +9,7 @@ import glob
 import re
 from pathlib import Path
 import time
+import numpy as np
 
 #TODO: for sales, compute average price/m^2 for each postcode, save it in pandas.Series
 #TODO: for rents, compute average price/m^2 with and without ARA for each postcode, save it in 2 pandas.Series
@@ -23,7 +24,8 @@ end_rent = '&renderType=renderTypeTable'
 
 # Postal codes list
 to_open = Path("dataframes/") / 'df2017.tsv'
-pc_list = [c[:5] for c in pd.read_csv(to_open, sep='\t', encoding='utf-8')['Postal code'].values]
+pc_list = pd.read_csv(to_open, sep='\t', encoding='utf-8', dtype={'Postal code': object})['Postal code'].values
+# pd.DataFrame({'Postal code': pc_list}).to_csv(Path("dataframes/") / 'postalcodes.tsv', index=False)
 
 
 def get_query(ps='00100', onSale=True):
@@ -104,6 +106,8 @@ def clean_sale(df):
     to_drop += df[df.Kaupunginosa == '1'].index.tolist()
     to_drop += df[df.Kaupunginosa == 'Yksiö'].index.tolist()
     to_drop += df[df.Kaupunginosa == 'Kaksi huonetta'].index.tolist()
+    to_drop += df[df.Kaupunginosa == 'Kolme huonetta'].index.tolist()
+    to_drop += df[df.Kaupunginosa == 'Neljä huonetta tai enemmän'].index.tolist()
     to_drop += df[df.Kaupunginosa.isnull()].index.tolist()
 
     # Drop the indexes in the list
@@ -111,7 +115,7 @@ def clean_sale(df):
 
     # Reset the index
     df.reset_index(drop=True, inplace=True)
-    return df
+    return df.copy()
 
 
 def clean_rent(df):
@@ -134,7 +138,7 @@ def clean_rent(df):
 
     # Reset the index
     df.reset_index(drop=True, inplace=True)
-    return df
+    return df.copy()
 
 
 def clean(onSale=True):
@@ -183,6 +187,7 @@ def clean(onSale=True):
 
                 # Save dataframe to file
                 print('Postalcode: ' + str(code))
+                print(df_dic[code].head())
                 df_folder = 'dataframes_' + filename
                 if not os.path.exists(df_folder):
                     os.makedirs(df_folder)
@@ -191,6 +196,91 @@ def clean(onSale=True):
     return df_dic
 
 
+def sold_avg(df):
+    """
+    Return the average prices per square meters
+    :param df: a dataframe where the 5th column is price per square meter
+    :return: float, the average (or np.nan)
+    """
+    df = clean_sale(df)
+    if df[df.columns[5]].empty:
+        return np.nan
+    else:
+        return df[df.columns[5]].mean()
+
+
+def list_sold(pc_list=pc_list):
+    """
+    Build the list of average selling prices per square meter, for each postal code
+    :param pc_list: list of strings, where each string is a postal code
+    :return: list of floats, with np.nan
+    """
+    avg_price_list = []
+    for y in pc_list:
+        filename = str(y)[:5] + '.tsv'
+        df = pd.read_csv(Path('dataframes_sale') / filename, sep='\t', encoding='iso-8859-1')
+        avg_price_list.append(sold_avg(df))
+    return avg_price_list
+
+
+def rent_avg(df, withARA=True):
+    """
+    Return the average prices per square meters for the rents
+    :param df: a dataframe where the 5th column is price per square meter
+    :param withARA: compute the weighted mean including ARA houses
+    :return: float, the average (or np.nan)
+    """
+    cols = ['Unnamed', 'Keskivuokra ARA-vuokra', 'Keskivuokra Vapaarah. vanhat', 'Keskivuokra Vapaarah. uudet']
+    df = clean_rent(df)
+    df.replace({'-': 0.0}, inplace=True)
+    price = []
+    lkm = []
+    if df.empty:
+        return np.nan
+    else:
+        df = df[df.columns[:4]]
+        for i, row in df.iterrows():
+            if row['Unnamed'] == 'Kaikki':
+                price.append(float(row[cols[1]]))
+                price.append(float(row[cols[2]]))
+                price.append(float(row[cols[3]]))
+            if row['Unnamed'] == 'Lkm':
+                lkm.append(int(row[cols[1]]))
+                lkm.append(int(row[cols[2]]))
+                lkm.append(int(row[cols[3]]))
+        if len(price) > 0 and len(price) == len(lkm):
+            if withARA:
+                mysum = sum([price[i]*lkm[i] for i in range(len(price))])
+                if mysum != 0.0:
+                    return mysum/sum(lkm)
+                else:
+                    return np.nan
+            else:
+                mysum = sum([price[i] * lkm[i] for i in range(1, len(price))])
+                if mysum != 0.0:
+                    return mysum / (sum(lkm)-lkm[0])
+                else:
+                    return np.nan
+
+def list_rent(pc_list=pc_list):
+    """
+    Build the list of average selling prices per square meter, for each postal code
+    :param pc_list: list of strings, where each string is a postal code
+    :return: tuple of 2 lists of floats, with np.nan; the first list includes ARA,
+            the second list does not include ARA
+    """
+    avg_ARA_price_list = []
+    avg_noARA_price_list = []
+    for y in pc_list:
+        filename = str(y)[:5] + '.tsv'
+        df = pd.read_csv(Path('dataframes_rent') / filename, sep='\t', encoding='iso-8859-1')
+        avg_ARA_price_list.append(rent_avg(df, withARA=True))
+        avg_noARA_price_list.append(rent_avg(df, withARA=False))
+    return avg_ARA_price_list, avg_noARA_price_list
+
+
 if __name__ == '__main__':
-    sales_dic = clean(onSale=True)
-    rent_dic = clean(onSale=False)
+    # sales_dic = clean(onSale=True)
+    print(list_sold())
+    # rent_dic = clean(onSale=False)
+    print(list_rent())

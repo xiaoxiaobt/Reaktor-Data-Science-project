@@ -70,15 +70,6 @@ housing_query = {
         ]
       }
     },
-    {
-      "code": "Tiedot",
-      "selection": {
-        "filter": "item",
-        "values": [
-          "Mean"
-        ]
-      }
-    }
   ],
   "response": {
     "format": "csv"

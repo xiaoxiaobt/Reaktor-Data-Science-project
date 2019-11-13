@@ -246,7 +246,7 @@ body {
 }
 
 #_dash-app-content > div {
-    background-image: url("back_hd.jpg");
+    background-image: url("/assets/back_hd.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;

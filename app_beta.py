@@ -9,15 +9,15 @@ from toolkits import *
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
-name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Require UTF-8, Tab-seperated, name of postal code column ='id'
+name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='id'
 # Initialize variables
 
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
-paavo_df = pd.read_table(name_paavo_dataframe, dtype={"id": str})  # The dtype CANNOT be removed!
+paavo_df = pd.read_table(name_paavo_dataframe, dtype={"id": object})  # The dtype CANNOT be removed!
 paavo_df['text'] = '<b>' + paavo_df.location.astype(str) + '</b><br>' + \
                    "Workplaces: " + paavo_df['Workplaces, 2016 (TP)'].astype(str) + '<br>' + \
-                   "Average Income: " + paavo_df['Average income of inhabitants, 2016 (HR)'].astype(str) + \
-                   '<br>' + "Students: " + paavo_df['Students, 2016 (PT)'].astype(str)
+                   "Average Income: " + paavo_df['Average income of inhabitants, 2016 (HR)'].astype(str) + '<br>' + \
+                   "Students: " + paavo_df['Students, 2016 (PT)'].astype(str)
 
 
 def instructions():
@@ -32,6 +32,78 @@ def instructions():
         ],
         className="instructions-sidebar"
     )
+
+
+def get_polar_html(r=None):
+    if r is None:
+        r = [0.84, 0.51, 0.40, 0.76, 0.80]
+    polar_plot = go.Scatterpolar(r=r,
+                                 theta=['Education', 'Services', 'Transportation', 'Average Income',
+                                        'Population Density'],
+                                 fill='toself')
+    return html.Div(
+        children=[
+            html.H1("We suggest: Punavuori, 00120", id='suggestion_location_text'),
+            html.H2("🛈 Sell price: 7934 €/m²", id="suggestion_price_text"),
+            html.H3("Average income: \t39248 €/year", id="suggestion_income_text"),
+            html.H3("Average age: \t40", id="suggestion_age_text"),
+            html.H3("29.66% of the people has a higher university degree", id="suggestion_degree_text"),
+            dcc.Graph(
+                id='radar_plot',
+                config={'displayModeBar': False},
+                figure={
+                    'layout': go.Layout(
+                        paper_bgcolor='rgba(0,0,0,0)',
+                        plot_bgcolor='rgba(0,0,0,0)'
+                    ),
+                    'data': [polar_plot]
+                }
+            )
+        ]
+    )
+
+
+def get_about_html():
+    text = """
+                    This is the implementation of Data Science Project. The aim of this project is to 
+                    visualize and get insights on Finland demographics.
+                    """
+    return html.Div(text)
+
+
+def get_map_html():
+    map_plot = go.Choroplethmapbox(geojson=polygons,
+                                   text=paavo_df.text,
+                                   locations=paavo_df.id,
+                                   z=paavo_df['Surface area'],
+                                   colorscale="Viridis",
+                                   marker_opacity=0.7,
+                                   marker_line_width=0,
+                                   showscale=False,
+                                   )
+    map_layout = go.Layout(width=360,
+                           height=600,
+                           mapbox_style="carto-positron",
+                           mapbox_zoom=4,
+                           mapbox_center={"lat": 65.361064, "lon": 26.985940},
+                           margin={"r": 0, "t": 0, "l": 0, "b": 0}
+                           )
+    graph = dcc.Graph(id='main_plot',
+                      config={'displayModeBar': False},
+                      figure={'layout': map_layout, 'data': [map_plot]},
+                      style={'display': 'inline-block'},
+                      className="left_zone"
+                      )
+    text_block = html.Div([
+        html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
+        html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
+        html.H4(str(get_amount_of_service()), id="main_info")
+    ], style={'display': 'inline-block', 'width': 500}
+    )
+    map_html = html.Div(
+        children=[graph, text_block]
+    )
+    return map_html
 
 
 height, width = 200, 500
@@ -139,22 +211,17 @@ app.layout = html.Div(
                     id="stitching-tabs",
                     value="canvas-tab",
                     children=[
-                        dcc.Tab(label="MAP", value="canvas-tab"),
-                        dcc.Tab(label="ANALYSIS", value="result-tab"),
-                        dcc.Tab(label="ABOUT", value="help-tab"),
-                        dcc.Tab(label="TEAM", value="team-tab")
+                        dcc.Tab(label="MAP", value="canvas-tab", children=[get_map_html()]),
+                        dcc.Tab(label="ANALYSIS", value="result-tab", children=[get_polar_html()]),
+                        dcc.Tab(label="ABOUT", value="help-tab", children=[get_about_html()]),
+                        dcc.Tab(label="TEAM", value="team-tab",
+                                children=[html.Div("Roope, Trang, Thong, Letizia, Taige")])
                     ],
                     className="tabs"
-                ),
-                html.Div(
-                    id="tabs-content-example",
-                    style={'display': 'block', "text-align": "left", "margin": "auto",
-                           'paper_bgcolor': 'rgba(0,0,0,0)', "plot_bgcolor": 'rgba(0,0,0,0)'},
-                    className="canvas"
                 )
             ],
             className="eight columns result"
-        ),
+        )
     ],
     className="row twelve columns"
 )
@@ -163,82 +230,6 @@ app.layout = html.Div(
 @app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
 def change_focus(click):
     return "result-tab" if click else "canvas-tab"
-
-
-@app.callback(
-    Output("tabs-content-example", "children"), [Input("stitching-tabs", "value")]
-)
-def fill_tab(tab):
-    if tab == "result-tab":
-        polar_plot = go.Scatterpolar(r=[0, 2, 1, 5, 0],
-                                     theta=['Education', 'Services', 'Transportation', 'Average Income',
-                                            'Population Density'],
-                                     fill='toself')
-        polar_html = html.Div(
-            children=[
-                dcc.Graph(
-                    id='radar_plot',
-                    config={'displayModeBar': False},
-                    figure={
-                        'layout': go.Layout(
-                            paper_bgcolor='rgba(0,0,0,0)',
-                            plot_bgcolor='rgba(0,0,0,0)'
-                        ),
-                        'data': [polar_plot]
-                    }
-                )
-            ]
-        )
-
-        return polar_html
-    elif tab == "canvas-tab":
-        map_plot = go.Choroplethmapbox(geojson=polygons,
-                                       text=paavo_df.text,
-                                       locations=paavo_df.id,
-                                       z=paavo_df['Surface area'],
-                                       colorscale="Viridis",
-                                       marker_opacity=0.5,
-                                       marker_line_width=0,
-                                       showscale=False,
-                                       )
-        map_layout = go.Layout(
-            width=360,
-            height=600,
-            mapbox_style="carto-positron",
-            mapbox_zoom=4,
-            mapbox_center={"lat": 65.361064, "lon": 26.985940},
-            margin={"r": 0, "t": 0, "l": 0, "b": 0}
-        )
-        graph = dcc.Graph(
-                    id='main_plot',
-                    config={'displayModeBar': False},
-                    figure={
-                        'layout': map_layout,
-                        'data': [map_plot]
-                    },
-            style={'display': 'inline-block'},
-            className="left_zone"
-                )
-        k = html.Div([
-            html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
-            html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
-            html.H4(str(get_amount_of_service()), id="main_info")
-        ], style={'display': 'inline-block', 'width': 500}
-        )
-        map_html = html.Div(
-            children=[
-                graph, k
-            ]
-        )
-        return map_html
-    elif tab == "help-tab":
-        text = """
-                This is the implementation of Data Science Project. The aim of this project is to 
-                visualize and get insights on Finland demographics.
-                """
-        return [html.Div(text)]
-    else:
-        return [html.Div("Roope, Trang, Thong, Letizia, Taige")]
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 # Collect data into data frames based on the year of the file
 import glob
+import os
 import re
 import pandas as pd
 from pathlib import Path
@@ -295,11 +296,15 @@ def get_tsv_files():
     """
     df_dic = get_all_dataframes()
 
+    folder = 'datafreames'
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
     for y, df in df_dic.items():
         df.fillna(0, inplace=True)
         filename = 'df'+str(y)+'.tsv'
         print("Saving ", filename)
-        df.to_csv(Path('dataframes') / filename, sep='\t', index=False, encoding='utf-8')
+        df.to_csv(Path(folder) / filename, sep='\t', index=False, encoding='utf-8')
 
 
 def get_common_columns():

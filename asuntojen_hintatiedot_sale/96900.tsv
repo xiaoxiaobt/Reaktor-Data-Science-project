@@ -1,0 +1,42 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Saarenkylä	2h, k, kph, s	rt	5200	130000	2500	2005	1/1	ei	hyvä	D2013
+Saarenkylä	2h, k, kph, s, ...	rt	5000	134000	2680	2006	2/2	ei	hyvä	C2013
+Saarenkylä	2h, k, vh, eril...	kt	5350	160000	2991	2004	1/2	ei	hyvä	C2013
+Nivavaara	3h, k, vh, kph,...	rt	7800	77000	987	1992	1/1	ei	hyvä	E2013
+Nivavaara	3h, k, khh, kph...	rt	8500	189500	2229	2014	1/1	ei	hyvä	C2013
+Saarenkylä	3h, oh, k, wc, ...	ok	10300	98000	951	1977	-1/1	ei	hyvä	E2018
+Saarenkylä	3h, k, kph/wc, ...	rt	7000	209000	2986	2016	1/1	ei	hyvä	C2013
+Nivavaara	3h, k, khh, kph...	rt	8150	176000	2160	2007	-1/2	ei	hyvä	D2007
+Saarenkylä	3mh, oh, k, khh...	ok	11000	225000	2045	2006	-1/1	ei	hyvä	D2018
+Saarenkylä	3h,k,s	rt	7400	160000	2162	2004	1/1	ei	hyvä	F2007
+Saarenkylä	3h,k,khh,s	rt	7600	174500	2296	2009	1/1	ei	hyvä	
+Saarenkylä	3h,k,s,ask,wc	ok	10000	142000	1420	1964		ei	tyyd.	D2018
+Nivavaara	3h, k, kph, s, wc	rt	7350	149500	2034	2005	1/1	ei	hyvä	D2013
+Saarenkylä	3h, k, kph, s, ...	rt	7500	188500	2513	2004	1/1	ei	hyvä	E2013
+Saarenkylä	3h, k, khh, kph, s	rt	8170	190500	2332	2004	1/1	ei	hyvä	E2013
+Nivavaara	3h,k,s	rt	7400	147000	1986	2005	1/1	ei	hyvä	D2013
+Saarenkylä	3mh, oh, k, khh...	rt	9900	309000	3121	2016	-1/1	ei	hyvä	C2013
+Nivavaara	4h, k, kph, s, ...	rt	9000	140900	1566	1993	-1/2	ei	hyvä	D2007
+Nivavaara	3mh, oh, k+rt, ...	ok	10500	199000	1895	1992	-1/1	ei	hyvä	E2018
+Saarenkylä	3mh, oh, k, eri...	ok	12700	188000	1480	1980	-1/1	ei	hyvä	E2013
+Saarenkylä	3mh, oh, k, khh...	rt	9900	244000	2465	2012	-1/1	ei	hyvä	C2018
+Nivavaara	3h+k+khh+ph+s j...	ok	18200	238000	1308	1993	1/1	ei	hyvä	D2007
+Saarenkylä	4h, k, khh, kph...	rt	9800	208000	2122	2004	1/1	ei	hyvä	D2013
+Saarenkylä	5h, k, khh, kph...	ok	12900	265000	2054	2012	-1/1	ei	hyvä	A2007
+Saarenkylä	3h, k, oh, kph,...	rt	13550	292500	2159	2010	-1/1	ei	hyvä	D2018
+Nivavaara	3mh, oh, k, kph...	ok	15050	260000	1728	2006	-1/2	ei	hyvä	C2018
+Saarenkylä	5h, k, khh, kph...	ok	15300	225000	1471	1991	-1/1	ei	hyvä	D2018
+Saarenkylä	3mh, oh, k, rt,...	rt	9500	275000	2895	2019	-1/1	ei	hyvä	B2018
+Saarenkylä	4h, k, khh, kph...	rt	11300	165000	1460	1986	-1/1	ei	hyvä	E2013
+Nivavaara	5h,k,s+at/var	ok	11500	156000	1357	1983		ei	hyvä	D2018
+Saarenkylä	4h,k,kph,s,var,at	ok	12000	110000	917	1967		ei	hyvä	E2018
+Saarenkylä	3mh, oh, k, vh,...	ok	19260	344000	1786	2013	-1/1	ei	hyvä	C2013
+Saarenkylä	Tupak,3mh,takka...	ok	12700	223000	1756	2006		ei	hyvä	C2018
+Saarenkylä	3h,k,th,khh,s,v...	ok	11200	162500	1451	1988		ei	hyvä	E2018
+Saarenkylä	3mh, oh, k, wc ...	ok	12200	285000	2336	2005	-1/1	ei	hyvä	C2018
+Saarenkylä	5h, oh, k, khh,...	ok	16100	224000	1391	1983	-1/1	ei	hyvä	E2018
+Saarenkylä	5h,k,khh,s	ok	11400	164000	1439	1992		ei	hyvä	D2018
+Saarenkylä	4mh, k, oh, rt,...	ok	18400	390000	2120	2012	-1/2	ei	hyvä	C2007
+Nivavaara	5h, k, kph, khh, s	ok	12000	177000	1475	1991	-1/1	ei	hyvä	D2018
+Saarenkylä	5h, 2x k, pukuh...	ok	11800	47000	398	1976	-1/1	ei	tyyd.	
+Nivavaara	3mh, oh, k, tak...	ok	14500	221000	1524	1991	-1/1	ei	hyvä	

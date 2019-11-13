@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Rantavitikka	1h,kk,p	kt	3000	72000	2400	1980	2/4	on	hyvä	
+Ahkiomaa	1h,kk,s	kt	3000	79000	2633	1989	4/5	on	hyvä	F2013
+Rantavitikka	1h, kk, alk, kp...	kt	3400	133000	3912	2019	1/4	on	hyvä	C2013
+Ahkiomaa	1h, kk, kph, s ...	kt	2950	3000	102	2012	3/4	on	hyvä	D2013
+Ahkiomaa	1h, kk, kph, s ...	kt	2950	99000	3356	2012	3/4	on	hyvä	D2013
+Viirinkangas	1h, k, kph, ran...	kt	2600	96500	3712	2017	2/4	on	hyvä	C2013
+Viirinkangas	1h, k, kph + ra...	kt	3050	109000	3574	2017	4/4	on	hyvä	C2013
+Rantavitikka	1h, kk, kph, s ...	kt	3200	61000	1906	1988	3/4	on	hyvä	E2013
+Viirinkangas	1h, kk, kph, las.p	kt	3100	67500	2177	1977	2/3	ei	hyvä	F2013
+Viirinkangas	1h, k, kph, p	kt	3350	55000	1642	1980	3/4	ei	hyvä	F2013
+Viirinkangas	1h, k, kph, las.p	kt	2500	94000	3760	2013	2/4	on	hyvä	B2018
+Viirinkangas	1h-4h,k,kh	kt	149900	830000	554	2018		ei		
+Rantavitikka	1h,kk,p	kt	3100	68000	2194	1977	3/3	ei	hyvä	C2007
+Viirinkangas	1h, k, kph, ran...	kt	2600	95500	3673	2017	4/4	on	hyvä	
+Ahkiomaa	1h,kk	kt	3100	52100	1681	1976	2/5	on	tyyd.	F2013
+Rantavitikka	1h,kk,alk,p	kt	3400	117300	3450	2019	1/4	on	hyvä	C2018
+Rantavitikka	1h, kk, kph, s,...	kt	3150	65000	2063	2000	1/2	ei	hyvä	F2013
+Rantavitikka	2h, k, alk, kph...	kt	4400	3000	68	2019	4/4	on	hyvä	C2013
+Rantavitikka	2h, k, alk, kph...	kt	4400	165000	3750	2019	4/4	on	hyvä	C2013
+Rantavitikka	2h,k,s,p	kt	4800	91000	1896	1990	2/3	ei	hyvä	
+Rantavitikka	2h, k, vh, kph,...	kt	6050	163000	2694	2013	4/4	on	hyvä	B2018
+Ahkiomaa	2h, kk, kph, s, p	kt	4600	128500	2793	2012	1/4	on	hyvä	D2013
+Rantavitikka	2h,k,s,p	kt	4800	89000	1854	1988	2/4	on	hyvä	E2013
+Viirinkangas	2h, k, kph, las.p	kt	5450	89000	1633	1982	5/5	on	hyvä	C2007
+Viirinkangas	2h,tupak,kph,s,...	rt	5500	112500	2045	1988	1/1	ei	hyvä	
+Viirinkangas	2h, k, kph, vh, p	kt	5900	70000	1186	1979	1/4	on	hyvä	D2013
+Rantavitikka	2h+k, kph, las. p	kt	6500	86250	1327	1977	2/3	ei	hyvä	F2013
+Rantavitikka	2h, kk, vh, kph...	kt	4100	109000	2659	2005	1/3	on	hyvä	C2013
+Viirinkangas	2h+kk	kt	4900	61000	1245	1975	1/3	ei	hyvä	D2018
+Rantavitikka	2h, k kph, s, v...	kt	5100	125000	2451	2005	2/3	on	hyvä	C2013
+Rantavitikka	2h, kk, kph, s,...	kt	4300	94000	2186	1990	3/3	ei	hyvä	D2013
+Rantavitikka	2h,k,p	kt	6200	86000	1387	1980	2/4	on	hyvä	
+Ahkiomaa	2h, k, kph, s +...	kt	4800	3000	63	2008	4/5	on	hyvä	B2007
+Ahkiomaa	2h, k, kph, s +...	kt	4800	136000	2833	2008	4/5	on	hyvä	B2007
+Viirinkangas	2h, k, kph, s, ...	rt	5650	106000	1876	1985	1/1	ei	hyvä	E2013
+Rantavitikka	2h, k, kph, vh ...	kt	6100	86000	1410	1980	1/4	on	hyvä	
+Rantavitikka	2h, kk, kph, s	kt	4150	136500	3289	2013	4/4	on	hyvä	B2018
+Rantavitikka	2h,kk,s,p	kt	4500	90000	2000	1994	3/3	ei	hyvä	C2007
+Viirinkangas	2h,k,s,p	kt	5500	140000	2545	2006	3/4	on	hyvä	E2013
+Ahkiomaa	2h,k,s	kt	4800	93200	1942	1989	3/5	on	hyvä	F2013
+Ahkiomaa	2h, k, kph, s +...	kt	3800	116000	3053	2006	1/5	on	hyvä	D2007
+Ahkiomaa	2h, k, kph, s, ...	kt	5150	143500	2786	2012	2/6	on	hyvä	C2013
+Viirinkangas	2h, k, s + las. p	kt	4750	114000	2400	2007	3/5	on	hyvä	E2013
+Ahkiomaa	2h, k, kph, vh ...	kt	6200	73000	1177	1977	1/3	ei	hyvä	D2007
+Rantavitikka	2h, kk, kph	kt	5200	58000	1115	1977	1/3	ei	hyvä	F2013
+Viirinkangas	2h, avok, kph, ...	kt	5600	128000	2286	2006	1/2	ei	hyvä	C2018
+Rantavitikka	2h,k,sa,p	kt	6100	90000	1475	1988	2/3	ei	hyvä	F2013
+Viirinkangas	2h, k, s, las.p	kt	4650	114500	2462	2007	2/5	on	hyvä	E2013
+Viirinkangas	2h, k, kph, vh, p	kt	6610	71199	1077	1974	2/4	on	hyvä	F2013
+Ahkiomaa	2h,k,s,p	kt	5300	131000	2472	2006	5/5	on	hyvä	D2007
+Rantavitikka	2h,k,alk,s,p	kt	4400	143800	3268	2019	2/4	on	hyvä	C2018
+Rantavitikka	2h,kk,p	kt	3800	134700	3545	2019	4/4	on	hyvä	C2018

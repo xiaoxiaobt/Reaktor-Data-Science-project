@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Solja	akp	kt	1000	100	10	2019	1/1	ei	hyvä	C2013
+Solja	1h, kt, parveke	kt	2100	99864	4755	2020	3/4	on	hyvä	B2018
+Suuppa	1h,kk,kph,alkov...	kt	3600	75000	2083	1974	3/3	ei		C2007
+Suuppa	1h+alk+kk+kph+l...	kt	3400	59500	1750	1982	3/3	ei	tyyd.	B2013
+Solja	akp	kt	1000	3000	300	2019	1/1	ei	hyvä	C
+Solja	akp	kt	1000	4000	400	2019	1/1	ei	hyvä	C
+Solja	akp	kt	1000	5500	550	2019	1/1	ei	hyvä	C
+Solja	akp	kt	1000	3085	309	2019	1/1	ei	hyvä	C
+Suuppa	1h, kt, psh, la...	kt	2800	123000	4393	2018	3/7	on	hyvä	C2013
+Solja	1h, kt, kph, ra...	kt	2850	104980	3684	2019	1/5	on	hyvä	C
+Vähäjärvi	1h,kk,kph,lasit.p	kt	3600	83000	2306	1976	2/2	ei	hyvä	G2013
+Solja	2h+kt+kph+parveke	kt	4200	139992	3333	2020	1/4	on	hyvä	B2018
+Takamaa	2h,k,s,kph,et,v...	rt	6400	188000	2938	2011	1/1	ei	hyvä	C2013
+Kurikka	2h, k, kph, s, ...	kt	4950	165000	3333	2011	3/5	on	hyvä	
+Vähäjärvi	2h, k, kph, s, ...	rt	6400	104000	1625	1982	1/1	ei	hyvä	
+Kurikka	2h, k, kph, s, ...	kt	4950	158000	3192	2011	2/5	on	hyvä	
+Vähäjärvi	2h, k, p	rt	5450	115000	2110	1978	2/2	ei	hyvä	D2007
+Suuppa	2h+k+kph+vh+las...	kt	6000	96000	1600	1974	2/3	ei		C2013
+Suuppa	2h+k+vh+parveke	kt	5600	112000	2000	1972	1/5	on	hyvä	G2013
+Solja	2h, kt, kph, s, p	kt	4850	154936	3195	2019	1/5	on	hyvä	C
+Solja	2h, kt, kph, s,...	kt	3700	129958	3512	2019	1/5	on	hyvä	C
+Suuppa	2h+k+vh+khh+par...	kt	6200	195800	3158	2010	3/6	on	hyvä	E2013
+Solja	2h, kt, kph, s, p	kt	4850	158918	3277	2019	2/5	on	hyvä	C
+Solja	2h, kt, kph, s, p	kt	4900	155841	3180	2019	2/5	on	hyvä	C
+Solja	2h, kt, kph, s, p	kt	4900	161995	3306	2019	3/5	on	hyvä	C
+Solja	2h, kt, kph, s, p	kt	4850	168873	3482	2019	3/5	on	hyvä	C
+Solja	2h, kt, kph, s, p	kt	4850	176837	3646	2019	4/5	on	hyvä	C
+Kyösti	2h+k+sauna+terassi	rt	4900	103900	2120	1972	1/1	ei		G2018
+Suuppa	2h, k, kph/wc, ...	kt	6000	126000	2100	1974	3/3	ei	hyvä	
+Kurikka	2h, k, s	kt	5200	137000	2635	2000	2/3	on	hyvä	
+Takamaa	3h, k, s	rt	7700	221000	2870	2009	1/1	ei		D2007
+Vähäjärvi	3h+k	kt	7900	116500	1475	1982	3/3	ei		B2007
+Vähäjärvi	3h, k, kph, s, ...	rt	8000	155000	1938	1985	-1/2	ei	hyvä	
+Solja	3h, kt, kph, s,...	kt	5900	199880	3388	2020	3/4	on	hyvä	B2018
+Haikka	3h, k, s, kph, ...	rt	7150	241500	3378	2013	1/1	ei	hyvä	
+Solja	3h+kt+kph+s+par...	kt	5900	194864	3303	2020	2/4	on	hyvä	B2018
+Solja	3h, k, s	rt	8250	241000	2921	2019	-1/2	ei	hyvä	C
+Kyösti	3h, k, s, kph/w...	rt	8000	175000	2188	1986	-1/2	ei	hyvä	
+Solja	3h, k, s	rt	8250	241000	2921	2019	-1/2	ei	hyvä	C
+Kurikka	3h,k,s	rt	8000	228000	2850	2003	1/1	ei	hyvä	E2018
+Kyösti	3h+kt+kph+parveke	kt	6200	195000	3145	2018	3/4	on		C2018
+Solja	3h, k, s	rt	8250	238815	2895	2019	-1/2	ei	hyvä	C
+Kurikka	3h, k, s, lasit.p	kt	8000	242000	3025	2008	6/6	on	hyvä	E2013
+Kyösti	3h,takkahuone,k...	rt	8000	175000	2188	1981	1/1	ei	hyvä	E2013
+Kyösti	3h+kt+parveke	kt	5800	190000	3276	2018	2/4	on		C2018
+Lepomoisio	3h, k, s	rt	8000	175000	2188	1988		ei	hyvä	C2007
+Vähäjärvi	3h, k, kph/s, w...	rt	8000	160000	2000	1985	-1/2	ei	hyvä	E
+Niemenmaan alue	3h, k, kph, s, ...	kt	7100	129500	1824	1992	3/3	ei	hyvä	
+Kyösti	3h,k,s	rt	8000	158000	1975	1983	1/1	ei	hyvä	G2013
+Solja	3h, kt, kph, s, p	kt	5350	178828	3343	2019	2/5	on	hyvä	C
+Solja	3h, kt, kph, s,...	kt	5700	188964	3315	2019	2/5	on	hyvä	C
+Takamaa	3h+k+s	rt	8200	232000	2829	2007	1/1	ei	hyvä	D2013

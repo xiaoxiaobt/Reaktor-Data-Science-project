@@ -1,0 +1,47 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Hyrylä	2h,kk,s	kt	4200	132000	3143	1999	1/3	on		F2013
+Hyrylä	2h, k, kph, s, wc	rt	5800	150000	2586	1989	1/1	ei	tyyd.	
+Ristikivi	2h, k, kph + l&...	rt	3700	110100	2976	2013	1/1	ei	hyvä	
+Hyökkälä	2h,k	kt	6000	120000	2000	1984	1/2	ei	hyvä	D2013
+Klaavonkallio	2-3h,k,s	kt	6400	202000	3156	2006		on	hyvä	C2013
+Hyökkälä	2h,k,s	kt	5900	183000	3102	2001	4/5	on	hyvä	C2007
+Hyrylä	2h+k	kt	5800	79000	1362	1976		ei		C2013
+Hyrylä	2h+k+kph+vh+p	kt	5900	107500	1822	1971	2/2	ei	hyvä	F2007
+Etelärinne	2 h + k + s	rt	6400	173000	2703	1984	1/1	ei	tyyd.	F2013
+Hyrylä	2h,k,s	kt	6400	180000	2813	1999	2/4	on		D2007
+Hyrylä	2h, kk, s, lasi...	kt	4700	162000	3447	2006	4/6	on	hyvä	C
+Mikkola	2h,k	kt	5500	112000	2036	1971		ei	hyvä	D2013
+Kalliopohja	2h, k	kt	5800	78000	1345	1974	2/3	ei		G2013
+Hyrylä	3h, k, kph, par...	kt	7850	117000	1490	1975	1/3	on	hyvä	D
+Mahlanäki	3h, k, kph, vh	kt	7300	75000	1027	1974	2/3	ei	tyyd.	G2013
+Hyrylä	3h, k, s, kph, ...	kt	8200	240000	2927	2006	3/4	on	hyvä	C2013
+Mahlamäki	3h, k	kt	7350	128000	1741	1982	3/3	ei	hyvä	
+Paijala	3h+k+s	rt	7600	219000	2882	2007	1/1	ei	hyvä	
+Paijala	3h, k, s + harr...	rt	7600	224000	2947	1991	1/1	ei	hyvä	C2007
+Kalliopohja	3h,k	kt	7700	101811	1322	1976	5/6	on	tyyd.	C2013
+Nummenharju/paijala	3h+k+s	rt	8800	230000	2614	2000	1/1	ei	tyyd.	
+Vaunukangas	3h,k,s	rt	8000	178000	2225	1982	1/1	ei	tyyd.	
+Hyökkälä	3h, k	kt	7550	146000	1934	1985	1/2	ei	tyyd.	
+Vesitorninmäki	3h,k,s,ak	rt	8000	195000	2438	1982	1/1	ei	hyvä	F2013
+Etelärinne	3h, k, s, kph, ...	rt	8600	202000	2349	1983	1/1	ei	hyvä	F2013
+Koskenmäki	3h,k,s	rt	8000	268000	3350	2013		ei	hyvä	C2007
+Paijala	3h, k, s, vh, u...	rt	8000	255000	3188	2012	2/2	ei	hyvä	C
+Hyrylä	3h, k, kph/wc, ...	kt	7250	90000	1241	1979	2/3	ei	tyyd.	D
+Hyökkälä	3h,k,s	rt	7400	235000	3176	2004		ei	hyvä	D2007
+Hyrylä	3h, k, s, kph, ...	rt	7200	180000	2500	1982	1/1	ei	hyvä	F2007
+Hyrylä	3h, avok, kph, ...	rt	9000	235000	2611	1984	1/2	ei	hyvä	D
+Kalliopohja	3h,k	kt	7500	121000	1613	1976	4/6	on		C2018
+Hyrylä	2-3H+KT+S	kt	6450	245000	3798	2014	4/4	on	hyvä	B2018
+Paijala	4h+k+s-os+khh+2var	rt	14100	235000	1667	1971		ei		D2013
+Paijala	4h,k,s	rt	8700	273000	3138	2012		ei	hyvä	C2007
+Hyökkälä	4 h, k, s, kph,...	rt	9000	205000	2278	1987	1/1	ei	tyyd.	
+Mahlamäki	4h,k,kh,wc,lasi...	kt	9350	137000	1465	1974	4/6	ei	hyvä	
+Mikkola	4h, k, s, ph/kh...	rt	11000	307000	2791	2006	1/1	ei	hyvä	
+Mikkola	4h, k, kph, s, ...	rt	10300	268000	2602	2007	1/2	ei	hyvä	B2007
+Paijala	5h,k,s + kä...	rt	10800	300000	2778	2003		ei	hyvä	E2018
+Paijala	4h,k,s	rt	10300	231000	2243	1991		ei	hyvä	C2013
+Paijala	4h,k,s	rt	8600	270000	3140	2012		ei	hyvä	C2007
+Vesitorninmäki	4h, k, s, piha,...	rt	10500	189000	1800	1976	1/1	ei	hyvä	D
+Paijala	3-4h,k,s,ak	rt	9100	267000	2934	1988	1/2	ei	hyvä	
+Lahelanrinne	5h,k,s,at	rt	12900	235000	1822	1970		ei	hyvä	F2013
+Mahlamäki	4h,k,kph/wc, er...	kt	9000	142000	1578	1982	2/3	ei	hyvä	

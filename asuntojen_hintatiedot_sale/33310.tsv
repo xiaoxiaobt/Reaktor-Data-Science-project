@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Tesoma	1h, kk, kph/wc,...	kt	2950	60000	2034	1980	2/5	on	tyyd.	D
+Tesoma	1h+kt+kph+lasit...	kt	2750	117000	4255	2018	1/6	on	hyvä	
+Tesoma	1h+kt+kph+lasit...	kt	2600	116900	4496	2018	2/6	on	hyvä	
+Tesoma	1h, kk	kt	3300	73800	2236	1970	3/3	on	tyyd.	G2013
+Tesoma	1h, kk, kph/wc,...	kt	2950	58900	1997	1980	4/5	on	hyvä	D
+Tesoma	1h+kt+kph+lasit...	kt	2300	109900	4778	2018	5/6	on	hyvä	
+Tesoma	1h+kt+kph+lasit...	kt	2300	99500	4326	2018	2/6	on	hyvä	
+Tesoma	1h, kk	kt	3330	75000	2252	1966	4/6	on	tyyd.	B2007
+Tesoma	1h, kk	kt	3850	89000	2312	1969	3/7	on	tyyd.	E2013
+Tesoma	1h, kt, kph, p	kt	2050	98150	4788	2018	3/6	on	hyvä	
+Tesoma	1h, kk	kt	3150	66000	2095	1977	1/3	ei	tyyd.	C2007
+Tesoma	1h+kt+lasitettu...	kt	2300	96000	4174	2018	3/6	on	hyvä	C2018
+Tesoma	1h+kt+lasitettu...	kt	2300	99500	4326	2018	4/6	on	hyvä	C2018
+Tesoma	1h+kt+lasitettu...	kt	2600	105800	4069	2018	3/6	on	hyvä	C2018
+Tesomajärvi	1h, kk	kt	3850	86000	2234	1970	6/7	on	hyvä	G2013
+Tesoma	1h+kt+kph+lasit...	kt	2550	96500	3784	2018	1/6	on	hyvä	
+Tesoma	1h+kt+lasitettu...	kt	2800	111500	3982	2018	3/6	on	hyvä	C2018
+Tesoma	1H+KT+parvi 5,5 m²	kt	2050	118000	5756	2018	6/6	on	hyvä	
+Tesoma	h, kt, kph, las...	kt	2300	96000	4174	2018	4/6	on	hyvä	
+Tesomajärvi	1h, kk	kt	3850	85000	2208	1970	6/7	on	hyvä	G2013
+Tesoma	1h, kt, kph, p	kt	2050	96603	4712	2018	3/6	on	hyvä	
+Tesoma	2h+kt+lasitettu...	kt	3700	139000	3757	2018	3/6	on	hyvä	C2018
+Tesoma	1	kt	1300	9500	731	2018	1/8	on	hyvä	C2018
+Tesoma	1	kt	1300	9500	731	2018	1/8	on	hyvä	C2018
+Tesoma	1h+kt+kph+lasit...	kt	2050	96480	4706	2018	1/6	on	hyvä	
+Tesoma	2h, kk	kt	4800	67000	1396	1966	5/7	on	hyvä	D2007
+Tesoma	2h, k, p	kt	5050	85000	1683	1967	3/3	on	tyyd.	D2007
+Tesoma	2h,kk,kph,vh,las.p	kt	3800	143000	3763	2018	8/8	on	hyvä	C2018
+Tesoma	2h, kk	kt	4800	62000	1292	1966	4/7	on	tyyd.	D2007
+Tesoma	2h,k,kph,las.p	kt	5700	83000	1456	1968	1/7	on	tyyd.	E2007
+Tesoma	2h, k, kph	kt	5550	75000	1351	1968	4/5	on	hyvä	F
+Tesoma	2h,kk	kt	3800	131000	3447	2018	4/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	3800	127700	3361	2018	2/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	3800	120000	3158	2018	1/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4100	137900	3363	2018	5/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4100	135596	3307	2018	4/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4300	126500	2942	2018	1/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4100	135100	3295	2018	3/8	on	hyvä	C2018
+Tesoma	2h,k,kph,las.p	kt	5700	88500	1553	1965	3/5	on		F2013
+Tesoma	2h,kk	kt	4300	133600	3107	2018	2/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4100	133100	3246	2018	2/8	on	hyvä	C2018
+Tesoma	2h,kk	kt	4300	135600	3153	2018	3/8	on	hyvä	C2018
+Tesoma	2h, k,, kph, et...	kt	5670	87600	1545	1965	1/5	on	tyyd.	F2013
+Tesoma	3h,k,p	kt	7400	122000	1649	1968	7/7	on	hyvä	E2007
+Tesoma	3h,k	kt	7300	83000	1137	1966	6/7	on		D2007
+Tesoma	3h+k+p	kt	7500	115000	1533	1970	1/3	on		G2013
+Ristimäki	3h+k+s+las.p	kt	7350	166500	2265	2008	5/5	ei	hyvä	
+Tesoma	3h,k	kt	7300	62000	849	1969	2/3	ei		D2007
+Kohmankaari	3h,k,s,p,terass...	rt	8500	220000	2588	2008	1/2	ei	hyvä	D2007
+Tesomajärvi	3h, k, lasit p	kt	7410	82000	1107	1966	7/7	on	tyyd.	
+Tohloppi	3h, k, rt, eril...	rt	8500	189000	2224	1981	-1/2	ei	hyvä	
+Ikuri	3h,k,kph,s,wc,u...	rt	7000	203000	2900	2013	1/1	ei	hyvä	C2013

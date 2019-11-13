@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Moisio	1h,k,vh,kph	kt	3600	37500	1042	1968	2/2	ei		
+Pahkavuori	1h,kk,kph,s,mak...	rt	4400	78500	1784	1995	1/1	ei	hyvä	E2013
+Keskusta	1h, k	kt	3700	41000	1108	1948	2/2	ei	hyvä	
+Palometsä	1h,kk,kph,s	rt	3800	33000	868	1984	1/1	ei	tyyd.	D2007
+Mököinen	1h,kk,kph	kt	3200	53000	1656	1974	3/7	on	tyyd.	D2007
+Palometsä	2h,k,kph,vh	rt	5200	36500	702	1971	1/1	ei	tyyd.	E2013
+Keskusta, salo	2h,k,kph,s	kt	5400	115500	2139	1988	3/4	on		E2013
+Hermanni	2h,kk,kph	kt	5200	58000	1115	1957	1/3	ei		D2007
+Pahkavuori	2h,k,kph	kt	5900	46000	780	1979	2/3	ei	tyyd.	E2013
+Pahkavuori	2h,k,kph	kt	5900	68500	1161	1969	1/3	ei	hyvä	G2013
+Keskusta	2h, k, s	rt	5900	59000	1000	1948	1/2	ei	tyyd.	G2014
+Mököinen	2h,k,kph	kt	5200	84000	1615	1974	4/7	on		D2007
+Enola	2h,k,vh,kph	kt	5300	34500	651	1968	1/2	ei		G2013
+Pahkavuori	2h,kt,s	rt	4800	83000	1729	1998	1/1	ei	hyvä	D2007
+Hermanni	2h,k,kph	kt	5300	61000	1151	1967	1/3	ei	huono	D2007
+Mököinen	2h,kph,k	kt	6100	84000	1377	1980	6/7	on	hyvä	D2007
+Kauniainen	2h,k,s	kt	5100	143300	2810	2012	1/6	on	hyvä	D2013
+Enola	2h,k,kph,s,vh	kt	6200	64000	1032	1985	1/2	ei	tyyd.	G2013
+Pahkavuori	2h,kk,kph,s	kt	5900	89000	1508	1989	1/5	on	tyyd.	E2013
+Enola	2h,kk,vh,kph	rt	4300	54000	1256	1970	1/1	ei		E2013
+Keskusta, salo	2h,k,kph	kt	5300	78000	1472	1967	2/3	ei	hyvä	D2007
+Keskusta, salo	2h,k,vh,kph,s	kt	6200	72000	1161	1985		ei		G2013
+Keskusta, salo	2h,k,kph	kt	5800	89000	1534	1968	2/3	ei		E2013
+Keskusta, salo	2h,k,wc,et	kt	6500	66500	1023	1988	2/4	on		
+Mököinen	2h,kk,kph,s,las...	kt	4400	125000	2841	2005	2/5	on	hyvä	D2013
+Keskusta, salo	2h,k,vh,kph	kt	5400	77000	1426	1966	3/3	on		D2013
+Keskusta, salo	2h,k,kph	kt	6200	72000	1161	1974	3/3	ei	hyvä	F2013
+Moisio	2h,k,kph	kt	4700	63000	1340	1981	3/3	ei	tyyd.	G2013
+Keskusta, salo	2h,k,wc,vh,ph	kt	6000	115000	1917	1938	2/3	ei		F2013
+Keskusta, salo	2h,k,kph,wc	kt	5100	65000	1275	1978	3/3	ei		G2013
+Keskusta, salo	2h,kk,s	kt	4000	89000	2225	1997	1/3	on		B2007
+Mököinen	2h,kk,kph,vh	kt	4500	56000	1244	1966	5/8	ei	huono	E2013
+Hermanni	Liikehuoneisto	kt	4500	63577	1413	1969		ei		G2013
+Mököinen	2h,k,kph	kt	6000	53000	883	1987	3/3	ei	tyyd.	D2007
+Hermanni	2h,k,vh,kph	kt	5900	59000	1000	1960	2/4	on		D2007
+Pahkavuori	3h,k,kph,vh	kt	7600	49000	645	1970	2/3	ei		F2013
+Mököinen	3h,k,kph	kt	7800	110000	1410	1974	5/7	on	hyvä	D2007
+Palometsä	3h,k,wc,vh,ph,s	rt	7600	97500	1283	1984	1/1	ei		G2013
+Keskusta, salo	3h,k,kph	kt	6800	64000	941	1955	2/2	ei	hyvä	D2013
+Pahkavuori	3h,k,kph	kt	7600	49000	645	1970	2/3	ei		F2013
+Pahkavuori	3h,k,kph,s	kt	7200	69000	958	1987	2/3	ei	tyyd.	D2007
+Palometsä	3h,k,ph,s,vh+at...	rt	8000	95000	1188	1986	1/1	ei	tyyd.	
+Enola	3h,k,vh,kph	kt	8000	45000	563	1956	1/2	ei		
+Mököinen	3h,k,vh,wc,ph	kt	8000	97691	1221	1980	5/7	on		D2007
+Palometsä	3h,k,wc,vh,ph,s	rt	7600	95000	1250	1984		ei		G2013
+Lukkarinmäki	3h,k,kph	rt	8000	90000	1125	1961		ei		D2007
+Keskusta, salo	3h,k,s	kt	10800	200000	1852	1987	3/3	on	tyyd.	
+Palometsä	3(4)h,k,s	rt	9300	60000	645	1987		ei		E2013
+Pahkavuori	3h,k,wc,vh,kph,s	rt	8900	227000	2551	2009		ei		D2013
+Mököinen	3h,k,vh,parv.	kt	7200	104000	1444	1961	2/8	on		D2013
+Keskusta, salo	3h,k,kph	kt	6700	107000	1597	1970	3/4	on		D2007
+Pahkavuori	3h,k,kph	kt	7600	80000	1053	1972	2/4	ei	hyvä	G2013

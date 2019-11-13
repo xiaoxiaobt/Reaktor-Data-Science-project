@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h+kk+ph	kt	3100	39000	1258	1975	1/3	ei	hyvä	E2007
+Keskusta	1h, k, kph	kt	2400	45000	1875	1992	3/3	ei	tyyd.	
+Hakalahti	1h, kt, kph, vh	kt	2800	106500	3804	2014	1/2	ei	hyvä	B2007
+Keskusta	1h, kk	kt	2400	59000	2458	1964	4/9	on	hyvä	C2007
+Vanha kaupunki	2h, kk, s	kt	4500	87000	1933	1985	2/2	ei		D2007
+Hakalahti	2h, k, s	kt	6600	132000	2000	2000	2/4	on	hyvä	
+Keskusta	2h, k, s	kt	5300	122000	2302	1990	2/4	on	hyvä	D2007
+Keskusta	2h,k	kt	6300	69000	1095	1960	1/5	ei	hyvä	C2013
+Hakalahti	2h, tk, kph, s	kt	5200	101000	1942	1999	2/2	ei	hyvä	G2013
+Hakalahti	2h, k, s	rt	5200	92081	1771	1989	1/1	ei	hyvä	B2007
+Hakalahti	2h, k, s	rt	6500	130000	2000	2010	-1/2	ei	hyvä	
+Keskusta	2h, k	kt	6500	106500	1638	1972	3/8	on	hyvä	D2007
+Keskusta	2h, kk	kt	4100	93000	2268	1966	3/8	on	hyvä	
+Keskusta	2h, alkovi, k	kt	5800	90000	1552	1944	3/5	on	tyyd.	E2013
+Keskusta	2h, k, s, lasit...	kt	5900	113000	1915	1988	3/3	ei	hyvä	D
+Hakalahti	2h, kk, s	kt	4100	83500	2037	1988	2/3	ei	hyvä	D2007
+Keskusta	2h, kk, s	kt	4400	95000	2159	1986	3/3	ei	tyyd.	F2013
+Hakalahti	2h, kk, s	kt	4100	79000	1927	1988	2/3	ei	hyvä	D2007
+Mäntykangas	2h, k	kt	5000	56000	1120	1956	1/2	ei		D2007
+Mäntykangas	2h,k	kt	5000	64500	1290	1956	1/2	ei	hyvä	D2007
+Hakalahti	2h, k	kt	6200	105000	1694	1972	4/6	on	tyyd.	D2007
+Hakalahti	2h, k, s	rt	5900	144000	2441	2000	1/1	ei	hyvä	E2007
+Keskusta	2h, k, s	kt	5900	75000	1271	1987	1/2	ei	tyyd.	
+Hakalahti	2h, k, s	kt	5900	162000	2746	2006	2/4	on	hyvä	C2007
+Hakalahti	2h+kk+s	kt	4200	122000	2905	2006	3/3	on	hyvä	B2013
+Pohjois-hakalahti	3h, k, s	rt	8000	177000	2213	2004	1/1	ei		E2013
+Keskusta	3h, k, kph, s, 2wc	kt	10400	68500	659	1992	3/3	ei	tyyd.	
+Keskusta	3h, k	kt	6100	101000	1656	1970	2/3	ei	hyvä	D2007
+Hakalahti	3h, k, s	kt	6300	142000	2254	2000	4/5	on	hyvä	C2007
+Keskusta	3h, kt, s	kt	5200	198000	3808	2018	2/5	on	hyvä	
+Torkinmäki	3h, k, s, khh, 2wc	rt	8900	108000	1213	1985	1/2	ei	hyvä	
+Hakalahti	3h,k,s	kt	6900	105000	1522	2000	1/2	ei	hyvä	G2013
+Keskusta	3h, k, s	kt	6600	122000	1848	1994	3/5	on	hyvä	D2007
+Hakalahti	3h, k, s	kt	7750	127000	1639	1988	2/3	ei	hyvä	A
+Hakalahti	3h, kk, s	kt	7800	216000	2769	2008	2/3	on	hyvä	
+Pohjois-hakalahti	3h, kt, s, + parvi	rt	8200	240000	2927	2007	1/1	ei	hyvä	
+Pohjois-hakalahti	3h, k, s	kt	10000	290000	2900	2007	5/5	on	hyvä	B2007
+Keskusta	3h, k	kt	7350	68000	925	1971	3/3	ei	hyvä	D
+Hakalahti	3h, k, s	kt	6700	217000	3239	2007	2/5	on	hyvä	B2007
+Keskusta	3h+k+s	kt	9100	175000	1923	1929	4/4	on		D2013
+Keskusta	3h, k, s	kt	7400	150000	2027	2001	2/4	on	hyvä	C2007
+Hakalahti	3h, k, s	kt	6500	260000	4000	2016	4/5	on	hyvä	C
+Hakalahti	3h,k,s	kt	7800	128000	1641	1988	1/3	ei		A2007
+Keskusta	4h, k, kph, s, wc	kt	10700	120000	1121	1992	2/3	ei	tyyd.	
+Halkokari	4h, k, khh, s, ...	rt	10200	199500	1956	1989	1/1	ei	hyvä	
+Keskusta	6h, 2xk, ph, 2x...	ok	16700	99000	593	1940		ei	tyyd.	
+Hakalahti	3(4)h, k, s, kh...	rt	10400	286000	2750	2005	1/2	ei	hyvä	
+Keskusta	6h, 2xk, kph, s...	ok	23000	247000	1074	1921		ei	hyvä	D2018
+Hakalahti	4h, k, s	ok	10900	215600	1978	1995	1/1	ei	hyvä	D
+Keskusta	3mh, 2oh, rt, k...	ok	17900	228000	1274	1996	-1/3	ei	hyvä	
+Keskusta	4mh, oh, k, khh...	ok	14100	193750	1374	2001	-1/2	ei	hyvä	
+Keskusta	6h, 2xk, ph, 2x...	ok	16700	95000	569	1940		ei	tyyd.	

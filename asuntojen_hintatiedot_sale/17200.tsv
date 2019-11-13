@@ -1,0 +1,28 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Anianpelto	2h,k,kph/s,terassi	rt	5600	82000	1464	1989		ei	hyvä	B2007
+Vääksy	2h,k,kph/s,p	kt	5600	67600	1207	1985	2/3	ei	hyvä	D2013
+Vääksy	2h,k,vh,s	rt	5800	88000	1517	1986	1/1	ei	tyyd.	E2013
+Vääksy	2h, k, s, kph, vh	rt	6300	160000	2540	2007	1/1	ei	hyvä	D2013
+Vääksy	2h,k,kph,vh,ter,at	rt	6000	84000	1400	1975	1/1	ei	hyvä	G2013
+Vääksy	2h,kk,ph/s,p	kt	4800	74000	1542	1989	2/4	on	hyvä	F2013
+Anianpelto	2h,k,kph/s,terassi	rt	5600	60000	1071	1989	1/1	ei	tyyd.	B2007
+Vääksy	2h,k,kph,s,wc,vh	rt	7700	130000	1688	2000	1/1	ei	hyvä	D2007
+Vääksy	2h,k,s	rt	6000	65000	1083	1985	1/1	ei	tyyd.	G2013
+Vääksy	2h,k,ph,p	kt	5700	95000	1667	1972	3/3	on	tyyd.	C2007
+Vääksy	3h,k,s	rt	8000	157000	1963	2007	1/1	ei	hyvä	D2007
+Vääksy	3h,k,kph,s,wc,p...	kt	7300	213000	2918	2009	5/5	on	hyvä	D2007
+Vääksy	3h,k,kph,s,las....	rt	8000	135000	1688	1991	1/1	ei	hyvä	F2013
+Vääksy	3h,k,kh,s,wc,vh...	rt	7800	100000	1282	1985		ei	tyyd.	E2013
+Vääksy	3h, k, s, p	kt	8350	197000	2359	2007	5/6	on	hyvä	
+Vääksy	4h, tkh, k,apuk...	ok	17500	229000	1309	1986	-1/1	ei	hyvä	
+Vääksy	4h, k, s, erill...	rt	10000	127000	1270	1980	2/2	ei	hyvä	
+Vääksy	5h,k,kph,s,at,t...	ok	13800	145000	1051	1966	1/2	ei	hyvä	
+Vääksy	4h,k,s,kph,wc	ok	7900	163000	2063	1987		ei	hyvä	
+Vääksy	4h,k,ph,s,vh,wc	rt	9800	130000	1327	1985	1/1	ei	hyvä	B2007
+Vääksy	4 h, k, tkh, kh...	ok	11200	134000	1196	1989	1/2	ei	tyyd.	
+Vääksy	4h, k, s, kph, ...	ok	10300	129000	1252	1987	-1/1	ei	tyyd.	
+Vääksy	4h,k , s, 2kph/wc	rt	11500	110000	957	1974	1/2	ei	hyvä	A2007
+Vääksy	4h,k/ruok,wc,kh...	ok	12550	245000	1952	2015	1/1	ei	hyvä	B
+Vääksy	4h, k, rt, s, p...	ok	11170	140000	1253	1981	-1/1	ei	hyvä	
+Vääksy	4h,k,kph,s,wc,p	rt	10700	134000	1252	1990	1/2	ei	hyvä	E2013
+Vääksy	5h,k,s-osasto,w...	ok	11900	75000	630	1976	1/1	ei	tyyd.	

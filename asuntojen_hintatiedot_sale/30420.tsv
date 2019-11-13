@@ -1,0 +1,25 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Kuhala	1 h, k	kt	3200	44520	1391	1986	5/5	on	hyvä	E
+Keskusta	1h,kk	kt	3000	31755	1059	1975	9/9	on		B2007
+Kuhala	1h,k	kt	3800	45000	1184	1974	4/5	on	tyyd.	C2007
+Kuhala	1h,kk,s	kt	3200	49000	1531	1985	3/5	on	tyyd.	D2007
+Tölö	1h,kk	kt	2800	35000	1250	1978	2/9	on		B2007
+Paavola	1h,kk,s	rt	3800	42000	1105	1982	1/1	ei		E2013
+Kuhala	2h,k,s	kt	6400	76500	1195	1992	2/4	on	hyvä	D2007
+Talsoila	2h+k+psh+s	rt	4800	105000	2188	2006	1/1	ei	hyvä	D
+Talsoila	2h,k,s + autokatos	rt	5800	102000	1759	2006	1/1	ei	hyvä	D2007
+Kuhala	2h,k,s	kt	5400	67000	1241	1985	2/5	on	tyyd.	D2007
+Tölö	2h,k	kt	6000	66000	1100	1985	3/6	on	hyvä	B2007
+Kuhala	2h,k	kt	6500	61000	938	1972	2/6	on		D2007
+Paavola	2h,k,s	rt	4600	65000	1413	1991	1/1	ei	hyvä	F2013
+Kuhala	2h,kk,s	kt	4600	79000	1717	1985	2/5	on	hyvä	D2007
+Tölö	2h,k	kt	5900	54000	915	1979	7/7	on	hyvä	B2007
+Kuhala	3h,k,s	kt	7500	123000	1640	2004	2/2	ei	hyvä	
+Talsoila	3h+k+s	kt	7550	96000	1272	1981	3/5	on	hyvä	C
+Tölö	3h,k	kt	7600	66000	868	1979	2/7	on		B2013
+Tölö	3h,k	kt	7600	78000	1026	1977	1/9	on	hyvä	B2007
+Tölö	3h,k	kt	7700	48000	623	1977	1/7	on	tyyd.	A2007
+Talsoila	3h+k+psh+s+wc+vh	rt	7300	143000	1959	2006	1/1	ei	hyvä	D
+Talsoila	3h,k,s + autokatos	rt	7300	122000	1671	2006	1/1	ei	hyvä	D2007
+Kuhala	3h, k	kt	7700	82000	1065	1974	3/5	on	hyvä	C2007
+Tölö	3h,k	kt	7800	57000	731	1975	9/9	on		B2007

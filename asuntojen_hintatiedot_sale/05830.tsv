@@ -1,0 +1,45 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Vehkoja	1h, kk, kph, la...	kt	3500	65000	1857	1979	1/3	ei	hyvä	
+Kirjavatolppa	1h, kk, kph, vh...	kt	3450	56500	1638	1978	3/3	ei	tyyd.	D
+Kirjavatolppa	1h, kk, kph, la...	kt	2800	61000	2179	1969	1/5	on	tyyd.	G
+Viertola	1h, kk, s, parveke	kt	3550	90500	2549	1989	3/4	on	tyyd.	D
+Viertola	1h, kk, s, p	kt	3550	91500	2577	1989	1/4	on	tyyd.	D
+Kirjavatolppa	1h,kk,s	kt	3600	83000	2306	1985	3/3	ei	hyvä	E2018
+Viertola	2h,k,wc,s,vh, l...	kt	5200	122500	2356	1985	1/5	on	hyvä	D2007
+Vehkoja	2h,kk,s	kt	4400	81000	1841	1990	1/3	ei	tyyd.	F2013
+Kirjavatolppa	2h + k + psh	kt	5150	80000	1553	1976	2/3	ei	hyvä	
+Kirjavatolppa	2h, k, kph, par...	kt	4550	110000	2418	1991	3/4	on	hyvä	B
+Kirjavatolppa	2h, k, s	rt	6900	133000	1928	1977	1/1	ei	hyvä	G2013
+Kirjavatolppa	2h,k	kt	5200	60000	1154	1976	2/3	ei	huono	D2013
+Kirjavatolppa	2h, k, las.parveke	kt	5750	115000	2000	1978	2/3	ei	hyvä	D
+Kirjavatolppa	2h,k,s	rt	6300	144000	2286	1983	1/1	ei	hyvä	
+Viertola	2h+k+s	kt	5550	110000	1982	1986	3/4	ei	tyyd.	E
+Viertola	2h, k, kph, las...	kt	5200	89000	1712	1973	2/5	on	hyvä	E
+Vehkoja	2h+kk+s	kt	4400	110000	2500	1990	1/3	ei	hyvä	F2013
+Vehkoja	2h,k,kh,s,p	kt	6050	129000	2132	1995	3/3	ei	hyvä	C2007
+Viertola	2h, k, psh/wc, ...	kt	5350	65000	1215	1971	1/2	ei	tyyd.	D
+Viertola	2h, k, kph, par...	kt	5100	85000	1667	1963	3/5	on	hyvä	F
+Vieremä	2h, k, s, parv.	kt	6050	118500	1959	1987	1/3	on	hyvä	F
+Kirjavatolppa	2h, k, kph/wc, s	rt	6000	123950	2066	1986	3/3	ei	hyvä	E
+Kirjavatolppa	2h,kk	kt	4600	62000	1348	1965	1/2	ei	tyyd.	F2013
+Kirjavatolppa	3h,k,kh,s,p	kt	6250	227000	3632	2018	2/2	ei	hyvä	C
+Viertola	3h,k,vh,wc,psh,s,p	kt	6950	175500	2525	1993	4/5	on	hyvä	D2007
+Nummenkärki	3h+k+s	rt	7400	178000	2405	1989	1/1	ei	tyyd.	
+Kirjavatolppa	3h, k, kph, parv	kt	7000	130000	1857	1977	1/3	ei	hyvä	D2007
+Viertola	3h,k,kph,parv.	kt	7200	65500	910	1969	4/5	on	huono	G
+Kirjavatolppa	3h,k,s	rt	7600	155000	2039	1986	1/1	ei	hyvä	B2013
+Nummenkärki	3h, k, s	rt	8300	235000	2831	2011	1/1	ei	hyvä	E
+Viertola	3h, k, s	kt	8850	172000	1944	1985	5/5	on	hyvä	D
+Nummenkärki	3h,k,s,var	rt	6300	162000	2571	2015	1/1	ei	hyvä	C2013
+Viertola	3h,k	kt	5800	117000	2017	1967	4/5	on	tyyd.	D2007
+Kirjavatolppa	3h,k	kt	6000	90000	1500	1965	2/3	ei	tyyd.	F2013
+Kruununpuisto	3h+kk+aputilat ...	rt	6900	175000	2536	1976	1/2	ei	hyvä	D2018
+Nummenkärki	3h, k, s + auto...	rt	6250	161000	2576	2014	1/1	ei	hyvä	C
+Puolimatka	4h,k	kt	8900	144000	1618	1966	2/3	ei	hyvä	D2007
+Kirjavatolppa	6h, k, wc, khh,...	rt	15300	242000	1582	1970	1/1	ei	hyvä	
+Vehkoja	5h,k,s	ok	10500	200000	1905	1950		ei	hyvä	E2018
+Nummenkärki	4h, k, s	rt	9550	188000	1969	1989	1/1	ei	hyvä	E2013
+Kirjavatolppa	4h,k,s	rt	9000	222000	2467	2004	1/1	ei	hyvä	E2013
+Vehkoja	4h,k,s ja l...	ok	11400	231000	2026	1983		ei	hyvä	D2018
+Nummenkärki	4h, k, kph/wc, ...	rt	7500	187000	2493	2014	1/1	ei	hyvä	C
+Vehkoja	4-6h, k, khh, k...	ok	10000	200000	2000	1950	-1/3	ei	hyvä	

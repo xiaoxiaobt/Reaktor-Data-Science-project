@@ -1,0 +1,52 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1 h, kk	kt	3500	100431	2869	1978	3/3	ei	hyvä	C2018
+Lindal	1h,kk	kt	3300	57000	1727	1970	3/3	ei	hyvä	
+Keskusta	1h+kk	kt	3100	150000	4839	2013	3/3	ei	hyvä	
+Finnsbacka	1h,kk	kt	3600	118000	3278	1984	1/3	ei	hyvä	
+Keskusta	1h, tk, s, lasi...	kt	3900	113000	2897	1994	2/3	ei	tyyd.	F2013
+Lindal	2h, k	kt	6250	85300	1365	1975	3/3	ei	tyyd.	C2007
+Jolkby	2h,k,s	rt	6250	150000	2400	1985	1/1	ei	hyvä	D2007
+Finnsbacka	2h+k	kt	5800	102000	1759	1982	3/3	ei		D2007
+Kirkkonummen keskus	2h, k, p	kt	6200	112000	1806	1982	1/3	ei	tyyd.	D2007
+Keskusta	2 h, k	kt	5750	115000	2000	1982	1/3	ei	tyyd.	D2007
+Lindal	2h,k	kt	6300	104000	1651	1975	1/3	ei	hyvä	C2007
+Finnsbacka	2h, k, parv.	kt	5850	75000	1282	1978	2/5	ei	tyyd.	E2007
+Heikkilä	2h,k,s	rt	6200	172500	2782	1981	1/1	ei	hyvä	
+Finnsbacka	2h+k	kt	6300	125000	1984	1980	3/3	ei	hyvä	
+Ravals	2h,k,s	rt	5800	160000	2759	1991	1/1	ei	hyvä	
+Lindal	2h, k	kt	6300	105000	1667	1975	1/3	ei	hyvä	F2013
+Neidonkallio	2h+kk+s	rt	4500	150000	3333	2008	1/1	ei	hyvä	D2013
+Överby	2h, k, ruokailu...	rt	6300	187000	2968	2004	1/1	ei	hyvä	D
+Finnsbacka	2h, k	kt	6200	110000	1774	1982	1/3	ei	hyvä	E2013
+Pappilanmäki	1h+tk+s	kt	3900	130000	3333	1994	2/3	ei	hyvä	F2013
+Lukkarinmäki	2h,k,s	kt	5200	189000	3635	2008	4/5	ei	hyvä	
+Finnsbacka	2h, k, kph	kt	5900	114000	1932	1982	2/3	ei	hyvä	E2013
+Ravals	2h, kt, s, kph,...	rt	4100	121000	2951	1993	1/1	ei	hyvä	E2013
+Lindal	2h,k,kph,p	kt	6250	84500	1352	1974	2/3	ei	hyvä	D2013
+Finnsbacka	2h,k,s	kt	5550	129756	2338	1984	1/3	ei	hyvä	
+Kirkkolaakso	3h,k,s,	kt	7350	250000	3401	2013	4/5	on	hyvä	A2013
+Kuusala	3h, k, kph, s	rt	6400	228000	3563	2017	1/1	ei	hyvä	C2013
+Keskusta	3h, k, s	kt	8250	292000	3539	2013	3/4	on	hyvä	A2007
+Överby	3h, k, 2vh, s, ...	rt	8350	197000	2359	1988	1/2	ei	hyvä	
+Kuusala	3h+k+s	rt	7700	153000	1987	1978	1/2	ei	hyvä	E2007
+Finnsbacka	3h,k	kt	7500	151000	2013	1985	2/4	ei	hyvä	F2013
+Neidonkallio	3 h, k, s	rt	8600	262000	3047	2005	1/1	ei	hyvä	D
+Lindal	3 h, k, kph, vh...	kt	8200	153000	1866	1975	3/3	ei	hyvä	G
+Finnsbacka	3h, k	kt	7500	117091	1561	1978	2/3	ei	hyvä	E
+Finnsbacka	3h, k, kph, vh,...	kt	7500	120000	1600	1980	1/3	ei	hyvä	D2007
+Finnsbacka	3h, k, s	kt	6950	139000	2000	1985	3/3	ei	hyvä	F2013
+Keskusta	3h, k, kph, las...	kt	7450	95000	1275	1979	2/3	ei	hyvä	F2014
+Neidonkallio	3h+k+s	rt	8500	216000	2541	2006	1/2	ei	hyvä	D2013
+Neidonpuisto	3h, k, s, vh	rt	9500	195000	2053	2004	-1/2	ei	hyvä	D2007
+Keskusta	4h, k, s	rt	13000	270000	2077	1998	2/2	ei	hyvä	E2007
+Neidonlaakso	4h,k,s	rt	10900	290000	2661	2004	1/2	ei	hyvä	D2013
+Jolkby	4h,k,s,kph,eril...	rt	7500	178000	2373	1982	1/3	ei	hyvä	
+Kantvik	5h, k, s	rt	11500	284668	2475	2012	2/2	ei	hyvä	C2007
+Jolkby	4 h, keitti...	rt	9100	220000	2418	1986	1/1	ei	tyyd.	F2013
+Jolkby	4h+k+s	rt	9400	225696	2401	1985	2/2	ei	hyvä	
+Jolkby	4h+k+s	rt	9300	185000	1989	1983	1/1	ei	hyvä	
+Heikkilä	4h,k,s,ph, vara...	rt	12500	248000	1984	1982	1/2	ei	hyvä	
+Neidonkallio	4h+k+s	rt	10900	270000	2477	2006	1/2	ei	hyvä	D2013
+Kuusala	5h+k+s	rt	12050	280000	2324	1986	1/1	ei	hyvä	
+Kuusala	4h,k,s	rt	9600	231000	2406	1988	1/2	ei		
+Lindal	4h+k+s	rt	9900	234000	2364	1990	1/2	ei	hyvä	

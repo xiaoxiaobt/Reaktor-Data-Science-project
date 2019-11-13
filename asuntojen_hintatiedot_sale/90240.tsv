@@ -1,0 +1,28 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Svaaninsuo	2h, k, s	rt	5700	120000	2105	1993	1/1	ei	hyvä	B2013
+Iinatti	2h, k, s	rt	5600	76000	1357	1990	1/1	ei	hyvä	B2007
+Maikkula	2h, k, s	rt	5250	83000	1581	1990	1/2	ei	hyvä	F
+Maikkula	2h,kk,kh,vh,ph,...	kt	4600	111500	2424	2012	2/3	on	hyvä	C2018
+Maikkula	2h, kk, kph, s	kt	4100	47000	1146	1989	1/2	ei	hyvä	D2007
+Maikkula	2h+k+sa	kt	5900	60000	1017	1989	2/3	ei	hyvä	E2013
+Maikkula	2 h,kk,s	kt	4300	50000	1163	1989	2/3	ei	hyvä	E2013
+Maikkula	2h, k, s	kt	5650	72000	1274	1989	1/3	ei	hyvä	F2013
+Knuutilankangas	2h+kk+s+lasitet...	kt	5500	65000	1182	1985	1/2	ei	hyvä	C2007
+Kontinkangas	3-4 h,k,s	rt	8500	141000	1659	1988	1/1	ei	hyvä	B2007
+Maikkula	3h+k+sa	rt	6700	105000	1567	1987	1/1	ei	hyvä	A2013
+Värttö	3h, k	kt	7850	80000	1019	1975	1/3	ei	tyyd.	C2013
+Iinatti	3h, k, ph, s, w...	rt	7700	114000	1481	1988		ei	hyvä	D2007
+Maikkula	3h, k, kph, s, vh	kt	7700	94200	1223	1990	2/2	ei	hyvä	D2007
+Maikkula	2mh, oh, k/rt, ...	rt	9000	80000	889	1957	-1/3	ei	hyvä	
+Patamäki	3h, k, s	rt	7900	115000	1456	1990	1/1	ei	hyvä	G2013
+Iinatti	4mh, oh, k, kph...	ok	13600	190000	1397	1988	-1/2	ei	hyvä	
+Patamäki	3mh, oh, k, kph...	rt	11200	207000	1848	2005	-1/2	ei	hyvä	
+Maikkula	5h, k, s	rt	11400	158000	1386	1986	1/1	ei	hyvä	D2018
+Iinatti	5h, k, s, wc	rt	9900	140000	1414	1988	1/1	ei	hyvä	E2013
+Maikkula	4h, k, s, wc	rt	9900	147200	1487	1991	-1/2	ei	hyvä	E2013
+Knuutilankangas	4h, k, kph, s + wc	rt	8300	139000	1675	1985	1/1	ei	hyvä	D2007
+Knuutilankangas	5mh,oh,k,s,kph/...	rt	15300	155000	1013	1983	1/1	ei	hyvä	D2013
+Patamäki	3mh, oh, k, eri...	rt	11450	203000	1773	1990	1/1	ei	hyvä	E2013
+Iinatti	3h,k,kh,p ja 3h...	ok	18500	251000	1357	2006		ei	hyvä	
+Iinatti	4h, k, s, kh, k...	ok	11700	155000	1325	1986	-1/1	ei	hyvä	D
+Maikkula	4h, k, s, parveke	rt	8800	135000	1534	1991	-1/2	ei	hyvä	E2013

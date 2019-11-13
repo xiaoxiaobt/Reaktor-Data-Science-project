@@ -1,0 +1,52 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Mäntsälä	2h+k+s	rt	5800	125000	2155	1986	1/1	ei	hyvä	
+Mäntsälä	2h+kk	kt	4050	42000	1037	1978	1/1	ei	huono	
+Keskusta	2h, avok	kt	4200	166244	3958	2018	3/5	ei	hyvä	
+Mäntsälä	2h+kk+s+parveke	kt	4650	100000	2151	1991	1/3	ei	hyvä	
+Arvonpelto	2h, kk, kph, s	rt	4500	116000	2578	1981		ei	hyvä	D2013
+Keskusta	2 h, k, s, vh, ak	rt	6000	110000	1833	1996	1/1	ei	tyyd.	G2013
+Mustamäki	2 h, k, kph	kt	6000	50000	833	1974	1/4	ei	tyyd.	E2013
+Mustamäki	2 h, k, kph, la...	kt	6000	52000	867	1974	3/3	ei	hyvä	E2007
+Mustamäki	2H+K	kt	5750	71000	1235	1974	2/5	ei	hyvä	
+Valkamanpelto	2 h, k, s	rt	5300	108000	2038	1988	1/1	ei	hyvä	
+Hemminpelto	2h, kk, kph, s	kt	4000	114000	2850	2005	3/4	on	hyvä	F2013
+Hemminpelto	2h + k + s + te...	kt	5800	77000	1328	1991	1/3	ei	tyyd.	F2013
+Valkamanpelto	2h, k, s, kph, vh	rt	6300	132000	2095	1990	1/1	ei	hyvä	
+Hemminpelto	2 h, k, s, parv...	kt	6100	129000	2115	2006	2/5	on	hyvä	F2013
+Keskusta	2 h, kk, s, par...	kt	3800	119000	3132	2005	4/5	on	hyvä	F2013
+Kylä-maisala	2h, k, kph, las...	kt	5000	61000	1220	1975	3/3	ei	hyvä	E2013
+Keskusta	2 h, kk, s, vh	kt	4600	133000	2891	2009	1/5	on	hyvä	E2013
+Keskusta	2h, k	kt	5800	209000	3603	2018	5/8	on	hyvä	C
+Keskusta	2 h, kk, kph, v...	kt	4300	65000	1512	1963	1/3	ei	hyvä	G2013
+Keskusta	2h, kk, s	kt	5300	95000	1792	1999	1/4	on	tyyd.	F2013
+Valkamanpelto	2h, k, s	rt	6300	117500	1865	1991	1/1	ei	hyvä	F2013
+Mustamäki	2h, k, kph, par...	kt	6000	47000	783	1974		ei	hyvä	E2013
+Meijerinpelto	2h, k, kph, s, vh	rt	5500	88000	1600	1981	1/1	ei	tyyd.	D2013
+Heissa	3h, k, s	rt	7000	142000	2029	2001		ei		F2013
+Mallamäki	3h, k, 2xvh, kp...	rt	8400	125000	1488	1989		ei	hyvä	F2013
+Heissa	3 h, k, s, ak	rt	8100	144000	1778	1990	1/1	ei	hyvä	G2013
+Mäntsälä	2mh, avoin oh+k...	rt	7930	209000	2636	2019	1/1	ei	hyvä	B2018
+Mäntsälä	3h+k+s	rt	8000	161500	2019	2008	2/2	ei	hyvä	
+Keskusta	3h, k, kph, s, ...	kt	7850	190000	2420	2010	1/4	on	hyvä	E2013
+Hemminpelto	3 h, k, kph, s,...	kt	7700	159000	2065	2005	3/4	on	hyvä	F2013
+Hemminpelto	3 h, k, s	rt	8300	140000	1687	2003	1/2	ei	hyvä	D2013
+Mäntsälä	2mh, avoin oh+k...	rt	7930	202000	2547	2019	1/1	ei	hyvä	
+Arvonpelto	3 H+K+S	rt	7800	127202	1631	1982	1/2	ei	tyyd.	
+Valkamanpelto	3h+k+s	rt	7200	151000	2097	2005	1/1	ei	hyvä	
+Mustamäki	3 h, k, parveke	kt	7300	66000	904	1978	2/4	ei	hyvä	F2013
+Jokihuhta	3h,k,s,autokatosp.	rt	8400	140000	1667	1986	1/1	ei	hyvä	F2013
+Koskenranta	3 h, k, kph, s	rt	7600	147406	1940	1978	1/1	ei	hyvä	E2018
+Leppäniemi	3h, k, s, vh	rt	7800	155000	1987	2004	1/1	ei	hyvä	F2013
+Riihenmäki	3 h, k, s, eril...	rt	7800	110008	1410	1984	1/1	ei	tyyd.	E2013
+Keskusta	3 h, k, s, lasi...	kt	7400	180000	2432	2008	2/4	on	hyvä	D2013
+Jokihuhta	3 h, k, kph, s,...	rt	7600	198000	2605	2018		ei	hyvä	B2018
+Keskusta	3 h, k, s	rt	8000	164000	2050	2008	1/2	ei	hyvä	D2007
+Jokihuhta	3 h, k, s, kph,...	rt	7600	205000	2697	2018		ei	hyvä	B2018
+Valkamanpelto	4 h,k,s, 2x vh	rt	8800	158000	1795	1987		ei	hyvä	
+Leppäniemi	4h+k+s	rt	8800	170000	1932	2007	1/1	ei	hyvä	E2013
+Mäntsälä	3mh,oh,k,ph,s,w...	rt	9300	221000	2376	2017	1/1	ei	hyvä	
+Koskenranta	4h+k+s	rt	9300	155000	1667	1985	1/2	ei	hyvä	
+Linnamäki	3mh+oh+th+k+s+k...	ok	14000	247000	1764	1990	1/1	ei	hyvä	
+Linnamäki	5h, k, 2psh, s,...	ok	18000	265000	1472	1990	2/2	ei	hyvä	
+Hemminpelto	4 h, k, s, vh, ...	kt	9200	190000	2065	2006	4/5	on	hyvä	F2013
+Leppäniemi	4h, k, kph, s, ...	rt	8900	186000	2090	2004	1/1	ei	hyvä	E2013

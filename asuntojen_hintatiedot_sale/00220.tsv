@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Jätkäsaari	1h, kt	kt	2900	195750	6750	2021	2/5	on	hyvä	B2018
+Jätkäsaari	1h, kt	kt	2900	207350	7150	2021	4/7	on	hyvä	B2018
+Jätkäsaari	1h, kt	kt	2900	195750	6750	2021	2/7	on	hyvä	B2018
+Jätkäsaari	1h, kt	kt	2900	216050	7450	2021	5/7	on	hyvä	B2018
+Jätkäsaari	1h, kt	kt	2900	201550	6950	2021	3/7	on	hyvä	B2018
+Jätkäsaari	1h, avok, kph, ...	kt	3050	295000	9672	2019	4/6	on	hyvä	C2019
+Jätkäsaari	1h+kt	kt	3200	223680	6990	2019	4/7	on	hyvä	B2018
+Jätkäsaari	2h+kt+s	kt	5200	300560	5780	2019	4/7	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4300	268750	6250	2021	4/5	on	hyvä	B2018
+Jätkäsaari	2H+KT	kt	4050	293062	7236	2020	2/12	ei	hyvä	
+Jätkäsaari	2h, kt	kt	4300	262300	6100	2021	3/5	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4500	274500	6100	2021	3/5	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4000	244000	6100	2021	3/7	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4750	273125	5750	2021	1/7	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4500	288000	6400	2021	5/5	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4000	250000	6250	2021	4/7	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4500	272250	6050	2021	2/5	on	hyvä	B2018
+Jätkäsaari	2h, kt	kt	4300	255850	5950	2021	2/5	on	hyvä	B2018
+Jätkäsaari	2h+kt+p	kt	4500	323700	7193	2020	2/12	ei	hyvä	
+Jätkäsaari	3h, kt	kt	6600	369600	5600	2021	6/7	on	hyvä	B2018
+Jätkäsaari	3h, kt, s	kt	8300	415000	5000	2021	3/5	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	6600	339900	5150	2021	3/7	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	6700	345050	5150	2021	3/7	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	5200	317200	6100	2021	4/7	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	6700	385250	5750	2021	6/7	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	5200	309400	5950	2021	3/7	on	hyvä	B2018
+Jätkäsaari	3h, kt, s	kt	8300	406700	4900	2021	2/5	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	6950	368350	5300	2021	4/5	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	5200	319800	6150	2021	5/7	on	hyvä	B2018
+Jätkäsaari	3h, kt	kt	6950	350975	5050	2021	2/5	on	hyvä	B2018
+Jätkäsaari	3h+kt+s	kt	7900	424625	5375	2019	3/7	on	hyvä	B2018
+Jätkäsaari	3h+kt+s	kt	7750	408813	5275	2019	6/7	on	hyvä	B2018
+Jätkäsaari	3h+kt+s	kt	8100	380000	4691	2019	2/7	on	hyvä	B2018
+Jätkäsaari	3h+kt+s	kt	7650	365000	4771	2019	2/7	on	hyvä	B2018
+Jätkäsaari	3h, avok, s-os,...	kt	8300	461641	5562	2019	5/8	on	hyvä	C2012
+Jätkäsaari	3h+kt+s	kt	8050	412000	5118	2019	3/7	on	hyvä	B2018
+Jätkäsaari	3h, kt, s	kt	7650	360186	4708	2015	5/7	on	hyvä	C2013
+Jätkäsaari	3h+kt+s	kt	7750	405200	5228	2019	4/7	on	hyvä	B2018
+Jätkäsaari	3h+kt+s	kt	6950	398300	5731	2019	3/7	on	hyvä	B2018
+Jätkäsaari	3h, avok, s-os,...	kt	8300	452720	5454	2019	4/8	on	hyvä	C2012
+Jätkäsaari	3h, avok, s-os,...	kt	8300	468331	5643	2019	6/8	on	hyvä	C2012
+Jätkäsaari	4h, kt, s	kt	9200	441600	4800	2021	2/7	on	hyvä	B2018
+Jätkäsaari	5h, kt, s	kt	11000	581900	5290	2021	7/7	on	hyvä	B2018
+Jätkäsaari	5h, kt, s	kt	11000	572000	5200	2021	6/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	7850	376800	4800	2021	2/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	9200	469200	5100	2021	5/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	9200	478400	5200	2021	6/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	10700	545700	5100	2021	3/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	9150	466650	5100	2021	5/5	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	10700	587430	5490	2021	7/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	9200	487600	5300	2021	7/7	on	hyvä	B2018
+Jätkäsaari	4h, kt, s	kt	10700	577800	5400	2021	6/7	on	hyvä	B2018

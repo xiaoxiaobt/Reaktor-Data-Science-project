@@ -1,0 +1,37 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,kk,kph	kt	2000	26000	1300	1944	1/2	ei	tyyd.	C2007
+Plaani	1h,kk,alk,kph,s	kt	3800	45000	1184	1985	1/2	ei	tyyd.	E2007
+Keskusta	1h,k,kph,p	kt	3300	29716	900	1962	1/4	ei	tyyd.	D2007
+Keskusta	1h,kk,kph,vh,las.p	kt	3200	25362	793	1971	3/3	on	tyyd.	D2007
+Keskusta	1h,kk,wc	kt	2300	19500	848	1953	2/2	ei	hyvä	D2007
+Plaani	Oh,alk,kk,psh,p	kt	3000	33500	1117	1983	3/3	ei		D2007
+Keskusta	2h,k,psh,vh,las.p	kt	5600	57000	1018	1973	2/3	on	hyvä	D2007
+Keskusta	2h,k,kph,p	kt	5400	35000	648	1975	3/4	on	huono	C2007
+Keskusta	1h,kk,kph	kt	3200	25000	781	1957	1/3	ei	tyyd.	D2007
+Heinola	2h,kk,kph,las.p...	kt	4550	60000	1319	1982	2/4	ei	hyvä	
+Tommola	2h,k,psh,s,p	kt	5300	74000	1396	1984	3/3	ei	hyvä	E2013
+Niemelä	2h,kk,kph,s,p	kt	4500	80000	1778	1987	5/5	on	hyvä	F2013
+Sinilähde	2h,k,s,kph,varasto	rt	6100	51300	841	1988	1/1	ei	tyyd.	F2007
+Pyhätön	3h,k,kph,s,vh,p	rt	6100	83000	1361	1989	2/2	ei	hyvä	B2007
+Tommola	2h,k,psh,s,vh,p	kt	6200	125500	2024	2012	1/5	on	hyvä	A2007
+Niemelä	2h,k,kph,p	kt	6000	62000	1033	1983	2/3	ei	hyvä	C2013
+Keskusta	2h,k,kph,p	kt	5250	20500	390	1962	3/3	ei	huono	C2007
+Plaani	2h,k,psh,p	kt	5400	73500	1361	2001	2/3	on	hyvä	G2013
+Keskusta	2h,k,ph,s,p	kt	5600	65500	1170	1990	3/3	ei	tyyd.	D2013
+Sepänniemi	2h,k,psh,p	kt	4900	67000	1367	1990	2/5	on	hyvä	F2013
+Harju	2h,k,kph,p	kt	5800	87500	1509	1975	1/4	on	hyvä	D2007
+Keskusta	3h,k,psh,p	kt	6500	45000	692	1960	3/3	ei	hyvä	C2013
+Niemelä	3h,k,psh,s,wc,v...	rt	8700	94500	1086	1986	1/2	ei	hyvä	G2013
+Sepänniemi	3h,k,vh,kph,s,p	kt	7700	183000	2377	2007	2/3	on	hyvä	C2018
+Niemelä	3h,k,psh,s,wc,v...	rt	7800	113000	1449	1989	1/1	ei	hyvä	D2013
+Keskusta	3h,k,psh,p	kt	7300	110000	1507	1969	2/3	on	hyvä	G2013
+Pyhätön	Oh,k,2mh,ty...	rt	9000	97000	1078	1983	1/2	ei	hyvä	E2013
+Laukkamäki	3h,k,kph,s,wc	rt	7300	125000	1712	2001	1/1	ei	hyvä	E2013
+Sepänniemi	3h,k/rt,psh,wc,...	kt	7800	107500	1378	1981	2/5	on	tyyd.	D2007
+Keskusta	3h,k,psh,s,wc,p	kt	7100	140000	1972	1987	4/4	on	hyvä	C2007
+Niemelä	3h,k,psh,s,wc,v...	rt	7800	112000	1436	1989	1/1	ei		D2013
+Keskusta	3h,k,kph,vh,p	kt	7700	55000	714	1956	2/2	ei	tyyd.	D2007
+Keskusta	3h,kt,psh,s,p	kt	7400	289700	3915	2015	4/4	on	hyvä	A2007
+Niemelä	4h,k,psh,s,wc	rt	10100	163000	1614	1985	1/1	ei	hyvä	E2013
+Keskusta	oh,2 mh,kirj,ru...	kt	10400	156000	1500	1969	2/3	on	hyvä	G2013
+Keskusta	oh,2-3h,ruok,k,...	kt	10000	89000	890	1953	3/4	ei	hyvä	E2007

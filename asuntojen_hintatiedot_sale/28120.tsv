@@ -1,0 +1,19 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Päärnäinen	2h,k	rt	7000	120000	1714	1922	1/2	ei	hyvä	
+Käppärä	2h,k,kph,p	kt	4900	65000	1327	1958	2/7	on		E2007
+Käppärä	2h,k,p	kt	5400	69000	1278	1964	3/3	ei	hyvä	F2013
+Käppärä	2h+kk	kt	4100	52000	1268	1965	1/3	on		F2013
+Käppärä	2h+k+parveke	kt	4900	54000	1102	1958	5/7	on		E2013
+Käppärä	2h+k+kph+vh+las...	kt	5600	48000	857	1965	6/10	on	tyyd.	G2013
+Käppärä	2 h, k, p	kt	5550	48000	865	1965	2/8	on	tyyd.	G
+Päärnäinen	2h, k	rt	4200	81000	1929	1900	2/2	ei	hyvä	
+Käppärä	3k, k, kh, p	kt	7850	75000	955	1966	2/7	on	tyyd.	C2007
+Käppärä	3h, k, kh/wc, p	kt	5700	65000	1140	1957	5/7	on	tyyd.	E
+Päärnäinen	3h, k, s, p	kt	9860	137000	1389	1950	3/3	ei	hyvä	F
+6.osa/päärnäinen	3h+k+2wc+vh+var...	rt	10500	165000	1571	2002	1/2	ei	hyvä	
+Tiilinummi	3h+kk	kt	5300	56000	1057	1959	2/2	ei		
+Käppärä	4h, k, p	kt	7850	99000	1261	1964	3/7	on	hyvä	F2013
+Käppärä	4 h, k, 2wc, kp...	kt	9100	117365	1290	1970	1/3	ei	hyvä	F
+Käppärä	4h k s	kt	8650	155000	1792	1950	1/3	ei	hyvä	F
+Tiilinummi	4h,k,khh,kph,wc	kt	9900	146000	1475	1950	2/3	ei	hyvä	F2013
+Päärnäinen	5h,k,kph	rt	9800	165000	1684	1904		ei	hyvä	

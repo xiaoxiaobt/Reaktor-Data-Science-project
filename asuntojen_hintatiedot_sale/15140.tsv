@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,k,kph	kt	3250	71000	2185	1946	4/6	on	tyyd.	D2018
+Keskusta	1h,kk,kph,lasit.p	kt	2000	76000	3800	1961	4/8	on	hyvä	D2007
+Keskusta	1h, kk, kph	kt	3250	70000	2154	1941	3/3	ei	hyvä	G2013
+Keskusta	1h, kk	kt	2970	68500	2306	1958	4/4	ei	hyvä	D2007
+Keskusta	1h,kk,kh,vh,p	kt	2700	80000	2963	1961	2/7	on	tyyd.	D2013
+Keskusta	1h, kk, kph/wc,...	kt	2700	93109	3448	1962	3/6	on	hyvä	
+Keskusta	1h,k,kh/wc	kt	3700	85000	2297	1947	1/4	on	hyvä	D2013
+Kiveriö	1h,kk,vh,kph/wc	kt	2850	56000	1965	1960	-1/4	ei	hyvä	D
+Keskusta	1h, kk	kt	2200	84500	3841	1957	6/10	on	hyvä	
+Kiveriö	1h, kk, alkovi,...	rt	3650	100000	2740	2003	1/2	ei	hyvä	E2007
+Keskusta	1h, tupak., alk...	kt	2450	104000	4245	2015	2/5	on	hyvä	C2013
+Ruoriniemi	1h, kk, s, kph,...	kt	3650	152500	4178	1995	4/7	on	hyvä	
+Kariniemi	1h, alkovi, k, kph	kt	3960	92000	2323	1941	2/3	ei	hyvä	G2013
+Keskusta	1h,kt,kph,lp	kt	2500	125000	5000	2017	5/5	on	hyvä	C2013
+Ankkuri	1h,kk,ph,s,p	kt	3800	118000	3105	2011	4/6	on	hyvä	C2007
+Keskusta	1h,kk,kph	kt	2100	49000	2333	1957	1/3	ei	tyyd.	E2013
+Paavola	1h,alk,kk,kh/wc...	kt	4200	107000	2548	1987	4/4	on	hyvä	F
+Paavola	2h,kk,vh,kph,s,...	kt	4200	152000	3619	2001	5/5	on	hyvä	F2013
+Keski-lahti	2 h, kt, kh, p	kt	4500	199800	4440	2019	4/5	on	hyvä	C2018
+Keskusta	2h, avok, kph, ...	kt	3700	158000	4270	2017	3/5	on	hyvä	C2013
+Ruoriniemi	2h, k, s	kt	4850	177500	3660	1995	1/7	on	hyvä	
+Keskusta	2h, k, sauna, k...	kt	5370	105000	1955	1958	2/4	ei	hyvä	D2007
+Keskusta	2h, tkh, k, kh/...	kt	6770	119000	1758	1947	4/4	on	tyyd.	D2007
+Keskusta	2h, k, kph/s, w...	kt	5750	150000	2609	1995	4/7	on	tyyd.	
+Keskusta	2h.kk.s	kt	5400	173000	3204	2013	2/6	on	hyvä	C2018
+Keski-lahti	2h, k, s, vh, l...	kt	6050	180500	2983	2005	5/7	on	hyvä	C
+Ankkuri	2h, k, s, lasitp.	kt	5300	154800	2921	2011	1/6	on	hyvä	C2007
+Keskusta	2h,k,kph,s,vh,p	kt	6500	188000	2892	2000	4/7	ei	hyvä	
+Keskusta	2h,k	kt	6300	104000	1651	1951	3/5	on	tyyd.	F2013
+Keski-lahti	2h, kk, kh	kt	3400	76000	2235	1946	5/6	on	hyvä	D2007
+Paavola	2h,kk,kph,s,las.p	kt	4900	171000	3490	2009	5/7	ei	hyvä	
+Keskusta	2h, k, p	kt	5000	120000	2400	1963	6/6	on	hyvä	
+Keskusta	2h, kk, kph	kt	4500	82200	1827	1951	2/5	on	huono	F2013
+Kariniemi	k, oh, mh, ph/w...	kt	6000	115000	1917	1951	2/7	on	hyvä	D
+Keski-lahti	2h,k,kph,p	kt	5200	109000	2096	1961	5/7	on		D2013
+Keskusta	2h, k, p	kt	6300	106000	1683	1951	4/5	on	hyvä	F2013
+Keskusta	2h,k,p	kt	6300	104500	1659	1951	4/5	on	tyyd.	F2013
+Paavola	2h,k,kph,s,p	kt	5600	140000	2500	1996	2/6	on	hyvä	D2007
+Ankkuri	2h,kk,s,kph,las...	kt	4850	174000	3588	2005	6/6	ei	hyvä	
+Keskusta	2h, kk, s, kph,...	kt	4800	97000	2021	1991	1/2	ei	tyyd.	C2019
+Ruoriniemi	2h,k,s	kt	4500	184000	4089	1999	3/8	on	hyvä	E2013
+Keskusta	2h,rt,k,kph	kt	6700	167500	2500	1946	5/6	on	hyvä	D2007
+Paavola	2h, k, kph, las...	kt	6200	67000	1081	1975	1/5	on	tyyd.	E2013
+Keskusta	2h,k,s,las.p	kt	5500	127000	2309	1985	2/5	on	hyvä	F2013
+Paavola	2h,kk,s,ph,vh,p...	kt	4700	125000	2660	1997	1/5	on	hyvä	D2007
+Paavola	2h,kk,kph,s,vh,p	kt	4900	148000	3020	2011	2/7	on	hyvä	C2013
+Keskusta	2h,kt,kph,p	kt	4500	163500	3633	2019	1/5	on	hyvä	C2018
+Keskusta	2h, kk, s, p	kt	4700	96800	2060	1985	3/3	on	tyyd.	D
+Ankkuri	2h, kk, s, kph, p	kt	5450	169500	3110	2008	5/5	on	hyvä	E2013
+Keskusta	2h, k, kph, p	kt	4400	99000	2250	1961	3/3	ei	hyvä	
+Ruoriniemi	2h,k,s,vh, las....	kt	5600	165000	2946	1997	5/6	on	hyvä	G2013
+Paavola	2h,kk,s, kph	kt	4900	158000	3224	2008	3/7	on	hyvä	D2007

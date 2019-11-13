@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,kk	kt	3300	85700	2597	1974	2/4	on	hyvä	F
+Keskusta	1h, alkovi, kt, s	kt	4000	150000	3750	2016	5/8	on	hyvä	C
+Keskusta	1h+kk	kt	3100	71000	2290	1964	2/3	on		E2007
+Keskusta	1h, kk, alkovi,...	kt	3900	77112	1977	1969	3/4	on	tyyd.	G2013
+Keskusta	1h, kk, kph, ra...	kt	3400	78000	2294	1966	1/3	on	hyvä	F2013
+Keskusta	1 h, kk	kt	2800	80000	2857	1968	1/3	ei	hyvä	F
+Rantakylä	1h, kt	kt	3100	88000	2839	2015	2/2	ei	hyvä	C
+Keskusta	1h,kk,kph	kt	2700	63000	2333	1955	3/3	ei	huono	F2013
+Keskusta	1 h, kk	kt	3050	80000	2623	1977	2/3	on	hyvä	E
+Keskusta	1 h, kk, kph, l...	kt	3000	83500	2783	1978	3/3	ei	hyvä	F2013
+Keskusta	1h, kk	kt	3100	74000	2387	1973	2/4	on		E2013
+Keskusta	1h, kk, kph	kt	3500	88000	2514	1973	3/3	on	tyyd.	E2013
+Keskusta	1 h, k, alkovi	kt	4000	104147	2604	1966	1/3	on	hyvä	E2013
+Keskusta	1h,kk,ph	kt	2850	84000	2947	1963	3/3	ei	hyvä	F
+Keskusta	1h, kk	kt	3250	80000	2462	1974	2/3	ei	hyvä	F
+Keskusta	1h, k	kt	3600	80000	2222	1972	3/3	ei		E2013
+Keskusta	1h, kk	kt	4000	72000	1800	1970	2/3	on		F2013
+Keskusta	1h,kk	kt	2750	75000	2727	1962	4/4	on	tyyd.	E2018
+Keskusta	1h, kk	kt	2700	76000	2815	1963	2/3	ei		E2018
+Keskusta	1h,kk,kph	kt	3000	85000	2833	1978	1/3	ei	hyvä	F2018
+Keskusta	1h, kk	kt	3100	80000	2581	1973	1/3	ei	tyyd.	E2013
+Keskusta	2h,k	kt	5150	86400	1678	1969	1/4	on	tyyd.	G
+Keskusta	2h, k	kt	4200	84000	2000	1961	3/3	ei		D2007
+Keskusta	2h, k, s	kt	6500	300000	4615	2015	6/6	on	hyvä	C2013
+Keskusta	2h,k,ph,s	kt	6100	125000	2049	1989	4/4	on	hyvä	D
+Keskusta	2h	kt	5150	115000	2233	1980	3/3	ei	hyvä	E
+Keskusta	2h, k	kt	6200	125000	2016	1968	1/3	ei	hyvä	D
+Keskusta	2h, kt, s	kt	4850	130500	2691	1997	1/4	on	hyvä	E2013
+Keskusta	2h, k, s	kt	5850	146000	2496	2000	2/5	on	hyvä	F2013
+Keskusta	2h, k, s	kt	5900	150000	2542	1996	2/4	on	hyvä	E2013
+Keskusta	2h, k	kt	5200	103500	1990	1974	3/3	ei		F2013
+Keskusta	2h, k, kph, par...	kt	5300	90000	1698	1974	3/3	ei	hyvä	F2013
+Keskusta	2h, kk	kt	4200	100000	2381	1963	2/3	ei	hyvä	F2013
+Keskusta	2h, k ,s	kt	5300	105700	1994	1965	2/3	ei	hyvä	F2013
+Keskusta	2h, k, s	kt	6500	287280	4420	2015	5/6	on	hyvä	C2013
+Keskusta	2h, kt, s	kt	4200	196500	4679	2015	5/6	on	hyvä	C2013
+Keskusta	2 h, kk, kph/wc	kt	4850	89000	1835	1961	3/3	on	hyvä	F2013
+Keskusta	2h + k	kt	5250	109500	2086	1977	1/3	on	hyvä	E
+Keskusta	2h, k, s	kt	5750	109454	1904	1983	2/3	ei	hyvä	E2013
+Keskusta	2h,k,ph	kt	5300	93000	1755	1974	2/3	ei	hyvä	F
+Keskusta	2h, k	kt	5300	105000	1981	1970	3/3	on	hyvä	E2013
+Keskusta	2h,kk	kt	3900	102000	2615	1949	3/5	on	hyvä	
+Keskusta	2h, k	kt	5300	89000	1679	1965	2/5	on	tyyd.	D2007
+Keskusta	2 h, k, kph, s	kt	5500	102000	1855	1957	2/3	ei	hyvä	
+Keskusta	2 h, kk, kph	kt	4000	96000	2400	1963	1/4	on	hyvä	
+Rantakylä	2h, kt, s	kt	4100	95000	2317	2012	2/2	ei	hyvä	B
+Keskusta	2k,k,s	kt	5900	125000	2119	1983	3/3	on	hyvä	C2007
+Keskusta	2h,k,ph,s	kt	4800	120000	2500	1986	3/4	on	hyvä	C
+Keskusta	2h, k	kt	5800	90000	1552	1974	3/3	ei	hyvä	
+Keskusta	2h, k, kh, p	kt	5950	123000	2067	1972	2/3	on	hyvä	D2007
+Keskusta	2, k	kt	5300	110000	2075	1952	3/3	ei		G2013
+Keskusta	2h, kk	kt	4450	80000	1798	1961	3/3	on	tyyd.	F

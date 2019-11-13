@@ -235,6 +235,7 @@ body {
 .instruction {
     background-color: #003359;
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -246,7 +247,7 @@ body {
 }
 
 #_dash-app-content > div {
-    background-image: url("back_hd.jpg");
+    background-image: url("/assets/back_hd.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -256,6 +257,7 @@ body {
     background-color: white;
     opacity: 0.7;
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 

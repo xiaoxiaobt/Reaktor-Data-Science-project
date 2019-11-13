@@ -880,5 +880,5 @@ def return_dict():
     return a
 
 
-while True:
+if __name__ == "__main__":
     print(eval(input("Command? \n")))

@@ -1,9 +1,6 @@
 import pandas as pd
-from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Using internal project modules
 
 
 def pairwise_correlation(df):

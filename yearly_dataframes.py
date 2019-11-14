@@ -6,10 +6,6 @@ import pandas as pd
 from pathlib import Path
 import numpy as np
 
-# Using internal project modules
-from asuntojen_hintatiedot import list_sold, list_rent
-from coordinates import coordinates
-
 
 def postalcode_and_area(df):
     """
@@ -85,10 +81,10 @@ def clean_columns(df):
 
 def drop_and_replace(df):
     """
-    This function deletes the row 0 (Finland),
-    drops remaining duplicate columns, and replaces missing values with 0.
-    :param df: the dataframe to clean
-    :return: the cleaned dataframe
+    This function deletes the row 0 (Finland), drops remaining duplicate columns,
+    and replaces missing values. Inline comments explain how missing/private values are handled.
+    :param df: the data frame to clean
+    :return: the cleaned data frame
     """
     # Drop row 0: Finland
     df.drop(index=0, inplace=True)
@@ -97,10 +93,41 @@ def drop_and_replace(df):
     for c in df.columns:
         drop_double_columns(df, c)
 
-    # Replace missing values with 0
+    # Replace missing values
+    # RULES:
+    #       1) if it's a count, take the min of the column
+    #           and if the min is greater than 15, take 15
+    #       2) if it's a rate/percentage/average/median, take the median of the column
+    # MISSING VALUES COME FROM:
+    #       (RA) -> Data on dwellings are protected if there is only one residential building in the area.
+    #               Data on the average floor area of dwellings and type of house are protected if there is only one
+    #               residential building or fewer than 30 dwellings in the area. Protected fields have the value "..".
+    #               Data on free-time residences is not protected.
+    #       (KO) -> Data on educational structure are confidential if the area contains fewer than 30 people aged 18 or over
+    #       (HR) -> Data on income are confidential if the area contains fewer than 30 people aged 18 or over
+    #       (TE) -> Data on size and stage in life of households are confidential if there are fewer than 30 households in the area.
+    #       (TR) -> Data on the income of households are confidential if there are fewer than ten households in the area.
+    #       (TP) -> Data on workplaces are protected if there are fewer than 10 workplaces in the area
+    # SOURCE:
+    #       http://www.stat.fi/static/media/uploads/tup/paavo/paavo_kuvaus_en.pdf
+
     df.replace({'..': np.nan, '.': np.nan}, inplace=True)
-    df.replace({None: 0}, inplace=True)
-    df.fillna(0, inplace=True)
+    for col_name in df.columns:
+        if df[col_name].isna().sum() > 0:
+            filter_on_column = df[df[col_name].notna()]
+            if 'Average' in col_name or 'average' in col_name or 'ratio' in col_name or 'rate' in col_name \
+            or 'income' in col_name or 'purchasing power' in col_name:
+                nonzero_minimum = filter_on_column[col_name].median()
+            else:
+                nonzero_minimum = filter_on_column[col_name][filter_on_column[col_name].astype('float') > 0].min()
+                nonzero_minimum = min(float(nonzero_minimum), 15)
+
+            df[col_name].fillna(nonzero_minimum, inplace=True)
+
+    if sum(df.isna().sum()) > 0:
+        print("WARNING: There are still missing values!")
+        df.replace({None: 0}, inplace=True)
+        df.fillna(0, inplace=True)
 
     return df
 
@@ -126,15 +153,6 @@ def get_index_positions(list_of_elements, element):
             break
 
     return index_pos_list
-
-
-def add_buses():
-    """
-    Open the file 'bus.tsv' from the folder 'data' and return the column to add to the data frame
-    :return: list of values as a pandas Series
-    """
-    bus_df = pd.read_csv(Path('data/') / 'bus.tsv', sep='\t', usecols=['Bus stops'])
-    return bus_df['Bus stops'].copy()
 
 
 def add_density(year, pclist):
@@ -183,11 +201,9 @@ def get_all_dataframes():
     This function assigns the data to the correct data frame according to the year,
     and calls drop_and_replace to clean the data frame.
     The latest postal codes (from 2017) are taken into account.
-    Number of bus stops, average selling prices over the last 12 months,
-    average rent with and without ARA over the last 12 months,
-    population density, latitude and longitude coordinates, are added to each data frame.
     :return: df_dic, a dictionary where the keys are the years
-            and the values are the corresponding data frames
+            and the values are the corresponding data frames, and
+            common_columns, a list of common columns as found by 'get_common_columns'
     """
     # Read all the files with the data
     file_list = glob.glob("paavo_data/*.csv")
@@ -234,10 +250,6 @@ def get_all_dataframes():
                 temp = temp[~temp['Postal code'].isin(old_pc)]
                 df_dic[y] = pd.concat([df_dic[y], temp.copy()], axis=1, sort=False).reindex(df_dic[y].index)
 
-    sold_df = pd.DataFrame({'Sell price': list_sold()}, dtype=np.float64)
-    rentARA_df = pd.DataFrame({'Rent price with ARA': list_rent()[0]}, dtype=np.float64)
-    rentnoAra_df = pd.DataFrame({'Rent price without ARA': list_rent()[1]}, dtype=np.float64)
-
     for year, dfy in df_dic.items():
         # Here we add the columns 'Bus stops', 'Sold', 'Rented', 'Population density', 'Lat', 'Lon'
         # The column 'Inhabitants total' becomes useless: we can remove it after scaling
@@ -245,8 +257,6 @@ def get_all_dataframes():
         dfy.drop(columns=['Postal code area', 'Postialue', 'Area_x', 'Area_y'], inplace=True, errors='ignore')
         dfy = data_format(dfy)
         dfy.reset_index(inplace=True)
-        # Add bus stops
-        dfy['Bus stops'] = add_buses()
 
         # Add population density
         dfy.drop(columns=['index'], inplace=True)
@@ -263,30 +273,11 @@ def get_all_dataframes():
         new_df = pd.DataFrame({'Density': mydensitylist})
         dfy.update(new_df)
 
-        # Add avg selling prices in the last 12 months
-        dfy['Sell price'] = [0] * len(dfy.index)
-        dfy.update(sold_df)
-
-        # Add avg renting prices with ARA in the last 12 months
-        dfy['Rent price with ARA'] = [0] * len(dfy.index)
-        dfy.update(rentARA_df)
-
-        # Add avg renting prices without ARA in the last 12 months
-        dfy['Rent price without ARA'] = [0] * len(dfy.index)
-        dfy.update(rentnoAra_df)
-
-        # Add latitude and longitude
-        coord = coordinates()
-        lat = []
-        lon = []
-        for elm in coord:
-            lat.append(elm[1][0])
-            lon.append(elm[1][1])
-        dfy['Lat'] = lat
-        dfy['Lon'] = lon
+        # Remove the year and extra comma
+        dfy.columns = [re.sub(r", \d{4} $", "", column) for column in dfy.columns]
 
     print("Data are ready")
-    return df_dic
+    return df_dic, get_common_columns(df_dic)
 
 
 def get_tsv_files():
@@ -294,9 +285,9 @@ def get_tsv_files():
     Call get_all_dataframes and save each year on a file
     :return: None
     """
-    df_dic = get_all_dataframes()
+    df_dic, _ = get_all_dataframes()
 
-    folder = 'datafreames'
+    folder = 'dataframes'
     if not os.path.exists(folder):
         os.makedirs(folder)
 
@@ -307,24 +298,21 @@ def get_tsv_files():
         df.to_csv(Path(folder) / filename, sep='\t', index=False, encoding='utf-8')
 
 
-def get_common_columns():
-    df_dic = get_all_dataframes()
-    col_dic = {}
-    for y, df in df_dic.items():
-        # Strip out the year from every column
-        # The columns with the same content have the same name, regardless of the year
-        columns_without_year = [re.sub(r" \d{4}", "", title) for title in df.columns]
-        col_dic[y] = set(columns_without_year)
-
+def get_common_columns(df_dic):
+    """
+    :param: df_dic, a dictionary of data frames, as returned by 'get_all_dataframes'
+    :return: a list of column names, representing the common subset of columns
+            that appears in all data frames from 2013 on (2012 is excluded on purpose,
+            since it has too few attributes)
+    """
     years = list(df_dic.keys())
     # 2012 is years[0]
-    print(years)
     y0 = years[1]
     years = years[2:]
-    common = set(col_dic[y0])
+    common = set(df_dic[y0].columns)
     for y in years:
-        common = common.intersection(col_dic[y])
-    return common
+        common = common.intersection(df_dic[y].columns)
+    return sorted(common)
 
 
 if __name__ == '__main__':

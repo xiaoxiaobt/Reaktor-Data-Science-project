@@ -11,9 +11,9 @@ from yearly_dataframes import get_all_dataframes
 
 def all_data():
     """
-    TEMPORARY: dataframe 2017 augmented with columns that are not in 2017 but are in 2016,
+    TEMPORARY: data frame 2017 augmented with columns that are not in 2017 but are in 2016,
     and also columns from external sources (paavo housing, asuntojen hintatiedot, bus stops, latitude and longitude)
-    :return: the dataframe
+    :return: the data frame
     """
     all_dfs, columns = get_all_dataframes()
 
@@ -31,7 +31,9 @@ def add_newest_attributes(df):
     population density, latitude and longitude coordinates, are added to each data frame.
     :return: the updated data frame
     """
+    print("Loading sales...")
     sold_df = pd.DataFrame({'Sell price': list_sold()}, dtype=np.float64)
+    print("Loading rents...")
     rentARA_df = pd.DataFrame({'Rent price with ARA': list_rent()[0]}, dtype=np.float64)
     rentnoAra_df = pd.DataFrame({'Rent price without ARA': list_rent()[1]}, dtype=np.float64)
 
@@ -75,10 +77,44 @@ def add_buses():
     Open the file 'bus.tsv' from the folder 'data' and return the column to add to the data frame
     :return: list of values as a pandas Series
     """
+    print("Loading bus stops...")
     bus_df = pd.read_csv(Path('data/') / 'bus.tsv', sep='\t', usecols=['Bus stops'])
     return bus_df['Bus stops'].copy()
 
 
+def add_peculiarity(df):
+    """
+    Add the column 'peculiarity' with a sentence describing some
+    particular characteristic of the postalcode area.
+    :return: the updated data frame
+    """
+    list = []
+    # TODO: Build the list based on min and max values by column, but at most 1 info per postalcode
+    # See notes
+    for i, row in df.iterrows():
+        list.append(str(row['Area']))
+    df['text'] = list
+    return df
+
+
+def add_hover_description(df):
+    """
+    Add the column 'text' with the numbers and description
+    shown on the app when selecting one postalcode area.
+    :return: the updated data frame
+    """
+    list = []
+    for i, row in df.iterrows():
+        list.append('<b>' + str(row['Area']) + '</b><br>' +
+                    "Density: " + str(row['Density']) + '<br>' +
+                    "Average age: " + str(row['Average age of inhabitants']) + '<br>' +
+                    "Average income: " + str(row['Average income of inhabitants']) + '<br>')
+    df['text'] = list
+
+    return df
+
+
 if __name__ == '__main__':
     d = all_data()
+    d = add_hover_description(d)
     print(d.head())

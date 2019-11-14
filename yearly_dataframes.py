@@ -115,7 +115,9 @@ def drop_and_replace(df):
     for col_name in df.columns:
         if df[col_name].isna().sum() > 0:
             filter_on_column = df[df[col_name].notna()]
-            if 'Average' in col_name or 'average' in col_name or 'ratio' in col_name or 'rate' in col_name \
+            if 'Average' in col_name or 'average' in col_name \
+            or 'median' in col_name or 'Median' in col_name \
+            or 'ratio' in col_name or 'rate' in col_name \
             or 'income' in col_name or 'purchasing power' in col_name:
                 nonzero_minimum = filter_on_column[col_name].median()
             else:

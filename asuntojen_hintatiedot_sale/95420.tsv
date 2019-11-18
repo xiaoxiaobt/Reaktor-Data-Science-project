@@ -1,0 +1,15 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Pudas	2h,kk,kph	kt	5000	35000	700	1972	1/3	ei	hyvä	G2013
+Tornio	2h,k,sauna	rt	6500	83897	1291	1982	1/1	ei	hyvä	C2013
+Palosaari	2h,k,s	rt	6000	81000	1350	1989	1/1	ei	hyvä	F2013
+Luotomäki	2h,kk,kph	rt	5650	52000	920	1973	1/1	ei	tyyd.	D2013
+Luotomäki	2h+k+s	rt	5550	78000	1405	1972	1/1	ei	hyvä	F
+Tornio	2h,k	kt	6200	37683	608	1972	3/3	ei	hyvä	G2013
+Kalliopudas	2h,k,kph,s	rt	5500	70000	1273	1975	1/1	ei		D2013
+Luotomäki	3h,k,s	rt	8800	90000	1023	1972	1/1	ei	hyvä	D2013
+Palosaari	3h,k,s	rt	9000	69000	767	1975	1/1	ei	tyyd.	
+Palosaari	3h+k+s	rt	7250	106000	1462	1990	1/1	ei	hyvä	E2007
+Luotomäki	3h,k,s	rt	8000	80000	1000	1974	1/1	ei	hyvä	E2007
+Luotomäki	3h,k,kph,s	rt	8800	75000	852	1972	1/1	ei	hyvä	D2007
+Pudas	4h+k+s	rt	10200	100000	980	1976	1/1	ei	hyvä	E
+Luotomäki	4h,k,kph,s	rt	8900	66200	744	1978	1/2	ei	tyyd.	F2013

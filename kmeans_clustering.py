@@ -6,54 +6,72 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn.metrics import davies_bouldin_score
 from sklearn.metrics import silhouette_score
-from cumulative_variance_plot import cumulative_variance_plot
+
+# Using internal project modules
+from data_analysis_visualization import cumulative_variance_plot, clustering_inertia
 
 
-def open():
+def dataframe():
     """
-    Open the dataframe and return it.
-    :return: the dataframe
+    Open the data frame and return it.
+    :return: the data frame
     """
     # Open sample
-    df = pd.read_csv(Path("dataframes/") / 'df2016.tsv', sep='\t', skiprows=0, encoding='utf-8',
+    df = pd.read_csv(Path("dataframes/") / 'final_dataframe.tsv', sep='\t', skiprows=0, encoding='utf-8',
                      dtype={'Postal code': object})
     print(df[df.columns[:5]].head())
 
-    # Correctly assign datatypes
+    # Correctly assign data types
     column_dic = dict.fromkeys(df.columns)
     for key in column_dic.keys():
         if key == 'Postal code' or key == 'Area':
-            print(key)
             column_dic[key] = 'object'
         else:
-            print(key)
             column_dic[key] = 'float'
     df = df.astype(column_dic)
 
-    df.fillna(0, inplace=True)
-    print(df.isnull().sum(axis=0))
-    print(df.describe())
-    print(df.shape)
-    print(df.columns)
-    print(df.dtypes)
+    if sum(df.isna().sum(axis=0)) > 0:
+        print("WARNING: There are still missing values. They will be replaced with 0.")
+        df.fillna(0, inplace=True)
+    # print(df.isnull().sum(axis=0))
+    # print(df.describe())
+    # print(df.shape)
+    # print(df.columns)
+    # print(df.dtypes)
     return df
 
 
 def k_means_clustering(automaticClusterNum=False):
-    df = open()
+    """
+    Perform K-Means clustering on the scaled final data frame,
+    and saves the column 'label' with the cluster id.
+    :param automaticClusterNum: bool, if True calls 'choose_cluster_num' to find
+            an optimal number of clusters; if False, uses an hard-coded value
+            as the number of clusters
+    :return: a tuple, where the fist element is the PCA scaled data frame, and the second
+            element the scaled final data frame. Both the data frame have the new column 'label'
+    """
+    # Open the final data frame
+    df = dataframe()
+
+    # Exclude columns representing string values from PCA
     columns = list(set(df.columns) - set(['Postal code', 'Area']))
+
+    # Standard scale and PCA
     X_train = df[columns]
     X_scaled = preprocessing.scale(X_train)
-    # print(X_scaled)
     pca = PCA()
     X_pca = pca.fit_transform(X_scaled)
-    # print(pca.explained_variance_ratio_)
+
+    # Plot cumulative explained variance by PCA component
     array_var = pca.explained_variance_ratio_
     array_cum = array_var.cumsum()
-    print(array_cum)
     cumulative_variance_plot(array_cum)
+
+    # Save PCA in a new data frame
     pca_df = pd.DataFrame(index=df.index)
     new_col = ['Postal code', 'Area']
+
     # Copy old columns (left out from PCA)
     for c in new_col:
         pca_df[c] = df[c]
@@ -62,63 +80,90 @@ def k_means_clustering(automaticClusterNum=False):
     for i in range(30):
         pca_df['pca_' + str(i + 1)] = X_pca.T[i]
 
-    # print(pca_df)
+    # Number of clusters
     if automaticClusterNum:
         i = choose_cluster_num(pca_df)
     else:
-        i = 71
+        i = 65
 
-    kmeans = KMeans(n_clusters=71)
+    # Perform clustering
+    kmeans = KMeans(n_clusters=i)
     kmeans.fit(pca_df[pca_df.columns[2:15]])
     labels = kmeans.labels_
 
-    # print(kmeans.cluster_centers_)
-    print(kmeans.inertia_)
-    print(kmeans.n_iter_)
+    print("Clustering with " + str(i) + " clusters converged in " + str(kmeans.n_iter_))
 
+    # Adding the column with cluster label
     pca_df['label'] = labels
+    df['label'] = labels
 
-    return pca_df
+    return pca_df, df
 
 
-def get_clusters():
-    pca_df = k_means_clustering()
+def clusters_dictionary():
+    """
+    Perform K-Means clustering and return the clusters as a dictionary
+    :return: a dictionary, where the key is the cluster id and the value is a list of Areas
+    """
+    pca_df, _ = k_means_clustering()
     cluster_dic = {}
     for i in list(set(pca_df['label'].to_list())):
         cluster_dic[i] = pca_df[pca_df.label == i]['Area'].values
     return cluster_dic
 
 
-def choose_cluster_num(df=None, start_point=10, end_point=200, rtype='bouldin'):
+def choose_cluster_num(df=None, start_point=2, end_point=100, rtype='bouldin', plot_inertia=True):
     """
-    Finds the optimal number of clusters to use for the Kmean or Agglomerative clustering.
-    :param df: Data to be clustered. Optional.
+    Finds the optimal number of clusters to use for the K-Mean or .
+    :param df: Data to be clustered. Optional. Default: the final dataf frame returned by 'dataframe()'
     :param start_point: The minimum number of clusters to test. Minimum value is 2.
-    :param end_point: The maximum number of clusters to test.
+    :param end_point: The maximum number of clusters to test. Maximum value should be less than 3026.
     :param rtype: Metrics to be used, 'bouldin' for Davies Bouldin score, 'silhouette' for Silhouette score.
+    :param plot_inertia: bool, if True shows the curve of inertia
     :return: Optimal number of clusters.
     """
+    # Get the data
+    if df is None:
+        df = dataframe()
+
     # Prepare empty arrays to save the results
+    # Davies Bouldin
     resultd = []
+    # Silhouette
     results = []
+    # Inertia
+    inertia = []
 
     # Create an array with possible numbers of clusters
     k_num = range(start_point, end_point + 1)
 
-    # Loop through the possible numbers of clusters
+    # Exclude columns representing string values from PCA
+    columns = list(set(df.columns) - set(['Postal code', 'Area']))
+
+    # Standard scale and PCA
+    X_train = df[columns]
+    X_scaled = preprocessing.scale(X_train)
+    pca = PCA()
+    X_pca = pca.fit_transform(X_scaled)
+
     for i in k_num:
         kmeans = KMeans(n_clusters=i)
-        kmeans.fit(df[df.columns[2:15]])
+        kmeans.fit(X_pca)
         labels = kmeans.labels_
 
         # Calculate Davies Bouldin score
-        score_d = davies_bouldin_score(df[df.columns[4:]], labels)
+        score_d = davies_bouldin_score(X_pca, labels)
         # Calculate Silhouette score
-        score_s = silhouette_score(df[df.columns[4:]], labels)
+        score_s = silhouette_score(X_pca, labels)
         print(f'With {i} clusters, Davies Bouldin score is {score_d}, Silhouette score is {score_s}')
         # Save the results
         resultd.append(score_d)
         results.append(score_s)
+        inertia.append(kmeans.inertia_)
+
+    if plot_inertia:
+        # Plot inertia
+        clustering_inertia(inertia)
 
     # Plot the results
     plt.figure(figsize=(12, 6))
@@ -137,4 +182,5 @@ def choose_cluster_num(df=None, start_point=10, end_point=200, rtype='bouldin'):
 
 
 if __name__ == '__main__':
-    print(get_clusters())
+    choose_cluster_num()
+    print(clusters_dictionary())

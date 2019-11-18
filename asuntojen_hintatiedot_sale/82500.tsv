@@ -1,0 +1,26 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Päätye	1h,kk,s	kt	3600	39000	1083	1997	1/2	ei	hyvä	D2007
+Keskusta	1h,kt,alk,s	kt	3700	74000	2000	2008	4/4	on	hyvä	A2007
+Keskusta	1h,kk,s	kt	3400	28000	824	1986	2/2	ei	hyvä	E2007
+Hutsi	2h,kk	rt	4700	26000	553	1973	1/1	ei	hyvä	E2007
+Päätye	2h,k,s	rt	5800	30000	517	1985	1/1	ei	hyvä	E2007
+Kalattoma	2h,kk,s sek...	rt	4600	35000	761	1999	1/1	ei	hyvä	G2013
+Kytänniemi	2h,k,s	rt	6000	25000	417	1986	1/1	ei	hyvä	D2007
+Selkue	2h,k,s	rt	6000	27000	450	1982	1/1	ei	tyyd.	E2007
+Kitee	2	rt	5850	30000	513	1979	1/1	ei	hyvä	
+Palomäki	2h,k,s	rt	5300	20000	377	1977	1/1	ei	tyyd.	E2007
+Kitee	2h,k+autotalli	kt	4900	22000	449	1982	1/2	ei	hyvä	F2013
+Keskusta	2h,k,s + autokatos	kt	5700	62000	1088	1999	2/4	on	hyvä	D2007
+Päätye	2h+kt+s	kt	5200	155000	2981	2014	4/4	on	hyvä	C2007
+Sepänniemi	3h,k,s	rt	7500	56000	747	1976	1/1	ei	hyvä	F2007
+Päätye	3h,kt,s	kt	6600	120000	1818	2014	4/4	on		C2007
+Hutsi	3h,k	kt	7500	18000	240	1974	3/3	ei	huono	D2007
+Päätye	3h,k,s	kt	7200	81000	1125	1989	2/3	ei	hyvä	F2013
+Keskusta	3h,k,s	kt	7900	56500	715	1979	2/4	ei	hyvä	F2013
+Kytänniemi	3h,k,s	rt	7500	56000	747	1986	1/1	ei	hyvä	D2007
+Päätye	3h, k, s	kt	7300	41133	563	1975	2/3	on	hyvä	D
+Päätye	3h+kt+s sek...	kt	7400	156000	2108	2014	2/4	on	hyvä	C2007
+Kitee	oh,2mh,k,takkah...	ok	11100	75000	676	1990		ei	hyvä	
+Kitee	4h,k,pesuh/s,ta...	ok	9200	55000	598	1961		ei	hyvä	
+Päätye	4h,k,s	kt	10700	92000	860	1988	1/2	ei	hyvä	F2013
+Kitee	4h, k, s, tkh, khh	ok	12200	140000	1148	1991	-1/1	ei	hyvä	E2014

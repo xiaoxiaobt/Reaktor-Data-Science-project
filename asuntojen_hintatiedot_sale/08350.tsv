@@ -1,0 +1,23 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Routio	1h, k	kt	3400	46000	1353	1972	3/7	on	hyvä	D2007
+Routio	1h+k	kt	3400	55000	1618	1971	3/7	on		D2013
+Routio	1h,k,kph	kt	3400	56000	1647	1972	5/7	on	tyyd.	D2013
+Routio	2h+k	kt	5800	75000	1293	1977	1/7	on	hyvä	D2013
+Routio	2h+k	kt	6100	48500	795	1971	4/7	on	huono	D2007
+Routio	2h,k,s,kph,2xwc...	rt	6600	120000	1818	1989	2/2	ei	hyvä	
+Routio	2h,k	kt	6100	78000	1279	1971	6/7	on	hyvä	D2013
+Routio	2h, k, kph, vth...	kt	5800	78000	1345	1972	6/7	on	hyvä	D2007
+Routio	3h, k, kph, wc+...	kt	7300	84000	1151	1972	4/7	on	tyyd.	D2007
+Routio	3	kt	7300	68000	932	1967	2/3	ei	hyvä	E2007
+Routio	3h, k, s + lasi...	kt	7850	152000	1936	2003	5/7	on	hyvä	D2007
+Routio	3h+k+s	rt	6300	163000	2587	2006	1/1	ei	hyvä	
+Routio	3h, k, s	kt	7850	146000	1860	2003	2/7	on	hyvä	D2007
+Routio	3h+k+s	rt	7050	175000	2482	1992	1/1	ei	hyvä	F2007
+Routio	3h+k	kt	7400	93000	1257	1977	5/7	on		D2013
+Routio	3h+k	kt	7600	67000	882	1978	6/7	on	tyyd.	D2007
+Routio	3h, k	kt	7350	95000	1293	1976	3/7	on	hyvä	D2007
+Routio	3h, k, kph, wc,...	kt	7550	81000	1073	1972	6/7	on	hyvä	D2007
+Routio	5h+k+s+khh+k+at	ok	12100	252000	2083	1998	-1/1	ei	hyvä	
+Routio	5h, k, s, 3xwc,...	ok	20850	360000	1727	2006	-1/3	ei	hyvä	A2018
+Routio	4h, k, s, tkh, ...	rt	12600	199000	1579	1978	2/2	ei	hyvä	D
+Routio	4mh,oh,rt,k,kph...	ok	14900	260000	1745	2004	1/2	ei	hyvä	

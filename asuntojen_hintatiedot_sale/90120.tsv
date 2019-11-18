@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Heinäpää	1h, kk, kph, s,...	kt	3650	88000	2411	1992	1/4	on	hyvä	D2013
+Heinäpää	1 h,kk,kh	kt	2900	78500	2707	1962	3/3	ei	hyvä	F2013
+Heinäpää	1h, k, kph	kt	3050	87500	2869	1970	2/5	on	hyvä	D2007
+Heinäpää	1h, kk, kph, s	kt	3100	112000	3613	2004	3/4	on	hyvä	C2007
+Heinäpää	1h,kh,kh	kt	2200	58000	2636	1959	1/3	ei	tyyd.	B2007
+Heinäpää	1h,kk,s,vh,parveke	kt	3800	94000	2474	1990	3/5	on	hyvä	D2007
+Heinäpää	1h, kk, ph	kt	3000	84000	2800	1967	2/5	on	hyvä	D2007
+Heinäpää	1h, k	kt	3200	62000	1938	1957	2/3	ei	hyvä	
+Heinäpää	1h+kk+s	kt	3000	85000	2833	1997	2/4	on	hyvä	B2013
+Etu-lyötty	1h+kk+alk+s	kt	3600	121500	3375	2006	4/8	on	hyvä	A2013
+Etu-lyötty	1h, alk, kk	kt	3150	126000	4000	2018	4/5	on	hyvä	
+Heinäpää	1 h,k	kt	3400	72500	2132	1974	1/5	on	tyyd.	C2007
+Heinäpää	1h+kka	kt	2300	77000	3348	1958	1/3	ei	hyvä	C2007
+Heinäpää	2h,k,kh,vh, ran...	kt	5000	85000	1700	1958	3/4	on	hyvä	B2007
+Heinäpää	2h+kk	kt	4400	91000	2068	1975	2/3	ei	hyvä	D2007
+Heinäpää	2h,k,s	kt	5700	130000	2281	1989	2/3	ei	hyvä	C2007
+Heinäpää	2h+k+s	kt	5000	115000	2300	1997	2/4	on	hyvä	B2007
+Heinäpää	2h, k	kt	4600	99500	2163	1976	2/5	on	hyvä	B2007
+Heinäpää	2h, kk	kt	4100	83000	2024	1959	5/6	on	tyyd.	D2007
+Heinäpää	2h,k	kt	5400	116000	2148	1964	3/3	ei	hyvä	D2007
+Heinäpää	2h, k, s	kt	5500	134000	2436	1989	4/4	on	hyvä	C2013
+Heinäpää	2h, kk, kph	kt	4200	113000	2690	1958	2/3	ei	hyvä	C
+Heinäpää	2h,k	kt	5300	89000	1679	1976	5/5	on	tyyd.	B2007
+Heinäpää	2h, k	kt	5800	116000	2000	1969	3/5	on	hyvä	F2013
+Etu-lyötty	2h, kk, s	kt	4350	147050	3380	2008	3/5	on	hyvä	E2013
+Heinäpää	2h, k	kt	4450	103000	2315	1961	5/6	on	hyvä	E2013
+Heinäpää	2h, kk	kt	4200	84000	2000	1958	2/3	ei	hyvä	C
+Hollihaka	2h,kk,sa,kh,et,...	kt	4500	172000	3822	2016	3/5	on	hyvä	C2013
+Heinäpää	2h, k	kt	5600	108000	1929	1961	3/3	ei	hyvä	D
+Heinäpää	2h,k,kh	kt	5600	116500	2080	1965	1/3	ei	hyvä	D2007
+Heinäpää	2h,k,kh,parveke	kt	5000	100000	2000	1965	2/5	on	tyyd.	D2007
+Etu-lyötty	2h+kk+s	kt	5050	133000	2634	1996	5/6	on	hyvä	B2007
+Heinäpää	2h,k	kt	5400	86679	1605	1964	2/3	ei	hyvä	D2007
+Heinäpää	2h+k+s	kt	5100	117000	2294	1996	4/6	on	tyyd.	B2013
+Heinäpää	2h,kk,kh,vh,et,...	kt	5000	109860	2197	1964	2/5	on	hyvä	E2013
+Heinäpää	2h,k	kt	5300	104000	1962	1946	2/7	on	tyyd.	C2007
+Heinäpää	2h,k,kph/wc/s,l...	kt	4900	145000	2959	2002	3/4	on	hyvä	F2013
+Etu-lyötty	2h, kk, s	kt	4750	156000	3284	2004	4/4	on	hyvä	C2007
+Heinäpää	2+k	kt	5500	107000	1945	1957	3/3	ei	hyvä	D2018
+Keskusta	3h+k+s	kt	7350	309100	4205	2018	6/16	on	hyvä	C2013
+Heinäpää	3h+k+s	kt	6400	150000	2344	1989	2/4	ei	hyvä	C2013
+Heinäpää	3 h,k,parveke	kt	7000	137830	1969	1990	1/5	on	tyyd.	C2007
+Keskusta	3h,k,sa,kh,wc,v...	kt	7300	117500	1610	1972	4/5	on	tyyd.	D2007
+Heinäpää	3h,k,s	kt	6700	215000	3209	2006	3/4	on	hyvä	D2013
+Etu-lyötty	3h, k, s, lasit...	kt	6900	182000	2638	2005	3/4	on	hyvä	B2007
+Heinäpää	3h, k, kph	kt	6900	144000	2087	1972	1/3	ei	hyvä	
+Etu-lyötty	4h, k, kph/wc, ...	kt	8700	231000	2655	2005	5/5	on	hyvä	B2007
+Karjasilta	Oh, rt, k, 2mh,...	kt	10000	245000	2450	1950	3/3	ei	hyvä	D
+Hollihaka	4h,k,2kph	rt	10500	240000	2286	1925	1/2	ei	hyvä	
+Etu-lyötty	4h,k,kh,sa,wc,vh	kt	9100	299000	3286	2007	7/8	on	hyvä	E2013
+Keskusta	4h,k,wc,kh,saun...	kt	9800	225000	2296	1978	2/6	on	hyvä	D2007
+Heinäpää	3-4h,kt,sauna,p...	kt	8400	343000	4083	2013	4/5	on	hyvä	C2013

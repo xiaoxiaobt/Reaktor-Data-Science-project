@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Kuokkala	1h+k	kt	2750	95200	3462	2016	1/2	ei		
+Kuokkala	1h+k	kt	2750	95200	3462	2016	1/2	ei		
+Kuokkala	1h+kt+kh+rp	kt	2750	95200	3462	2016	1/2	ei	hyvä	
+Kuokkala	1h+k+kh+rp	kt	2750	95200	3462	2016	1/2	ei	hyvä	
+Kuokkala	1h+k	kt	2750	97000	3527	2016	1/2	ei		
+Kuokkala	1h+kk+ph	kt	2700	60000	2222	1990	1/5	on	tyyd.	F2013
+Kuokkala	1h,tpk,kph,s,la...	kt	4200	138900	3307	2015	1/6	on	hyvä	C2013
+Kekkola	1h,k,kph,s	kt	3700	70000	1892	1987	1/2	ei	tyyd.	F2013
+Ainolanranta	1h,k,kph,s,p	kt	3800	114000	3000	2004	1/5	on	tyyd.	E2013
+Ainolanranta	1h, kk, alk, s	kt	3750	117000	3120	2002	6/10	on	hyvä	G2007
+Kuokkala	2h, k, s, kph, ...	rt	4800	127500	2656	1990	1/1	ei	hyvä	E2013
+Suuruspää	2h, kk, s, kph,...	kt	4300	146000	3395	2003	2/8	on	hyvä	D2007
+Ainolanranta	2h,k,s,kph,lasi...	kt	5150	172000	3340	2003	4/9	on	tyyd.	G2013
+Ainola	2h, k, s, kph, ...	kt	5850	159000	2718	2005	2/3	ei	hyvä	F2013
+Kuokkala	2h+k+kh+s+p	kt	5350	80000	1495	1990	3/4	ei	tyyd.	
+Nenäinniemi	2h,k,s,ph,wc,p,...	rt	5500	105500	1918	1990	1/2	ei	hyvä	C2007
+Samulinniemi	2h, k, s	kt	5700	128000	2246	2006	1/2	ei	hyvä	B2007
+Kekkola	2h,k,kph,s	kt	6100	114000	1869	1989	2/2	ei	tyyd.	F2013
+Kuokkala	2h,k,vh,kph,s,p	kt	5500	93000	1691	1990	4/5	on	tyyd.	D2007
+Kuokkala	2h+k	kt	5000	73000	1460	1984	3/3	ei	tyyd.	
+Pirttimäki	2h+k+s	kt	5500	157000	2855	2015	2/2	ei	hyvä	A2007
+Äijälänsalmi	2h,kt,s, p	kt	4600	164000	3565	2018	3/4	on	hyvä	C2013
+Kuokkala	2h,kk,s,wc	kt	4900	67000	1367	1992	1/3	on	tyyd.	F2013
+Kuokkala	2h, kk, s, kph,...	kt	5150	76500	1485	1990	2/3	ei	tyyd.	D2007
+Ainola / kuokkala	2h+k+kph+s+lasi...	kt	5850	149000	2547	2005	1/2	ei	hyvä	
+Kuokkala	2h,kk,s,p	kt	4700	70000	1489	1991	1/3	ei	tyyd.	F2013
+Kekkola	2h, k, s, kph, p	kt	5700	89000	1561	1988	2/3	ei	tyyd.	F2013
+Ainola	2h,k,s	kt	5900	152500	2585	2008	1/3	ei		F2013
+Kuokkala	2h,kk,kph,s,eri...	kt	4900	77000	1571	1992	5/5	on	tyyd.	F2013
+Ainolanranta	2h, kk, s, kph, p	kt	4750	137000	2884	2007	4/7	on	hyvä	C2007
+Suuruspää	1h+tpk+kph+s	kt	4100	105000	2561	1994	5/7	on	hyvä	D2007
+Suuruspää	1h+tpk+kph+s	kt	4100	106000	2585	1994	1/7	on	hyvä	D2007
+Suuruspää	tupak, 2x mh, k...	kt	5000	123000	2460	1994	3/7	on	tyyd.	D2007
+Kekkola	2h,kt,ph,s	kt	5350	105000	1963	2001	1/3	on	tyyd.	C2007
+Sulkula	2h,k,kph,sauna,...	rt	4600	92500	2011	1992	2/2	ei	tyyd.	G2013
+Kuokkala	2h, avok, kph, ...	kt	5800	122000	2103	1992	1/3	ei	hyvä	F2013
+Kuokkala	2h, kk, s, kph,...	kt	4900	72000	1469	1992	1/5	on	hyvä	F2013
+Pirttimäki	2h,k,kph,s	kt	5500	163000	2964	2012	2/2	ei		A2007
+Ainolanranta	2h,kk,kph,s,las...	kt	5150	160500	3117	2003	2/6	on	hyvä	C2007
+Äijälä	2h, k, s, kph, ...	kt	5200	147000	2827	2011	4/5	on	hyvä	C2007
+Ainola	2h,k,s	kt	5900	170000	2881	2008	2/2	ei	hyvä	F2013
+Tikka	2h,kt,s,p	kt	4600	149900	3259	2018	3/7	on	hyvä	C2013
+Kuokkala	2h, kk, s, kph,...	kt	5100	82000	1608	1990	2/4	on	tyyd.	F2013
+Suuruspää	3h,k,kph,s,eril...	kt	7400	115000	1554	1994	1/7	on	hyvä	D2018
+Suuruspää	2h,tupak,kph,s,...	kt	5000	112500	2250	1994	2/7	on	tyyd.	D2018
+Kuokkala	3h,k,vh,ph,s,p	kt	7600	84000	1105	1990	1/4	on	tyyd.	F2013
+Ainolanranta	3h, k, s, kph, ...	kt	9100	262000	2879	2004	2/2	ei	hyvä	E2013
+Ainola	3h, k, s, kph, ...	kt	7250	190000	2621	2007	3/7	on	hyvä	C2007
+Suuruspää	3h,k,kph,s,eril...	kt	7400	118500	1601	1994	2/7	on	hyvä	D2007
+Kuokkala	3h+k+kh+s+p	kt	6900	91400	1325	1990	4/4	ei	tyyd.	
+Ristikivi	3h,k,kph,s,parveke	rt	8100	131000	1617	1986	1/2	ei	tyyd.	D2013
+Ristikivi	3h,k,kph,s,eril...	rt	8600	185000	2151	2002	1/2	ei	hyvä	F2013

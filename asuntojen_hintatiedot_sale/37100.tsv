@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,kt,alk	kt	3100	112400	3626	2019	5/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3100	117800	3800	2019	8/12	on	hyvä	C2013
+Halimaa	1h,kk,alk,kph	kt	3400	39000	1147	1973	2/3	ei	hyvä	F2013
+Keskusta	1h, tupak, kph,...	kt	3900	110000	2821	2006	3/5	on	hyvä	D2013
+Keskusta	1h, alkovi, kk,...	kt	3200	55000	1719	1970	6/6	on	tyyd.	
+Keskusta	1h,kt,alk	kt	3100	110900	3577	2019	4/12	on	hyvä	C2013
+Keskusta	1h, alkovi, kk,...	kt	3200	62000	1938	1970	1/6	on	hyvä	
+Keskusta	1h, kk, kph, vh, p	kt	2700	59200	2193	1968	2/3	ei	hyvä	
+Keskusta	1h,kt	kt	2800	107700	3846	2019	6/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3000	104800	3493	2019	2/12	on	hyvä	C2013
+Myllyhaka	1h,kk	kt	3400	42500	1250	1970	2/3	ei		G2013
+Keskusta	1h,kt,alk	kt	3200	121400	3794	2019	8/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3200	111600	3488	2019	4/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3200	112300	3509	2019	5/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3200	113800	3556	2019	6/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3100	110900	3577	2019	4/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3100	119800	3865	2019	8/12	on	hyvä	C2013
+Keskusta	1h,kt,alk	kt	3000	109000	3633	2019	4/12	on	hyvä	C2013
+Viiki		kt	1000	1500	150	2018	1/1	ei	hyvä	C
+Viiki		kt	1000	200	20	2018	1/1	ei	hyvä	C
+Kankaantaka	2h, k, kph + la...	kt	5210	68000	1305	1959	1/3	ei	hyvä	F2013
+Keskusta	2h,k,s	kt	4900	178300	3639	2019	8/12	on	hyvä	C2013
+Keskusta	2h, k, s, kph/w...	kt	5050	169000	3347	2010	10/12	on	hyvä	E2013
+Keskusta	2h,k	kt	4200	147300	3507	2019	4/12	on	hyvä	C2013
+Keskusta	2h, k, kph/wc, vh	kt	4850	80000	1649	1954	2/2	ei	hyvä	G2013
+Keskusta	2h, k	kt	6400	59500	930	1951	1/3	ei	tyyd.	
+Myllyhaka	2h,kk	kt	4400	47000	1068	1969	1/3	ei		G2013
+Keskusta	2h+k+kph+aputil...	kt	5600	58000	1036	1967	3/3	ei	tyyd.	G2013
+Myllyhaka	2h,k,kph,vh,las.p	kt	5600	65000	1161	1979	2/3	ei	hyvä	F2013
+Keskusta	2h, k, s, vh, l...	kt	5000	125000	2500	2002	2/4	on	hyvä	F2013
+Keskusta	2h,kt	kt	4300	146400	3405	2019	3/12	on	hyvä	C2013
+Keskusta	2h,k+parv	kt	5600	98000	1750	1966	3/3	on	hyvä	F2013
+Kankaantaka	2h, k, kph, s	kt	5000	135000	2700	2014	5/7	on		C2013
+Kankaantaka	2h, k, kph, vh ...	kt	5500	82000	1491	1963	3/3	ei	hyvä	F2013
+Viiki	2h, kt, s, kph ...	kt	4350	135000	3103	2012	1/2	ei	hyvä	D2013
+Halimaa	2h,k,kph,vh+parv.	kt	5100	40000	784	1973	3/3	ei	tyyd.	F2013
+Myllyhaka	2h,k,p	kt	6500	57500	885	1970	3/3	ei	tyyd.	G2013
+Keskusta	2h,k,kph	kt	5700	33819	593	1954	1/3	ei	huono	G2013
+Keskusta	2h,kt	kt	4400	157500	3580	2019	6/12	on	hyvä	C2013
+Keskusta	2h,k,s	kt	4900	154500	3153	2019	2/12	on	hyvä	C2013
+Keskusta	2h,k,kph,lasit.p	kt	5250	75000	1429	1974	1/3	ei	hyvä	D2007
+Kankaantaka	2h+k+p	kt	5500	82500	1500	1958	1/3	ei		F2013
+Viiki	2 h, k, psh/wc,...	kt	5500	147500	2682	2018	1/2	ei	hyvä	C2007
+Keskusta	2h+k+s+lasit.p	kt	6300	115000	1825	1980	1/3	ei	hyvä	F2013
+Keskusta	2h,k,s	kt	4900	159100	3247	2019	3/12	on	hyvä	C2013
+Keskusta	2h,kk,s,las.p	kt	4800	120000	2500	1997	3/3	on	tyyd.	C2013
+Keskusta	3h,k,s	kt	6500	237800	3658	2019	10/12	on	hyvä	C2013
+Keskusta	3h, k, wc	kt	6130	85000	1387	1936	2/2	ei	hyvä	
+Keskusta	3h+k+kph,vh,p	kt	7700	126000	1636	1956	6/6	on	hyvä	G2007
+Viiki	3h, k, kph, por...	kt	6450	200000	3101	2012	1/3	on	hyvä	
+Viiki	3h,k,s,kph + te...	kt	6500	184000	2831	2012	1/2	ei	hyvä	D2013
+Viiki	3h, k, s, psh, ...	rt	6950	173000	2489	2018	-1/2	ei	hyvä	C

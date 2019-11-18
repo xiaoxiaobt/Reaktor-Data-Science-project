@@ -24,38 +24,35 @@ def instructions():
     return html.P(
         children=[
             """
-    - An App provides suggestions for relocation in Finland
-    - Otaniemi is the best place to relocate, right?
-    - Fill in relavent information below and click "Estimate"
-    - Alternatively, search an area by its name or postal code
-    """
+            - An App provides suggestions for relocation in Finland
+            - Otaniemi is the best place to relocate, right?
+            - Fill in relavent information below and click "Estimate"
+            - Alternatively, search an area by its name or postal code
+            """
         ],
         className="instructions-sidebar"
     )
 
 
-def get_polar_html(r=None):
-    if r is None:
-        r = [0.84, 0.51, 0.40, 0.76, 0.80]
+def get_polar_html(code=None):
+    if code is None:
+        code = "02150"
+    r = [0, 2, 1, 5, 0]
+    # TODO: Get r values (List of int) from df
     polar_plot = go.Scatterpolar(r=r,
                                  theta=['Education', 'Services', 'Transportation', 'Average Income',
                                         'Population Density'],
                                  fill='toself')
     return html.Div(
         children=[
-            html.H1("We suggest: Punavuori, 00120", id='suggestion_location_text'),
-            html.H2("🛈 Sell price: 7934 €/m²", id="suggestion_price_text"),
-            html.H3("Average income: \t39248 €/year", id="suggestion_income_text"),
-            html.H3("Average age: \t40", id="suggestion_age_text"),
-            html.H3("29.66% of the people has a higher university degree", id="suggestion_degree_text"),
+
+            html.Div(children=get_analysis(code), id="info_text"),
+
             dcc.Graph(
                 id='radar_plot',
                 config={'displayModeBar': False},
                 figure={
-                    'layout': go.Layout(
-                        paper_bgcolor='rgba(0,0,0,0)',
-                        plot_bgcolor='rgba(0,0,0,0)'
-                    ),
+                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
                     'data': [polar_plot]
                 }
             )
@@ -71,11 +68,44 @@ def get_about_html():
     return html.Div(text)
 
 
+def get_side_analysis():
+    return [
+        html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
+        html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
+        # html.H4(str(get_amount_of_service()), id="main_info")
+    ]
+
+
+def TODO(a):
+    return "TODO"
+
+
+def get_analysis(code='02150'):
+    location_string = TODO(code) + " " + code
+    # TODO: get name of new location == Required in dropdown menu of location
+    sell_price_string = TODO(code)
+    # TODO: get price of new location from df, toString
+    income_string = TODO(code)
+    # TODO: get income of new location from df, toString
+    average_age_string = TODO(code)
+    # TODO: get age of new location from df, toString
+    percentage_degree = TODO(code)
+    # TODO: get percentage of degree from df, toString
+    # TODO: Add more relevant info
+    return [html.H1("We suggest: " + location_string),
+            html.H2("🛈 Sell price: " + sell_price_string + " €/m²"),
+            html.H3("Average income: \t" + income_string + " €/year"),
+            html.H3("Average age: \t" + average_age_string),
+            html.H3(percentage_degree + " of the people has a higher university degree")]
+
+
 def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
+                                   # TODO: Replace hover text
                                    locations=paavo_df.id,
                                    z=paavo_df['Surface area'],
+                                   # TODO: Replace representation
                                    colorscale="Viridis",
                                    marker_opacity=0.7,
                                    marker_line_width=0,
@@ -91,18 +121,12 @@ def get_map_html():
     graph = dcc.Graph(id='main_plot',
                       config={'displayModeBar': False},
                       figure={'layout': map_layout, 'data': [map_plot]},
+                      # TODO: Add more layers in 'data'
                       style={'display': 'inline-block'},
                       className="left_zone"
                       )
-    text_block = html.Div([
-        html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
-        html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
-        # html.H4(str(get_amount_of_service()), id="main_info")
-    ], style={'display': 'inline-block', 'width': 500}
-    )
-    map_html = html.Div(
-        children=[graph, text_block]
-    )
+    text_block = html.Div(children=get_side_analysis(), style={'display': 'inline-block', 'width': 500}, id="side_info")
+    map_html = html.Div(children=[graph, text_block])
     return map_html
 
 
@@ -116,6 +140,7 @@ columns = [{"name": i, "id": i} for i in list_columns]
 print("Loading app...")
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 server = app.server
+app.title = "Data Science Project"
 app.config.suppress_callback_exceptions = False
 app.layout = html.Div(
     children=[
@@ -140,6 +165,7 @@ app.layout = html.Div(
                 html.Div(
                     # Empty child function for the callback
                     html.Div(id="demo-explanation", children=[])
+                    # TODO: Add callback for instructions
                 ),
                 html.Div(
                     [
@@ -147,12 +173,13 @@ app.layout = html.Div(
                             [
                                 html.Label("Income"),
                                 dcc.Input(
-                                    id="nrows-stitch",
+                                    id="income",
                                     type="number",
                                     value=2000,
                                     name="number of rows",
-                                    min=1,
-                                    step=1
+                                    min=1200,
+                                    step=200
+                                    # TODO: Change it to income range
                                 )
                             ]
                         ),
@@ -164,21 +191,21 @@ app.layout = html.Div(
                                     type="number",
                                     value=22,
                                     name="number of rows",
-                                    min=1,
-                                    step=1
+                                    min=1
+                                    # TODO: Change it to age range
                                 ),
                             ]
                         ),
                         html.Div(
                             [
-                                html.Label("Family members"),
+                                html.Label("Current Location"),
                                 dcc.Input(
-                                    id="family_situation",
-                                    type="number",
-                                    value=5,
-                                    name="number of columns",
-                                    min=1,
-                                    step=1
+                                    id="location",
+                                    type="text",
+                                    value="02150, Otaniemi",
+                                    name="number of columns"
+                                    # TODO: Make a dropdown menu instead
+                                    # TODO: Make a List with postal code + Location
                                 ),
                             ]
                         ),
@@ -186,10 +213,22 @@ app.layout = html.Div(
                             [
                                 html.Label("Occupation"),
                                 dcc.Input(
-                                    id="ncolumns-stitch",
+                                    id="Occupation",
                                     type="text",
-                                    value="Poor coder",
+                                    value="Student",
                                     name="number of rows"
+                                ),
+                            ]
+                        ),
+                        html.Div(
+                            [
+                                html.Label("Type of household"),
+                                dcc.Input(
+                                    id="household_type",
+                                    type="text",
+                                    value="Single",
+                                    name="number of rows"
+                                    # TODO: Change this to dropdown menu
                                 ),
                             ]
                         )
@@ -197,10 +236,8 @@ app.layout = html.Div(
                     className="mobile_forms",
                 ),
                 html.Br(),
-                html.Button(
-                    "Estimate", id="button-stitch", className="button_submit"
-                ),
-                html.Br(),
+                html.Button("Estimate", id="button-stitch", className="button_submit"),
+                # TODO: Disable the button when input is erroneous.
                 html.Img(src=app.get_asset_url('logos.png'))
             ],
             className="four columns instruction"
@@ -231,6 +268,12 @@ app.layout = html.Div(
 def change_focus(click):
     return "result-tab" if click else "canvas-tab"
 
+
+"""
+@app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
+def predict():
+    pass
+"""
 
 if __name__ == "__main__":
     app.run_server(debug=False)

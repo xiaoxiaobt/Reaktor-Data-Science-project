@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
 from toolkits import *
+from temp.reference_function import *
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
@@ -199,11 +200,13 @@ app.layout = html.Div(
                         html.Div(
                             [
                                 html.Label("Current Location"),
-                                dcc.Input(
+                                dcc.Dropdown(
                                     id="location",
-                                    type="text",
+                                    clearable=False,
                                     value="02150, Otaniemi",
-                                    name="number of columns"
+                                    options=dropdown_dict(),
+                                    style={'background-color': 'transparent'},
+                                    className='dropdown'
                                     # TODO: Make a dropdown menu instead
                                     # TODO: Make a List with postal code + Location
                                 ),
@@ -231,9 +234,21 @@ app.layout = html.Div(
                                     # TODO: Change this to dropdown menu
                                 ),
                             ]
-                        )
+                        ),
+                        html.Div([
+                            html.Label("Moving options"),
+                            dcc.RadioItems(
+                                options=[
+                                    {'label': 'Faraway from current location', 'value': 'change'},
+                                    {'label': 'Close to current location', 'value': 'nochange'},
+                                    {'label': 'Whatever', 'value': 'whatever'}
+                                ],
+                                value='whatever',
+                                id="selection_radio"
+                            )
+                        ])
                     ],
-                    className="mobile_forms",
+                    className="mobile_forms"
                 ),
                 html.Br(),
                 html.Button("Estimate", id="button-stitch", className="button_submit"),

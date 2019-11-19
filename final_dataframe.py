@@ -53,19 +53,21 @@ def add_newest_attributes(df):
     df.update(rentnoAra_df)
 
     # Add Housing prices
-    ## THERE IS NO 2018?
     temp = pd.read_csv(Path('data/') / 'paavo_housing_data.tsv', sep='\t')
-    df.update(temp['Housing price (2017)'])
+    df.update(temp['Housing price (2018)'])
 
     # Add latitude and longitude
     coord = coordinates()
     lat = []
     lon = []
     for elm in coord:
-        lat.append(elm[1][0])
-        lon.append(elm[1][1])
+        lon.append(elm[1][0])
+        lat.append(elm[1][1])
     df['Lat'] = lat
     df['Lon'] = lon
+
+    # Add radius
+    df['Radius'] = add_radius()
 
     filename = 'final_dataframe.tsv'
     df.to_csv(Path('dataframes/') / filename, sep='\t', index=False, encoding='utf-8')
@@ -97,6 +99,18 @@ def add_peculiarity(df):
     return df
 
 
+def add_radius():
+    """
+    Open the file 'radius.csv' from the folder 'data' and return the column to add to the data frame
+    :return: list of values as a pandas Series
+    """
+    print("Loading radius...")
+    r_df = pd.read_csv(Path('data/') / 'radius.csv', sep='\t', dtype={'posti_alue': object, 'Radius': float})
+    r_df.sort_values(by=['posti_alue'], inplace=True)
+    r_df.reset_index(inplace=True)
+    return r_df['Radius'].copy()
+
+
 def add_hover_description(df):
     """
     Add the column 'text' with the numbers and description
@@ -118,3 +132,4 @@ if __name__ == '__main__':
     d = all_data()
     d = add_hover_description(d)
     print(d.head())
+

@@ -77,10 +77,10 @@ def TODO(a):
 
 def get_analysis(code='02150'):
     location_string = zip_name_dict()[code] + " " + code
-    sell_price_string = str(paavo_df[paavo_df['Postal code'] == code]['Sell price'].values[0])
-    income_string = str(paavo_df[paavo_df['Postal code'] == code]['Average income of inhabitants'].values[0])
-    average_age_string = str(paavo_df[paavo_df['Postal code'] == code]['Average age of inhabitants'].values[0])
-    percentage_degree = str(paavo_df[paavo_df['Postal code'] == code]['Academic degree - Higher level university degree'].values[0])
+    sell_price_string = get_attribute(postalcode=code, column="Sell price")
+    income_string = get_attribute(postalcode=code, column="Average income of inhabitants")
+    average_age_string = get_attribute(postalcode=code, column="Average age of inhabitants")
+    percentage_degree = get_attribute(postalcode=code, column="Academic degree - Higher level university degree")
     # TODO: get percentage of degree from df, toString
     # TODO: Add more relevant info
     return [html.H1("We suggest: " + location_string),

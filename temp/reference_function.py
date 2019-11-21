@@ -14,7 +14,23 @@ def dropdown_dict():
 
 
 def get_attribute(postalcode="02150", column=None):
+    """
+    Read from the data frame: find the value of the given column for the given postal code.
+    :param postalcode: str, a valid postal code
+    :param column: str, a valid complete column name
+    :return: a string with the value of the column, or raise Exception
+    """
     if column is not None:
         return str(paavo_df[paavo_df['Postal code'] == postalcode][column].values[0])
     else:
         raise Exception
+
+
+def radar_attribute(postalcode="02150", column=None):
+    value = float(get_attribute(postalcode=postalcode, column=column))
+    max = paavo_df[column].max()
+    min = paavo_df[column].min()
+    if "scaled" in column:
+        return value
+    else:
+        return (value-min)/(max-min)

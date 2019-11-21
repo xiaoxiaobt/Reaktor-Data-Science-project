@@ -34,8 +34,11 @@ def instructions():
 def get_polar_html(code=None):
     if code is None:
         code = "02150"
-    r = [0, 2, 1, 5, 0]
-    # TODO: Get r values (List of int) from df
+    r = [radar_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled"),
+         radar_attribute(postalcode=code, column="Services"),
+         radar_attribute(postalcode=code, column="Bus stops"),
+         radar_attribute(postalcode=code, column="Average income of inhabitants"),
+         radar_attribute(postalcode=code, column="Density")]
     polar_plot = go.Scatterpolar(r=r,
                                  theta=['Education', 'Services', 'Transportation', 'Average Income',
                                         'Population Density'],
@@ -168,11 +171,10 @@ app.layout = html.Div(
                                 dcc.Input(
                                     id="income",
                                     type="number",
-                                    value=2000,
+                                    value=10000,
                                     name="number of rows",
                                     min=10000,
                                     step=1000
-                                    # TODO: Change it to income range
                                 )
                             ]
                         ),

@@ -10,7 +10,7 @@ from temp.reference_function import *
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
-name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
+name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-separated, name of postal code column ='Postal code'
 # Initialize variables
 
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
@@ -21,9 +21,9 @@ def instructions():
     return html.P(
         children=[
             """
-            - An App provides suggestions for relocation in Finland
+            - An App that provides suggestions for relocation in Finland
             - Otaniemi is the best place to relocate, right?
-            - Fill in relavent information below and click "Estimate"
+            - Fill the form below and click "Estimate"
             - Alternatively, search an area by its name or postal code
             """
         ],
@@ -40,7 +40,7 @@ def get_polar_html(code=None):
          radar_attribute(postalcode=code, column="Average income of inhabitants"),
          radar_attribute(postalcode=code, column="Density")]
     polar_plot = go.Scatterpolar(r=r,
-                                 theta=['Education', 'Services', 'Transportation', 'Average Income',
+                                 theta=['Education', 'Services', 'Public Transportation', 'Average Income',
                                         'Population Density'],
                                  fill='toself')
     return html.Div(
@@ -60,8 +60,8 @@ def get_polar_html(code=None):
 
 def get_about_html():
     text = """
-                    This is the implementation of Data Science Project. The aim of this project is to 
-                    visualize and get insights on Finland demographics.
+                    This is the implementation of our Data Science Project. The aim of this project is to provide 
+                    suggestions on suitable relocation areas in Finland, based on housing prices and demographics.
                     """
     return html.Div(text)
 
@@ -79,20 +79,24 @@ def TODO(a):
 
 
 def get_analysis(code='02150'):
+    # H1
     location_string = zip_name_dict()[code] + " " + code
+    # H2
     sell_price_string = get_attribute(postalcode=code, column="Sell price")
     sell_price_string = sell_price_string if sell_price_string != "0.0" else "--"
-    rentARA_price_string = get_attribute(postalcode=code, column="Rent price with ARA")
-    rentARA_price_string = "{:.2f}".format(float(rentARA_price_string)) if rentARA_price_string != "0.0" else "--"
-    rentNoARA_price_string = get_attribute(postalcode=code, column="Rent price without ARA")
-    rentNoARA_price_string = "{:.2f}".format(float(rentNoARA_price_string)) if rentNoARA_price_string != "0.0" else "--"
+    rent_ara_price_string = get_attribute(postalcode=code, column="Rent price with ARA")
+    rent_ara_price_string = format_2f(rent_ara_price_string) if rent_ara_price_string != "0.0" else "--"
+    rent_noara_price_string = get_attribute(postalcode=code, column="Rent price without ARA")
+    rent_noara_price_string = format_2f(rent_noara_price_string) if rent_noara_price_string != "0.0" else "--"
+    # H3
     income_string = get_attribute(postalcode=code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=code, column="Average age of inhabitants")
     percentage_degree = "{:.2f}".format(100*float(get_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
     return [html.H1("We suggest: " + location_string),
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
-            html.H2("🛈 Last 12 months rent price: " + rentARA_price_string + " €/m² (including ARA), " + rentNoARA_price_string + " €/m² (private only)"),
+            html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
+                    + rent_noara_price_string + " €/m² (private only)"),
             html.H3("Average income: \t" + income_string + " €/year"),
             html.H3("Average age: \t" + average_age_string + " years"),
             html.H3(percentage_degree + "% of the people has a higher university degree")]
@@ -102,7 +106,7 @@ def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
                                    locations=paavo_df['Postal code'],
-                                   z=paavo_df['Occupancy rate'],
+                                   z=paavo_df['Surface area'],
                                    # TODO: Replace representation
                                    colorscale="Viridis",
                                    marker_opacity=0.7,

@@ -93,7 +93,6 @@ def get_analysis(code='02150'):
 def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
-                                   # TODO: Replace hover text
                                    locations=paavo_df['Postal code'],
                                    z=paavo_df['Occupancy rate'],
                                    # TODO: Replace representation
@@ -162,14 +161,14 @@ app.layout = html.Div(
                     [
                         html.Div(
                             [
-                                html.Label("Income"),
+                                html.Label("Yearly income"),
                                 dcc.Input(
                                     id="income",
                                     type="number",
                                     value=2000,
                                     name="number of rows",
-                                    min=1200,
-                                    step=200
+                                    min=10000,
+                                    step=1000
                                     # TODO: Change it to income range
                                 )
                             ]

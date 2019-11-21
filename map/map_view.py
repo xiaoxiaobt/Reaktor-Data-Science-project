@@ -1,12 +1,12 @@
-#!/usr/bin/env python
-
 from pyglet.gl import *
 from pyglet.window import mouse
 import numpy as np
 from ctypes import *
-import sys
 import math
 import random
+
+from map_meta_tools import load_map_meta
+from map_geom_tools import load_map_geom
 
 config = pyglet.gl.Config(sample_buffers=1, samples=8, double_buffer=True)
 window = pyglet.window.Window(config=config, resizable=True)
@@ -20,17 +20,13 @@ out vec4 color;
 
 uniform mat3 world_to_view;
 
-uniform bool color_fetch;
 layout(std140) uniform color_table_block {
     vec4 color_table[3026];
 };
 
 void main()
 {
-    if (color_fetch)
-        color = color_table[color_index];
-    else
-        color = vec4(0.0, 0.0, 0.0, 1.0);
+    color = color_table[color_index];
     vec3 new_position = world_to_view * vec3(position, 1.0);
     gl_Position = vec4(new_position.xy, 0.0, 1.0);
 }
@@ -46,94 +42,71 @@ void main()
 }
 '''
 
-data = np.load('map_mesh.npz')
+map_meta = load_map_meta()
+map_geom = load_map_geom()
 
-vertex_array = data['arr_0']
-face_array = data['arr_1']
-edge_array = data['arr_2']
-
-data = np.load('map_code.npz')
-
-code_array = data['arr_0']
-
-if sys.byteorder == 'big':
-    vertex_array.byteswap()
-    face_array.byteswap()
-    edge_array.byteswap()
+vertex_array = map_geom['vertex_data']
+element_array = map_geom['element_data']
 
 color_table_array = np.empty(3026, dtype='4=f4')
 for i in range(color_table_array.shape[0]):
-    seed = 0
-    for j in range(3):
-        seed = 10 * seed + code_array[i][j] - 48
-    random.seed(seed)
     r = random.random()
     g = random.random()
     b = random.random()
     color_table_array[i] = r, g, b, 1.0
 
-vertex_buffer = GLuint()
-vertex_buffer_data = vertex_array.ctypes.data_as(POINTER(GLvoid))
-vertex_size = 2 * sizeof(GLfloat) + sizeof(GLushort)
-vertex_buffer_size = vertex_array.shape[0] * vertex_size
 
-face_buffer = GLuint()
-face_buffer_data = face_array.ctypes.data_as(POINTER(GLuint))
-face_size = 3 * sizeof(GLuint)
-face_buffer_size = face_array.shape[0] * face_size
+def build_shader(shader_info):
+    shader = glCreateShader(shader_info['type'])
+    glShaderSource(shader, 1,
+                   pointer(cast(c_char_p(shader_info['source']), POINTER(GLchar))),
+                   pointer(GLint(len(shader_info['source']))))
+    glCompileShader(shader)
+    return shader
 
-edge_buffer = GLuint()
-edge_buffer_data = edge_array.ctypes.data_as(POINTER(GLuint))
-edge_size = 2 * sizeof(GLuint)
-edge_buffer_size = edge_array.shape[0] * edge_size
 
-color_table_buffer = GLuint()
-color_table_buffer_data = color_table_array.ctypes.data_as(POINTER(GLvoid))
-color_table_buffer_size = 4 * sizeof(GLfloat) * color_table_array.shape[0]
+def build_shader_program(shader_info_list):
+    shader_list = []
+    for shader_info in shader_info_list:
+        shader_list.append(build_shader(shader_info))
+    shader_program = glCreateProgram()
+    for shader in shader_list:
+        glAttachShader(shader_program, shader)
+    glLinkProgram(shader_program)
+    for shader in shader_list:
+        glDetachShader(shader_program, shader)
+    return shader_program
 
-vertex_shader = glCreateShader(GL_VERTEX_SHADER)
-glShaderSource(vertex_shader, 1,
-               pointer(cast(c_char_p(VERTEX_SHADER_SOURCE), POINTER(GLchar))),
-               pointer(GLint(len(VERTEX_SHADER_SOURCE))))
-glCompileShader(vertex_shader)
 
-fragment_shader = glCreateShader(GL_FRAGMENT_SHADER)
-glShaderSource(fragment_shader, 1,
-               pointer(cast(c_char_p(FRAGMENT_SHADER_SOURCE), POINTER(GLchar))),
-               pointer(GLint(len(FRAGMENT_SHADER_SOURCE))))
-glCompileShader(fragment_shader)
+shader_program = build_shader_program([
+    {'type': GL_VERTEX_SHADER, 'source': VERTEX_SHADER_SOURCE},
+    {'type': GL_FRAGMENT_SHADER, 'source': FRAGMENT_SHADER_SOURCE}
+])
 
-shader_program = glCreateProgram()
-glAttachShader(shader_program, vertex_shader)
-glAttachShader(shader_program, fragment_shader)
-glLinkProgram(shader_program)
-
-glDetachShader(shader_program, vertex_shader)
-glDetachShader(shader_program, fragment_shader)
 
 world_to_view_uniform = glGetUniformLocation(shader_program, c_char_p(b'world_to_view'))
-color_fetch_uniform = glGetUniformLocation(shader_program, c_char_p(b'color_fetch'))
 
-glGenBuffers(1, pointer(color_table_buffer))
-glBindBuffer(GL_UNIFORM_BUFFER, color_table_buffer)
-glBufferData(GL_UNIFORM_BUFFER, color_table_buffer_size, color_table_buffer_data, GL_DYNAMIC_DRAW)
-glBindBuffer(GL_UNIFORM_BUFFER, 0)
+
+def build_buffer(buffer_type, buffer_data, buffer_usage):
+    buffer = GLuint()
+    glGenBuffers(1, pointer(buffer))
+    glBindBuffer(buffer_type, buffer)
+    glBufferData(buffer_type, buffer_data.nbytes, buffer_data.ctypes.data_as(POINTER(GLvoid)), buffer_usage)
+    glBindBuffer(buffer_type, 0)
+    buffer_element_size = buffer_data.nbytes // buffer_data.shape[0]
+    buffer_element_count = buffer_data.nbytes // buffer_element_size
+    return buffer, buffer_element_size, buffer_element_count
+
+
+vertex_buffer, vertex_size, _ = build_buffer(GL_ARRAY_BUFFER, vertex_array, GL_STATIC_DRAW)
+element_buffer, element_size, element_count = build_buffer(GL_ELEMENT_ARRAY_BUFFER, element_array, GL_STATIC_DRAW)
+color_table_buffer, _, _ = build_buffer(GL_UNIFORM_BUFFER, color_table_array, GL_DYNAMIC_DRAW)
 
 color_table_uniform_block = glGetUniformBlockIndex(shader_program, c_char_p(b'color_table_block'))
 glUniformBlockBinding(shader_program, color_table_uniform_block, 0)
 glBindBufferBase(GL_UNIFORM_BUFFER, 0, color_table_buffer)
 
-glGenBuffers(1, pointer(vertex_buffer))
 glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer)
-glBufferData(GL_ARRAY_BUFFER, vertex_buffer_size, vertex_buffer_data, GL_STATIC_DRAW)
-
-glGenBuffers(1, pointer(face_buffer))
-glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, face_buffer)
-glBufferData(GL_ELEMENT_ARRAY_BUFFER, face_buffer_size, face_buffer_data, GL_STATIC_DRAW)
-
-glGenBuffers(1, pointer(edge_buffer))
-glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, edge_buffer)
-glBufferData(GL_ELEMENT_ARRAY_BUFFER, edge_buffer_size, edge_buffer_data, GL_STATIC_DRAW)
 
 glEnableVertexAttribArray(0)
 glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, vertex_size, 0)
@@ -142,13 +115,28 @@ glEnableVertexAttribArray(1)
 glVertexAttribIPointer(1, 1, GL_UNSIGNED_SHORT, vertex_size, 2 * sizeof(GLfloat))
 
 glBindBuffer(GL_ARRAY_BUFFER, 0)
-glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0)
 
 x_mid = (83748.4296875 + 732907.75) / 2
 y_mid = (6629044.0 + 7776450.0) / 2
 x_mid_off = 0
 y_mid_off = 0
 log_zoom = -8.0
+
+
+def build_view():
+    zoom = math.exp(log_zoom)
+    xmid = x_mid + x_mid_off
+    ymid = y_mid + y_mid_off
+
+    view_to_clip = np.array([[2 / window.width, 0, -1],
+                             [0, 2 / window.height, -1],
+                             [0, 0, 1]], dtype='=f4')
+    map_to_view = np.array([[zoom, 0, window.width / 2 - zoom * xmid],
+                            [0, zoom, window.height / 2 - zoom * ymid],
+                            [0, 0, 1]], dtype='=f4')
+
+    return map_to_view, view_to_clip
+
 
 mouse_pre = None
 mouse_now = None
@@ -242,38 +230,22 @@ def on_resize(width, height):
 def on_draw():
 
     # clear screen
-    glClearColor(0.8, 0.9, 1.0, 1.0)
+    glClearColor(1.0, 1.0, 1.0, 1.0)
     glClear(GL_COLOR_BUFFER_BIT)
 
     glUseProgram(shader_program)
 
-    xmid = x_mid + x_mid_off
-    ymid = y_mid + y_mid_off
-
-    zoom = math.exp(log_zoom)
-
     # update projection matrix
-    window_to_view = np.array([[2 / window.width, 0, -1],
-                               [0, 2 / window.height, -1],
-                               [0, 0, 1]], dtype='=f4')
-    world_to_window = np.array([[zoom, 0, window.width / 2 - zoom * xmid],
-                                [0, zoom, window.height / 2 - zoom * ymid],
-                                [0, 0, 1]], dtype='=f4')
-    world_to_view = window_to_view @ world_to_window
-    glUniformMatrix3fv(world_to_view_uniform, 1, GL_TRUE, world_to_view.ctypes.data_as(POINTER(GLfloat)))
+    map_to_view, view_to_clip = build_view()
+    map_to_clip = view_to_clip @ map_to_view
+    glUniformMatrix3fv(world_to_view_uniform, 1, GL_TRUE, map_to_clip.ctypes.data_as(POINTER(GLfloat)))
 
     # bind vertices
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer)
 
-    # bind and draw faces
-    glUniform1i(color_fetch_uniform, 1)
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, face_buffer)
-    glDrawElements(GL_TRIANGLES, face_buffer_size // sizeof(GLuint), GL_UNSIGNED_INT, 0)
-
-    # bind and draw edges
-    glUniform1i(color_fetch_uniform, 0)
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, edge_buffer)
-    glDrawElements(GL_LINES, edge_buffer_size // sizeof(GLuint), GL_UNSIGNED_INT, 0)
+    # bind and draw elements
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer)
+    glDrawElements(GL_TRIANGLES, element_count * 3, GL_UNSIGNED_INT, 0)
 
     # remove bindings
     glBindBuffer(GL_ARRAY_BUFFER, 0)

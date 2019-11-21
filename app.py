@@ -78,9 +78,10 @@ def TODO(a):
 def get_analysis(code='02150'):
     location_string = zip_name_dict()[code] + " " + code
     sell_price_string = get_attribute(postalcode=code, column="Sell price")
+    sell_price_string = sell_price_string if sell_price_string != "0.0" else "--"
     income_string = get_attribute(postalcode=code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=code, column="Average age of inhabitants")
-    percentage_degree = get_attribute(postalcode=code, column="Academic degree - Higher level university degree")
+    percentage_degree = "{:.2f}".format(100*float(get_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled")))
     # TODO: get percentage of degree from df, toString
     # TODO: Add more relevant info
     return [html.H1("We suggest: " + location_string),

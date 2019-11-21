@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-
 # Using internal project modules
 from asuntojen_hintatiedot import list_sold, list_rent
 from coordinates import coordinates
@@ -11,8 +10,9 @@ from yearly_dataframes import get_all_dataframes
 
 def all_data():
     """
-    TEMPORARY: data frame 2017 augmented with columns that are not in 2017 but are in 2016,
-    and also columns from external sources (paavo housing, asuntojen hintatiedot, bus stops, latitude and longitude)
+    Data frame 2017 with original columns and scaled columns, augmented with columns
+    that are not in 2017 but are in 2016, and also columns from external sources
+    (paavo housing, asuntojen hintatiedot, bus stops, latitude and longitude)
     :return: the data frame
     """
     all_dfs, columns = get_all_dataframes()
@@ -21,6 +21,7 @@ def all_data():
     for c in all_dfs['2016'].columns:
         if c not in newest.columns:
             newest[c] = all_dfs['2016'][c]
+    newest = add_scaled_columns_2017(newest)
     return add_newest_attributes(newest)
 
 
@@ -56,6 +57,9 @@ def add_newest_attributes(df):
     temp = pd.read_csv(Path('data/') / 'paavo_housing_data.tsv', sep='\t')
     df.update(temp['Housing price (2018)'])
 
+    # Add surface area TODO
+    h = pd.read_csv(Path('data/') / 'surface_area.tsv', sep='\t', usecols=['Postal code', 'Surface area (2017)'])
+
     # Add latitude and longitude
     coord = coordinates()
     lat = []
@@ -68,6 +72,9 @@ def add_newest_attributes(df):
 
     # Add radius
     df['Radius'] = add_radius()
+
+    # Add text description
+    df = add_hover_description(df)
 
     filename = 'final_dataframe.tsv'
     df.to_csv(Path('dataframes/') / filename, sep='\t', index=False, encoding='utf-8')
@@ -128,8 +135,23 @@ def add_hover_description(df):
     return df
 
 
+def add_scaled_columns_2017(df):
+    """
+    Add the scaled columns from the data frame 2017.
+    :param df: the data frame where to add columns
+    :return: the data frame with added columns
+    """
+    scaled = pd.read_csv('dataframes_scaled/df2017.tsv', sep='\t', dtype={'Postal code': object})
+    for col in scaled.columns:
+        if "scaled" in col:
+            df[col] = scaled[col].copy()
+    return df
+
+
 if __name__ == '__main__':
     d = all_data()
-    d = add_hover_description(d)
-    print(d.head())
+    # print(d.head())
+    # temp = pd.read_csv(Path('dataframes/') / 'final_dataframe.tsv', sep='\t', dtype={'Postal code': object})
+    # print(temp.head())
+    # print(temp[temp['Postal code'] == "02150"]['Sell price'].values[0])
 

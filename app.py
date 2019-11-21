@@ -10,15 +10,11 @@ from temp.reference_function import *
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
-name_paavo_dataframe = "./data/paavo_9_koko.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='id'
+name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
 # Initialize variables
 
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
-paavo_df = pd.read_table(name_paavo_dataframe, dtype={"id": object})  # The dtype CANNOT be removed!
-paavo_df['text'] = '<b>' + paavo_df.location.astype(str) + '</b><br>' + \
-                   "Workplaces: " + paavo_df['Workplaces, 2016 (TP)'].astype(str) + '<br>' + \
-                   "Average Income: " + paavo_df['Average income of inhabitants, 2016 (HR)'].astype(str) + '<br>' + \
-                   "Students: " + paavo_df['Students, 2016 (PT)'].astype(str)
+paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 
 
 def instructions():
@@ -80,30 +76,26 @@ def TODO(a):
 
 
 def get_analysis(code='02150'):
-    location_string = TODO(code) + " " + code
-    # TODO: get name of new location == Required in dropdown menu of location
-    sell_price_string = TODO(code)
-    # TODO: get price of new location from df, toString
-    income_string = TODO(code)
-    # TODO: get income of new location from df, toString
-    average_age_string = TODO(code)
-    # TODO: get age of new location from df, toString
-    percentage_degree = TODO(code)
+    location_string = zip_name_dict()[code] + " " + code
+    sell_price_string = str(paavo_df[paavo_df['Postal code'] == code]['Sell price'].values[0])
+    income_string = str(paavo_df[paavo_df['Postal code'] == code]['Average income of inhabitants'].values[0])
+    average_age_string = str(paavo_df[paavo_df['Postal code'] == code]['Average age of inhabitants'].values[0])
+    percentage_degree = str(paavo_df[paavo_df['Postal code'] == code]['Academic degree - Higher level university degree'].values[0])
     # TODO: get percentage of degree from df, toString
     # TODO: Add more relevant info
     return [html.H1("We suggest: " + location_string),
             html.H2("🛈 Sell price: " + sell_price_string + " €/m²"),
             html.H3("Average income: \t" + income_string + " €/year"),
-            html.H3("Average age: \t" + average_age_string),
-            html.H3(percentage_degree + " of the people has a higher university degree")]
+            html.H3("Average age: \t" + average_age_string + " years"),
+            html.H3(percentage_degree + "% of the people has a higher university degree")]
 
 
 def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
                                    # TODO: Replace hover text
-                                   locations=paavo_df.id,
-                                   z=paavo_df['Surface area'],
+                                   locations=paavo_df['Postal code'],
+                                   z=paavo_df['Occupancy rate'],
                                    # TODO: Replace representation
                                    colorscale="Viridis",
                                    marker_opacity=0.7,

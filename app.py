@@ -116,7 +116,9 @@ def get_map_html():
                       style={'display': 'inline-block'},
                       className="left_zone"
                       )
-    text_block = html.Div(children=get_side_analysis(), style={'display': 'inline-block', 'width': 500}, id="side_info")
+    text_block = html.Div(children=get_side_analysis(),
+                          style={'display': 'inline-block', 'width': 500, 'position': 'absolute'}, id="side_info")
+    test_donotremove = html.Div(children=[html.H1("dfnsjkbfjds")], style={'display': 'inline-block'})
     map_html = html.Div(children=[graph, text_block])
     return map_html
 
@@ -131,13 +133,13 @@ columns = [{"name": i, "id": i} for i in list_columns]
 print("Loading app...")
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 server = app.server
-app.title = "Data Science Project"
+app.title = "Kodimpi - Data Science Project"
 app.config.suppress_callback_exceptions = False
 app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Relocation App (BETA)"),
+                html.H1(children="Kodimpi (BETA)"),
                 instructions(),
                 html.Div(
                     [

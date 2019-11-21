@@ -82,13 +82,17 @@ def get_analysis(code='02150'):
     location_string = zip_name_dict()[code] + " " + code
     sell_price_string = get_attribute(postalcode=code, column="Sell price")
     sell_price_string = sell_price_string if sell_price_string != "0.0" else "--"
+    rentARA_price_string = get_attribute(postalcode=code, column="Rent price with ARA")
+    rentARA_price_string = "{:.2f}".format(float(rentARA_price_string)) if rentARA_price_string != "0.0" else "--"
+    rentNoARA_price_string = get_attribute(postalcode=code, column="Rent price without ARA")
+    rentNoARA_price_string = "{:.2f}".format(float(rentNoARA_price_string)) if rentNoARA_price_string != "0.0" else "--"
     income_string = get_attribute(postalcode=code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=code, column="Average age of inhabitants")
     percentage_degree = "{:.2f}".format(100*float(get_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled")))
-    # TODO: get percentage of degree from df, toString
     # TODO: Add more relevant info
     return [html.H1("We suggest: " + location_string),
-            html.H2("🛈 Sell price: " + sell_price_string + " €/m²"),
+            html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
+            html.H2("🛈 Last 12 months rent price: " + rentARA_price_string + " €/m² (including ARA), " + rentNoARA_price_string + " €/m² (private only)"),
             html.H3("Average income: \t" + income_string + " €/year"),
             html.H3("Average age: \t" + average_age_string + " years"),
             html.H3(percentage_degree + "% of the people has a higher university degree")]

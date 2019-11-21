@@ -247,7 +247,7 @@ body {
 }
 
 #_dash-app-content > div {
-    background-image: url("/assets/back_hd.jpg");
+    background-image: url("back_hd.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -646,6 +646,12 @@ input[type="button"].button-primary:focus {
     font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
     width: 80%;
     margin-top: 15px;
+
+}
+
+.Select-value-label {
+    color: #D1D1D1 !important;
+
 
 }
 

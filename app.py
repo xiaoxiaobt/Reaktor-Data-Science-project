@@ -46,9 +46,7 @@ def get_polar_html(code=None):
                                  fill='toself')
     return html.Div(
         children=[
-
             html.Div(children=get_analysis(code), id="info_text"),
-
             dcc.Graph(
                 id='radar_plot',
                 config={'displayModeBar': False},
@@ -291,4 +289,4 @@ def predict():
 """
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)

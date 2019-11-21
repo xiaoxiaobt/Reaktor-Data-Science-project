@@ -168,16 +168,41 @@ def add_density(year, pclist):
     :param pclist: list of strings, where each element is a postal code to take
     :return: dictionary of postal codes and population density
     """
-    if year == '2012': year = '2013'
+    if year == '2012':
+        year = '2013'
     if year not in ['2012', '2013', '2014', '2015', '2016', '2017']:
         print('WARNING: wrong year! Empty Series returned')
         return {}
     else:
         col_name = 'Density (' + year + ')'
-        dens_df = pd.read_csv(Path('data/') / 'density.tsv', sep='\t', usecols=['Postal code', col_name], dtype={'Postal code': object})
+        dens_df = pd.read_csv(Path('data/') / 'density.tsv', sep='\t',
+                              usecols=['Postal code', col_name], dtype={'Postal code': object})
         dens_df.fillna(0)
         dens_df = dens_df[dens_df['Postal code'].isin(pclist)]
         return dens_df.copy().set_index('Postal code').to_dict()[col_name]
+
+
+def combine_age_ranges(df):
+    """
+    This function replaces the smaller age ranges with combined larger age ranges
+    :param df: the data frame
+    :return: the data frame with combined age ranges
+    """
+    if "0-2 years" not in df.columns:
+        return
+
+    combined_age_ranges = [
+        ["0-15 years", ["0-2 years", "3-6 years", "7-12 years", "13-15 years"]],
+        ["16-34 years", ["16-17 years", "18-19 years", "20-24 years", "25-29 years", "30-34 years"]],
+        ["35-64 years", ["35-39 years", "40-44 years", "45-49 years", "50-54 years", "55-59 years", "60-64 years"]],
+        ["65 years or over", ["65-69 years", "70-74 years", "75-79 years", "80-84 years", "85 years or over"]]
+    ]
+
+    for output, input_list in combined_age_ranges:
+        df[output] = df[input_list].sum(axis=1)
+        df.drop(input_list, axis=1, inplace=True)
+
+    return df
 
 
 def data_format(df):
@@ -277,6 +302,8 @@ def get_all_dataframes():
 
         # Remove the year and extra comma
         dfy.columns = [re.sub(r", \d{4} $", "", column) for column in dfy.columns]
+
+        combine_age_ranges(dfy)
 
     print("Data are ready")
     return df_dic, get_common_columns(df_dic)

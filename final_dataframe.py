@@ -130,7 +130,8 @@ def add_hover_description(df):
         list.append('<b>' + str(row['Area']) + '</b><br>' +
                     "Density: " + str(row['Density']) + '<br>' +
                     "Average age: " + str(row['Average age of inhabitants']) + '<br>' +
-                    "Average income: " + str(row['Average income of inhabitants']) + '<br>')
+                    "Median income: " + str(row['Median income of inhabitants']) + '<br>' +
+                    "Employment rate: " + str(row['Employment rate %']) + '<br>')
     df['text'] = list
 
     return df

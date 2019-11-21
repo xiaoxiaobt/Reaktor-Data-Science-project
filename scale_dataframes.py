@@ -137,7 +137,7 @@ def load_scale_save():
         # Read the data frame
         df = pd.read_csv(f"dataframes/df{y}.tsv", sep="\t")
         # Remove the year and extra comma
-        df.columns = [re.sub(r", \d{4} $", "", column) for column in df.columns]
+        df.columns = [re.sub(r", \d{4}\s*$", "", column) for column in df.columns]
         # Fix the postal code (5 digits and string)
         df["Postal code"] = df["Postal code"].astype(str).str.pad(5, fillchar='0')
         df_vp_by_y[y] = df

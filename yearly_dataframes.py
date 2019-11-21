@@ -340,7 +340,10 @@ def get_all_dataframes():
         dfy.update(new_df)
 
         # Remove the year and extra comma
-        dfy.columns = [re.sub(r", \d{4} $", "", column) for column in dfy.columns]
+        dfy.columns = [re.sub(r", \d{4}\s*$", "", column) for column in dfy.columns]
+
+        # Remove extra space before parenthesis
+        dfy['Area'] = [re.sub(r"\s(?=\))", "", a) for a in dfy['Area']]
 
         # Combine age columns to wider ranges
         combine_age_ranges(dfy)

@@ -201,7 +201,7 @@ def add_surface(year, pclist):
     else:
         col_name = 'Surface area (' + year + ')'
         surface_df = pd.read_csv(Path('data/') / 'surface_area.tsv', sep='\t',
-                              usecols=['Postal code', col_name], dtype={'Postal code': object})
+                              usecols=['Postal code', col_name], dtype={'Postal code': object, col_name: float})
         surface_df.fillna(0)
         surface_df = surface_df[surface_df['Postal code'].isin(pclist)]
         return surface_df.copy().set_index('Postal code').to_dict()[col_name]
@@ -336,7 +336,7 @@ def get_all_dataframes():
                 mysurfacelist.append(0)
 
         dfy['Surface area'] = [0] * len(dfy.index)
-        new_df = pd.DataFrame({'Surface area': mydensitylist})
+        new_df = pd.DataFrame({'Surface area': mysurfacelist})
         dfy.update(new_df)
 
         # Remove the year and extra comma

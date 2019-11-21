@@ -22,6 +22,7 @@ def all_data():
         if c not in newest.columns:
             newest[c] = all_dfs['2016'][c]
     newest = add_scaled_columns_2017(newest)
+    newest = add_scaled_columns_2016(newest)
     return add_newest_attributes(newest)
 
 
@@ -144,6 +145,19 @@ def add_scaled_columns_2017(df):
     scaled = pd.read_csv('dataframes_scaled/df2017.tsv', sep='\t', dtype={'Postal code': object})
     for col in scaled.columns:
         if "scaled" in col:
+            df[col] = scaled[col].copy()
+    return df
+
+
+def add_scaled_columns_2016(df):
+    """
+    Add the scaled columns from the data frame 2016 when data from 2017 are missing.
+    :param df: the data frame where to add columns
+    :return: the data frame with added columns
+    """
+    scaled = pd.read_csv('dataframes_scaled/df2016.tsv', sep='\t', dtype={'Postal code': object})
+    for col in scaled.columns:
+        if "scaled" in col and col not in df.columns:
             df[col] = scaled[col].copy()
     return df
 

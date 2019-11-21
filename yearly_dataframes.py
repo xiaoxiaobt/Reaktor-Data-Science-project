@@ -182,6 +182,31 @@ def add_density(year, pclist):
         return dens_df.copy().set_index('Postal code').to_dict()[col_name]
 
 
+def add_surface(year, pclist):
+    """
+    Open the file 'surface_area.tsv' in the folder 'data' and return
+    a dictionary where the keys are postal codes and the values are surface area values.
+    NOTE: There is no surface area for the year 2012.
+    When asking for 2012, the column 2013 will be returned.
+    For the years outside the known range, an empty dictionary is returned.
+    :param year: string, the year to read
+    :param pclist: list of strings, where each element is a postal code to take
+    :return: dictionary of postal codes and surface area
+    """
+    if year == '2012':
+        year = '2013'
+    if year not in ['2012', '2013', '2014', '2015', '2016', '2017']:
+        print('WARNING: wrong year! Empty Series returned')
+        return {}
+    else:
+        col_name = 'Surface area (' + year + ')'
+        surface_df = pd.read_csv(Path('data/') / 'surface_area.tsv', sep='\t',
+                              usecols=['Postal code', col_name], dtype={'Postal code': object})
+        surface_df.fillna(0)
+        surface_df = surface_df[surface_df['Postal code'].isin(pclist)]
+        return surface_df.copy().set_index('Postal code').to_dict()[col_name]
+
+
 def combine_age_ranges(df):
     """
     This function replaces the smaller age ranges with combined larger age ranges
@@ -243,7 +268,7 @@ def get_all_dataframes():
     # to each year, it is associated one DataFrame
     df_dic = {y: pd.DataFrame() for y in years_list}
 
-    # Dataframe 2017 --> we need 2017 fists, since we want to refer to the latest postal codes and areas
+    # Dataframe 2017 --> we need 2017 first, since we want to refer to the latest postal codes and areas
     for file in file_list:
         if '2017' in file:
             if df_dic['2017'].size == 0:
@@ -278,12 +303,12 @@ def get_all_dataframes():
                 df_dic[y] = pd.concat([df_dic[y], temp.copy()], axis=1, sort=False).reindex(df_dic[y].index)
 
     for year, dfy in df_dic.items():
-        # Here we add the columns 'Bus stops', 'Sold', 'Rented', 'Population density', 'Lat', 'Lon'
-        # The column 'Inhabitants total' becomes useless: we can remove it after scaling
         dfy = clean_columns(dfy)
         dfy.drop(columns=['Postal code area', 'Postialue', 'Area_x', 'Area_y'], inplace=True, errors='ignore')
         dfy = data_format(dfy)
         dfy.reset_index(inplace=True)
+
+        # Here we add the columns 'Bus stops', 'Sold', 'Rented', 'Population density', 'Surface area', 'Lat', 'Lon'
 
         # Add population density
         dfy.drop(columns=['index'], inplace=True)
@@ -300,9 +325,24 @@ def get_all_dataframes():
         new_df = pd.DataFrame({'Density': mydensitylist})
         dfy.update(new_df)
 
+        # Add surface area
+        surface_df = add_surface(year=year, pclist=postalcodes_list)
+
+        mysurfacelist = []
+        for pc in postalcodes_list:
+            if pc in surface_df.keys():
+                mysurfacelist.append(surface_df[pc])
+            else:
+                mysurfacelist.append(0)
+
+        dfy['Surface area'] = [0] * len(dfy.index)
+        new_df = pd.DataFrame({'Surface area': mydensitylist})
+        dfy.update(new_df)
+
         # Remove the year and extra comma
         dfy.columns = [re.sub(r", \d{4} $", "", column) for column in dfy.columns]
 
+        # Combine age columns to wider ranges
         combine_age_ranges(dfy)
 
     print("Data are ready")

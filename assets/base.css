@@ -266,6 +266,16 @@ body {
     margin-bottom: 20px
 }
 
+.side_analysis {
+    display: inline-block;
+    width: 500px;
+    position: absolute;
+}
+
+.Select-control {
+    background-color: transparent;
+}
+
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -642,13 +652,6 @@ input[type="button"].button-primary:focus {
     margin-left: 0px;
 }
 
-.upload_zone {
-    font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
-    width: 80%;
-    margin-top: 15px;
-
-}
-
 .Select-value-label {
     color: #D1D1D1 !important;
 
@@ -681,7 +684,6 @@ select {
     margin-left: 9%;
     height: 30px;
     width: 50%;
-    box-sizing: border-box;
     padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     background-color: transparent;
     border: 1px solid #8898B2;
@@ -1267,9 +1269,6 @@ there.
         margin: 0 auto;
     }
 
-    .upload_zone {
-        width: 100vw;
-    }
 
     .comeon {
         display: inherit;
@@ -1394,7 +1393,6 @@ there.
         border: 1px solid #8898B2;
         border-radius: 4px;
         box-shadow: none;
-        box-sizing: border-box;
         font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
         font-size: inherit;
         color: #D1D1D1;

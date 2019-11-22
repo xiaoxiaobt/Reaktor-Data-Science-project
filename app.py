@@ -99,7 +99,8 @@ def get_analysis(old_code="02150", new_code="00100"):
                     + rent_noara_price_string + " €/m² (private only)"),
             html.H3("Average income: \t" + income_string + " €/year"),
             html.H3("Average age: \t" + average_age_string + " years"),
-            html.H3(percentage_degree + "% of the people has a higher university degree")]
+            # html.H3(percentage_degree + "% of the people has a higher university degree")
+            ]
 
     table = make_dash_table(old_code, new_code)
     return text + table
@@ -126,12 +127,10 @@ def get_map_html():
     graph = dcc.Graph(id='main_plot',
                       config={'displayModeBar': False},
                       figure={'layout': map_layout, 'data': [map_plot]},
-                      # TODO: Add more layers in 'data'
                       style={'display': 'inline-block'},
                       className="left_zone"
                       )
-    text_block = html.Div(children=get_side_analysis(),
-                          style={'display': 'inline-block', 'width': 500, 'position': 'absolute'}, id="side_info")
+    text_block = html.Div(children=get_side_analysis(), className="side_analysis", id="side_info")
     # test_DONOTREMOVE = html.Div(children=[html.H1("dfnsjkbfjds")], style={'display': 'inline-block'})
     map_html = html.Div(children=[graph, text_block])
     return map_html
@@ -198,7 +197,6 @@ app.layout = html.Div(
                                     value=22,
                                     name="number of rows",
                                     min=1
-                                    # TODO: Change it to age range
                                 ),
                             ]
                         ),
@@ -208,12 +206,9 @@ app.layout = html.Div(
                                 dcc.Dropdown(
                                     id="location",
                                     clearable=False,
-                                    value="02150, Otaniemi",
+                                    value="02150",
                                     options=location_dropdown(),
-                                    style={'background-color': 'transparent'},
                                     className='dropdown'
-                                    # TODO: Make a dropdown menu instead
-                                    # TODO: Make a List with postal code + Location
                                 ),
                             ]
                         ),
@@ -225,7 +220,6 @@ app.layout = html.Div(
                                     clearable=False,
                                     value="Student",
                                     options=occupation_dropdown(),
-                                    style={'background-color': 'transparent'},
                                     className='dropdown'
                                 ),
                             ]
@@ -238,7 +232,6 @@ app.layout = html.Div(
                                     clearable=False,
                                     value="Single",
                                     options=household_type_dropdown(),
-                                    style={'background-color': 'transparent'},
                                     className='dropdown'
                                 ),
                             ]
@@ -299,4 +292,8 @@ def predict():
 """
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    DEBUG_MODE = True
+    if DEBUG_MODE:
+        print("Debug mode is enabled. It will take double amount of time to load.")
+        print("This is compromised by the background image.")
+    app.run_server(debug=DEBUG_MODE)

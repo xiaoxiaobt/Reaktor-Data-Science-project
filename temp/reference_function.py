@@ -95,15 +95,16 @@ def make_dash_table(old_code, new_code):
     row_education = four_row_list("Education index", old_education, new_education, analysis_education)
 
     # Line 4
-    url = "https://avoindata.prh.fi/bis/v1?totalResults=true&maxResults=1&resultsFrom=10000" + \
-          "&streetAddressPostCode={:s}&companyRegistrationFrom=1950-01-01"
-    print("This part takes time (~10s). Comment this part to accelerate. \n(From line 100, reference_function.py)")
-    old_company_num = eval(requests.get(url.format(old_code)).text.split(',"previous')[0] + '}')['totalResults']
-    new_company_num = eval(requests.get(url.format(new_code)).text.split(',"previous')[0] + '}')['totalResults']
-    result_company_num = int(new_company_num) - int(old_company_num)
-    analysis_company_num = "↗ Big town with more opportunities" if result_company_num > 0 else "↘ Peaceful life"
-    row_company_num = four_row_list("Number of companies", old_company_num, new_company_num, analysis_company_num)
+
+    # url = "https://avoindata.prh.fi/bis/v1?totalResults=true&maxResults=1&resultsFrom=10000" + \
+    #       "&streetAddressPostCode={:s}&companyRegistrationFrom=1950-01-01"
+    # print("This part takes time (~10s). Comment this part to accelerate. \n(From line 100, reference_function.py)")
+    # old_company_num = eval(requests.get(url.format(old_code)).text.split(',"previous')[0] + '}')['totalResults']
+    # new_company_num = eval(requests.get(url.format(new_code)).text.split(',"previous')[0] + '}')['totalResults']
+    # result_company_num = int(new_company_num) - int(old_company_num)
+    # analysis_company_num = "↗ Big town with more opportunities" if result_company_num > 0 else "↘ Peaceful life"
+    # row_company_num = four_row_list("Number of companies", old_company_num, new_company_num, analysis_company_num)
 
     # Final result
-    table = [row_title, row_income, row_education, row_company_num]
+    table = [row_title, row_income, row_education]  # , row_company_num]
     return table

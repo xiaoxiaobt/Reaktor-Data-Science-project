@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
-from toolkits import *
+# from toolkits import *
 from temp.reference_function import *
 
 print("Loading data...")
@@ -45,7 +45,8 @@ def get_polar_html(code=None):
                                  fill='toself')
     return html.Div(
         children=[
-            html.Div(children=get_analysis(code), id="info_text"),
+            html.Div(children=get_analysis(code, "00100"), id="info_text"),
+            # TODO: Get the new code from prediction
             dcc.Graph(
                 id='radar_plot',
                 config={'displayModeBar': False},
@@ -74,32 +75,35 @@ def get_side_analysis():
     ]
 
 
-def TODO(a):
-    return "TODO"
-
-
-def get_analysis(code='02150'):
+def get_analysis(old_code="02150", new_code="00100"):
     # H1
-    location_string = zip_name_dict()[code] + " " + code
+    location_string = "Hey, how about this one? " + zip_name_dict()[new_code] + ", " + new_code
     # H2
-    sell_price_string = get_attribute(postalcode=code, column="Sell price")
-    sell_price_string = sell_price_string if sell_price_string != "0.0" else "--"
-    rent_ara_price_string = get_attribute(postalcode=code, column="Rent price with ARA")
+    sell_price_string = get_attribute(postalcode=new_code, column="Sell price")
+    sell_price_string = format_2f(sell_price_string) if sell_price_string != "0.0" else "--"
+    rent_ara_price_string = get_attribute(postalcode=new_code, column="Rent price with ARA")
     rent_ara_price_string = format_2f(rent_ara_price_string) if rent_ara_price_string != "0.0" else "--"
-    rent_noara_price_string = get_attribute(postalcode=code, column="Rent price without ARA")
+    rent_noara_price_string = get_attribute(postalcode=new_code, column="Rent price without ARA")
     rent_noara_price_string = format_2f(rent_noara_price_string) if rent_noara_price_string != "0.0" else "--"
     # H3
-    income_string = get_attribute(postalcode=code, column="Average income of inhabitants")
-    average_age_string = get_attribute(postalcode=code, column="Average age of inhabitants")
-    percentage_degree = "{:.2f}".format(100*float(get_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled")))
+    income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
+    average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
+    percentage_degree = format_2f(
+        100 * float(
+            get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
-    return [html.H1("We suggest: " + location_string),
+
+    text = [html.H1(location_string),
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
             html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
                     + rent_noara_price_string + " €/m² (private only)"),
             html.H3("Average income: \t" + income_string + " €/year"),
             html.H3("Average age: \t" + average_age_string + " years"),
-            html.H3(percentage_degree + "% of the people has a higher university degree")]
+            # html.H3(percentage_degree + "% of the people has a higher university degree")
+            ]
+
+    table = make_dash_table(old_code, new_code)
+    return text + table
 
 
 def get_map_html():
@@ -123,13 +127,11 @@ def get_map_html():
     graph = dcc.Graph(id='main_plot',
                       config={'displayModeBar': False},
                       figure={'layout': map_layout, 'data': [map_plot]},
-                      # TODO: Add more layers in 'data'
                       style={'display': 'inline-block'},
                       className="left_zone"
                       )
-    text_block = html.Div(children=get_side_analysis(),
-                          style={'display': 'inline-block', 'width': 500, 'position': 'absolute'}, id="side_info")
-    test_donotremove = html.Div(children=[html.H1("dfnsjkbfjds")], style={'display': 'inline-block'})
+    text_block = html.Div(children=get_side_analysis(), className="side_analysis", id="side_info")
+    # test_DONOTREMOVE = html.Div(children=[html.H1("dfnsjkbfjds")], style={'display': 'inline-block'})
     map_html = html.Div(children=[graph, text_block])
     return map_html
 
@@ -195,7 +197,6 @@ app.layout = html.Div(
                                     value=22,
                                     name="number of rows",
                                     min=1
-                                    # TODO: Change it to age range
                                 ),
                             ]
                         ),
@@ -205,35 +206,33 @@ app.layout = html.Div(
                                 dcc.Dropdown(
                                     id="location",
                                     clearable=False,
-                                    value="02150, Otaniemi",
-                                    options=dropdown_dict(),
-                                    style={'background-color': 'transparent'},
+                                    value="02150",
+                                    options=location_dropdown(),
                                     className='dropdown'
-                                    # TODO: Make a dropdown menu instead
-                                    # TODO: Make a List with postal code + Location
                                 ),
                             ]
                         ),
                         html.Div(
                             [
                                 html.Label("Occupation"),
-                                dcc.Input(
+                                dcc.Dropdown(
                                     id="Occupation",
-                                    type="text",
+                                    clearable=False,
                                     value="Student",
-                                    name="number of rows"
+                                    options=occupation_dropdown(),
+                                    className='dropdown'
                                 ),
                             ]
                         ),
                         html.Div(
                             [
-                                html.Label("Type of household"),
-                                dcc.Input(
+                                html.Label("Household type"),
+                                dcc.Dropdown(
                                     id="household_type",
-                                    type="text",
+                                    clearable=False,
                                     value="Single",
-                                    name="number of rows"
-                                    # TODO: Change this to dropdown menu
+                                    options=household_type_dropdown(),
+                                    className='dropdown'
                                 ),
                             ]
                         ),

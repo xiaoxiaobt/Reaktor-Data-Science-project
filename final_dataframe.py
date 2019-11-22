@@ -58,8 +58,8 @@ def add_newest_attributes(df):
     temp = pd.read_csv(Path('data/') / 'paavo_housing_data.tsv', sep='\t')
     df.update(temp['Housing price (2018)'])
 
-    # Add surface area TODO
-    h = pd.read_csv(Path('data/') / 'surface_area.tsv', sep='\t', usecols=['Postal code', 'Surface area (2017)'])
+    # Add forest data
+    df['Forest'] = add_forest()
 
     # Add latitude and longitude
     coord = coordinates()
@@ -90,6 +90,16 @@ def add_buses():
     print("Loading bus stops...")
     bus_df = pd.read_csv(Path('data/') / 'bus.tsv', sep='\t', usecols=['Bus stops'])
     return bus_df['Bus stops'].copy()
+
+
+def add_forest():
+    """
+    Open the file 'forest_data.csv' from the folder 'data' and return the column to add to the data frame
+    :return: list of values as a pandas Series
+    """
+    print("Loading forest data...")
+    f_df = pd.read_csv(Path('data/') / 'forest_data.csv', sep=',', usecols=['forest_average'])
+    return f_df['forest_average'].copy()
 
 
 def add_peculiarity(df):

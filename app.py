@@ -292,8 +292,4 @@ def predict():
 """
 
 if __name__ == "__main__":
-    DEBUG_MODE = True
-    if DEBUG_MODE:
-        print("Debug mode is enabled. It will take double amount of time to load.")
-        print("This is compromised by the background image.")
-    app.run_server(debug=DEBUG_MODE)
+    app.run_server(debug=False)

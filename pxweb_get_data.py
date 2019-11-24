@@ -222,6 +222,7 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
     def postal_merge(left, right):
         return left.merge(right, how='left', on='Postal code')
 
+    # Calculate housing prices for groups of postal codes with the same first 6-n digits
     def get_mean_simple(df, n):
         df_n = pd.DataFrame(df['Postal code'].apply(lambda x: x[:(1 - n)]))
         df_n.rename(columns={df_n.columns[0]: 'Postal code'}, inplace=True)
@@ -232,7 +233,7 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
         # df_n.set_index('Postal code', inplace=True)
         return df_n
 
-
+    # Impute using the results above
     def impute_simple(df, df_n):
         df_ni = df_n.set_index('Postal code')
         for code in list(df_n['Postal code']):
@@ -242,6 +243,7 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
                     df.at[i, 'Mean'] = df_ni.at[code, 'Mean']
         return df
 
+    # Impute with respect to density using a linear model
     def impute_with_density(df, postal_df):
 
         def postal_truncate(n):
@@ -268,7 +270,6 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
                         if df_.at[i, 'Mean'] <= 0 or np.isnan(df_.at[i, 'Mean']):
                             df_.at[i, 'Mean'] = int(model.predict([1, df_.at[i, 'Density']])[0])
             return df_
-
 
         for i in range(3,6):
             df = impute_price(df, i)
@@ -319,12 +320,12 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
                     quarter_frame.at[code, 'Number'] = 0
 
             if year < 2013:
-                # Calculating the average housing price of postal codes with the same first 3 digits
+                # Calculating the average housing price of postal codes with the same first 3, 2, 1 digits
                 quarter_frame_3 = get_mean_simple(quarter_frame, 3)
                 quarter_frame_4 = get_mean_simple(quarter_frame, 4)
                 quarter_frame_5 = get_mean_simple(quarter_frame, 5)
 
-                # Fill df_4 empty values with that of df_5
+                # Fill df_4 empty values with that of df_5 and df_3 with that of df_4
                 quarter_frame_4 = impute_simple(quarter_frame_4, quarter_frame_5)
                 quarter_frame_3 = impute_simple(quarter_frame_3, quarter_frame_4)
 
@@ -335,13 +336,15 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
                 # Fill the year frame with mean postal code values
                 quarter_frame = impute_simple(quarter_frame, quarter_frame_3)
             else:
+                # Extract density values of the year
                 year_density = density[['Postal code', 'Density (' + str(year) + ')']]
                 year_density = postal_standardize(year_density)
                 year_density.rename(columns={('Density (' + str(year) + ')'): 'Density'}, inplace=True)
-                # print(year_density.isna().sum())
                 quarter_frame = postal_merge(quarter_frame, year_density)
                 quarter_frame = quarter_frame.astype({'Density': float})
                 quarter_frame = quarter_frame.fillna(0)
+
+                # Imputing using density
                 quarter_frame = impute_with_density(quarter_frame, postal_code)
                 quarter_frame = quarter_frame.fillna(0)
 
@@ -355,6 +358,7 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
             main_table = postal_merge(main_table, quarter_frame)
             print('Year ' + str(year) + ', quarter ' + str(quarter) + ': Done')
 
+    # Construct yearly and quarterly tables
     quarter_columns = main_table.columns[main_table.columns.str.contains('Q')]
     year_columns = main_table.columns[main_table.columns.str.contains('Housing')]
 
@@ -363,6 +367,6 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
     year_table = main_table[year_columns]
     quarter_table = main_table[quarter_columns]
 
-
+    # Save yearly and quarterly tables to files
     year_table.to_csv(os.path.join(destination_directory, 'paavo_housing_data_yearly.tsv'), sep='\t')
     quarter_table.to_csv(os.path.join(destination_directory, 'paavo_housing_data_quarterly.tsv'), sep='\t')

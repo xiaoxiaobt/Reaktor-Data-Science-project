@@ -6,6 +6,7 @@
 - [Usage](#usage)
 - [Documentation](#documentation)
 - [Test](#tests)
+- [Privacy Notice](#privacy)
 - [Team](#team)
 - [License](#license)
 
@@ -17,7 +18,6 @@ The service can be directly accessed from `https://ds-project-aalto.herokuapp.co
 To run the application on a local machine, follow steps below:
 ### Prerequisites
 - Python 3.6+
-- JavaScript
 - git
 
 ### Clone
@@ -57,6 +57,14 @@ TODO
 TODO
 ## Tests
 TODO
+## Privacy Notice
+
+**We care about your privacy**. We take your data privacy seriously, as we always have.
+
+We need to collect and treat your personal data to provide you a precise suggestion for relocation. All data will not be stored on our server.
+This service fully complies with the EU General Data Protection Regulation (GDPR). 
+The full source code of the service can be found from [here](https://github.com/xiaoxiaobt/Reaktor-Data-Science-project).
+
 
 ---
 

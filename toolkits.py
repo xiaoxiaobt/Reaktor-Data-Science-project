@@ -135,8 +135,8 @@ def feature_selection(list_of_post_code=None):
     selected.writelines(",\n".join(match))
     selected.writelines(tail)
     selected.close()
-    alltext = head + ",\n".join(match) + tail
-    polygons = json.loads(alltext)
+    all_text = head + ",\n".join(match) + tail
+    polygons = json.loads(all_text)
     # polygons = json.load(open("./data/selected.geojson", "r"))
     # print(polygons)
     return polygons
@@ -212,7 +212,7 @@ def find_all_transportation():
     """
 
     # Calculate data from Bus, Tram and Ferry
-    BusTramFerry_info = './data_transportation/bus_tram_ferry_stations_oneline.json'
+    busTramFerry_info = './data_transportation/bus_tram_ferry_stations_oneline.json'
     file_bus = "./data_transportation/bus_stations.tsv"
     file_tram = "./data_transportation/tram_stations.tsv"
     file_ferry = "./data_transportation/ferry_stations.tsv"
@@ -220,7 +220,7 @@ def find_all_transportation():
     write_ferry = open(file_ferry, "w+")
     write_tram = open(file_tram, "w+")
     pattern = r'"lat":([0-9.]*),"lon":([0-9.]*),'
-    with open(BusTramFerry_info) as f:
+    with open(busTramFerry_info) as f:
         lines = f.readlines()
         for line in lines:
             if "BUS" in line:
@@ -234,11 +234,11 @@ def find_all_transportation():
                 write_ferry.write(lat + '\t' + lon + '\n')
 
     # Calculate data from Train
-    Train_info = './data_transportation/train_stations_oneline.json'
+    train_info = './data_transportation/train_stations_oneline.json'
     file_train = "./data_transportation/train_stations.tsv"
     write_train = open(file_train, "w+")
     pattern = r',"longitude":([0-9.]*),"latitude":([0-9.]*)}'
-    with open(Train_info) as f:
+    with open(train_info) as f:
         lines = f.readlines()
         for line in lines:
             if "true" in line:  # Then the station is passenger station
@@ -269,11 +269,8 @@ def calculate_transportation_df():
         print(str(sum(dic.values())) + " points classified in file " + name_of_file)
         df = pd.DataFrame.from_dict(dic, orient='index', columns=[name_of_file])
         combined_dict[name_of_file] = df
-    [print(i.head()) for i in combined_dict.values()]
     final_df = pd.concat(combined_dict.values(), axis=1)
     final_df.to_csv("final_transportation.tsv", sep="\t")
-
-
 
 
 def main():
@@ -285,5 +282,4 @@ def main():
 
 
 if __name__ == "__main__":
-    calculate_transportation_df()
-    # main()
+    main()

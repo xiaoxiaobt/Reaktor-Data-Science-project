@@ -3,9 +3,11 @@ import dash_html_components as html
 import requests
 import numpy as np
 import matplotlib.pyplot as plt
+from toolkits import *
 
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
+traffic_df = pd.read_csv("./data_transportation/final_transportation.tsv", sep="\t", dtype={"Postal code": object})
 
 
 def zip_name_dict():
@@ -173,3 +175,18 @@ def zip_tax_dict():
 
 def get_tax(code):
     return zip_tax_dict()[code]
+
+
+def get_transportation_icons(code):
+    string = ""
+    if traffic_df[traffic_df['Postal code'] == code]["Bus"].values[0] > 0:
+        string += "🚌 "
+    if traffic_df[traffic_df['Postal code'] == code]["Train"].values[0] > 0:
+        string += "🚂 "
+    if traffic_df[traffic_df['Postal code'] == code]["Tram"].values[0] > 0:
+        string += "🚋 "
+    if traffic_df[traffic_df['Postal code'] == code]["Metro"].values[0] > 0:
+        string += "🚇 "
+    if traffic_df[traffic_df['Postal code'] == code]["Ferry"].values[0] > 0:
+        string += "🚢 "
+    return string

@@ -71,6 +71,7 @@ def get_side_analysis():
     return [
         html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
         html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
+        html.H2(get_transportation_icons("02150"), style={"font-size": "4rem"})
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 

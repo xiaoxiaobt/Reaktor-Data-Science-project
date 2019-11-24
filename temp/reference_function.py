@@ -5,18 +5,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from toolkits import *
 
-name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
+name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column = 'Postal code'
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 traffic_df = pd.read_csv("./data_transportation/final_transportation.tsv", sep="\t", dtype={"Postal code": object})
 tax_df = pd.read_csv("./data/final_tax.tsv", sep="\t", dtype={"Postal code": object})
-
-def zip_name_dict():
-    zip_name_dict = dict(zip(paavo_df['Postal code'], map(lambda x: x.split("(")[0].strip(), paavo_df['Area'])))
-    return zip_name_dict
+zip_name_dict = dict(zip(paavo_df['Postal code'], map(lambda x: x.split("(")[0].strip(), paavo_df['Area'])))
+zip_tax_dict = dict(zip(tax_df["Postal code"], tax_df["Tax"]))
 
 
 def location_dropdown():
-    return [{'label': i + ", " + zip_name_dict()[i], 'value': i} for i in paavo_df['Postal code']]
+    return [{'label': i + ", " + zip_name_dict[i], 'value': i} for i in paavo_df['Postal code']]
 
 
 def occupation_dropdown():
@@ -90,9 +88,9 @@ def make_dash_table(old_code, new_code):
     row_income = four_row_list("Income", old_income, new_income, analysis_income)
 
     # Line 3
-    old_education = "{:.2f}".format(
+    old_education = format_2f(
         float(get_attribute(old_code, 'Academic degree - Higher level university degree scaled')) * 100)
-    new_education = "{:.2f}".format(
+    new_education = format_2f(
         float(get_attribute(new_code, 'Academic degree - Higher level university degree scaled')) * 100)
     result_education = float(new_education) - float(old_education)
     analysis_education = "↗ Find more skilled fellows" if result_education > 0 else "↘ Less competitions"
@@ -119,23 +117,18 @@ def age_model(code):
     perc = np.nan_to_num(perc)
     perc[perc >= 1] = 0.5
     perc[perc <= 0] = 0.5
-
     # a[a > 70] = 70
-    q15 = np.percentile(perc, 20)
-    q25 = np.percentile(perc, 30)
-    q35 = np.percentile(perc, 45)
-    q40 = np.percentile(perc, 60)
     # plt.hist(a, bins=30)
     # plt.show()
     situation_of_code = float(get_attribute(code, "65 years or over")) / float(
         get_attribute(code, 'Inhabitants, total'))
-    if situation_of_code <= q15:
+    if situation_of_code <= np.percentile(perc, 20):
         return "Very Young"
-    elif situation_of_code <= q25:
+    elif situation_of_code <= np.percentile(perc, 30):
         return "Young"
-    elif situation_of_code <= q35:
+    elif situation_of_code <= np.percentile(perc, 45):
         return "Moderate"
-    elif situation_of_code <= q40:
+    elif situation_of_code <= np.percentile(perc, 60):
         return "Youngest-old"
     else:
         return "Old"
@@ -145,30 +138,16 @@ def tax_model(tax_rate=20):
     taxes = pd.read_csv("../data/municipality_tax.tsv", sep="\t")['Tax']
     # plt.hist(taxes, bins=10)
     # plt.show()
-    q20 = np.percentile(taxes, 20)
-    q40 = np.percentile(taxes, 40)
-    q60 = np.percentile(taxes, 60)
-    q80 = np.percentile(taxes, 80)
-    print([q20, q40, q60, q80])
-    if tax_rate < q20:
+    if tax_rate < np.percentile(taxes, 20):
         return "High"
-    elif tax_rate < q40:
+    elif tax_rate < np.percentile(taxes, 40):
         return "Slightly higher"
-    elif tax_rate < q60:
+    elif tax_rate < np.percentile(taxes, 60):
         return "Super high"
-    elif tax_rate < q80:
+    elif tax_rate < np.percentile(taxes, 80):
         return "Ultra High"
     else:
         return "Extremely high"
-
-
-def zip_tax_dict():
-    zip_tax = dict(zip(tax_df["Postal code"], tax_df["Tax"]))
-    return zip_tax
-
-
-def get_tax(code):
-    return zip_tax_dict()[code]
 
 
 def get_transportation_icons(code):

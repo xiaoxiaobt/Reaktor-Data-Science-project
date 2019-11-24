@@ -40,7 +40,8 @@ def get_polar_html(old_code="02150", new_code="00100"):
     polar_plot = go.Scatterpolar(r=r,
                                  theta=['Education', 'Services', 'Public Transportation', 'Average Income',
                                         'Population Density'],
-                                 fill='toself')
+                                 fill='toself',
+                                 )
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code), id="info_text"),
@@ -68,9 +69,9 @@ def get_about_html():
 
 def get_side_analysis(zip="02150"):
     return [
-        html.H2("Area: " + zip_name_dict()[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
+        html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Income tax rate: " + str(get_tax(zip)) + "%"),
+        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%"),
         html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
@@ -78,8 +79,7 @@ def get_side_analysis(zip="02150"):
 
 def get_analysis(old_code="02150", new_code="00100"):
     # H1
-    location_string = "Hey, how about this one? " + zip_name_dict()[new_code] + ", " + new_code
-    debug = old_code
+    location_string = "Hey, how about this one? " + zip_name_dict[new_code] + ", " + new_code
     # H2
     sell_price_string = get_attribute(postalcode=new_code, column="Sell price")
     sell_price_string = format_2f(sell_price_string) if sell_price_string != "0.0" else "--"
@@ -90,9 +90,7 @@ def get_analysis(old_code="02150", new_code="00100"):
     # H3
     income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
-    percentage_degree = format_2f(
-        100 * float(
-            get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
+    # percentage_degree = format_2f(100 * float(get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
 
     text = [html.H1(location_string + "/" + old_code),
@@ -133,7 +131,6 @@ def get_map_html():
                       className="left_zone"
                       )
     text_block = html.Div(children=get_side_analysis(), className="side_analysis", id="side_info")
-    # test_DONOTREMOVE = html.Div(children=[html.H1("dfnsjkbfjds")], style={'display': 'inline-block'})
     map_html = html.Div(children=[graph, text_block])
     return map_html
 
@@ -287,7 +284,6 @@ app.layout = html.Div(
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value')])
 def change_focus(click, income, age, location, occupation, household_type, selection_radio):
-    print(location)
     if income <= 0 or ~isinstance(income, int):
         income = 500
     if (age <= 0) or (age >= 120) or ~isinstance(age, int):

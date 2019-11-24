@@ -1,4 +1,4 @@
-# Data-Science-project---Reaktor
+# Data-Science-project - Reaktor
 ## Table of Contents
 
 - [Installation](#installation)

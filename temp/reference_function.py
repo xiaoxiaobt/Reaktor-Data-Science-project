@@ -164,7 +164,7 @@ def zip_tax_dict():
     zip_municipality = pd.read_csv("./data/zip_municipality.tsv", sep="\t")
     municipality_tax = pd.read_csv("./data/municipality_tax.tsv", sep="\t")
     zip_municipality_dict = dict(zip(zip_municipality['Postinumeroalue'], zip_municipality['Kunnan nimi']))
-    municipality_tax_dict = dict(zip(map(str.strip, municipality_tax['Municipality']), municipality_tax['Tax']))
+    municipality_tax_dict = dict(zip(municipality_tax['Municipality'], municipality_tax['Tax']))
     zip_tax = dict()
     for key in zip_municipality['Postinumeroalue']:
         zip_tax[key] = municipality_tax_dict[zip_municipality_dict[key]]
@@ -173,6 +173,3 @@ def zip_tax_dict():
 
 def get_tax(code):
     return zip_tax_dict()[code]
-
-
-tax_model()

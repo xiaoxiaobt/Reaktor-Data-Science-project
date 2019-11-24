@@ -240,9 +240,21 @@ def find_all_transportation():
     with open(Train_info) as f:
         lines = f.readlines()
         for line in lines:
-            if "true" in line:
+            if "true" in line:  # Then the station is passenger station
                 lat, lon = re.findall(pattern, line)[0]
                 write_train.write(lat + '\t' + lon + '\n')
+
+
+def tax_remove_white_space():
+    write_new = open("municipality_tax.csv", "w+")
+    with open("./data/municipality_tax.tsv") as f:
+        lines = f.readlines()
+        for line in lines:
+            name, tax = line.split("\t")
+            write_new.write(name.strip() + "\t" + tax)
+
+
+tax_remove_white_space()
 
 
 def main():

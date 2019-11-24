@@ -67,11 +67,12 @@ def get_about_html():
     return html.Div(text)
 
 
-def get_side_analysis():
+def get_side_analysis(zip="02150"):
     return [
-        html.H2("Area: Otaniemi, 02150", id="code_title", style={'color': 'black'}),
-        html.H4("🛈 Greetings from Tiger :D ", id="code_info"),
-        html.H2(get_transportation_icons("02150"), style={"font-size": "4rem"})
+        html.H2("Area: " + zip_name_dict()[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
+        html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
+        html.H2("Income tax rate: " + str(get_tax(zip)) + "%"),
+        html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 
@@ -116,7 +117,7 @@ def get_map_html():
                                    colorscale="Viridis",
                                    marker_opacity=0.7,
                                    marker_line_width=0,
-                                   showscale=False,
+                                   showscale=False
                                    )
     map_layout = go.Layout(width=360,
                            height=600,
@@ -286,6 +287,16 @@ def change_focus(click):
     return "result-tab" if click else "canvas-tab"
 
 
+@app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])
+def return_side_analysis(hover_point):
+    try:
+        pc = hover_point['points'][0]['location']
+    except Exception:
+        pc = '02150'
+    return get_side_analysis(pc)
+
+
+
 """
 @app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
 def predict():
@@ -293,4 +304,4 @@ def predict():
 """
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)

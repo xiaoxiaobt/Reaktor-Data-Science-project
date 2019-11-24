@@ -270,7 +270,20 @@ def calculate_transportation_df():
         df = pd.DataFrame.from_dict(dic, orient='index', columns=[name_of_file])
         combined_dict[name_of_file] = df
     final_df = pd.concat(combined_dict.values(), axis=1)
-    final_df.to_csv("final_transportation.tsv", sep="\t")
+    final_df.to_csv("./data_transportation/final_transportation.tsv", sep="\t")
+
+
+def calculate_tax_rate_df():
+    zip_municipality = pd.read_csv("./data/zip_municipality.tsv", sep="\t", dtype={"Postinumeroalue": object})
+    municipality_tax = pd.read_csv("./data/municipality_tax.tsv", sep="\t")
+    zip_municipality_dict = dict(zip(zip_municipality['Postinumeroalue'], zip_municipality['Kunnan nimi']))
+    municipality_tax_dict = dict(zip(municipality_tax['Municipality'], municipality_tax['Tax']))
+    zip_tax = dict()
+    for key in zip_municipality['Postinumeroalue']:
+        zip_tax[key] = municipality_tax_dict[zip_municipality_dict[key]]
+
+    zip_df = pd.DataFrame.from_dict(zip_tax, orient='index', columns=["Tax"])
+    zip_df.to_csv("./data/final_tax.tsv", sep="\t")
 
 
 def main():

@@ -8,7 +8,7 @@ from toolkits import *
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 traffic_df = pd.read_csv("./data_transportation/final_transportation.tsv", sep="\t", dtype={"Postal code": object})
-
+tax_df = pd.read_csv("./data/final_tax.tsv", sep="\t", dtype={"Postal code": object})
 
 def zip_name_dict():
     zip_name_dict = dict(zip(paavo_df['Postal code'], map(lambda x: x.split("(")[0].strip(), paavo_df['Area'])))
@@ -163,13 +163,7 @@ def tax_model(tax_rate=20):
 
 
 def zip_tax_dict():
-    zip_municipality = pd.read_csv("./data/zip_municipality.tsv", sep="\t")
-    municipality_tax = pd.read_csv("./data/municipality_tax.tsv", sep="\t")
-    zip_municipality_dict = dict(zip(zip_municipality['Postinumeroalue'], zip_municipality['Kunnan nimi']))
-    municipality_tax_dict = dict(zip(municipality_tax['Municipality'], municipality_tax['Tax']))
-    zip_tax = dict()
-    for key in zip_municipality['Postinumeroalue']:
-        zip_tax[key] = municipality_tax_dict[zip_municipality_dict[key]]
+    zip_tax = dict(zip(tax_df["Postal code"], tax_df["Tax"]))
     return zip_tax
 
 

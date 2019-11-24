@@ -67,10 +67,11 @@ def fix_dataframe():
     """Fix the dataframe to desired format: UTF-8, Tab-seperated, replace '..' with np.nan, changed column name to id"""
     # Reformat all data from semicolon-separated value to tsv with encoding utf-8
     input_filename = "./data/paavo_9_koko.csv"
+    output_filename = "./data/paavo_9_koko.tsv"
     df = pd.read_csv(input_filename, delimiter=";", encoding='iso-8859-1', header=1)
-    df.to_csv("./data/paavo_9_koko.tsv", sep="\t", encoding="utf-8", index=False)
+    df.to_csv(output_filename, sep="\t", encoding="utf-8", index=False)
     # Remove the data for whole Finland
-    df = pd.read_csv("./data/paavo_9_koko.tsv", delimiter="\t")
+    df = pd.read_csv(output_filename, delimiter="\t")
     df.drop(index=0, inplace=True)
     # Split ["Postal code area"] to ["id"] and ["location"]
     col_location = df["Postal code area"].apply(lambda x: x.split(" ")[1])
@@ -82,12 +83,12 @@ def fix_dataframe():
     replacing_value = np.nan  # Or other values
     df.replace("..", replacing_value)
     # Add neighbour postal codes
-    df_neighbour = pd.read_csv("./temp/neighbours.csv", encoding='iso-8859-1', dtype={"NEIGHBORS": str})
+    df_neighbour = pd.read_csv("./temp/neighbours.csv", encoding='iso-8859-1', dtype={"NEIGHBORS": object})
     df_neighbour.sort_values(by="posti_alue", inplace=True)
     df_neighbour.reset_index(inplace=True)
     df.insert(loc=2, column='neighbour', value=df_neighbour.NEIGHBORS)
     # Save file
-    df.to_csv("./data/paavo_9_koko.tsv", sep="\t", encoding="utf-8", index=False)
+    df.to_csv("output_filename", sep="\t", encoding="utf-8", index=False)
 
 
 def add_id_for_geojson():
@@ -95,8 +96,7 @@ def add_id_for_geojson():
     file_write = open("./data/finland_2019_p4_utf8_simp_wid.geojson", "w+")
     for line in file.readlines():
         if 'properties": { "posti_alue' in line:
-            line = line.replace('properties": { "posti_alue', 'id')
-            line = line.replace('" }, "geometry"', '", "geometry"')
+            line = line.replace('properties": { "posti_alue', 'id').replace('" }, "geometry"', '", "geometry"')
         file_write.write(line)
     file.close()
     file_write.close()
@@ -157,8 +157,6 @@ def find_num_of_points(points):
         print("This algorithm should work on your computer. Remember to remove the exec() function call. ")
         from shapely import wkt
         from shapely.geometry import Point
-        import shapely.speedups
-        shapely.speedups.enable()
     point_dict = dict()
     polygon_dict = dict()
     FILE_NAME = "./data/zip_polygon.csv"
@@ -169,10 +167,8 @@ def find_num_of_points(points):
             point_dict[code] = 0
     # If the input is a list of points:
     if isinstance(points, list):
-        current = 0
-        for code in polygon_dict.keys():
-            current += 1
-            print("Progress: " + str(current) + "\t/ 3026")
+        for current, code in enumerate(polygon_dict.keys()):
+            print("Progress: {:d}\t/ 3026".format(current))
             for y, x in points:
                 if polygon_dict[code].contains(Point(x, y)):
                     point_dict[code] += 1
@@ -187,12 +183,13 @@ def get_amount_of_service(zip="02150"):
     """
     service_list = ["ruokakauppa", "ravintola", "kirjasto", "terveys", "kuntosali", "hotelli", "pubit ja baarit"]
     counts = dict()
-    random.shuffle(service_list)
+    # random.shuffle(service_list)
+    pattern = r"-->([0-9]+)<!--"
     for service in service_list:
-        URL = "https://www.finder.fi/search?what=" + service + "%20" + str(zip) + "&type=company"
+        URL = "https://www.finder.fi/search?what={:s}%20{:s}&type=company".format(service, zip)
         soup = BeautifulSoup(requests.get(URL).content, features="html.parser")
         main_content = soup.find('span', attrs={'class': 'SearchResultList__TabBar__Count'})
-        num = str(main_content).split("-->")[3].split("<!--")[0]
+        num = re.findall(pattern, str(main_content))[0]
         counts[service] = int(num)
         print(service, num)
     return counts
@@ -281,14 +278,13 @@ def calculate_tax_rate_df():
     zip_tax = dict()
     for key in zip_municipality['Postinumeroalue']:
         zip_tax[key] = municipality_tax_dict[zip_municipality_dict[key]]
-
     zip_df = pd.DataFrame.from_dict(zip_tax, orient='index', columns=["Tax"])
     zip_df.to_csv("./data/final_tax.tsv", sep="\t")
 
 
 def main():
     try:
-        eval(input("Input the name of function you would like to execute: \n").lower())
+        eval(input("Input the name of function you would like to execute: \n").lower().strip())
         print("Executed successfully.")
     except Exception:
         print("Function name not found. Please check your input.")

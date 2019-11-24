@@ -418,7 +418,6 @@ input[type="button"] {
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 2px;
-
 }
 
 
@@ -467,7 +466,6 @@ input[type="button"] {
     box-sizing: border-box;
     border-radius: 2px;
     border: transparent !important;
-
 }
 
 
@@ -654,8 +652,6 @@ input[type="button"].button-primary:focus {
 
 .Select-value-label {
     color: #D1D1D1 !important;
-
-
 }
 
 .dropdown {
@@ -680,7 +676,6 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-
     margin-left: 9%;
     height: 30px;
     width: 50%;
@@ -834,7 +829,6 @@ td:last-child {
 button,
 .button {
     margin-bottom: 0rem;
-
 }
 
 input,
@@ -947,7 +941,6 @@ there.
         margin-right: 5px;
         margin-top: -20px;
         margin-bottom: -50px;
-
     }
 
     .demo_button {
@@ -973,7 +966,6 @@ there.
         margin-top: -20px;
         margin-bottom: -50px;
     }
-
 }
 
 
@@ -1066,7 +1058,6 @@ there.
         margin-right: 5px;
         margin-top: -20px;
         margin-bottom: -50px;
-
     }
 
     .demo_button {
@@ -1211,7 +1202,6 @@ there.
         /* width: 130vh; */
         text-align: left;
         margin: 0 auto;
-
     }
 
     .tabs {
@@ -1321,7 +1311,6 @@ there.
     #tabs-content-example > div > button:nth-child(8) {
         height: 30px !important;
         width: 30px !important;
-
     }
 
 
@@ -1353,8 +1342,6 @@ there.
         width: 100vw !important;
         margin: 0 auto;
     }
-
-
 }
 
 @media (max-width: 500px) {
@@ -1363,7 +1350,6 @@ there.
         margin-top: -20px;
         margin-bottom: 20px
     }
-
 }
 
 @media (max-width: 320px) {
@@ -1382,7 +1368,6 @@ there.
     input[type="password"],
     textarea,
     select {
-
         margin-left: 9%;
         height: 30px;
         width: 70%;
@@ -1396,6 +1381,5 @@ there.
         font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
         font-size: inherit;
         color: #D1D1D1;
-
     }
 }

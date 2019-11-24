@@ -40,17 +40,19 @@ def get_polar_html(old_code="02150", new_code="00100"):
     polar_plot = go.Scatterpolar(r=r,
                                  theta=['Education', 'Services', 'Public Transportation', 'Average Income',
                                         'Population Density'],
-                                 fill='toself',
+                                 fill='toself'
                                  )
     return html.Div(
         children=[
-            html.Div(children=get_analysis(old_code, new_code), id="info_text"),
+            html.Div(children=get_analysis(old_code, new_code)),
             # TODO: Get the new code from prediction
             dcc.Graph(
-                id='radar_plot',
                 config={'displayModeBar': False},
                 figure={
-                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
+                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)',
+                                        plot_bgcolor='rgba(0,0,0,0)',
+                                        height=400
+                                        ),
                     'data': [polar_plot]
                 }
             )
@@ -61,9 +63,9 @@ def get_polar_html(old_code="02150", new_code="00100"):
 
 def get_about_html():
     text = """
-                    This is the implementation of our Data Science Project. The aim of this project is to provide 
-                    suggestions on suitable relocation areas in Finland, based on housing prices and demographics.
-                    """
+           This is the implementation of our Data Science Project. The aim of this project is to provide 
+           suggestions on suitable relocation areas in Finland, based on housing prices and demographics.
+           """
     return html.Div(text)
 
 
@@ -93,7 +95,7 @@ def get_analysis(old_code="02150", new_code="00100"):
     # percentage_degree = format_2f(100 * float(get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
 
-    text = [html.H1(location_string + "/" + old_code),
+    text = [html.H1(location_string),
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
             html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
                     + rent_noara_price_string + " €/m² (private only)"),
@@ -106,7 +108,7 @@ def get_analysis(old_code="02150", new_code="00100"):
     return text + table
 
 
-def get_map_html():
+def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
                                    locations=paavo_df['Postal code'],
@@ -120,8 +122,8 @@ def get_map_html():
     map_layout = go.Layout(width=360,
                            height=600,
                            mapbox_style="carto-positron",
-                           mapbox_zoom=4,
-                           mapbox_center={"lat": 65.361064, "lon": 26.985940},
+                           mapbox_zoom=zoom,
+                           mapbox_center={"lat": lat, "lon": lon},
                            margin={"r": 0, "t": 0, "l": 0, "b": 0}
                            )
     graph = dcc.Graph(id='main_plot',
@@ -131,7 +133,7 @@ def get_map_html():
                       className="left_zone"
                       )
     text_block = html.Div(children=get_side_analysis(), className="side_analysis", id="side_info")
-    map_html = html.Div(children=[graph, text_block])
+    map_html = html.Div(children=[graph, text_block], id="map_html")
     return map_html
 
 
@@ -151,7 +153,7 @@ app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Kodimpi (BETA)"),
+                html.H1(children="Kodimpi (BETA)", id="haha"),
                 instructions(),
                 html.Div(
                     [
@@ -301,8 +303,7 @@ def change_focus(click, income, age, location, occupation, household_type, selec
     if click:
         return get_polar_html(location, prediction), "result-tab"
     else:
-        print("ERROR")
-        return get_polar_html(location, prediction), "canvas-tab"
+        dash.exceptions.PreventUpdate()
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])

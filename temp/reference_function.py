@@ -120,15 +120,14 @@ def age_model(code):
     # a[a > 70] = 70
     # plt.hist(a, bins=30)
     # plt.show()
-    situation_of_code = float(get_attribute(code, "65 years or over")) / float(
-        get_attribute(code, 'Inhabitants, total'))
-    if situation_of_code <= np.percentile(perc, 20):
+    code_situation = float(get_attribute(code, "65 years or over")) / float(get_attribute(code, 'Inhabitants, total'))
+    if code_situation <= np.percentile(perc, 20):
         return "Very Young"
-    elif situation_of_code <= np.percentile(perc, 30):
+    elif code_situation <= np.percentile(perc, 30):
         return "Young"
-    elif situation_of_code <= np.percentile(perc, 45):
+    elif code_situation <= np.percentile(perc, 45):
         return "Moderate"
-    elif situation_of_code <= np.percentile(perc, 60):
+    elif code_situation <= np.percentile(perc, 60):
         return "Youngest-old"
     else:
         return "Old"

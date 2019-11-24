@@ -4,6 +4,7 @@ import numpy as np
 import os
 import requests
 import random
+import re
 from bs4 import BeautifulSoup
 
 
@@ -196,6 +197,66 @@ def get_amount_of_service(zip="02150"):
     return counts
 
 
+def find_all_transportation():
+    """
+    This function finds all stations in finland
+    Bus, Tram and Ferry -> DigiTransit api
+    https://api.digitransit.fi/graphiql/finland?query=%257B%2520%250A%2520%2520stations%2520%257B%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%2520%2520vehicleMode%250A%2520%2520%257D%250A%257D
+    Train -> DigiTraffic website
+    https://www.digitraffic.fi/rautatieliikenne/#junien-tiedot-trains
+    Metro -> Hand-scraped, this is the first time I am glad that Finland has such a short metro lane LMAO
+    https://www.google.fi/maps/
+
+    Data have been pre-processed
+    """
+
+    # Calculate data from Bus, Tram and Ferry
+    BusTramFerry_info = './data_transportation/bus_tram_ferry_stations_oneline.json'
+    file_bus = "./data_transportation/bus_stations.tsv"
+    file_tram = "./data_transportation/tram_stations.tsv"
+    file_ferry = "./data_transportation/ferry_stations.tsv"
+    write_bus = open(file_bus, "w+")
+    write_ferry = open(file_ferry, "w+")
+    write_tram = open(file_tram, "w+")
+    pattern = r'"lat":([0-9.]*),"lon":([0-9.]*),'
+    with open(BusTramFerry_info) as f:
+        lines = f.readlines()
+        for line in lines:
+            if "BUS" in line:
+                lat, lon = re.findall(pattern, line)[0]
+                write_bus.write(lat + '\t' + lon + '\n')
+            elif "TRAM" in line:
+                lat, lon = re.findall(pattern, line)[0]
+                write_tram.write(lat + '\t' + lon + '\n')
+            elif "FERRY" in line:
+                lat, lon = re.findall(pattern, line)[0]
+                write_ferry.write(lat + '\t' + lon + '\n')
+
+    # Calculate data from Train
+    Train_info = './data_transportation/train_stations_oneline.json'
+    file_train = "./data_transportation/train_stations.tsv"
+    write_train = open(file_train, "w+")
+    pattern = r',"longitude":([0-9.]*),"latitude":([0-9.]*)}'
+    with open(Train_info) as f:
+        lines = f.readlines()
+        for line in lines:
+            if "true" in line:  # Then the station is passenger station
+                lat, lon = re.findall(pattern, line)[0]
+                write_train.write(lat + '\t' + lon + '\n')
+
+
+def tax_remove_white_space():
+    write_new = open("municipality_tax.csv", "w+")
+    with open("./data/municipality_tax.tsv") as f:
+        lines = f.readlines()
+        for line in lines:
+            name, tax = line.split("\t")
+            write_new.write(name.strip() + "\t" + tax)
+
+
+tax_remove_white_space()
+
+
 def main():
     try:
         eval(input("Input the name of function you would like to execute: \n").lower())
@@ -204,5 +265,6 @@ def main():
         print("Function name not found. Please check your input.")
 
 
+find_all_transportation()
 if __name__ == "__main__":
     main()

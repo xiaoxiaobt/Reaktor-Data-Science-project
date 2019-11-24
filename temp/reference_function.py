@@ -1,6 +1,8 @@
 import pandas as pd
 import dash_html_components as html
 import requests
+import numpy as np
+import matplotlib.pyplot as plt
 
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column ='Postal code'
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
@@ -108,3 +110,66 @@ def make_dash_table(old_code, new_code):
     # Final result
     table = [row_title, row_income, row_education]  # , row_company_num]
     return table
+
+
+def age_model(code):
+    perc = paavo_df["65 years or over"] / paavo_df['Inhabitants, total']
+    perc = np.nan_to_num(perc)
+    perc[perc >= 1] = 0.5
+    perc[perc <= 0] = 0.5
+
+    # a[a > 70] = 70
+    q15 = np.percentile(perc, 20)
+    q25 = np.percentile(perc, 30)
+    q35 = np.percentile(perc, 45)
+    q40 = np.percentile(perc, 60)
+    # plt.hist(a, bins=30)
+    # plt.show()
+    situation_of_code = float(get_attribute(code, "65 years or over")) / float(
+        get_attribute(code, 'Inhabitants, total'))
+    if situation_of_code <= q15:
+        return "Very Young"
+    elif situation_of_code <= q25:
+        return "Young"
+    elif situation_of_code <= q35:
+        return "Moderate"
+    elif situation_of_code <= q40:
+        return "Youngest-old"
+    else:
+        return "Old"
+
+
+def tax_model(tax_rate=20):
+    taxes = pd.read_csv("../data/municipality_tax.tsv", sep="\t")['Tax']
+    # plt.hist(taxes, bins=10)
+    # plt.show()
+    q20 = np.percentile(taxes, 20)
+    q40 = np.percentile(taxes, 40)
+    q60 = np.percentile(taxes, 60)
+    q80 = np.percentile(taxes, 80)
+    print([q20, q40, q60, q80])
+    if tax_rate < q20:
+        return "High"
+    elif tax_rate < q40:
+        return "Slightly higher"
+    elif tax_rate < q60:
+        return "Super high"
+    elif tax_rate < q80:
+        return "Ultra High"
+    else:
+        return "Extremely high"
+
+
+def zip_tax_dict():
+    zip_municipality = pd.read_csv("./data/zip_municipality.tsv", sep="\t")
+    municipality_tax = pd.read_csv("./data/municipality_tax.tsv", sep="\t")
+    zip_municipality_dict = dict(zip(zip_municipality['Postinumeroalue'], zip_municipality['Kunnan nimi']))
+    municipality_tax_dict = dict(zip(municipality_tax['Municipality'], municipality_tax['Tax']))
+    zip_tax = dict()
+    for key in zip_municipality['Postinumeroalue']:
+        zip_tax[key] = municipality_tax_dict[zip_municipality_dict[key]]
+    return zip_tax
+
+
+def get_tax(code):
+    return zip_tax_dict()[code]

@@ -41,6 +41,7 @@ full_query = {
 }
 # url and query for paavo housing data
 housing_url = 'http://pxnet2.stat.fi/PXWeb/api/v1/en/StatFin_Passiivi/asu/ashi/statfinpas_ashi_pxt_004_2017q4.px'
+
 housing_query = {
   "query": [
     {
@@ -76,3 +77,28 @@ housing_query = {
   }
 }
 
+ts_housing_query = {
+  "query": [
+    {
+      "code": "Talotyyppi",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "6"
+        ]
+      }
+    },
+    {
+      "code": "Rakennusvuosi",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "8"
+        ]
+      }
+    }
+  ],
+  "response": {
+    "format": "csv"
+  }
+}

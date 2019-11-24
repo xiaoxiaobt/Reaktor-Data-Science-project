@@ -155,8 +155,10 @@ def find_num_of_points(points):
         return
     else:
         print("This algorithm should work on your computer. Remember to remove the exec() function call. ")
-        exec("from shapely import wkt")
-        exec("from shapely.geometry import Point")
+        from shapely import wkt
+        from shapely.geometry import Point
+        import shapely.speedups
+        shapely.speedups.enable()
     point_dict = dict()
     polygon_dict = dict()
     FILE_NAME = "./data/zip_polygon.csv"
@@ -173,7 +175,6 @@ def find_num_of_points(points):
             print("Progress: " + str(current) + "\t/ 3026")
             for y, x in points:
                 if polygon_dict[code].contains(Point(x, y)):
-                    points.remove((y, x))
                     point_dict[code] += 1
     return point_dict
 
@@ -254,7 +255,25 @@ def tax_remove_white_space():
             write_new.write(name.strip() + "\t" + tax)
 
 
-tax_remove_white_space()
+def calculate_transportation_df():
+    train_raw = pd.read_csv("./data_transportation/train_stations.tsv", sep="\t"), "Train"
+    metro_raw = pd.read_csv("./data_transportation/metro_stations.tsv", sep="\t"), "Metro"
+    ferry_raw = pd.read_csv("./data_transportation/ferry_stations.tsv", sep="\t"), "Ferry"
+    tram_raw = pd.read_csv("./data_transportation/tram_stations.tsv", sep="\t"), "Tram"
+    bus_raw = pd.read_csv("./data_transportation/bus_stations.tsv", sep="\t"), "Bus"
+    file_raw_list = [metro_raw, train_raw, ferry_raw, tram_raw, bus_raw]
+    combined_dict = dict()
+    for file, name_of_file in file_raw_list:
+        lis = list(zip(file["lat"], file["lon"]))
+        dic = find_num_of_points(lis)
+        print(str(sum(dic.values())) + " points classified in file " + name_of_file)
+        df = pd.DataFrame.from_dict(dic, orient='index', columns=[name_of_file])
+        combined_dict[name_of_file] = df
+    [print(i.head()) for i in combined_dict.values()]
+    final_df = pd.concat(combined_dict.values(), axis=1)
+    final_df.to_csv("final_transportation.tsv", sep="\t")
+
+
 
 
 def main():
@@ -265,6 +284,6 @@ def main():
         print("Function name not found. Please check your input.")
 
 
-find_all_transportation()
 if __name__ == "__main__":
-    main()
+    calculate_transportation_df()
+    # main()

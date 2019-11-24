@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import dash
 import plotly.graph_objs as go
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import dash_html_components as html
 import dash_core_components as dcc
 # from toolkits import *
@@ -31,21 +31,19 @@ def instructions():
     )
 
 
-def get_polar_html(code=None):
-    if code is None:
-        code = "02150"
-    r = [radar_attribute(postalcode=code, column="Academic degree - Higher level university degree scaled"),
-         radar_attribute(postalcode=code, column="Services"),
-         radar_attribute(postalcode=code, column="Bus stops"),
-         radar_attribute(postalcode=code, column="Average income of inhabitants"),
-         radar_attribute(postalcode=code, column="Density")]
+def get_polar_html(old_code="02150", new_code="00100"):
+    r = [radar_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled"),
+         radar_attribute(postalcode=new_code, column="Services"),
+         radar_attribute(postalcode=new_code, column="Bus stops"),
+         radar_attribute(postalcode=new_code, column="Average income of inhabitants"),
+         radar_attribute(postalcode=new_code, column="Density")]
     polar_plot = go.Scatterpolar(r=r,
                                  theta=['Education', 'Services', 'Public Transportation', 'Average Income',
                                         'Population Density'],
                                  fill='toself')
     return html.Div(
         children=[
-            html.Div(children=get_analysis(code, "00100"), id="info_text"),
+            html.Div(children=get_analysis(old_code, new_code), id="info_text"),
             # TODO: Get the new code from prediction
             dcc.Graph(
                 id='radar_plot',
@@ -55,7 +53,8 @@ def get_polar_html(code=None):
                     'data': [polar_plot]
                 }
             )
-        ]
+        ],
+        id="analysis_info"
     )
 
 
@@ -80,6 +79,7 @@ def get_side_analysis(zip="02150"):
 def get_analysis(old_code="02150", new_code="00100"):
     # H1
     location_string = "Hey, how about this one? " + zip_name_dict()[new_code] + ", " + new_code
+    debug = old_code
     # H2
     sell_price_string = get_attribute(postalcode=new_code, column="Sell price")
     sell_price_string = format_2f(sell_price_string) if sell_price_string != "0.0" else "--"
@@ -95,7 +95,7 @@ def get_analysis(old_code="02150", new_code="00100"):
             get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
 
-    text = [html.H1(location_string),
+    text = [html.H1(location_string + "/" + old_code),
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
             html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
                     + rent_noara_price_string + " €/m² (private only)"),
@@ -218,7 +218,7 @@ app.layout = html.Div(
                             [
                                 html.Label("Occupation"),
                                 dcc.Dropdown(
-                                    id="Occupation",
+                                    id="occupation",
                                     clearable=False,
                                     value="Student",
                                     options=occupation_dropdown(),
@@ -282,9 +282,31 @@ app.layout = html.Div(
 )
 
 
-@app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
-def change_focus(click):
-    return "result-tab" if click else "canvas-tab"
+@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
+              [Input("button-stitch", "n_clicks")],
+              [State('income', 'value'), State('age', 'value'), State('location', 'value'),
+               State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value')])
+def change_focus(click, income, age, location, occupation, household_type, selection_radio):
+    print(location)
+    if income <= 0 or ~isinstance(income, int):
+        income = 500
+    if (age <= 0) or (age >= 120) or ~isinstance(age, int):
+        age = 22
+    if (location == "") or (location is None) or (location not in list(paavo_df['Postal code'])):
+        location = "00930"
+    if occupation not in map(dict.keys, occupation_dropdown()):
+        occupation = "Computer Science"
+    if household_type not in map(dict.keys, household_type_dropdown()):
+        household_type = "Single"
+    prediction = None  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+    # This should return a postal code ↑↑↑↑↑↑
+    if prediction is None:
+        prediction = "00120"
+    if click:
+        return get_polar_html(location, prediction), "result-tab"
+    else:
+        print("ERROR")
+        return get_polar_html(location, prediction), "canvas-tab"
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])
@@ -295,13 +317,6 @@ def return_side_analysis(hover_point):
         pc = '02150'
     return get_side_analysis(pc)
 
-
-
-"""
-@app.callback(Output("stitching-tabs", "value"), [Input("button-stitch", "n_clicks")])
-def predict():
-    pass
-"""
 
 if __name__ == "__main__":
     app.run_server(debug=False)

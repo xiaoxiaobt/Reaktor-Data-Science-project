@@ -16,6 +16,8 @@ name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 
+button_nclicks = 0
+
 
 def instructions():
     return html.P(
@@ -153,15 +155,11 @@ app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Kodimpi (BETA)", id="haha"),
+                html.H1(children="Kodimpi (BETA)"),
                 instructions(),
                 html.Div(
                     [
-                        html.Button(
-                            "LEARN MORE",
-                            className="button_instruction",
-                            id="learn-more-button"
-                        ),
+                        html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
                         html.A(
                             html.Button(
                                 "GITHUB", className="demo_button", id="demo"
@@ -282,10 +280,11 @@ app.layout = html.Div(
 
 
 @app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
-              [Input("button-stitch", "n_clicks")],
+              [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value')])
-def change_focus(click, income, age, location, occupation, household_type, selection_radio):
+def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio):
+    global button_nclicks
     if income <= 0 or ~isinstance(income, int):
         income = 500
     if (age <= 0) or (age >= 120) or ~isinstance(age, int):
@@ -300,8 +299,12 @@ def change_focus(click, income, age, location, occupation, household_type, selec
     # This should return a postal code ↑↑↑↑↑↑
     if prediction is None:
         prediction = "00120"
-    if click:
+    if button_click is not None and button_nclicks + 1 == button_click:
+        button_nclicks += 1
         return get_polar_html(location, prediction), "result-tab"
+    elif map_click is not None:
+        pc = map_click['points'][0]['location']
+        return get_polar_html("02150", pc), "result-tab"
     else:
         dash.exceptions.PreventUpdate()
 

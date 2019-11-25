@@ -24,6 +24,7 @@ Flask-Caching
 Flask-Compress
 Flask-Ext
 future
+geopy
 herepy
 idna
 imageio

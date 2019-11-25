@@ -105,11 +105,13 @@ def make_dash_table(old_code, new_code):
     # Line 2
     old_income = get_attribute(old_code, 'Average income of inhabitants')
     new_income = get_attribute(new_code, 'Average income of inhabitants')
-    result_income = 100 * float(new_income) / float(old_income)
+    result_income = float(new_income) / float(old_income) - 1
     if result_income > 0:
-        analysis_income = "↗ {:.2f}% potential increase".format(result_income)
+        analysis_income = "↗ {:.2f}% potential increase".format(result_income * 100)
+    elif result_income > - 0.15:
+        analysis_income = "Similar income"
     else:
-        analysis_income = "↘ {:.2f}% easier life".format(result_income)
+        analysis_income = "↘ {:.2f}% easier life".format(result_income * 100)
     row_income = four_row_list("Income", old_income, new_income, analysis_income)
 
     # Line 3
@@ -140,8 +142,7 @@ def make_dash_table(old_code, new_code):
 def age_model(code):
     perc = paavo_df["65 years or over"] / paavo_df['Inhabitants, total']
     perc = np.nan_to_num(perc)
-    perc[perc >= 1] = 0.5
-    perc[perc <= 0] = 0.5
+    perc[perc >= 1 | perc <= 0] = 0.5
     # a[a > 70] = 70
     # plt.hist(a, bins=30)
     # plt.show()

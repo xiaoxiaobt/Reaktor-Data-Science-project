@@ -169,11 +169,9 @@ app.layout = html.Div(
                     ],
                     className="mobile_buttons"
                 ),
-                html.Div(
-                    # Empty child function for the callback
-                    html.Div(id="demo-explanation", children=[])
-                    # TODO: Add callback for instructions
-                ),
+                # Empty child function for the callback
+                html.Div(id="demo-explanation", children=[]),
+                # TODO: Add callback for instructions
                 html.Div(
                     [
                         html.Div(

@@ -16,6 +16,8 @@ name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 
+button_nclicks = 0
+
 
 def instructions():
     return html.P(
@@ -49,10 +51,7 @@ def get_polar_html(old_code="02150", new_code="00100"):
             dcc.Graph(
                 config={'displayModeBar': False},
                 figure={
-                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)',
-                                        plot_bgcolor='rgba(0,0,0,0)',
-                                        height=400
-                                        ),
+                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=400),
                     'data': [polar_plot]
                 }
             )
@@ -137,31 +136,27 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     return map_html
 
 
-height, width = 200, 500
-canvas_width = 800
-scale = canvas_width / width
-canvas_height = round(height * scale)
-list_columns = ["length", "width", "height", "left", "top"]
-columns = [{"name": i, "id": i} for i in list_columns]
+# height, width = 200, 500
+# canvas_width = 800
+# scale = canvas_width / width
+# canvas_height = round(height * scale)
+# list_columns = ["length", "width", "height", "left", "top"]
+# columns = [{"name": i, "id": i} for i in list_columns]
 
 print("Loading app...")
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 server = app.server
 app.title = "Kodimpi - Data Science Project"
-app.config.suppress_callback_exceptions = False
+app.config.suppress_callback_exceptions = True
 app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Kodimpi (BETA)", id="haha"),
+                html.H1(children="Kodimpi (BETA)"),
                 instructions(),
                 html.Div(
                     [
-                        html.Button(
-                            "LEARN MORE",
-                            className="button_instruction",
-                            id="learn-more-button"
-                        ),
+                        html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
                         html.A(
                             html.Button(
                                 "GITHUB", className="demo_button", id="demo"
@@ -169,11 +164,9 @@ app.layout = html.Div(
                     ],
                     className="mobile_buttons"
                 ),
-                html.Div(
-                    # Empty child function for the callback
-                    html.Div(id="demo-explanation", children=[])
-                    # TODO: Add callback for instructions
-                ),
+                # Empty child function for the callback
+                html.Div(id="demo-explanation", children=[]),
+                # TODO: Add callback for instructions
                 html.Div(
                     [
                         html.Div(
@@ -282,10 +275,11 @@ app.layout = html.Div(
 
 
 @app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
-              [Input("button-stitch", "n_clicks")],
+              [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value')])
-def change_focus(click, income, age, location, occupation, household_type, selection_radio):
+def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio):
+    global button_nclicks
     if income <= 0 or ~isinstance(income, int):
         income = 500
     if (age <= 0) or (age >= 120) or ~isinstance(age, int):
@@ -300,10 +294,16 @@ def change_focus(click, income, age, location, occupation, household_type, selec
     # This should return a postal code ↑↑↑↑↑↑
     if prediction is None:
         prediction = "00120"
-    if click:
+    if button_click is None:
+        button_click = 0
+    if button_nclicks + 1 == button_click:
+        button_nclicks += 1
         return get_polar_html(location, prediction), "result-tab"
+    elif map_click is not None:
+        pc = map_click['points'][0]['location']
+        return get_polar_html("02150", pc), "result-tab"
     else:
-        dash.exceptions.PreventUpdate()
+        dash.exceptions.PreventUpdate(), dash.exceptions.PreventUpdate()
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])
@@ -316,4 +316,4 @@ def return_side_analysis(hover_point):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)

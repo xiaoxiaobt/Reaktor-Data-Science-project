@@ -12,6 +12,10 @@ column_list = ['Postal code',
                'Employment rate %',
                'Average income of inhabitants',
                'Average age of inhabitants',
+               '0-15 years scaled',
+               '16-34 years scaled',
+               '35-64 years scaled',
+               '65 years or over scaled',
                'Average size of households',
                'Density',
                'Students',
@@ -41,6 +45,10 @@ column_list = ['Postal code',
                'U Activities of extraterritorial organisations and bodies combine scaled',
                'Forest',
                'Water',
+               'Bus stops',
+               'Sell price',
+               'Rent price with ARA',
+               'Rent price without ARA',
                'Lat',
                'Lon',
                'label'
@@ -59,6 +67,7 @@ def dataframe():
     # Correctly assign data types
     column_dic = dict.fromkeys(df.columns)
     for key in column_dic.keys():
+        print(key)
         if key == 'Postal code' or key == 'Area' or key == 'text':
             column_dic[key] = 'object'
         else:
@@ -174,20 +183,34 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
         df = df
 
     if occupation == "Student":
-        weights = [1, 1, 3, 3, 3, 1, 3, 1, 1, 1,
+        weights = [3, 1,  # Academic degree, Employment rate
+                   1, 3,   # Avg income, Avg age
+                   1, 2, 1, 1,  # Age distribution
+                   2,  # Avg size household
+                   0,  # Density
+                   4,  # Students
+                   1, 1, 1,  # Primary, Processing, Services
                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                   1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                   2,
-                   3, 3,
-                   0, 0, 0,
-                   0]
+                   2, 1, 2, 1, 1, 2, 2, 1, 1, 1,
+                   1,
+                   1, 1,  # Forest, Water
+                   1, 1, 2, 1,  # Bus stops, Sell price, Rent price with ARA, Rent price without ARA
+                   0, 0, 0,  # Lat, Lon, label
+                   0]  # Distance
         occupation = "Students"
     else:
-        weights = [1, 1, 3, 3, 3, 1, 3, 1, 1, 1,
+        weights = [1, 1,
+                   3, 3,
+                   1, 1, 1, 1,
+                   3,
+                   1,
+                   3,
+                   1, 1, 1,
                    2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
                    2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
                    2,
-                   3, 3,
+                   2, 2,
+                   1, 1, 1, 1,
                    0, 0, 0,
                    0]
         jobs_input = ['Agriculture, forestry, fishing',
@@ -211,7 +234,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                       'Other service',
                       'Activities of households as employers',
                       'Extraterritorial organisations and bodies']
-        occupation = jobs_input.index(occupation)+12
+        occupation = jobs_input.index(occupation)+16
 
     household_type = household_type if type(household_type) is str else 5
     inputs = [income, household_type]

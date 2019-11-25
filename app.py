@@ -8,6 +8,8 @@ import dash_core_components as dcc
 # from toolkits import *
 from temp.reference_function import *
 
+from similar_postialue import apply_input
+
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-separated, name of postal code column ='Postal code'
@@ -224,7 +226,8 @@ app.layout = html.Div(
                                 dcc.Dropdown(
                                     id="household_type",
                                     clearable=False,
-                                    value="Single",
+                                    value=1,
+                                    #value="Single",
                                     options=household_type_dropdown(),
                                     className='dropdown'
                                 ),
@@ -281,16 +284,17 @@ app.layout = html.Div(
 def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio):
     global button_nclicks
     if income <= 0 or ~isinstance(income, int):
-        income = 500
+        income = 10000
     if (age <= 0) or (age >= 120) or ~isinstance(age, int):
         age = 22
     if (location == "") or (location is None) or (location not in list(paavo_df['Postal code'])):
         location = "00930"
     if occupation not in map(dict.keys, occupation_dropdown()):
-        occupation = "Computer Science"
+        occupation = "Student"
     if household_type not in map(dict.keys, household_type_dropdown()):
-        household_type = "Single"
-    prediction = None  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        household_type = 1
+    prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+    print(prediction)
     # This should return a postal code ↑↑↑↑↑↑
     if prediction is None:
         prediction = "00120"

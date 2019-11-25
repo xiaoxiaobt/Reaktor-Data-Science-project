@@ -102,14 +102,14 @@ def find_neighbor_of(df=None, weights=None, placename=None, postalcode=None):
     dist = sorted(dist.items(), key=lambda x: x[1], reverse=False)
 
     # Print the first 10 suggestions
-    # count = 0
-    # for elm in dist:
-    #     i = elm[0]
-    #     print(str(df[df['Postal code'] == i][['Postal code', 'Area']].values[0]) + "\t" + str(elm[1]))
-    #     count += 1
-    #     if count >= 10:
-    #         break
-    return dist[1][0]
+    count = 0
+    for elm in dist:
+        i = elm[0]
+        print(str(df[df['Postal code'] == i][['Postal code', 'Area']].values[0]) + "\t" + str(elm[1]))
+        count += 1
+        if count >= 10:
+            break
+    return str(dist[1][0])
 
 
 def get_cluster_of(postalcode=""):
@@ -141,8 +141,9 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
     :param income: int, the annual average income of the user
     :param age: int, the age of the user
     :param location: str, the current place postal code
-    :param occupation: str, the occupation
-    :param household_type: int, the size of the user's household
+    :param occupation: str, the occupation from 'list_of_jobs'
+    :param household_type: int, the size of the user's household. If household type is a string, it will
+            be converted to 5.
     :param selection_radio: str, when equal to "change" the suggestion will be further away than 100 km,
             when equal to "nochange" the suggestion will be closer than 100 km.
     :return: call the function 'find_neighbor_of' which return the suggested postal code
@@ -172,7 +173,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
         # No restriction on distance
         df = df
 
-    if occupation == 'Student':
+    if occupation == "Student":
         weights = [1, 1, 3, 3, 3, 1, 3, 1, 1, 1,
                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -180,6 +181,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                    3, 3,
                    0, 0, 0,
                    0]
+        occupation = "Students"
     else:
         weights = [1, 1, 3, 3, 3, 1, 3, 1, 1, 1,
                    2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -188,7 +190,30 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                    3, 3,
                    0, 0, 0,
                    0]
+        jobs_input = ['Agriculture, forestry, fishing',
+                      'Mining and quarrying',
+                      'Manufacturing',
+                      'Electricity, gas, steam, air conditioning supply',
+                      'Water supply, sewerage, waste management',
+                      'Construction',
+                      'Wholesale, retail, repair of vehicles',
+                      'Transportation and storage',
+                      'Accommodation and food service',
+                      'Information and communication',
+                      'Financial and insurance',
+                      'Real estate',
+                      'Professional, scientific, technical activities',
+                      'Administrative and support service',
+                      'Public administration, defence, social security',
+                      'Education',
+                      'Human health and social work',
+                      'Arts, entertainment and recreation',
+                      'Other service',
+                      'Activities of households as employers',
+                      'Extraterritorial organisations and bodies']
+        occupation = jobs_input.index(occupation)+12
 
+    household_type = household_type if type(household_type) is str else 5
     inputs = [income, household_type]
     column_names = ['Average income of inhabitants', 'Average size of households']
     ages = ['0-15 years scaled', '16-34 years scaled', '35-64 years scaled', '65 years or over scaled']
@@ -223,7 +248,7 @@ if __name__ == '__main__':
     #40740 Kortepohja   (Jyväskylä)
     #33720 Hervanta   (Tampere)
     #53850 Skinnarila   (Lappeenranta)
-    n = apply_input(income=20000, age=32, location="02150",
+    n = apply_input(income=10000, age=22, location="02150",
                         occupation="Student",
-                        household_type=2, selection_radio="change")
+                        household_type=1, selection_radio="whatever")
     print(n)

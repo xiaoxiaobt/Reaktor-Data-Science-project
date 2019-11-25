@@ -1,12 +1,11 @@
 import numpy as np
-import pandas as pd
 import plotly.graph_objects as go
 
-def housing_plot(housing_data_file, housing_prediction_file, code):
-    observation_df = pd.read_csv(housing_data_file, sep='\t')
-    prediction_df = pd.read_csv(housing_prediction_file, sep='\t')
+def housing_plot(housing_data_df, housing_prediction_df, code):
+    observation_df = housing_data_df
+    prediction_df = housing_prediction_df
 
-    # Extract the row of the postal code
+    # Extract the row of the postal code, format the postal code values
     def prepare_df(df):
         df = df.astype({'Postal code': str})
         for i in list(df.index):
@@ -74,7 +73,3 @@ def housing_plot(housing_data_file, housing_prediction_file, code):
     fig.update_yaxes(title_text='Price')
 
     return fig
-
-if __name__ == '__main__':
-    plot = housing_plot('/home/thong/Aalto/Undergraduate/Year 2/CS-C3230/paavo_housing_data_quarterly.tsv', '/home/thong/Aalto/Undergraduate/Year 2/CS-C3230/paavo_housing_quarterly_prediction.tsv', '99990')
-    plot.show()

@@ -82,6 +82,7 @@ Send2Trash
 six
 sklearn
 soupsieve
+statsmodels
 tabulate
 terminado
 testpath

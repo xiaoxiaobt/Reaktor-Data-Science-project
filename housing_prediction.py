@@ -1,12 +1,13 @@
 import numpy as np
-import pandas as pd
 import os
 from statsmodels.tsa.arima_model import ARIMA
 
 
-def housing_data_predict(destination_directory, paavo_housing_quarterly):
+def housing_data_predict(destination_directory, paavo_housing_quarterly_df):
     years = range(2005, 2021)
-    housing_obs = pd.read_csv(paavo_housing_quarterly, sep='\t')
+    housing_obs = paavo_housing_quarterly_df
+
+    # Format the postal code values
     housing_obs = housing_obs.astype({'Postal code': str})
     for i in list(housing_obs.index):
         housing_obs.at[i, 'Postal code'] = '0' * (5 - len(housing_obs.at[i, 'Postal code'])) + housing_obs.at[i, 'Postal code']
@@ -35,7 +36,7 @@ def housing_data_predict(destination_directory, paavo_housing_quarterly):
         X = housing_obs[code].values
         X = X.astype('float32')
         model = ARIMA(X, order=(0, 1, 1))
-        model_fit = model.fit(disp=-1, start_ar_lags=2)
+        model_fit = model.fit(disp=-1)
 
         # Calculate in-sample predictions
         in_sample = model_fit.predict(end=len(X))
@@ -49,6 +50,7 @@ def housing_data_predict(destination_directory, paavo_housing_quarterly):
         forecast_result_10 = model_fit.forecast(12, alpha=0.1)
         forecast_result_25 = model_fit.forecast(12, alpha=0.25)
 
+        # Extract forecast values and merge with in-sample predictions
         forecast = np.array(forecast_result_10[0])
         predictions = np.concatenate([in_sample, forecast])
 

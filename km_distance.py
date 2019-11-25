@@ -1,43 +1,32 @@
 import pandas as pd
 import geopy.distance
+from pathlib import Path
 
 
-def get_distance(df, threshold='80', postalcode='00100'):
+def get_distance(df, postalcode='00100'):
     """
-    :param df: the data frame, with clusters labels in the column 'label'
-    :param threshold: float, expressed in km. Distances greater than this number
-            will not be considered
+    :param df: the data frame
     :param postalcode: string, the postal code with respect to which the distance is computed
-    :return: a dictionary of postal codes with distance less than or equal to threshold
+    :return: the data frame, with a new column named 'Distance' that stores the geographical distance
+            in km between 'postalcode' and each postal code in the data frame
     """
 
-    target = df[df['Postal code'] == postalcode][['Lat'], ['Lon']]
-    df = df[df['Postal code'] == postalcode]['label']
+    target = df[df['Postal code'] == postalcode][['Lat', 'Lon']].values[0]
 
-    our_dic = {}
+    df['Distance'] = [0] * len(df.index)
     for i, row in df.iterrows():
         pc = row['Postal code']
         lat = row['Lat']
         lon = row['Lon']
-        our_dic[pc] = (lat, lon)
+        coord = (lat, lon)
+        dist = geopy.distance.distance(coord, target).km
+        df.at[i, 'Distance'] = dist
 
-    distance_dic = {}
-    for k in our_dic.keys():
-        dist = geopy.distance.distance(our_dic[k], target).km
-        if dist <= threshold:
-            distance_dic[k] = dist
-
-    return sort_dictionary(distance_dic)
+    return df
 
 
-def sort_dictionary(my_dict, reverse=False):
-    """
-    Sort the dictionary based on values.
-    :param my_dict: the dictionary to sort
-    :param reverse: boolean, when True sorts in decreasing order, and
-            when False shows in increasing order, with respect to the values.
-            Default: False.
-    :return: a list of tuples, where the first element is the key,
-            and the second element is the value.
-    """
-    return sorted(my_dict.items(), key=lambda x: x[1], reverse=reverse)
+if __name__ == '__main__':
+    df = pd.read_csv(Path("dataframes/") / 'final_dataframe.tsv', sep='\t', skiprows=0, encoding='utf-8',
+                     dtype={'Postal code': object})
+    df = get_distance(df)
+    print(df['Distance'])

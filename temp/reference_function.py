@@ -18,13 +18,38 @@ def location_dropdown():
 
 
 def occupation_dropdown():
-    list_of_jobs = ("Student;Computer Science;Natural Science;Social Science;Business;Law;Health-related;"
-                    + "Entrepreneur;Looking for one;Actor").split(";")
+    # YEAH IT IS HORRIBLE
+    list_of_jobs = ['Student',
+                    'Agriculture, forestry, fishing',
+                    'Mining and quarrying',
+                    'Manufacturing',
+                    'Electricity, gas, steam, air conditioning supply',
+                    'Water supply, sewerage, waste management',
+                    'Construction',
+                    'Wholesale, retail, repair of vehicles',
+                    'Transportation and storage',
+                    'Accommodation and food service',
+                    'Information and communication',
+                    'Financial and insurance',
+                    'Real estate',
+                    'Professional, scientific, technical activities',
+                    'Administrative and support service',
+                    'Public administration, defence, social security',
+                    'Education',
+                    'Human health and social work',
+                    'Arts, entertainment and recreation',
+                    'Other service',
+                    'Activities of households as employers',
+                    'Extraterritorial organisations and bodies'
+                    ]
+    #list_of_jobs = ("Student;Computer Science;Natural Science;Social Science;Business;Law;Health-related;"
+    #                + "Entrepreneur;Looking for one;Actor").split(";")
     return [{'label': i, 'value': i} for i in list_of_jobs]
 
 
 def household_type_dropdown():
-    list_of_household_type = ["Single", "Couple", "Couple with children", "One parent family", "Group"]
+    list_of_household_type = [1, 2, 3, 4, "5 or more"]
+    #list_of_household_type = ["Single", "Couple", "Couple with children", "One parent family", "Group"]
     return [{'label': i, 'value': i} for i in list_of_household_type]
 
 

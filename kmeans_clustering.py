@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 from sklearn import preprocessing
@@ -19,12 +20,11 @@ def dataframe():
     # Open sample
     df = pd.read_csv(Path("dataframes/") / 'final_dataframe.tsv', sep='\t', skiprows=0, encoding='utf-8',
                      dtype={'Postal code': object})
-    print(df[df.columns[:5]].head())
 
     # Correctly assign data types
     column_dic = dict.fromkeys(df.columns)
     for key in column_dic.keys():
-        if key == 'Postal code' or key == 'Area':
+        if key == 'Postal code' or key == 'Area' or key == 'text':
             column_dic[key] = 'object'
         else:
             column_dic[key] = 'float'
@@ -32,12 +32,8 @@ def dataframe():
 
     if sum(df.isna().sum(axis=0)) > 0:
         print("WARNING: There are still missing values. They will be replaced with 0.")
+        print(df.isna().sum(axis=0)[df.isna().sum(axis=0) > 0])
         df.fillna(0, inplace=True)
-    # print(df.isnull().sum(axis=0))
-    # print(df.describe())
-    # print(df.shape)
-    # print(df.columns)
-    # print(df.dtypes)
     return df
 
 
@@ -55,7 +51,7 @@ def k_means_clustering(automaticClusterNum=False):
     df = dataframe()
 
     # Exclude columns representing string values from PCA
-    columns = list(set(df.columns) - set(['Postal code', 'Area']))
+    columns = list(set(df.columns) - {'Postal code', 'Area', 'text', 'Radius', 'lat', 'lon'})
 
     # Standard scale and PCA
     X_train = df[columns]
@@ -70,28 +66,30 @@ def k_means_clustering(automaticClusterNum=False):
 
     # Save PCA in a new data frame
     pca_df = pd.DataFrame(index=df.index)
-    new_col = ['Postal code', 'Area']
+    new_col = ['Postal code', 'Area', 'text']
 
     # Copy old columns (left out from PCA)
     for c in new_col:
         pca_df[c] = df[c]
 
-    # Taking the fist 30 PCs
-    for i in range(30):
+    # Taking as many PCs as needed to reach at least 0.995 variance coverage
+    var_index = np.where(array_cum > 0.995)[0][0]
+    print("Taking " + str(var_index) + " components.")
+    for i in range(var_index):
         pca_df['pca_' + str(i + 1)] = X_pca.T[i]
 
     # Number of clusters
     if automaticClusterNum:
         i = choose_cluster_num(pca_df)
     else:
-        i = 65
+        i = 60
 
     # Perform clustering
     kmeans = KMeans(n_clusters=i)
-    kmeans.fit(pca_df[pca_df.columns[2:15]])
+    kmeans.fit(pca_df[pca_df.columns[3:var_index+3]])
     labels = kmeans.labels_
 
-    print("Clustering with " + str(i) + " clusters converged in " + str(kmeans.n_iter_))
+    print("Clustering with " + str(i) + " clusters converged in " + str(kmeans.n_iter_) + " iterations.")
 
     # Adding the column with cluster label
     pca_df['label'] = labels
@@ -102,17 +100,23 @@ def k_means_clustering(automaticClusterNum=False):
 
 def clusters_dictionary():
     """
-    Perform K-Means clustering and return the clusters as a dictionary
+    Read the column 'label' from final_dataframe.tsv' and return the clusters as a dictionary.
+    If the column 'label' is not in final_dataframe.tsv', call k_means_clustering and perform
+    the clustering.
     :return: a dictionary, where the key is the cluster id and the value is a list of Areas
     """
-    pca_df, _ = k_means_clustering()
+    # Open sample
+    df = pd.read_csv(Path("dataframes/") / 'final_dataframe.tsv', sep='\t', skiprows=0, encoding='utf-8',
+                     dtype={'Postal code': object})
+    if 'label' not in df.columns:
+        _, df = k_means_clustering()
     cluster_dic = {}
-    for i in list(set(pca_df['label'].to_list())):
-        cluster_dic[i] = pca_df[pca_df.label == i]['Area'].values
+    for i in list(set(df['label'].to_list())):
+        cluster_dic[i] = df[df.label == i][['Postal code', 'Area']].values
     return cluster_dic
 
 
-def choose_cluster_num(df=None, start_point=2, end_point=100, rtype='bouldin', plot_inertia=True):
+def choose_cluster_num(df=None, start_point=2, end_point=70, rtype='bouldin', plot_inertia=True):
     """
     Finds the optimal number of clusters to use for the K-Mean or .
     :param df: Data to be clustered. Optional. Default: the final dataf frame returned by 'dataframe()'
@@ -138,7 +142,7 @@ def choose_cluster_num(df=None, start_point=2, end_point=100, rtype='bouldin', p
     k_num = range(start_point, end_point + 1)
 
     # Exclude columns representing string values from PCA
-    columns = list(set(df.columns) - set(['Postal code', 'Area']))
+    columns = list(set(df.columns) - {'Postal code', 'Area', 'text', 'Radius', 'lat', 'lon'})
 
     # Standard scale and PCA
     X_train = df[columns]
@@ -182,5 +186,8 @@ def choose_cluster_num(df=None, start_point=2, end_point=100, rtype='bouldin', p
 
 
 if __name__ == '__main__':
-    choose_cluster_num()
+    # _, df = k_means_clustering()
+    # filename = 'final_dataframe.tsv'
+    # df.to_csv(Path('dataframes/') / filename, sep='\t', index=False, encoding='utf-8')
+    # choose_cluster_num()
     print(clusters_dictionary())

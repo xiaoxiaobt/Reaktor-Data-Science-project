@@ -322,7 +322,7 @@ def get_all_dataframes():
                 mydensitylist.append(0)
 
         dfy['Density'] = [0] * len(dfy.index)
-        new_df = pd.DataFrame({'Density': mydensitylist})
+        new_df = pd.DataFrame({'Density': [10**6 * d for d in mydensitylist]})
         dfy.update(new_df)
 
         # Add surface area

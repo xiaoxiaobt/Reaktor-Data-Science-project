@@ -68,7 +68,7 @@ def dataframe():
     column_dic = dict.fromkeys(df.columns)
     for key in column_dic.keys():
         print(key)
-        if key == 'Postal code' or key == 'Area' or key == 'text':
+        if key in ['Postal code', 'Area', 'text']:
             column_dic[key] = 'object'
         else:
             column_dic[key] = 'float'
@@ -184,7 +184,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
 
     if occupation == "Student":
         weights = [3, 1,  # Academic degree, Employment rate
-                   1, 3,   # Avg income, Avg age
+                   1, 3,  # Avg income, Avg age
                    1, 2, 1, 1,  # Age distribution
                    2,  # Avg size household
                    0,  # Density
@@ -234,7 +234,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                       'Other service',
                       'Activities of households as employers',
                       'Extraterritorial organisations and bodies']
-        occupation = jobs_input.index(occupation)+16
+        occupation = jobs_input.index(occupation) + 16
 
     household_type = household_type if type(household_type) is str else 5
     inputs = [income, household_type]
@@ -267,11 +267,11 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
 
 
 if __name__ == '__main__':
-    #20540 Nummi-Ylioppilaskylä   (Turku)
-    #40740 Kortepohja   (Jyväskylä)
-    #33720 Hervanta   (Tampere)
-    #53850 Skinnarila   (Lappeenranta)
+    # 20540 Nummi-Ylioppilaskylä   (Turku)
+    # 40740 Kortepohja   (Jyväskylä)
+    # 33720 Hervanta   (Tampere)
+    # 53850 Skinnarila   (Lappeenranta)
     n = apply_input(income=10000, age=22, location="02150",
-                        occupation="Student",
-                        household_type=1, selection_radio="whatever")
+                    occupation="Student",
+                    household_type=1, selection_radio="whatever")
     print(n)

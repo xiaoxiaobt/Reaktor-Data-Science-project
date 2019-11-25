@@ -105,9 +105,11 @@ def make_dash_table(old_code, new_code):
     # Line 2
     old_income = get_attribute(old_code, 'Average income of inhabitants')
     new_income = get_attribute(new_code, 'Average income of inhabitants')
-    result_income = 100 * float(new_income) / float(old_income)
+    result_income = 100 * float(new_income) / float(old_income) - 1
     if result_income > 0:
         analysis_income = "↗ {:.2f}% potential increase".format(result_income)
+    elif result_income > - 0.15:
+        analysis_income = "Similar income"
     else:
         analysis_income = "↘ {:.2f}% easier life".format(result_income)
     row_income = four_row_list("Income", old_income, new_income, analysis_income)

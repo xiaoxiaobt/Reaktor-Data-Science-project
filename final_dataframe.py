@@ -10,9 +10,11 @@ from yearly_dataframes import get_all_dataframes
 
 def all_data():
     """
-    Data frame 2017 with original columns and scaled columns, augmented with columns
-    that are not in 2017 but are in 2016, and also columns from external sources
-    (paavo housing, asuntojen hintatiedot, bus stops, latitude and longitude)
+    This is the main function. It uses the data frame 2017 with original columns and
+    scaled columns, augmented with columns that are not in 2017 but are in 2016, and
+    also columns from external sources (paavo housing, asuntojen hintatiedot, bus stops,
+    latitude and longitude, radius, forest data, water data). The column 'text'
+    with the description shown when hovering is also added here.
     :return: the data frame
     """
     all_dfs, columns = get_all_dataframes()
@@ -54,12 +56,14 @@ def add_newest_attributes(df):
     df['Rent price without ARA'] = [0] * len(df.index)
     df.update(rentnoAra_df)
 
-    # Add Housing prices
-    temp = pd.read_csv(Path('data/') / 'paavo_housing_data.tsv', sep='\t')
-    df.update(temp['Housing price (2018)'])
+    # Add Paavo Housing prices and trends
+    df = add_paavo_housing(df)
 
     # Add forest data
     df['Forest'] = add_forest()
+
+    # Add water data
+    df = add_water(df)
 
     # Add latitude and longitude
     coord = coordinates()
@@ -102,6 +106,46 @@ def add_forest():
     return f_df['forest_average'].copy()
 
 
+def add_water(df):
+    """
+    Open the file 'water_data.csv' from the folder 'data' and add the information to the data frame
+    :param df: the data frame where to add the columns
+    :return: the updated data frame
+    """
+    print("Loading water data...")
+    w_df = pd.read_csv(Path('data/') / 'water_data.csv', sep=',', usecols=['water_average_with_sea',
+                                                                           'water_average_without_sea'])
+    df['Water'] = w_df['water_average_with_sea'].copy()
+    diff = w_df['water_average_with_sea'] - w_df['water_average_without_sea']
+    mask = (diff.values > 0)
+    df['Boolean sea'] = mask.astype(int)
+    return df
+
+
+def add_paavo_housing(df):
+    """
+    Read the file 'paavo_housing_quartetly_prediction.tsv' from the folder 'data'
+    and add 2020Q1 price prediction, trend from 2018 and trend for 2020Q2
+    :param df: the data frame where to add the columns
+    :return: the updated data frame
+    """
+    print("Loading 2020Q1 price prediction...")
+    temp = pd.read_csv(Path('data/') / 'paavo_housing_quarterly_prediction.tsv', sep='\t',
+                       dtype={'2018Q4': float, '2018Q3': float, '2018Q2': float, '2018Q1': float,
+                              '2020Q1': float, '2020Q2': float})
+    # Add Paavo prediction for 2020Q1
+    df.update(temp['2020Q1'])
+
+    avg_2018 = (temp[['2018Q4', '2018Q3', '2018Q2', '2018Q1']].mean(axis=1))
+    long_trend = (temp['2020Q2'] - avg_2018) / avg_2018
+    near_future_trend = (temp['2020Q2'] - temp['2020Q1']) / temp['2020Q1']
+
+    # Add Paavo Housing trend
+    df['Trend from 2018'] = long_trend
+    df['Trend near future'] = near_future_trend
+    return df
+
+
 def add_peculiarity(df):
     """
     Add the column 'peculiarity' with a sentence describing some
@@ -113,7 +157,7 @@ def add_peculiarity(df):
     # See notes
     for i, row in df.iterrows():
         list.append(str(row['Area']))
-    df['text'] = list
+    df['interesting'] = list
     return df
 
 

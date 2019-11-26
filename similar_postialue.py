@@ -67,7 +67,7 @@ def dataframe():
     # Correctly assign data types
     column_dic = dict.fromkeys(df.columns)
     for key in column_dic.keys():
-        print(key)
+        # print(key)
         if key in ['Postal code', 'Area', 'text']:
             column_dic[key] = 'object'
         else:
@@ -111,11 +111,9 @@ def find_neighbor_of(df=None, weights=None, placename=None, postalcode=None):
     dist = sorted(dist.items(), key=lambda x: x[1], reverse=False)
 
     # Print the first 10 suggestions
-    count = 0
-    for elm in dist:
+    for count, elm in enumerate(dist):
         i = elm[0]
         print(str(df[df['Postal code'] == i][['Postal code', 'Area']].values[0]) + "\t" + str(elm[1]))
-        count += 1
         if count >= 10:
             break
     return str(dist[1][0])

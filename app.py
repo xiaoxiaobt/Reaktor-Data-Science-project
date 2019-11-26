@@ -227,7 +227,7 @@ app.layout = html.Div(
                                     id="household_type",
                                     clearable=False,
                                     value=1,
-                                    #value="Single",
+                                    # value="Single",
                                     options=household_type_dropdown(),
                                     className='dropdown'
                                 ),
@@ -280,8 +280,9 @@ app.layout = html.Div(
 @app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
               [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
-               State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value')])
-def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio):
+               State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
+               State("analysis_info", "children"), State("stitching-tabs", "value")])
+def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio, analysys_old, tab_old):
     global button_nclicks
     if button_click is None:
         button_click = 0
@@ -297,7 +298,8 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_type not in map(dict.keys, household_type_dropdown()):
             household_type = 1
-        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        prediction = str(apply_input(income, age, location, occupation, household_type,
+                                     selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
         print(prediction)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
@@ -307,7 +309,7 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
         pc = map_click['points'][0]['location']
         return get_polar_html("02150", pc), "result-tab"
     else:
-        dash.exceptions.PreventUpdate(), dash.exceptions.PreventUpdate()
+        return analysys_old, tab_old
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])

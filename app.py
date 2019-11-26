@@ -51,10 +51,7 @@ def get_polar_html(old_code="02150", new_code="00100"):
             dcc.Graph(
                 config={'displayModeBar': False},
                 figure={
-                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)',
-                                        plot_bgcolor='rgba(0,0,0,0)',
-                                        height=400
-                                        ),
+                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=400),
                     'data': [polar_plot]
                 }
             )
@@ -139,18 +136,18 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     return map_html
 
 
-height, width = 200, 500
-canvas_width = 800
-scale = canvas_width / width
-canvas_height = round(height * scale)
-list_columns = ["length", "width", "height", "left", "top"]
-columns = [{"name": i, "id": i} for i in list_columns]
+# height, width = 200, 500
+# canvas_width = 800
+# scale = canvas_width / width
+# canvas_height = round(height * scale)
+# list_columns = ["length", "width", "height", "left", "top"]
+# columns = [{"name": i, "id": i} for i in list_columns]
 
 print("Loading app...")
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 server = app.server
 app.title = "Kodimpi - Data Science Project"
-app.config.suppress_callback_exceptions = False
+app.config.suppress_callback_exceptions = True
 app.layout = html.Div(
     children=[
         html.Div(
@@ -167,11 +164,9 @@ app.layout = html.Div(
                     ],
                     className="mobile_buttons"
                 ),
-                html.Div(
-                    # Empty child function for the callback
-                    html.Div(id="demo-explanation", children=[])
-                    # TODO: Add callback for instructions
-                ),
+                # Empty child function for the callback
+                html.Div(id="demo-explanation", children=[]),
+                # TODO: Add callback for instructions
                 html.Div(
                     [
                         html.Div(
@@ -299,14 +294,16 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
     # This should return a postal code ↑↑↑↑↑↑
     if prediction is None:
         prediction = "00120"
-    if button_click is not None and button_nclicks + 1 == button_click:
+    if button_click is None:
+        button_click = 0
+    if button_nclicks + 1 == button_click:
         button_nclicks += 1
         return get_polar_html(location, prediction), "result-tab"
     elif map_click is not None:
         pc = map_click['points'][0]['location']
         return get_polar_html("02150", pc), "result-tab"
     else:
-        dash.exceptions.PreventUpdate()
+        dash.exceptions.PreventUpdate(), dash.exceptions.PreventUpdate()
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])
@@ -319,4 +316,4 @@ def return_side_analysis(hover_point):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)

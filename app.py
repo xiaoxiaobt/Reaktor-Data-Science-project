@@ -7,18 +7,15 @@ import dash_html_components as html
 import dash_core_components as dcc
 # from toolkits import *
 from temp.reference_function import *
-
 from similar_postialue import apply_input
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-separated, name of postal code column ='Postal code'
-# Initialize variables
 
+# Initialize variables
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
-
-button_nclicks = 0
 
 
 def get_instructions():
@@ -249,6 +246,7 @@ app.layout = html.Div(
                     className="mobile_forms"
                 ),
                 html.Br(),
+                html.Div(id="counter", className="0"),
                 html.Button("Estimate", id="button-stitch", className="button_submit"),
                 # TODO: Disable the button when input is erroneous.
                 html.Img(src=app.get_asset_url('logos.png'), style={"height": "162px", "width": "400px"})
@@ -277,18 +275,16 @@ app.layout = html.Div(
 )
 
 
-@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
+@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value"), Output("counter", "className")],
               [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
-               State("analysis_info", "children"), State("stitching-tabs", "value")])
+               State("analysis_info", "children"), State("stitching-tabs", "value"), State("counter", "className")])
 def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio,
-                 analysys_old, tab_old):
-    global button_nclicks
+                 analysys_old, tab_old, button_counter):
     if button_click is None:
         button_click = 0
-    if button_nclicks + 1 == button_click:
-        button_nclicks += 1
+    if int(button_counter) + 1 == button_click:
         if income <= 0 or ~isinstance(income, int):
             income = 10000
         if (age <= 0) or (age >= 120) or ~isinstance(age, int):
@@ -299,18 +295,17 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_type not in map(dict.keys, household_type_dropdown()):
             household_type = 1
-        prediction = str(apply_input(income, age, location, occupation, household_type,
-                                     selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
         print(prediction)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
             prediction = "00120"
-        return get_polar_html(location, prediction), "result-tab"
+        return get_polar_html(location, prediction), "result-tab", str(int(button_counter) + 1)
     elif map_click is not None:
         pc = map_click['points'][0]['location']
-        return get_polar_html("02150", pc), "result-tab"
+        return get_polar_html("02150", pc), "result-tab", button_counter
     else:
-        return analysys_old, tab_old
+        return analysys_old, tab_old, button_counter
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])

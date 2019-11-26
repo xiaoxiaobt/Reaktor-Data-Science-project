@@ -21,7 +21,7 @@ paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  #
 button_nclicks = 0
 
 
-def instructions():
+def get_instructions():
     return html.P(
         children=[
             """
@@ -153,8 +153,9 @@ app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Kodimpi (BETA)"),
-                instructions(),
+                html.Img(src=app.get_asset_url('Kodimpi.png'), style={"height": "113px", "width": "200px", "margin-left": "50px"}),
+                # html.H1(children="Kodimpi (BETA)"),
+                get_instructions(),
                 html.Div(
                     [
                         html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
@@ -250,7 +251,7 @@ app.layout = html.Div(
                 html.Br(),
                 html.Button("Estimate", id="button-stitch", className="button_submit"),
                 # TODO: Disable the button when input is erroneous.
-                html.Img(src=app.get_asset_url('logos.png'))
+                html.Img(src=app.get_asset_url('logos.png'), style={"height": "162px", "width": "400px"})
             ],
             className="four columns instruction"
         ),
@@ -281,7 +282,8 @@ app.layout = html.Div(
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
                State("analysis_info", "children"), State("stitching-tabs", "value")])
-def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio, analysys_old, tab_old):
+def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio,
+                 analysys_old, tab_old):
     global button_nclicks
     if button_click is None:
         button_click = 0

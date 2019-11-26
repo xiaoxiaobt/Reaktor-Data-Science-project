@@ -222,7 +222,7 @@ app.layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Household type"),
+                                html.Label("Household Size"),
                                 dcc.Dropdown(
                                     id="household_type",
                                     clearable=False,

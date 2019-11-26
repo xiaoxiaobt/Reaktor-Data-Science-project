@@ -25,6 +25,7 @@ Flask-Compress
 Flask-Ext
 future
 geopy
+gunicorn
 herepy
 idna
 imageio
@@ -96,4 +97,3 @@ webencodings
 Werkzeug
 widgetsnbextension
 zipp
-gunicorn

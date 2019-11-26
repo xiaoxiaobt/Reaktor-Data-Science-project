@@ -72,7 +72,7 @@ The full source code of the service can be found from [here](https://github.com/
 
 | <a>**Letizia**</a> | <a>**Taige**</a> | <a>**Roope**</a> | <a>**Trang**</a> | <a>**Thong**</a> | 
 | :---: |:---:| :---:| :---:| :---:| 
-| [![Letizia](https://avatars1.githubusercontent.com/u/45148109?s=200&v=4)](https://github.com/letiziaia)    | [![Taige](https://avatars2.githubusercontent.com/u/16875716?s=400&v=4)](https://github.com/xiaoxiaobt) | [![Roope](https://avatars2.githubusercontent.com/u/43811718?s=200&v=4)](https://github.com/rooperuu)  |[![Trang](https://avatars3.githubusercontent.com/u/55182434?s=200&v=4)](https://github.com/trangmng) | [![Thong](https://avatars0.githubusercontent.com/u/32213097?s=200&v=4)](https://github.com/trananhthong)  |
+| [![Letizia](https://avatars1.githubusercontent.com/u/45148109?s=200&v=4)](https://github.com/letiziaia)    | [![Taige](https://avatars2.githubusercontent.com/u/16875716?s=200&v=4)](https://github.com/xiaoxiaobt) | [![Roope](https://avatars2.githubusercontent.com/u/43811718?s=200&v=4)](https://github.com/rooperuu)  |[![Trang](https://avatars3.githubusercontent.com/u/55182434?s=200&v=4)](https://github.com/trangmng) | [![Thong](https://avatars0.githubusercontent.com/u/32213097?s=200&v=4)](https://github.com/trananhthong)  |
 
 ---
 

@@ -56,7 +56,7 @@ def housing_data_predict(destination_directory, paavo_housing_quarterly_df):
 
         # Filling the data frame
         for year in years:
-            for quarter in range(1,5):
+            for quarter in range(1, 5):
                 pos = (year - 2005) * 4 + quarter - 1
                 housing_pred.at[code, str(year) + 'Q' + str(quarter)] = int(predictions[pos])
                 if year > 2017:

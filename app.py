@@ -1,27 +1,21 @@
-import pandas as pd
-import json
 import dash
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
-import dash_html_components as html
 import dash_core_components as dcc
 # from toolkits import *
-from temp.reference_function import *
-
+from reference_function import *
 from similar_postialue import apply_input
 
 print("Loading data...")
 name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-separated, name of postal code column ='Postal code'
-# Initialize variables
 
+# Initialize variables
 polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
 
-button_nclicks = 0
 
-
-def instructions():
+def get_instructions():
     return html.P(
         children=[
             """
@@ -41,22 +35,15 @@ def get_polar_html(old_code="02150", new_code="00100"):
          radar_attribute(postalcode=new_code, column="Bus stops"),
          radar_attribute(postalcode=new_code, column="Average income of inhabitants"),
          radar_attribute(postalcode=new_code, column="Density")]
-    polar_plot = go.Scatterpolar(r=r,
-                                 theta=['Education', 'Services', 'Public Transportation', 'Average Income',
-                                        'Population Density'],
-                                 fill='toself'
-                                 )
+    polar_plot = go.Figure(go.Scatterpolar(r=r,
+                                           theta=['Education', 'Services', 'Public Transportation', 'Average Income',
+                                                  'Population Density'],
+                                           fill='toself'
+                                           ))
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code)),
-            # TODO: Get the new code from prediction
-            dcc.Graph(
-                config={'displayModeBar': False},
-                figure={
-                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=400),
-                    'data': [polar_plot]
-                }
-            )
+            dcc.Graph(figure=polar_plot, style={"height": "400px"}, config={'displayModeBar': False})
         ],
         id="analysis_info"
     )
@@ -74,8 +61,9 @@ def get_side_analysis(zip="02150"):
     return [
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%"),
-        html.H4("🛈 Greetings from Tiger :D", id="code_info"),
+        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%")
+        # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
+        # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 
@@ -138,12 +126,13 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     return map_html
 
 
-# height, width = 200, 500
-# canvas_width = 800
-# scale = canvas_width / width
-# canvas_height = round(height * scale)
-# list_columns = ["length", "width", "height", "left", "top"]
-# columns = [{"name": i, "id": i} for i in list_columns]
+def get_pie(code):
+    labels = ['0-15 years', '16-34 years', '35-64 years', '65 years or over']
+    nofages = [get_attribute(code, x) for x in labels]
+    return go.Figure(go.Pie(labels=labels, values=nofages, showlegend=False, hole=0.6),
+                     layout_annotations=[dict(text=age_model(code), x=0.5, y=0.5, font_size=24, showarrow=False)])
+
+
 
 print("Loading app...")
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
@@ -153,8 +142,10 @@ app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.H1(children="Kodimpi (BETA)"),
-                instructions(),
+                html.Img(src=app.get_asset_url('Kodimpi.png'),
+                         style={"height": "113px", "width": "200px", "margin-left": "50px"}),
+                # html.H1(children="Kodimpi (BETA)"),
+                get_instructions(),
                 html.Div(
                     [
                         html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
@@ -221,12 +212,11 @@ app.layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Household type"),
+                                html.Label("Household Size"),
                                 dcc.Dropdown(
                                     id="household_type",
                                     clearable=False,
                                     value=1,
-                                    # value="Single",
                                     options=household_type_dropdown(),
                                     className='dropdown'
                                 ),
@@ -248,9 +238,10 @@ app.layout = html.Div(
                     className="mobile_forms"
                 ),
                 html.Br(),
+                html.Div(id="counter", className="0"),
                 html.Button("Estimate", id="button-stitch", className="button_submit"),
                 # TODO: Disable the button when input is erroneous.
-                html.Img(src=app.get_asset_url('logos.png'))
+                html.Img(src=app.get_asset_url('logos.png'), style={"height": "162px", "width": "400px"})
             ],
             className="four columns instruction"
         ),
@@ -276,17 +267,16 @@ app.layout = html.Div(
 )
 
 
-@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value")],
+@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value"), Output("counter", "className")],
               [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
-               State("analysis_info", "children"), State("stitching-tabs", "value")])
-def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio, analysys_old, tab_old):
-    global button_nclicks
+               State("analysis_info", "children"), State("stitching-tabs", "value"), State("counter", "className")])
+def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio,
+                 analysys_old, tab_old, button_counter):
     if button_click is None:
         button_click = 0
-    if button_nclicks + 1 == button_click:
-        button_nclicks += 1
+    if int(button_counter) + 1 == button_click:
         if income <= 0 or ~isinstance(income, int):
             income = 10000
         if (age <= 0) or (age >= 120) or ~isinstance(age, int):
@@ -297,18 +287,17 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_type not in map(dict.keys, household_type_dropdown()):
             household_type = 1
-        prediction = str(apply_input(income, age, location, occupation, household_type,
-                                     selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
         print(prediction)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
             prediction = "00120"
-        return get_polar_html(location, prediction), "result-tab"
+        return get_polar_html(location, prediction), "result-tab", str(int(button_counter) + 1)
     elif map_click is not None:
         pc = map_click['points'][0]['location']
-        return get_polar_html("02150", pc), "result-tab"
+        return get_polar_html("02150", pc), "result-tab", button_counter
     else:
-        return analysys_old, tab_old
+        return analysys_old, tab_old, button_counter
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])

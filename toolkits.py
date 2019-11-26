@@ -155,8 +155,8 @@ def find_num_of_points(points):
         return
     else:
         print("This algorithm should work on your computer. Remember to remove the exec() function call. ")
-        from shapely import wkt
-        from shapely.geometry import Point
+        # from shapely import wkt
+        # from shapely.geometry import Point
     point_dict = dict()
     polygon_dict = dict()
     FILE_NAME = "./data/zip_polygon.csv"

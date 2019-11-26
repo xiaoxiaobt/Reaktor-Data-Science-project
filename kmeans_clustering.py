@@ -186,8 +186,8 @@ def choose_cluster_num(df=None, start_point=2, end_point=70, rtype='bouldin', pl
 
 
 if __name__ == '__main__':
-    # _, df = k_means_clustering()
-    # filename = 'final_dataframe.tsv'
-    # df.to_csv(Path('dataframes/') / filename, sep='\t', index=False, encoding='utf-8')
+    _, df = k_means_clustering()
+    filename = 'final_dataframe.tsv'
+    df.to_csv(Path('dataframes/') / filename, sep='\t', index=False, encoding='utf-8')
     # choose_cluster_num()
-    print(clusters_dictionary())
+    # print(clusters_dictionary())

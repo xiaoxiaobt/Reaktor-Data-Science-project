@@ -36,6 +36,11 @@
     display: none;
 }
 
+.jsx-4017309047.tab-parent {
+    background-color: white;
+    backdrop-filter: blur(8px);
+    opacity: 0.7;
+}
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
@@ -126,6 +131,10 @@
     .twelve.columns {
         width: 100%;
         margin-left: 0;
+        background-image: url("/assets/back_hd.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
     }
 
     .one-third.column {
@@ -247,10 +256,7 @@ body {
 }
 
 #_dash-app-content > div {
-    background-image: url("back_hd.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
+
 }
 
 #_dash-app-content > div > div.eight.columns.result {

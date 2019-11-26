@@ -146,10 +146,9 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
 # columns = [{"name": i, "id": i} for i in list_columns]
 
 print("Loading app...")
-app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
+app = dash.Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
 app.title = "Kodimpi - Data Science Project"
-app.config.suppress_callback_exceptions = True
 app.layout = html.Div(
     children=[
         html.Div(
@@ -322,4 +321,4 @@ def return_side_analysis(hover_point):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)

@@ -142,7 +142,8 @@ def make_dash_table(old_code, new_code):
 def age_model(code):
     perc = paavo_df["65 years or over"] / paavo_df['Inhabitants, total']
     perc = np.nan_to_num(perc)
-    perc[perc >= 1 | perc <= 0] = 0.5
+    perc[perc >= 1] = 0.5
+    perc[perc <= 0] = 0.5
     # a[a > 70] = 70
     # plt.hist(a, bins=30)
     # plt.show()

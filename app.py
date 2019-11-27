@@ -38,22 +38,15 @@ def get_polar_html(old_code="02150", new_code="00100"):
          radar_attribute(postalcode=new_code, column="Bus stops"),
          radar_attribute(postalcode=new_code, column="Average income of inhabitants"),
          radar_attribute(postalcode=new_code, column="Density")]
-    polar_plot = go.Scatterpolar(r=r,
-                                 theta=['Education', 'Services', 'Public Transportation', 'Average Income',
-                                        'Population Density'],
-                                 fill='toself'
-                                 )
+    polar_plot = go.Figure(go.Scatterpolar(r=r,
+                                           theta=['Education', 'Services', 'Public Transportation', 'Average Income',
+                                                  'Population Density'],
+                                           fill='toself'
+                                           ))
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code)),
-            # TODO: Get the new code from prediction
-            dcc.Graph(
-                config={'displayModeBar': False},
-                figure={
-                    'layout': go.Layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=400),
-                    'data': [polar_plot]
-                }
-            )
+            dcc.Graph(figure=polar_plot, style={"height": "400px"}, config={'displayModeBar': False})
         ],
         id="analysis_info"
     )
@@ -71,8 +64,9 @@ def get_side_analysis(zip="02150"):
     return [
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%"),
-        html.H4("🛈 Greetings from Tiger :D", id="code_info"),
+        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%")
+        # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
+        # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 
@@ -135,12 +129,13 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     return map_html
 
 
-# height, width = 200, 500
-# canvas_width = 800
-# scale = canvas_width / width
-# canvas_height = round(height * scale)
-# list_columns = ["length", "width", "height", "left", "top"]
-# columns = [{"name": i, "id": i} for i in list_columns]
+def get_pie(code):
+    labels = ['0-15 years', '16-34 years', '35-64 years', '65 years or over']
+    nofages = [get_attribute(code, x) for x in labels]
+    return go.Figure(go.Pie(labels=labels, values=nofages, showlegend=False, hole=0.6),
+                     layout_annotations=[dict(text=age_model(code), x=0.5, y=0.5, font_size=24, showarrow=False)])
+
+
 
 print("Loading app...")
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
@@ -150,7 +145,8 @@ app.layout = html.Div(
     children=[
         html.Div(
             [
-                html.Img(src=app.get_asset_url('Kodimpi.png'), style={"height": "113px", "width": "200px", "margin-left": "50px"}),
+                html.Img(src=app.get_asset_url('Kodimpi.png'),
+                         style={"height": "113px", "width": "200px", "margin-left": "50px"}),
                 # html.H1(children="Kodimpi (BETA)"),
                 get_instructions(),
                 html.Div(
@@ -224,7 +220,6 @@ app.layout = html.Div(
                                     id="household_type",
                                     clearable=False,
                                     value=1,
-                                    # value="Single",
                                     options=household_type_dropdown(),
                                     className='dropdown'
                                 ),

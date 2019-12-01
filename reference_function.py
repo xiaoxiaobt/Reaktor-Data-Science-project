@@ -101,7 +101,8 @@ def make_dash_table(old_code, new_code):
         return html.Tr([html.Td([name], style={"width": "160px"}), html.Td([first], style={"width": "100px"}),
                         html.Td([second], style={"width": "100px"}), html.Td([third], style={"width": "300px"})],
                        style={"margin-left": "9%", "display": "block"})
-
+    old_dict = get_amount_of_service(old_code)
+    new_dict = get_amount_of_service(new_code)
     """ Return a dash definition of an HTML table for a Pandas dataframe """
     # Line 1
     row_title = four_row_list("", "Current Location", "New Location", "Significance")
@@ -126,6 +127,9 @@ def make_dash_table(old_code, new_code):
     result_education = float(new_education) - float(old_education)
     analysis_education = "↗ Find more skilled fellows" if result_education > 0 else "↘ Less competitions"
     row_education = four_row_list("Education index", old_education, new_education, analysis_education)
+    table = [row_title, row_income, row_education]
+    # for x in old_dict.keys():
+    #    table.append(four_row_list(x, old_dict[x], new_dict[x], ""))
 
     # Line 4
 
@@ -139,7 +143,7 @@ def make_dash_table(old_code, new_code):
     # row_company_num = four_row_list("Number of companies", old_company_num, new_company_num, analysis_company_num)
 
     # Final result
-    table = [row_title, row_income, row_education]  # , row_company_num]
+      # , row_company_num]
     return table
 
 

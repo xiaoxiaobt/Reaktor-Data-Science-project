@@ -60,7 +60,9 @@ def get_side_analysis(zip="02150"):
     return [
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%")
+        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%"),
+        html.H2("Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
+        html.H2("Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
 
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4("🛈 Greetings from Tiger :D", id="code_info"),

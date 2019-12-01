@@ -111,6 +111,7 @@ def clusters_dictionary():
     if 'label' not in df.columns:
         _, df = k_means_clustering()
     cluster_dic = {}
+
     for i in list(set(df['label'].to_list())):
         cluster_dic[i] = df[df.label == i][['Postal code', 'Area']].values
     return cluster_dic

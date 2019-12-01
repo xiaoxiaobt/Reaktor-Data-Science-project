@@ -195,19 +195,6 @@ def get_amount_of_service(zip="02150"):
     return counts
 
 
-def all_services():
-    service_list = ["ruokakauppa", "ravintola", "kirjasto", "terveys", "kuntosali", "hotelli", "pubit ja baarit"]
-    df = pd.read_csv("./dataframes/final_dataframe.tsv", sep="\t", dtype={"Postal code": object},
-                     usecols=["Postal code"])
-    write = open("local service_list.tsv", "w+")
-    write.write("Postal code\tshop\trestaurant\tlibrary\thealth\tgym\thotel\tpub")
-    for i, code in enumerate(df["Postal code"]):
-        result = get_amount_of_service(code)
-        result = [str(result[x]) for x in service_list]
-        write.write(code + "\t" + "\t".join(result) + "\n")
-        print(str(i) + ' / 3026')
-
-
 def find_all_transportation():
     """
     This function finds all stations in finland
@@ -302,6 +289,6 @@ def main():
     except Exception:
         print("Function name not found. Please check your input.")
 
-all_services()
+
 if __name__ == "__main__":
     main()

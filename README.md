@@ -52,7 +52,10 @@ Now the application can be accessed from http://127.0.0.1:8050/
 ## Features
 TODO
 ## Usage
-TODO
+
+Start the application, and enter the required data into the left panel. Then, click "Estimate" to see your recommendation. 
+Alternatively, explore the map with the mouse and click on one area that is interesting for you.
+
 ## Documentation
 TODO
 ## Tests

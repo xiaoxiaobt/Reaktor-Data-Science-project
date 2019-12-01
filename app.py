@@ -20,9 +20,8 @@ def get_instructions():
         children=[
             """
             - An App that provides suggestions for relocation in Finland
-            - Otaniemi is the best place to relocate, right?
-            - Fill the form below and click "Estimate"
-            - Alternatively, search an area by its name or postal code
+            - Fill the form below and click "Recommend"
+            - Alternatively, click on one area
             """
         ],
         className="instructions-sidebar"
@@ -30,20 +29,26 @@ def get_instructions():
 
 
 def get_polar_html(old_code="02150", new_code="00100"):
-    r = [radar_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled"),
-         radar_attribute(postalcode=new_code, column="Services"),
-         radar_attribute(postalcode=new_code, column="Bus stops"),
-         radar_attribute(postalcode=new_code, column="Average income of inhabitants"),
-         radar_attribute(postalcode=new_code, column="Density")]
-    polar_plot = go.Figure(go.Scatterpolar(r=r,
-                                           theta=['Education', 'Services', 'Public Transportation', 'Average Income',
-                                                  'Population Density'],
-                                           fill='toself'
-                                           ))
+    categories = ['Education', 'Services', 'Public Transportation', 'Average Income', 'Population Density']
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatterpolar(r=radar_attribute(old_code), theta=categories, fill='toself', name='Current location'))
+    fig.add_trace(go.Scatterpolar(r=radar_attribute(new_code), theta=categories, fill='toself', name='New location'))
+
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 1]
+            )),
+        showlegend=True
+    )
+
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code)),
-            dcc.Graph(figure=polar_plot, style={"height": "400px"}, config={'displayModeBar': False})
+            dcc.Graph(figure=fig, style={"height": "400px"}, config={'displayModeBar': False})
         ],
         id="analysis_info"
     )
@@ -61,7 +66,8 @@ def get_side_analysis(zip="02150"):
     return [
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Income tax rate: " + str(zip_tax_dict[zip]) + "%")
+        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%")
+
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
@@ -79,7 +85,7 @@ def get_analysis(old_code="02150", new_code="00100"):
     rent_noara_price_string = get_attribute(postalcode=new_code, column="Rent price without ARA")
     rent_noara_price_string = format_2f(rent_noara_price_string) if rent_noara_price_string != "0.0" else "--"
     # H3
-    income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
+    # income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
     # percentage_degree = format_2f(100 * float(get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
     # TODO: Add more relevant info
@@ -88,7 +94,7 @@ def get_analysis(old_code="02150", new_code="00100"):
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
             html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
                     + rent_noara_price_string + " €/m² (private only)"),
-            html.H3("Average income: \t" + income_string + " €/year"),
+            # html.H3("Average income: \t" + income_string + " €/year"),
             html.H3("Average age: \t" + average_age_string + " years"),
             # html.H3(percentage_degree + "% of the people has a higher university degree")
             ]
@@ -239,7 +245,7 @@ app.layout = html.Div(
                 ),
                 html.Br(),
                 html.Div(id="counter", className="0"),
-                html.Button("Estimate", id="button-stitch", className="button_submit"),
+                html.Button("Recommend", id="button-stitch", className="button_submit"),
                 # TODO: Disable the button when input is erroneous.
                 html.Img(src=app.get_asset_url('logos.png'), style={"height": "162px", "width": "400px"})
             ],

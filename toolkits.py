@@ -289,6 +289,6 @@ def main():
     except Exception:
         print("Function name not found. Please check your input.")
 
-all_services()
+
 if __name__ == "__main__":
     main()

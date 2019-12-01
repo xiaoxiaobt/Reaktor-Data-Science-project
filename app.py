@@ -1,12 +1,9 @@
-import pandas as pd
-import json
 import dash
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
-import dash_html_components as html
 import dash_core_components as dcc
 # from toolkits import *
-from temp.reference_function import *
+from reference_function import *
 from similar_postialue import apply_input
 
 print("Loading data...")

@@ -65,7 +65,7 @@ def housing_plot(housing_data_df, housing_prediction_df, code):
     lower_25_bound = go.Scatter(x=forecast_time, y=lower_25, mode='lines', hovertemplate = hover_template, text = hover_text_forecast, marker=dict(color="#444"), line=dict(width=0), showlegend=False, name='75% Confidence')
     upper_25_bound = go.Scatter(x=forecast_time, y=upper_25, mode='lines', hovertemplate = hover_template, text = hover_text_forecast, marker=dict(color="#444"), line=dict(width=0), showlegend=False, fillcolor='rgba(68, 68, 68, 0.3)', fill='tonexty', name='75% Confidence')
 
-    features = [ observation_line, prediction_line, lower_25_bound, upper_25_bound, lower_10_bound, upper_10_bound]
+    features = [observation_line, prediction_line, lower_25_bound, upper_25_bound, lower_10_bound, upper_10_bound]
 
     # Create the plot object, adjust axes
     fig = go.Figure(data=features)

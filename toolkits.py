@@ -16,51 +16,51 @@ def toutf8(input_name="./temp/industry_2008.csv", output_name="./temp/industry_2
     file_write.close()
 
 
-def industry_data_cleaner():
-    """Find names of all types of industries"""
-    storage = open("./temp/modified_type.tsv", 'w+', encoding='utf-8')
-    file = open('./temp/industry_2008.csv', 'r', encoding='iso-8859-1')
-    file.readline()
-    for line in file.readlines():
-        line = line.rstrip('\n').split('\t')[1:]
-        line[0] = " ".join(line[0].split()[1:]).rstrip("\"")
-        storage.write(line[0] + "\t" + line[1] + '\n')
-    storage.close()
-    file.close()
+# def industry_data_cleaner():
+#     """Find names of all types of industries"""
+#     storage = open("./temp/modified_type.tsv", 'w+', encoding='utf-8')
+#     file = open('./temp/industry_2008.csv', 'r', encoding='iso-8859-1')
+#     file.readline()
+#     for line in file.readlines():
+#         line = line.rstrip('\n').split('\t')[1:]
+#         line[0] = " ".join(line[0].split()[1:]).rstrip("\"")
+#         storage.write(line[0] + "\t" + line[1] + '\n')
+#     storage.close()
+#     file.close()
 
 
-def add_id():
-    """
-    DEPRECATED
-    This function add "id" feature to .json file. The id feature works as identifier (key) to access
-     corresponding shape, only works for postinumeroalueet 2016.json
-    """
-    return
-    file = open("./data/postinumeroalueet 2016.json", "r")
-    file_write = open("./data/idchanged.json", "w")
-    wait_4_write = False
-    number = 0
-    for line in file.readlines():
-        if '"posti_alue"' in line:
-            number = line.split(": \"")[1].split("\",")[0]
-            wait_4_write = True
-            file_write.write(line)
-        elif '"namn"' in line:
-            continue
-        elif '"kuntanro"' in line:
-            continue
-        elif '"description"' in line:
-            continue
-        elif '"vuosi"' in line:
-            continue
-        elif wait_4_write and ("}" in line):
-            file_write.write(line.rstrip("\n") + ",\n")
-            file_write.write('            "id": "' + number + '"\n')
-            wait_4_write = False
-        else:
-            file_write.write(line)
-    file.close()
-    file_write.close()
+# def add_id():
+#     """
+#     DEPRECATED
+#     This function add "id" feature to .json file. The id feature works as identifier (key) to access
+#      corresponding shape, only works for postinumeroalueet 2016.json
+#     """
+#     return
+#     file = open("./data/postinumeroalueet 2016.json", "r")
+#     file_write = open("./data/idchanged.json", "w")
+#     wait_4_write = False
+#     number = 0
+#     for line in file.readlines():
+#         if '"posti_alue"' in line:
+#             number = line.split(": \"")[1].split("\",")[0]
+#             wait_4_write = True
+#             file_write.write(line)
+#         elif '"namn"' in line:
+#             continue
+#         elif '"kuntanro"' in line:
+#             continue
+#         elif '"description"' in line:
+#             continue
+#         elif '"vuosi"' in line:
+#             continue
+#         elif wait_4_write and ("}" in line):
+#             file_write.write(line.rstrip("\n") + ",\n")
+#             file_write.write('            "id": "' + number + '"\n')
+#             wait_4_write = False
+#         else:
+#             file_write.write(line)
+#     file.close()
+#     file_write.close()
 
 
 def fix_dataframe():

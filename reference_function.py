@@ -66,7 +66,7 @@ def get_attribute(postalcode="02150", column=None):
         raise Exception
 
 
-def radar_attribute(postalcode="02150", column=None):
+def radar_attribute(postalcode="02150"):
     """
     Read from the data frame: find the value of the given column for the given postal code,
     and normalize it from 0 to 1 if needed.
@@ -74,13 +74,17 @@ def radar_attribute(postalcode="02150", column=None):
     :param column: str, a valid complete column name
     :return: a float with the value of the column, or raise Exception
     """
-    value = float(get_attribute(postalcode=postalcode, column=column))
-    max = paavo_df[column].max()
-    min = paavo_df[column].min()
-    if "scaled" in column:
-        return value
-    else:
-        return (value - min) / (max - min)
+
+    def find_data(column_name):
+        value = float(get_attribute(postalcode, column=column_name))
+        if "scaled" in column_name:
+            return value
+        else:
+            return (value - paavo_df[column_name].min()) / (paavo_df[column_name].max() - paavo_df[column_name].min())
+
+    column_names = ["Academic degree - Higher level university degree scaled", "Services", "Bus stops",
+                    "Average income of inhabitants", "Density"]
+    return [find_data(name) for name in column_names]
 
 
 def format_2f(string):

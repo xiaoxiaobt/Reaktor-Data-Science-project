@@ -33,17 +33,11 @@ def get_polar_html(old_code="02150", new_code="00100"):
 
     fig = go.Figure()
 
-    fig.add_trace(go.Scatterpolar(r=radar_attribute(old_code), theta=categories, fill='toself', name='Current location'))
+    fig.add_trace(
+        go.Scatterpolar(r=radar_attribute(old_code), theta=categories, fill='toself', name='Current location'))
     fig.add_trace(go.Scatterpolar(r=radar_attribute(new_code), theta=categories, fill='toself', name='New location'))
 
-    fig.update_layout(
-        polar=dict(
-            radialaxis=dict(
-                visible=True,
-                range=[0, 1]
-            )),
-        showlegend=True
-    )
+    fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1])), showlegend=True)
 
     return html.Div(
         children=[
@@ -66,7 +60,9 @@ def get_side_analysis(zip="02150"):
     return [
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%")
+        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%"),
+        html.H2("Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
+        html.H2("Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
 
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
@@ -84,6 +80,8 @@ def get_analysis(old_code="02150", new_code="00100"):
     rent_ara_price_string = format_2f(rent_ara_price_string) if rent_ara_price_string != "0.0" else "--"
     rent_noara_price_string = get_attribute(postalcode=new_code, column="Rent price without ARA")
     rent_noara_price_string = format_2f(rent_noara_price_string) if rent_noara_price_string != "0.0" else "--"
+    trend_near_future_string = "{:+.2f}".format(100 * float(get_attribute(new_code, column="Trend near future")))
+
     # H3
     # income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
@@ -94,7 +92,7 @@ def get_analysis(old_code="02150", new_code="00100"):
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
             html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
                     + rent_noara_price_string + " €/m² (private only)"),
-            # html.H3("Average income: \t" + income_string + " €/year"),
+            html.H3("Trend of price: \t" + trend_near_future_string + " %"),
             html.H3("Average age: \t" + average_age_string + " years"),
             # html.H3(percentage_degree + "% of the people has a higher university degree")
             ]
@@ -107,8 +105,7 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
                                    locations=paavo_df['Postal code'],
-                                   z=paavo_df['Surface area'],
-                                   # TODO: Replace representation
+                                   z=paavo_df['Trend near future'],
                                    colorscale="Viridis",
                                    marker_opacity=0.7,
                                    marker_line_width=0,
@@ -137,7 +134,6 @@ def get_pie(code):
     nofages = [get_attribute(code, x) for x in labels]
     return go.Figure(go.Pie(labels=labels, values=nofages, showlegend=False, hole=0.6),
                      layout_annotations=[dict(text=age_model(code), x=0.5, y=0.5, font_size=24, showarrow=False)])
-
 
 
 print("Loading app...")
@@ -279,7 +275,7 @@ app.layout = html.Div(
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
                State("analysis_info", "children"), State("stitching-tabs", "value"), State("counter", "className")])
 def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio,
-                 analysys_old, tab_old, button_counter):
+                 analysis_old, tab_old, button_counter):
     if button_click is None:
         button_click = 0
     if int(button_counter) + 1 == button_click:
@@ -293,7 +289,8 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_type not in map(dict.keys, household_type_dropdown()):
             household_type = 1
-        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        prediction = str(apply_input(income, age, location, occupation, household_type,
+                                     selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
         print(prediction)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
@@ -303,7 +300,7 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
         pc = map_click['points'][0]['location']
         return get_polar_html("02150", pc), "result-tab", button_counter
     else:
-        return analysys_old, tab_old, button_counter
+        return analysis_old, tab_old, button_counter
 
 
 @app.callback(Output('side_info', 'children'), [Input('main_plot', 'hoverData')])

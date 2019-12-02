@@ -14,7 +14,7 @@
 ---
 
 ## Installation
-The service can be directly accessed from `https://ds-project-aalto.herokuapp.com/`.
+The service can be directly accessed from `https://kodimpi.herokuapp.com/`.
 
 To run the application on a local machine, follow steps below:
 ### Prerequisites

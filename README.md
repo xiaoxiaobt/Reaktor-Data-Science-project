@@ -55,10 +55,13 @@ Now the application can be accessed from http://127.0.0.1:8050/
 Start the application, and enter the required data into the left panel. Then, click "Estimate" to see your recommendation. 
 Alternatively, explore the map with the mouse and click on one area that is interesting for you.
 
+---
+
 ## Tests
 
 Unit tests have being implemented to make sure the dataframe has the correct attributes and shape.
 
+---
 ## Privacy
 
 **We care about your privacy**. We take your data privacy seriously, as we always have.
@@ -82,6 +85,7 @@ The full source code of the service can be found from [here](https://github.com/
 
 The project was supervised by Jorma Laaksonen from Aalto Univeristy and Jaakko Särelä from Reaktor.
 
+---
 ## License
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - Copyright 2019 © Letizia, Taige, Roope, Trang, Thong

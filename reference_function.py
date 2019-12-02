@@ -1,9 +1,9 @@
 import pandas as pd
 import dash_html_components as html
-import requests
 import numpy as np
-import matplotlib.pyplot as plt
-from toolkits import *
+# import requests
+# import matplotlib.pyplot as plt
+# from toolkits import *
 
 name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-seperated, name of postal code column = 'Postal code'
 paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!

@@ -130,7 +130,7 @@ def find_neighbor_of(df=None, weights=None, placename=None, postalcode=None):
                                                       w=weights)
 
     dist = sorted(dist.items(), key=lambda x: x[1], reverse=False)
-
+    print(len(dist))
     # Print the first 10 suggestions
     for count, elm in enumerate(dist):
         i = elm[0]
@@ -176,32 +176,40 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
             when equal to "nochange" the suggestion will be closer than 100 km.
     :return: call the function 'find_neighbor_of' which return the suggested postal code
     """
+    print(income)
+    print(age)
+    print(location)
+    print(occupation)
+    print(household_type)
+    print(selection_radio)
+
     df = get_cluster_of(location)
     df = get_distance(df=df, postalcode=location)
-    d = 100
+    d = 70
     if selection_radio == 'change':
-        # Far away: consider more than 100 km away (if possible, otherwise closer)
+        # Far away: consider more than 70 km away (if possible, otherwise closer)
         if len(df[(df['Distance'] == 0.0) | (df['Distance'] >= d)].index > 1):
             df = df[(df['Distance'] == 0.0) | (df['Distance'] >= d)]
         else:
             print("WARNING: the result was empty. We will set a different threshold")
             while len(df[(df['Distance'] == 0.0) | (df['Distance'] >= d)].index) <= 1:
-                d -= 50
+                d -= 10
                 df = df[(df['Distance'] == 0.0) | (df['Distance'] >= d)]
     elif selection_radio == 'nochange':
-        # Close: consider closer than 100 km (if possible, otherwise a bit further away)
+        # Close: consider closer than 70 km (if possible, otherwise a bit further away)
         if len(df[df['Distance'] <= d].index > 1):
             df = df[df['Distance'] <= d]
         else:
             print("WARNING: the result was empty. We will set a different threshold")
             while len(df[df['Distance'] <= d].index) <= 1:
-                d += 50
+                d += 10
                 df = df[df['Distance'] <= d]
     else:
         # No restriction on distance
         df = df
 
     if occupation == "Student":
+        print("Student")
         weights = [3, 1,  # Academic degree, Employment rate
                    1, 3,  # Avg income, Avg age
                    1, 2, 1, 1,  # Age distribution
@@ -218,8 +226,9 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                    0]  # Distance
         occupation = "Students"
     else:
-        weights = [1, 1,
-                   3, 3,
+        print("Working")
+        weights = [3, 1,
+                   3, 1,
                    1, 1, 1, 1,
                    3,
                    1,
@@ -254,6 +263,7 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
                       'Activities of households as employers',
                       'Extraterritorial organisations and bodies']
         occupation = jobs_input.index(occupation) + 16
+        print(occupation)
 
     household_type = household_type if type(household_type) is str else 5
     inputs = [income, household_type]
@@ -261,12 +271,16 @@ def apply_input(income, age, location, occupation, household_type, selection_rad
     ages = ['0-15 years scaled', '16-34 years scaled', '35-64 years scaled', '65 years or over scaled']
 
     if age <= 15:
+        print("Child")
         age_group = ages[0]
     elif age <= 34:
+        print("Young")
         age_group = ages[1]
     elif age <= 64:
+        print("Adult")
         age_group = ages[2]
     else:
+        print("Superadult")
         age_group = ages[3]
 
     i = df[df['Postal code'] == location].index.to_list()[0]
@@ -299,3 +313,7 @@ if __name__ == '__main__':
                     occupation="Student",
                     household_type=1, selection_radio="whatever")
     print(n)
+    m = apply_input(income=10000, age=22, location="02150",
+                    occupation="Education",
+                    household_type=1, selection_radio="whatever")
+    print(m)

@@ -30,9 +30,7 @@ def get_instructions():
 
 def get_polar_html(old_code="02150", new_code="00100"):
     categories = ['Education', 'Services', 'Public Transportation', 'Average Income', 'Population Density']
-
     fig = go.Figure()
-
     fig.add_trace(
         go.Scatterpolar(r=radar_attribute(old_code), theta=categories, fill='toself', name='Current location'))
     fig.add_trace(go.Scatterpolar(r=radar_attribute(new_code), theta=categories, fill='toself', name='New location'))
@@ -195,7 +193,7 @@ app.layout = html.Div(
                                     id="location",
                                     clearable=False,
                                     value="02150",
-                                    options=location_dropdown(),
+                                    options=location_dropdown,
                                     className='dropdown'
                                 ),
                             ]
@@ -207,7 +205,7 @@ app.layout = html.Div(
                                     id="occupation",
                                     clearable=False,
                                     value="Student",
-                                    options=occupation_dropdown(),
+                                    options=occupation_dropdown,
                                     className='dropdown'
                                 ),
                             ]
@@ -219,7 +217,7 @@ app.layout = html.Div(
                                     id="household_type",
                                     clearable=False,
                                     value=1,
-                                    options=household_type_dropdown(),
+                                    options=household_type_dropdown,
                                     className='dropdown'
                                 ),
                             ]
@@ -279,18 +277,18 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
     if button_click is None:
         button_click = 0
     if int(button_counter) + 1 == button_click:
-        if income <= 0 or ~isinstance(income, int):
+        if income is None or income <= 0:
             income = 10000
-        if (age <= 0) or (age >= 120) or ~isinstance(age, int):
+        if (age <= 0) or (age >= 120):
             age = 22
-        if (location == "") or (location is None) or (location not in list(paavo_df['Postal code'])):
+        if (location is None) or (location == "") or (location not in list(paavo_df['Postal code'])):
             location = "00930"
-        if occupation not in map(dict.keys, occupation_dropdown()):
+        if occupation not in list_of_jobs:
             occupation = "Student"
-        if household_type not in map(dict.keys, household_type_dropdown()):
+        if household_type not in list_of_household_type:
             household_type = 1
-        prediction = str(apply_input(income, age, location, occupation, household_type,
-                                     selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
+        # print(income, age, location, occupation, household_type)
+        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
         print(prediction)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:

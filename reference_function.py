@@ -11,46 +11,33 @@ traffic_df = pd.read_csv("./data_transportation/final_transportation.tsv", sep="
 tax_df = pd.read_csv("./data/final_tax.tsv", sep="\t", dtype={"Postal code": object})
 zip_name_dict = dict(zip(paavo_df['Postal code'], map(lambda x: x.split("(")[0].strip(), paavo_df['Area'])))
 zip_tax_dict = dict(zip(tax_df["Postal code"], tax_df["Tax"]))
-
-
-def location_dropdown():
-    return [{'label': i + ", " + zip_name_dict[i], 'value': i} for i in paavo_df['Postal code']]
-
-
-def occupation_dropdown():
-    # YEAH IT IS HORRIBLE
-    list_of_jobs = ['Student',
-                    'Agriculture, forestry, fishing',
-                    'Mining and quarrying',
-                    'Manufacturing',
-                    'Electricity, gas, steam, air conditioning supply',
-                    'Water supply, sewerage, waste management',
-                    'Construction',
-                    'Wholesale, retail, repair of vehicles',
-                    'Transportation and storage',
-                    'Accommodation and food service',
-                    'Information and communication',
-                    'Financial and insurance',
-                    'Real estate',
-                    'Professional, scientific, technical activities',
-                    'Administrative and support service',
-                    'Public administration, defence, social security',
-                    'Education',
-                    'Human health and social work',
-                    'Arts, entertainment and recreation',
-                    'Other service',
-                    'Activities of households as employers',
-                    'Extraterritorial organisations and bodies'
-                    ]
-    # list_of_jobs = ("Student;Computer Science;Natural Science;Social Science;Business;Law;Health-related;"
-    #                + "Entrepreneur;Looking for one;Actor").split(";")
-    return [{'label': i, 'value': i} for i in list_of_jobs]
-
-
-def household_type_dropdown():
-    list_of_household_type = [1, 2, 3, 4, "5 or more"]
-    # list_of_household_type = ["Single", "Couple", "Couple with children", "One parent family", "Group"]
-    return [{'label': i, 'value': i} for i in list_of_household_type]
+list_of_jobs = ['Student',
+                'Agriculture, forestry, fishing',
+                'Mining and quarrying',
+                'Manufacturing',
+                'Electricity, gas, steam, air conditioning supply',
+                'Water supply, sewerage, waste management',
+                'Construction',
+                'Wholesale, retail, repair of vehicles',
+                'Transportation and storage',
+                'Accommodation and food service',
+                'Information and communication',
+                'Financial and insurance',
+                'Real estate',
+                'Professional, scientific, technical activities',
+                'Administrative and support service',
+                'Public administration, defence, social security',
+                'Education',
+                'Human health and social work',
+                'Arts, entertainment and recreation',
+                'Other service',
+                'Activities of households as employers',
+                'Extraterritorial organisations and bodies'
+                ]
+list_of_household_type = [1, 2, 3, 4, "5 or more"]
+location_dropdown = [{'label': i + ", " + zip_name_dict[i], 'value': i} for i in paavo_df['Postal code']]
+occupation_dropdown = [{'label': i, 'value': i} for i in list_of_jobs]
+household_type_dropdown = [{'label': i, 'value': i} for i in list_of_household_type]
 
 
 def get_attribute(postalcode="02150", column=None):
@@ -101,8 +88,7 @@ def make_dash_table(old_code, new_code):
         return html.Tr([html.Td([name], style={"width": "160px"}), html.Td([first], style={"width": "100px"}),
                         html.Td([second], style={"width": "100px"}), html.Td([third], style={"width": "300px"})],
                        style={"margin-left": "9%", "display": "block"})
-    old_dict = get_amount_of_service(old_code)
-    new_dict = get_amount_of_service(new_code)
+
     """ Return a dash definition of an HTML table for a Pandas dataframe """
     # Line 1
     row_title = four_row_list("", "Current Location", "New Location", "Significance")
@@ -143,7 +129,7 @@ def make_dash_table(old_code, new_code):
     # row_company_num = four_row_list("Number of companies", old_company_num, new_company_num, analysis_company_num)
 
     # Final result
-      # , row_company_num]
+    # , row_company_num]
     return table
 
 

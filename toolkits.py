@@ -78,7 +78,7 @@ def fix_dataframe():
     col_id = df["Postal code area"].apply(lambda x: x.split(" ")[0])
     df.insert(loc=0, column='location', value=col_location)
     df.insert(loc=0, column='id', value=col_id)
-    del df["Postal code area"]
+    df.drop(["Postal code area"], axis=1)
     # Replace all ".." value
     replacing_value = np.nan  # Or other values
     df.replace("..", replacing_value)
@@ -181,6 +181,7 @@ def get_amount_of_service(zip="02150"):
     :param zip: zip_code (str)
     :return:  dictionary("service_name" -> number)
     """
+    return
     service_list = ["ruokakauppa", "ravintola", "kirjasto", "terveys", "kuntosali", "hotelli", "pubit ja baarit"]
     counts = dict()
     # random.shuffle(service_list)

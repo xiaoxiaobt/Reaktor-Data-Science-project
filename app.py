@@ -143,7 +143,10 @@ app.layout = html.Div(
                 get_instructions(),
                 html.Div(
                     [
-                        html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
+                        html.A(
+                            html.Button(
+                                "PRESENTATION", className="button_instruction", id="learn-more-button"
+                            ), href="https://xiaoxiaobt.github.io/Reaktor-Data-Science-project"),
                         html.A(
                             html.Button(
                                 "GITHUB", className="github_button", id="demo"
@@ -151,9 +154,6 @@ app.layout = html.Div(
                     ],
                     className="mobile_buttons"
                 ),
-                # Empty child function for the callback
-                html.Div(id="demo-explanation", children=[]),
-                # TODO: Add callback for instructions
                 html.Div(
                     [
                         html.Div(

@@ -41,6 +41,11 @@
     backdrop-filter: blur(8px);
     opacity: 0.7;
 }
+
+.mapboxgl-ctrl-attrib {
+    visibility: hidden;
+}
+
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
@@ -284,6 +289,9 @@ body {
 
 .Select-control {
     background-color: transparent;
+    border: 1px solid #8898B2;
+    border-radius: 4px;
+    box-shadow: none;
 }
 
 
@@ -366,8 +374,8 @@ label {
 }
 
 .result {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .tabs {

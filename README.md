@@ -1,4 +1,4 @@
-# Data-Science-project - Reaktor
+# Data Science project - Reaktor
 
 [![Build Status](https://travis-ci.com/xiaoxiaobt/Reaktor-Data-Science-project.svg?token=jweLhMwtk8oGmdXQGBZN&branch=master)](https://travis-ci.com/xiaoxiaobt/Reaktor-Data-Science-project)
 ## Table of Contents

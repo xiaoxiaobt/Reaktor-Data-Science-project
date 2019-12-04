@@ -42,7 +42,14 @@ def add_newest_attributes(df):
     rentnoAra_df = pd.DataFrame({'Rent price without ARA': list_rent()[1]}, dtype=np.float64)
 
     # Add bus stops
-    df['Bus stops'] = add_buses()
+    # df['Bus stops'] = add_buses()
+    bus_stops, metro, train, ferry, tram, bus = add_all_transportation()
+    df['Bus stops'] = bus_stops
+    df['Metro'] = metro
+    df['Train'] = train
+    df['Ferry'] = ferry
+    df['Tram'] = tram
+    df['Bus'] = bus
 
     # Add avg selling prices in the last 12 months
     df['Sell price'] = [0] * len(df.index)
@@ -96,6 +103,23 @@ def add_buses():
     return bus_df['Bus stops'].copy()
 
 
+def add_all_transportation():
+    """
+    Open the file 'final_transportation.tsv' from the folder 'data_transportation' and return the column
+    to add to the data frame
+    :return: list of values as a pandas Series
+    """
+    print("Loading public transportation...")
+    pt_df = pd.read_csv(Path('data_transportation/') / 'final_transportation.tsv', sep='\t',
+                        dtype={'Postal code': object}, index_col="Postal code")
+    # The column "Bus stops" is the sum of all public transportation
+    pt_df['Bus stops'] = pt_df.sum(axis=1)
+    pt_df = pt_df.sort_values(by=['Postal code']).reset_index()
+    # print(pt_df)
+    return pt_df['Bus stops'].copy(), \
+           pt_df['Metro'].copy(), pt_df['Train'].copy(), pt_df['Ferry'].copy(), pt_df['Tram'].copy(), pt_df['Bus'].copy()
+
+
 def add_forest():
     """
     Open the file 'forest_data.csv' from the folder 'data' and return the column to add to the data frame
@@ -115,7 +139,7 @@ def add_water(df):
     print("Loading water data...")
     w_df = pd.read_csv(Path('data/') / 'water_data.csv', sep=',', usecols=['water_average_with_sea',
                                                                            'water_average_without_sea'])
-    df['Water'] = w_df['water_average_with_sea'].copy()
+    df['Water'] = 100*w_df['water_average_with_sea'].copy()
     diff = w_df['water_average_with_sea'] - w_df['water_average_without_sea']
     mask = (diff.values > 0)
     df['Boolean sea'] = mask.astype(int)

@@ -76,7 +76,8 @@ class TestDataframe(unittest.TestCase):
                  'P Education combine scaled', 'Q Human health and social work activities combine scaled',
                  'R Arts, entertainment and recreation combine scaled', 'S Other service activities combine scaled',
                  'T Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use combine scaled',
-                 'U Activities of extraterritorial organisations and bodies combine scaled', 'Bus stops', 'Sell price',
+                 'U Activities of extraterritorial organisations and bodies combine scaled', 'Bus stops',
+                 'Metro', 'Train', 'Ferry', 'Tram', 'Bus', 'Sell price',
                  'Rent price with ARA', 'Rent price without ARA', 'Trend from 2018', 'Trend near future', 'Forest',
                  'Water', 'Boolean sea', 'Lat', 'Lon', 'Radius', 'text', 'label']
 

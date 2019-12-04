@@ -1,59 +1,67 @@
+from pyglet import app
 from pyglet.gl import *
-from pyglet.window import mouse
+from pyglet.window import key, mouse, Window
 import numpy as np
+from scipy.spatial import cKDTree
 from ctypes import *
 import math
-import random
 
 from map_meta_tools import load_map_meta
 from map_geom_tools import load_map_geom
+from map_plot_tools import load_map_plot
 
-config = pyglet.gl.Config(sample_buffers=1, samples=8, double_buffer=True)
-window = pyglet.window.Window(config=config, resizable=True)
+view_width = 640
+view_height = 480
+
+config = Config(sample_buffers=1, samples=8, double_buffer=True)
+window = Window(config=config, width=view_width, height=view_height, resizable=True, caption='<none>')
 
 VERTEX_SHADER_SOURCE = b'''
 #version 330
-layout(location = 0) in vec2 position;
-layout(location = 1) in int color_index;
+layout(location = 0) in vec2 a_position;
+layout(location = 1) in int a_region;
 
-out vec4 color;
+out vec4 v_color;
 
-uniform mat3 world_to_view;
+uniform mat3 u_map_to_clip;
 
-layout(std140) uniform color_table_block {
-    vec4 color_table[3026];
+layout(std140) uniform u_region_color_block {
+    vec4 u_region_color[3026];
 };
 
 void main()
 {
-    color = color_table[color_index];
-    vec3 new_position = world_to_view * vec3(position, 1.0);
-    gl_Position = vec4(new_position.xy, 0.0, 1.0);
+    v_color = u_region_color[a_region];
+    vec2 v_position = (u_map_to_clip * vec3(a_position, 1.0)).xy;
+    gl_Position = vec4(v_position, 0.0, 1.0);
 }
 '''
 
 FRAGMENT_SHADER_SOURCE = b'''
-#version 330 compatibility
-in vec4 color;
+#version 330
+in vec4 v_color;
+
+out vec4 f_color;
 
 void main()
 {
-    gl_FragColor = color;
+    f_color = v_color;
 }
 '''
 
 map_meta = load_map_meta()
 map_geom = load_map_geom()
+map_plot = load_map_plot()
 
 vertex_array = map_geom['vertex_data']
 element_array = map_geom['element_data']
 
-color_table_array = np.empty(3026, dtype='4=f4')
-for i in range(color_table_array.shape[0]):
-    r = random.random()
-    g = random.random()
-    b = random.random()
-    color_table_array[i] = r, g, b, 1.0
+color_array_dict = {
+    key.A: map_plot['age_data'],
+    key.W: map_plot['water_data'],
+    key.F: map_plot['forest_data'],
+    key.C: map_plot['cluster_data']
+}
 
 
 def build_shader(shader_info):
@@ -84,15 +92,19 @@ shader_program = build_shader_program([
 ])
 
 
-world_to_view_uniform = glGetUniformLocation(shader_program, c_char_p(b'world_to_view'))
+uniform_map_to_clip = glGetUniformLocation(shader_program, c_char_p(b'u_map_to_clip'))
+
+
+def update_buffer_content(buffer_type, buffer, buffer_data, buffer_usage):
+    glBindBuffer(buffer_type, buffer)
+    glBufferData(buffer_type, buffer_data.nbytes, buffer_data.ctypes.data_as(POINTER(GLvoid)), buffer_usage)
+    glBindBuffer(buffer_type, 0)
 
 
 def build_buffer(buffer_type, buffer_data, buffer_usage):
     buffer = GLuint()
     glGenBuffers(1, pointer(buffer))
-    glBindBuffer(buffer_type, buffer)
-    glBufferData(buffer_type, buffer_data.nbytes, buffer_data.ctypes.data_as(POINTER(GLvoid)), buffer_usage)
-    glBindBuffer(buffer_type, 0)
+    update_buffer_content(buffer_type, buffer, buffer_data, buffer_usage)
     buffer_element_size = buffer_data.nbytes // buffer_data.shape[0]
     buffer_element_count = buffer_data.nbytes // buffer_element_size
     return buffer, buffer_element_size, buffer_element_count
@@ -100,134 +112,184 @@ def build_buffer(buffer_type, buffer_data, buffer_usage):
 
 vertex_buffer, vertex_size, _ = build_buffer(GL_ARRAY_BUFFER, vertex_array, GL_STATIC_DRAW)
 element_buffer, element_size, element_count = build_buffer(GL_ELEMENT_ARRAY_BUFFER, element_array, GL_STATIC_DRAW)
-color_table_buffer, _, _ = build_buffer(GL_UNIFORM_BUFFER, color_table_array, GL_DYNAMIC_DRAW)
+region_color_buffer, _, _ = build_buffer(GL_UNIFORM_BUFFER, color_array_dict[key.F], GL_DYNAMIC_DRAW)
 
-color_table_uniform_block = glGetUniformBlockIndex(shader_program, c_char_p(b'color_table_block'))
-glUniformBlockBinding(shader_program, color_table_uniform_block, 0)
-glBindBufferBase(GL_UNIFORM_BUFFER, 0, color_table_buffer)
 
-glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer)
+def on_launch():
+    uniform_region_color_block = glGetUniformBlockIndex(shader_program, c_char_p(b'u_region_color_block'))
+    glUniformBlockBinding(shader_program, uniform_region_color_block, 0)
+    glBindBufferBase(GL_UNIFORM_BUFFER, 0, region_color_buffer)
 
-glEnableVertexAttribArray(0)
-glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, vertex_size, 0)
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer)
 
-glEnableVertexAttribArray(1)
-glVertexAttribIPointer(1, 1, GL_UNSIGNED_SHORT, vertex_size, 2 * sizeof(GLfloat))
+    glEnableVertexAttribArray(0)
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, vertex_size, 0)
 
-glBindBuffer(GL_ARRAY_BUFFER, 0)
+    glEnableVertexAttribArray(1)
+    glVertexAttribIPointer(1, 1, GL_UNSIGNED_SHORT, vertex_size, 2 * sizeof(GLfloat))
 
-x_mid = (83748.4296875 + 732907.75) / 2
-y_mid = (6629044.0 + 7776450.0) / 2
-x_mid_off = 0
-y_mid_off = 0
+    glBindBuffer(GL_ARRAY_BUFFER, 0)
+
+
 log_zoom = -8.0
 
+mat_view_to_clip = None
+mat_map_to_view = None
 
-def build_view():
+map_origin_x = (83748.4296875 + 732907.75) / 2
+map_origin_y = (6629044.0 + 7776450.0) / 2
+map_offset_x = 0.0
+map_offset_y = 0.0
+
+
+def update_view():
+    global mat_view_to_clip, mat_map_to_view
+
     zoom = math.exp(log_zoom)
-    xmid = x_mid + x_mid_off
-    ymid = y_mid + y_mid_off
+    mid_x = map_origin_x + map_offset_x
+    mid_y = map_origin_y + map_offset_y
 
-    view_to_clip = np.array([[2 / window.width, 0, -1],
-                             [0, 2 / window.height, -1],
-                             [0, 0, 1]], dtype='=f4')
-    map_to_view = np.array([[zoom, 0, window.width / 2 - zoom * xmid],
-                            [0, zoom, window.height / 2 - zoom * ymid],
-                            [0, 0, 1]], dtype='=f4')
+    mat_view_to_clip = np.array([[2 / window.width, 0, -1],
+                                 [0, 2 / window.height, -1],
+                                 [0, 0, 1]], dtype='=f4')
 
-    return map_to_view, view_to_clip
+    mat_map_to_view = np.array([[zoom, 0, window.width / 2 - zoom * mid_x],
+                                [0, zoom, window.height / 2 - zoom * mid_y],
+                                [0, 0, 1]], dtype='=f4')
 
 
-mouse_pre = None
-mouse_now = None
+centroid_tree = cKDTree(map_geom['element_middle'])
+centroid_tree_radius = np.max(map_geom['element_extent'])
+
+
+def find_region_by_map_position(map_position):
+
+    def is_point_in_triangle(p, p0, p1, p2):
+        d1 = p - p2
+        d2 = p1 - p2
+        d = d2[1] * (p0[0] - p2[0]) - d2[0] * (p0[1] - p2[1])
+        s = d2[1] * d1[0] - d2[0] * d1[1]
+        t = (p2[1] - p0[1]) * d1[0] + (p0[0] - p2[0]) * d1[1]
+        if d < 0:
+            return s <= 0 and t <= 0 and s + t >= d
+        return s >= 0 and t >= 0 and s + t <= d
+
+    i_candidates = centroid_tree.query_ball_point(vec_mouse_map_position[:2], centroid_tree_radius, p=np.inf)
+
+    for i in i_candidates:
+        a = vertex_array[element_array[i][0]]
+        b = vertex_array[element_array[i][1]]
+        c = vertex_array[element_array[i][2]]
+
+        if is_point_in_triangle(map_position[:2], a[0], b[0], c[0]):
+            return a[1]
+
+    return None
+
+
+vec_mouse_view_position = None
+vec_mouse_map_position = None
+fix_mouse_map_position = False
+
+
+@window.event
+def on_key_press(symbol, modifiers):
+    if symbol in color_array_dict.keys():
+        update_buffer_content(GL_UNIFORM_BUFFER, region_color_buffer, color_array_dict[symbol], GL_DYNAMIC_DRAW)
+
+
+@window.event
+def on_key_release(symbol, modifiers):
+    pass
 
 
 @window.event
 def on_mouse_press(x, y, button, modifiers):
-    global mouse_pre
+    global fix_mouse_map_position
     if button == mouse.LEFT:
-        mouse_pre = (x, y)
+        window.set_mouse_cursor(window.get_system_mouse_cursor(Window.CURSOR_SIZE))
+        fix_mouse_map_position = True
+    if button == mouse.RIGHT:
+        region = find_region_by_map_position(vec_mouse_map_position[:2])
+        if region is not None:
+            code = map_meta['region_code_data'][region]
+            name = map_meta['region_name_data'][region]
+            window.set_caption(f'{code} {name}')
+        else:
+            window.set_caption('<none>')
 
 
 @window.event
 def on_mouse_release(x, y, button, modifiers):
-    global mouse_pre, mouse_now
-    mouse_now = (x, y)
+    global fix_mouse_map_position
     if button == mouse.LEFT:
-        global x_mid, y_mid
-        global x_mid_off, y_mid_off
-        dx = -(mouse_now[0] - mouse_pre[0])
-        dy = -(mouse_now[1] - mouse_pre[1])
-        zoom = math.exp(log_zoom)
-        x_mid_off = dx / zoom
-        y_mid_off = dy / zoom
-        x_mid += x_mid_off
-        y_mid += y_mid_off
-        x_mid_off = 0
-        y_mid_off = 0
-        mouse_pre = None
-        mouse_now = None
+        window.set_mouse_cursor(None)
+        fix_mouse_map_position = False
+
+
+@window.event
+def on_mouse_motion(x, y, dx, dy):
+    global vec_mouse_view_position, vec_mouse_map_position
+    global mat_map_to_view
+    vec_mouse_view_position = np.array((x, y, 1.0))
+    vec_mouse_map_position = np.linalg.inv(mat_map_to_view) @ np.array((x, y, 1.0))
+
+
+@window.event
+def on_mouse_enter(x, y):
+    pass
+
+
+@window.event
+def on_mouse_leave(x, y):
+    global vec_mouse_view_position
+    vec_mouse_view_position = None
 
 
 @window.event
 def on_mouse_drag(x, y, dx, dy, buttons, modifiers):
-    global mouse_now
-    mouse_now = (x, y)
-    if buttons & mouse.LEFT:
-        global x_mid_off, y_mid_off
-        dx = -(mouse_now[0] - mouse_pre[0])
-        dy = -(mouse_now[1] - mouse_pre[1])
-        zoom = math.exp(log_zoom)
-        x_mid_off = dx / zoom
-        y_mid_off = dy / zoom
+    global vec_mouse_map_position
+    global mat_map_to_view
+    global map_offset_x, map_offset_y
+    new_vec_mouse_map_position = np.linalg.inv(mat_map_to_view) @ np.array((x, y, 1.0))
+    if not fix_mouse_map_position:
+        vec_mouse_map_position = new_vec_mouse_map_position
+    else:
+        map_offset_x += vec_mouse_map_position[0] - new_vec_mouse_map_position[0]
+        map_offset_y += vec_mouse_map_position[1] - new_vec_mouse_map_position[1]
+        update_view()
 
 
 @window.event
 def on_mouse_scroll(x, y, scroll_x, scroll_y):
-    global x_mid, y_mid
-
-    xmid = x_mid + x_mid_off
-    ymid = y_mid + y_mid_off
-
     global log_zoom
-    zoom = math.exp(log_zoom)
-    world_to_window = np.array([[zoom, 0, window.width / 2 - zoom * xmid],
-                                [0, zoom, window.height / 2 - zoom * ymid],
-                                [0, 0, 1]], dtype='=f4')
+    log_zoom = np.clip(log_zoom + 0.1 * scroll_y, -8.0, -2.0)
 
-    window_to_world = np.linalg.inv(world_to_window)
-    world_x, world_y, _ = window_to_world @ (x, y, 1)
+    global mat_map_to_view
+    global vec_mouse_map_position
+    global map_offset_x, map_offset_y
 
-    log_zoom += 0.1 * scroll_y
-    if log_zoom < -8.0:
-        log_zoom = -8.0
-    elif log_zoom > -2.0:
-        log_zoom = -2.0
-
-    zoom = math.exp(log_zoom)
-    world_to_window = np.array([[zoom, 0, window.width / 2 - zoom * xmid],
-                                [0, zoom, window.height / 2 - zoom * ymid],
-                                [0, 0, 1]], dtype='=f4')
-
-    window_to_world = np.linalg.inv(world_to_window)
-    world_x_new, world_y_new, _ = window_to_world @ (x, y, 1)
-
-    x_mid += world_x - world_x_new
-    y_mid += world_y - world_y_new
+    update_view()
+    new_vec_mouse_map_position = np.linalg.inv(mat_map_to_view) @ np.array((x, y, 1.0))
+    map_offset_x += vec_mouse_map_position[0] - new_vec_mouse_map_position[0]
+    map_offset_y += vec_mouse_map_position[1] - new_vec_mouse_map_position[1]
+    update_view()
 
 
 @window.event
 def on_resize(width, height):
+    global view_width, view_height
 
     # avoid width == 0, height == 0
-    width = max(width, 1)
-    height = max(height, 1)
+    view_width = max(width, 1)
+    view_height = max(height, 1)
 
-    glViewport(0, 0, width, height)
+    update_view()
 
 
 @window.event
 def on_draw():
+    glViewport(0, 0, view_width, view_height)
 
     # clear screen
     glClearColor(1.0, 1.0, 1.0, 1.0)
@@ -236,9 +298,9 @@ def on_draw():
     glUseProgram(shader_program)
 
     # update projection matrix
-    map_to_view, view_to_clip = build_view()
-    map_to_clip = view_to_clip @ map_to_view
-    glUniformMatrix3fv(world_to_view_uniform, 1, GL_TRUE, map_to_clip.ctypes.data_as(POINTER(GLfloat)))
+    global mat_view_to_clip, mat_map_to_view
+    map_to_clip = mat_view_to_clip @ mat_map_to_view
+    glUniformMatrix3fv(uniform_map_to_clip, 1, GL_TRUE, map_to_clip.ctypes.data_as(POINTER(GLfloat)))
 
     # bind vertices
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer)
@@ -256,4 +318,5 @@ def on_draw():
     glFlush()
 
 
-pyglet.app.run()
+on_launch()
+app.run()

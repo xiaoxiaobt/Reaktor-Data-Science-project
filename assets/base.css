@@ -98,6 +98,7 @@
 
     .four.columns {
         width: 30.6666666667%;
+
     }
 
     .five.columns {
@@ -253,6 +254,9 @@ body {
     width: 100%;
     overflow: auto;
     opacity: 0.7;
+    background-image: url('/assets/logos.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
 #_dash-app-content > div {
@@ -354,8 +358,9 @@ p {
 
 
 label {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 9%;
+    margin-bottom: 5px;
     color: #407DFA;
     font-family: "Geneva", "Tahoma", "Verdana", "sans-serif"
 }
@@ -433,7 +438,7 @@ input[type="reset"],
 input[type="button"] {
     margin-left: 9%;
     height: 34px;
-    width: 100px;
+    width: 120px;
     padding-bottom: 10px;
     color: white;
     text-align: center;
@@ -452,10 +457,10 @@ input[type="button"] {
     border: transparent !important;
 }
 
-.demo_button {
+.github_button {
     margin-left: 4%;
     height: 34px;
-    width: 140px;
+    width: 120px;
     padding-bottom: 10px;
     color: white;
     text-align: center;
@@ -467,7 +472,7 @@ input[type="button"] {
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    background-color: turquoise;
+    background-color: black;
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 2px;
@@ -810,6 +815,7 @@ li {
 table {
     border-collapse: separate;
     border: 1px solid black;
+    font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
 }
 
 th,
@@ -817,6 +823,7 @@ td {
     padding: 12px 15px;
     text-align: center;
     border-bottom: 1px solid #E1E1E1;
+    font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
 }
 
 th:first-child,
@@ -993,12 +1000,6 @@ there.
         font-weight: 300;
         font-family: "Geneva", "Tahoma", "Verdana", "sans-serif";
         margin: 0 auto;
-    }
-
-    .plotly-logo {
-        width: 40%;
-        margin: 0 auto;
-        margin-top: 40px;
     }
 
 

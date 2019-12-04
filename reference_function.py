@@ -53,7 +53,7 @@ def get_attribute(postalcode="02150", column=None):
         raise Exception
 
 
-def radar_attribute(postalcode="02150"):
+def radar_value(postalcode="02150"):
     """
     Read from the data frame: find the value of the given column for the given postal code,
     and normalize it from 0 to 1 if needed.
@@ -128,8 +128,6 @@ def make_dash_table(old_code, new_code):
     # analysis_company_num = "↗ Big town with more opportunities" if result_company_num > 0 else "↘ Peaceful life"
     # row_company_num = four_row_list("Number of companies", old_company_num, new_company_num, analysis_company_num)
 
-    # Final result
-    # , row_company_num]
     return table
 
 

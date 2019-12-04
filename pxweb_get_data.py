@@ -113,6 +113,7 @@ def paavo_data():
 
     return data
 
+
 def fetch_paavo_density_and_area(density_file_destination, area_file_destination):
     def clean_df(df):
         # Drop Finland row
@@ -288,7 +289,7 @@ def fetch_paavo_housing(destination_directory, postal_code_file, density_file):
     for year in year_list:
         for quarter in range(0, 5):
             # Construct the json query
-            new_query =  [{"code": "Vuosi", "selection": {"filter": "item", "values": [str(year)]}}, {"code": "Neljännes", "selection": {"filter": "item", "values": [str(quarter)]}}] + base_query
+            new_query = [{"code": "Vuosi", "selection": {"filter": "item", "values": [str(year)]}}, {"code": "Neljännes", "selection": {"filter": "item", "values": [str(quarter)]}}] + base_query
             quarter_query = {"query": new_query, "response": {"format": "csv"}}
             if quarter == 0:
                 mean_label = 'Housing price (' + str(year) + ')'

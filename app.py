@@ -1,8 +1,8 @@
+import json
 import dash
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
-import json
 from reference_function import *
 from similar_postialue import apply_input
 
@@ -19,9 +19,9 @@ def get_instructions():
     return html.P(
         children=[
             """
-            - An App that provides suggestions for relocation in Finland
-            - Fill the form below and click "Recommend"
-            - Alternatively, click on one area
+            · An App that provides suggestions for relocation in Finland
+            · Fill the form below and click "Recommend"
+            · Alternatively, click on one area
             """
         ],
         className="instructions-sidebar"
@@ -31,16 +31,14 @@ def get_instructions():
 def get_polar_html(old_code="02150", new_code="00100"):
     categories = ['Education', 'Services', 'Public Transportation', 'Average Income', 'Population Density']
     fig = go.Figure()
-    fig.add_trace(
-        go.Scatterpolar(r=radar_attribute(old_code), theta=categories, fill='toself', name='Current location'))
-    fig.add_trace(go.Scatterpolar(r=radar_attribute(new_code), theta=categories, fill='toself', name='New location'))
-
+    fig.add_trace(go.Scatterpolar(r=radar_value(old_code), theta=categories, fill='toself', name='Current location'))
+    fig.add_trace(go.Scatterpolar(r=radar_value(new_code), theta=categories, fill='toself', name='New location'))
     fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1])), showlegend=True)
 
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code)),
-            dcc.Graph(figure=fig, style={"height": "400px"}, config={'displayModeBar': False})
+            dcc.Graph(figure=fig, style={"height": "400px", "width": "800px"}, config={'displayModeBar': False})
         ],
         id="analysis_info"
     )
@@ -51,7 +49,7 @@ def get_about_html():
            This is the implementation of our Data Science Project. The aim of this project is to provide 
            suggestions on suitable relocation areas in Finland, based on housing prices and demographics.
            """
-    return html.Div(text)
+    return html.H3(text)
 
 
 def get_side_analysis(zip="02150"):
@@ -61,7 +59,6 @@ def get_side_analysis(zip="02150"):
         html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%"),
         html.H2("Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
         html.H2("Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
-
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
@@ -84,7 +81,6 @@ def get_analysis(old_code="02150", new_code="00100"):
     # income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
     average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
     # percentage_degree = format_2f(100 * float(get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
-    # TODO: Add more relevant info
 
     text = [html.H1(location_string),
             html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
@@ -151,7 +147,7 @@ app.layout = html.Div(
                         html.Button("LEARN MORE", className="button_instruction", id="learn-more-button"),
                         html.A(
                             html.Button(
-                                "GITHUB", className="demo_button", id="demo"
+                                "GITHUB", className="github_button", id="demo"
                             ), href="https://github.com/xiaoxiaobt/Reaktor-Data-Science-project")
                     ],
                     className="mobile_buttons"
@@ -239,11 +235,10 @@ app.layout = html.Div(
                 ),
                 html.Br(),
                 html.Div(id="counter", className="0"),
-                html.Button("Recommend", id="button-stitch", className="button_submit"),
-                # TODO: Disable the button when input is erroneous.
-                html.Img(src=app.get_asset_url('logos.png'), style={"height": "162px", "width": "400px"})
+                html.Button("Recommend", id="button-stitch", className="button_submit")
             ],
             className="four columns instruction"
+            # style={"background-image": "url('/assets/logos.png')", "background-repeat": "no-repeat", "background-position": "right bottom"}
         ),
         html.Div(
             [

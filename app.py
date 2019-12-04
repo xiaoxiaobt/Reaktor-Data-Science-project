@@ -33,12 +33,12 @@ def get_polar_html(old_code="02150", new_code="00100"):
     fig = go.Figure()
     fig.add_trace(go.Scatterpolar(r=radar_value(old_code), theta=categories, fill='toself', name='Current location'))
     fig.add_trace(go.Scatterpolar(r=radar_value(new_code), theta=categories, fill='toself', name='New location'))
-    fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1])), showlegend=True)
+    fig.update_layout(polar=dict(radialaxis=dict(range=[0, 1])), margin={"r": 20, "t": 50, "l": 20, "b": 20})
 
     return html.Div(
         children=[
             html.Div(children=get_analysis(old_code, new_code)),
-            dcc.Graph(figure=fig, style={"height": "400px", "width": "800px"}, config={'displayModeBar': False})
+            dcc.Graph(figure=fig, style={"height": "240px", "width": "800px"}, config={'displayModeBar': False})
         ],
         id="analysis_info"
     )
@@ -57,8 +57,8 @@ def get_side_analysis(zip="02150"):
         html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
         html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
         html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%"),
-        html.H2("Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
-        html.H2("Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
+        html.H2("🌲 Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
+        html.H2("🌊 Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
@@ -95,7 +95,7 @@ def get_analysis(old_code="02150", new_code="00100"):
     return text + table
 
 
-def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
+def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
                                    text=paavo_df.text,
                                    locations=paavo_df['Postal code'],
@@ -108,8 +108,8 @@ def get_map_html(lat=65.361064, lon=26.985940, zoom=4.0):
     map_layout = go.Layout(width=360,
                            height=600,
                            mapbox_style="carto-positron",
-                           mapbox_zoom=zoom,
-                           mapbox_center={"lat": lat, "lon": lon},
+                           mapbox_zoom=4.0,
+                           mapbox_center={"lat": 65.361064, "lon": 26.985940},
                            margin={"r": 0, "t": 0, "l": 0, "b": 0}
                            )
     graph = dcc.Graph(id='main_plot',
@@ -140,7 +140,6 @@ app.layout = html.Div(
             [
                 html.Img(src=app.get_asset_url('Kodimpi.png'),
                          style={"height": "113px", "width": "200px", "margin-left": "50px"}),
-                # html.H1(children="Kodimpi (BETA)"),
                 get_instructions(),
                 html.Div(
                     [
@@ -164,7 +163,6 @@ app.layout = html.Div(
                                     id="income",
                                     type="number",
                                     value=10000,
-                                    name="number of rows",
                                     min=10000,
                                     step=1000
                                 )
@@ -177,7 +175,6 @@ app.layout = html.Div(
                                     id="age",
                                     type="number",
                                     value=22,
-                                    name="number of rows",
                                     min=1
                                 ),
                             ]
@@ -238,7 +235,6 @@ app.layout = html.Div(
                 html.Button("Recommend", id="button-stitch", className="button_submit")
             ],
             className="four columns instruction"
-            # style={"background-image": "url('/assets/logos.png')", "background-repeat": "no-repeat", "background-position": "right bottom"}
         ),
         html.Div(
             [
@@ -267,27 +263,29 @@ app.layout = html.Div(
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
                State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
                State("analysis_info", "children"), State("stitching-tabs", "value"), State("counter", "className")])
-def change_focus(button_click, map_click, income, age, location, occupation, household_type, selection_radio,
+def change_focus(button_click, map_click, income, age, location, occupation, household_size, selection_radio,
                  analysis_old, tab_old, button_counter):
     if button_click is None:
         button_click = 0
     if int(button_counter) + 1 == button_click:
         if income is None or income <= 0:
             income = 10000
-        if (age <= 0) or (age >= 120):
+        if 0 < age < 120:
+            age = round(age)
+        else:
             age = 22
         if (location is None) or (location == "") or (location not in list(paavo_df['Postal code'])):
             location = "00930"
         if occupation not in list_of_jobs:
             occupation = "Student"
-        if household_type not in list_of_household_type:
-            household_type = 1
-        # print(income, age, location, occupation, household_type)
-        prediction = str(apply_input(income, age, location, occupation, household_type, selection_radio))  # get_prediction_model(income, age, location, occupation, household_type, selection_radio)
-        print(prediction)
+        if household_size not in list_of_household_type:
+            household_size = 1
+        prediction = str(apply_input(income, age, location, occupation, household_size, selection_radio))
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
             prediction = "00120"
+            print("WARNING: NO PREDICTION GIVEN")
+        print("Prediction: " + prediction)
         return get_polar_html(location, prediction), "result-tab", str(int(button_counter) + 1)
     elif map_click is not None:
         pc = map_click['points'][0]['location']

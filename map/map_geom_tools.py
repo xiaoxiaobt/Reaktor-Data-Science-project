@@ -59,9 +59,16 @@ def build_map_geom(source):
 
     element_array = mesh['element_vertex_pointer'].astype('<u4')
 
+    build_context_data(mesh)
+
+    element_middle_array = mesh['element_middle'].astype('<f8')
+    element_extent_array = mesh['element_extent'].astype('<f8')
+
     return {
         'vertex_data': vertex_array,
-        'element_data': element_array
+        'element_data': element_array,
+        'element_middle': element_middle_array,
+        'element_extent': element_extent_array
     }
 
 
@@ -245,6 +252,23 @@ def combine_mesh_list(mesh_list, has_index):
         mesh['vertex_region_pointer'] = vertex_region_pointer_array
 
     return mesh
+
+
+def build_context_data(mesh):
+    vertex_array = mesh['vertex_position']
+    element_array = mesh['element_vertex_pointer']
+    element_middle_array = np.empty((element_array.shape[0], 2), dtype=np.float)
+    element_extent_array = np.empty(element_array.shape[0], dtype=np.float)
+    for i in range(element_array.shape[0]):
+        a = vertex_array[element_array[i][0]]
+        b = vertex_array[element_array[i][1]]
+        c = vertex_array[element_array[i][2]]
+        middle = (np.max((a, b, c), axis=0) + np.min((a, b, c), axis=0)) / 2
+        extent = np.max(np.linalg.norm(np.array([a, b, c]) - middle, ord=np.inf))
+        element_middle_array[i] = middle
+        element_extent_array[i] = extent
+    mesh['element_middle'] = element_middle_array
+    mesh['element_extent'] = element_extent_array
 
 
 if __name__ == '__main__':

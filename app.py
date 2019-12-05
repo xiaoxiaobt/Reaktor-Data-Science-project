@@ -145,6 +145,10 @@ app.layout = html.Div(
                     [
                         html.A(
                             html.Button(
+                                "PRESENTATION", className="button_instruction", id="learn-more-button"
+                            ), href="https://docs.google.com/presentation/d/1UxK_5VFOWXF3Ni_3pTustceeMWMWMBmiT3ZiNMB7xNs/edit?usp=sharing"),
+                        html.A(
+                            html.Button(
                                 "GITHUB", className="github_button", id="demo"
                             ), href="https://github.com/xiaoxiaobt/Reaktor-Data-Science-project")
                     ],

@@ -177,7 +177,6 @@ def add_peculiarity(df):
     :return: the updated data frame
     """
     list = []
-    # TODO: Build the list based on min and max values by column, but at most 1 info per postalcode
     # See notes
     for i, row in df.iterrows():
         list.append(str(row['Area']))

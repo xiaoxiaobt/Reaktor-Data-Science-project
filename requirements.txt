@@ -44,7 +44,6 @@ jupyter-client
 jupyter-console
 jupyter-core
 kiwisolver
-llvmlite
 MarkupSafe
 matplotlib
 mistune
@@ -53,7 +52,6 @@ nbconvert
 nbformat
 networkx
 notebook
-numba
 numpy
 pandas
 pandocfilters
@@ -62,7 +60,6 @@ pathlib
 pickleshare
 Pillow
 plotly
-pprint
 prometheus-client
 prompt-toolkit
 pyglet
@@ -96,4 +93,5 @@ wcwidth
 webencodings
 Werkzeug
 widgetsnbextension
+wheel
 zipp

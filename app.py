@@ -60,7 +60,6 @@ def get_side_analysis(zip="02150"):
         html.H2("🌲 Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
         html.H2("🌊 Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
-        # html.H4("🛈 Greetings from Tiger :D", id="code_info"),
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 

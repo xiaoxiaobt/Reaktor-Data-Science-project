@@ -1,5 +1,5 @@
 # Ignored by Heroku
-README.md
+**/README.md
 LICENSE
 .gitignore
 /.github
@@ -28,5 +28,5 @@ dataframes/df*.tsv
 scripts/fetching
 scripts/modeling
 scripts/visualisation
-scripts/web
+scripts/web_map
 scripts/preprocessing

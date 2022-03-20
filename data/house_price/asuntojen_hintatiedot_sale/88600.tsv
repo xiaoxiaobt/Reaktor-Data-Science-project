@@ -1,0 +1,42 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,kk,kh	kt	2800	36000	1286	1981	3/3	ei		E2013
+Keskusta	1h, kk, s	kt	3410	61000	1789	1995	1/2	ei	hyvä	C
+Keskusta	1h, k, kh	rt	2500	32200	1288	2018	1/1	ei	hyvä	C2013
+Keskusta	1h, k, kh	rt	2500	36300	1452	2018	1/1	ei	hyvä	C2013
+Keskusta	1h,k,kh	kt	4100	56500	1378	1964	2/3	ei		B2013
+Keskusta	1h+k	kt	3300	46500	1409	1983		ei		F2013
+Hirvenniemi	2h+k+s	rt	5000	97000	1940	2009		ei	hyvä	C2013
+Akkoniemi	2h,k,s	kt	6100	43000	705	1978		ei		
+Hirvenniemi	2h+k+s	rt	5000	99000	1980	2009		ei		C2013
+Keskusta	2h,k,s	kt	5300	134000	2528	2011		on	hyvä	B2018
+Vuokatti	1h, tupak, s, p...	rt	6600	134500	2038	2011	1/2	ei	hyvä	C
+Makkosenmäki	2h,k,s	rt	6100	75000	1230	1985	1/1	ei		
+Keskusta	2h, k	kt	5500	65000	1182	1974	1/2	ei	hyvä	
+Hirvenniemi	2h+k+s	rt	5000	99000	1980	2009		ei	hyvä	C2013
+Keskusta	2h, k, s	kt	5500	56500	1027	1976	3/3	ei	hyvä	E
+Alasotkamo	2h+k+ph+s	rt	5500	114500	2082	2009	1/1	ei	hyvä	C
+Sopala	2h,k,s	rt	5500	87500	1591	1999		ei		C2018
+Makkosenmäki	2h, k, s	rt	6350	86000	1354	1982	1/1	ei	hyvä	D2007
+Tiilitörmä	1h,tupak.,s	rt	5800	97000	1672	2008		ei	hyvä	E2013
+Leivolankylä	2h, k, ph, s	rt	5500	114000	2073	2010	1/1	ei	hyvä	C2007
+Ylisotkamo	2h+k+s +autokatos	rt	5500	92000	1673	1999	1/1	ei	hyvä	
+Keskusta	3h+k+kh	kt	7450	50000	671	1973	2/3	ei	hyvä	
+Hirvenniemi	3h,k,s	rt	6600	132000	2000	2010		ei		C2018
+Keskusta	2h,k,s	kt	5000	92500	1850	2001		ei		E2018
+Keskusta	3h,k,s	kt	7600	223500	2941	2013	2/4	on		B2013
+Keskusta	3h, k, s	kt	7400	177500	2399	2011		ei		B2007
+Keskusta	3h, k, s	kt	7800	274500	3519	2013	2/4	on		B2013
+Keskusta	3h, k, s	rt	7000	123000	1757	2000	1/1	ei	hyvä	D
+Keskusta	3h+k+s	kt	7500	55407	739	1978	3/3	ei		F2013
+Hirvenniemi	3h, k , s	rt	7000	127000	1814	2009		ei		C2007
+Makkosenmäki	3h + k + s + ph...	rt	7900	74000	937	1981		ei	hyvä	
+Ylikylä	3h+k+s	kt	10500	195000	1857	2008		on	hyvä	D2007
+Makkosenmäki	3h, k, s,	rt	7600	78500	1033	1984		ei	hyvä	E2013
+Makkosenmäki	4h,k,s,ph	ok	10500	70500	671	1983		ei		
+Makkosenmäki	4h, k, s	ok	10500	126000	1200	1981		ei	hyvä	B2018
+Ylisotkamo	4h, k, s	ok	11800	103000	873	1971	-1/1	ei	hyvä	
+Keskusta	4 x 2 h, k, s, ...	rt	35200	180000	511	1972		ei		D2018
+Makkosenmäki	4 mh, oh, k, s,...	ok	11900	130000	1092	1979		ei		B2018
+Ylisotkamo	4mh, oh, yl...	ok	15700	208000	1325	1997	-1/2	ei	hyvä	
+Hirvenniemi	4h, k, s, ak, var	rt	10000	179000	1790	1980		ei	hyvä	F2013
+Ylisotkamo	k+oh+3mh+pukuh+...	ok	11500	87000	757	1969	-1/1	ei	hyvä	

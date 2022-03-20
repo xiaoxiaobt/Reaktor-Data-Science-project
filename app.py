@@ -1,102 +1,85 @@
 import json
-import dash
 import plotly.graph_objs as go
+from dash import dcc, html, Dash
 from dash.dependencies import Input, Output, State
-import dash_core_components as dcc
-from reference_function import *
-from similar_postialue import apply_input
+from scripts.deployment.reference_function import *
+from scripts.deployment.find_similar_postal_area import apply_input
 
 print("Loading data...")
-name_geojson = "./data/finland_2019_p4_utf8_simp_wid.geojson"
-name_paavo_dataframe = "./dataframes/final_dataframe.tsv"  # Requires UTF-8, Tab-separated, name of postal code column ='Postal code'
+name_geojson = "./data/geographic/finland_2019_p4_utf8_simp_wid.geojson"
 
 # Initialize variables
-polygons = json.load(open(name_geojson, "r"))  # It needs to contain "id" feature outside "description"
-paavo_df = pd.read_table(name_paavo_dataframe, dtype={"Postal code": object})  # The dtype CANNOT be removed!
+# It needs to contain "id" feature outside "description"
+polygons = json.load(open(name_geojson, "r"))
+# paavo_df = pd.read_table("./dataframes/final_dataframe.tsv",
+#                          dtype={"Postal code": object})  # Read in reference_function
 
-
-def get_instructions():
-    return html.P(
-        children=[
-            """
-            · An App that provides suggestions for relocation in Finland
-            · Fill the form below and click "Recommend"
-            · Alternatively, click on one area
-            """
-        ],
-        className="instructions-sidebar"
-    )
-
-
-def get_polar_html(old_code="02150", new_code="00100"):
-    categories = ['Education', 'Services', 'Public Transportation', 'Average Income', 'Population Density']
-    fig = go.Figure()
-    fig.add_trace(go.Scatterpolar(r=radar_value(old_code), theta=categories, fill='toself', name='Current location'))
-    fig.add_trace(go.Scatterpolar(r=radar_value(new_code), theta=categories, fill='toself', name='New location'))
-    fig.update_layout(polar=dict(radialaxis=dict(range=[0, 1])), margin={"r": 20, "t": 50, "l": 20, "b": 20})
-
-    return html.Div(
-        children=[
-            html.Div(children=get_analysis(old_code, new_code)),
-            dcc.Graph(figure=fig, style={"height": "240px", "width": "800px"}, config={'displayModeBar': False})
-        ],
-        id="analysis_info"
-    )
-
-
-def get_about_html():
-    text = """
-           This is the implementation of our Data Science Project. The aim of this project is to provide 
-           suggestions on suitable relocation areas in Finland, based on housing prices and demographics.
-           """
-    return html.H3(text)
+dcc._js_dist[0]['external_url'] = 'https://cdn.plot.ly/plotly-geo-2.11.0.min.js'
 
 
 def get_side_analysis(zip="02150"):
     return [
-        html.H2("Area: " + zip_name_dict[zip] + ", " + zip, id="code_title", style={'color': 'black'}),
-        html.H2(get_transportation_icons(zip), style={"font-size": "4rem"}),
-        html.H2("Municipality tax rate: " + str(zip_tax_dict[zip]) + "%"),
-        html.H2("🌲 Forest coverage: " + format_2f(get_attribute(zip, "Forest")) + " %"),
-        html.H2("🌊 Water coverage: " + format_2f(get_attribute(zip, "Water")) + " %")
+        html.H2(f"Area: {zip_name_dict[zip]}, {zip}", id="code_title"),
+        html.H2(get_transportation_icons(zip), id="transportation_icons"),
+        html.H2(f"🏢 Municipality tax rate: {zip_tax_dict[zip]}%"),
+        html.H2(
+            f"🌲 Forest coverage: {float(get_attribute(zip, 'Forest')):.2f}%"),
+        html.H2(
+            f"🌊 Water coverage: {float(get_attribute(zip, 'Water')):.2f}%")
         # dcc.Graph(figure=get_pie(zip), config={'displayModeBar': False})
         # html.H4(str(get_amount_of_service()), id="main_info")
     ]
 
 
-def get_analysis(old_code="02150", new_code="00100"):
+def get_polar_html(old_code="02150", new_code="00100"):
     # H1
-    location_string = "Hey, how about this one? " + zip_name_dict[new_code] + ", " + new_code
+    location_string = f"Hey, how about this one? {zip_name_dict[new_code]}, {new_code}"
     # H2
     sell_price_string = get_attribute(postalcode=new_code, column="Sell price")
-    sell_price_string = format_2f(sell_price_string) if sell_price_string != "0.0" else "--"
-    rent_ara_price_string = get_attribute(postalcode=new_code, column="Rent price with ARA")
-    rent_ara_price_string = format_2f(rent_ara_price_string) if rent_ara_price_string != "0.0" else "--"
-    rent_noara_price_string = get_attribute(postalcode=new_code, column="Rent price without ARA")
-    rent_noara_price_string = format_2f(rent_noara_price_string) if rent_noara_price_string != "0.0" else "--"
-    trend_near_future_string = "{:+.2f}".format(100 * float(get_attribute(new_code, column="Trend near future")))
+    sell_price_string = f"{float(sell_price_string):.2f}" if sell_price_string != "0.0" else "--"
+    rent_ara_price_string = get_attribute(
+        postalcode=new_code, column="Rent price with ARA")
+    rent_ara_price_string = f"{float(rent_ara_price_string):.2f}" if rent_ara_price_string != "0.0" else "--"
+    rent_noara_price_string = get_attribute(
+        postalcode=new_code, column="Rent price without ARA")
+    rent_noara_price_string = f"{float(rent_noara_price_string):.2f}" if rent_noara_price_string != "0.0" else "--"
+    trend_near_future_string = f"{float(get_attribute(new_code, column='Trend near future')):+.2%}"
 
     # H3
-    # income_string = get_attribute(postalcode=new_code, column="Average income of inhabitants")
-    average_age_string = get_attribute(postalcode=new_code, column="Average age of inhabitants")
-    # percentage_degree = format_2f(100 * float(get_attribute(postalcode=new_code, column="Academic degree - Higher level university degree scaled")))
+    average_age_string = get_attribute(
+        postalcode=new_code, column="Average age of inhabitants")
 
-    text = [html.H1(location_string),
-            html.H2("🛈 Last 12 months sell price: " + sell_price_string + " €/m²"),
-            html.H2("🛈 Last 12 months rent price: " + rent_ara_price_string + " €/m² (including ARA), "
-                    + rent_noara_price_string + " €/m² (private only)"),
-            html.H3("Trend of price: \t" + trend_near_future_string + " %"),
-            html.H3("Average age: \t" + average_age_string + " years"),
-            # html.H3(percentage_degree + "% of the people has a higher university degree")
-            ]
+    categories = ['Education', 'Services', 'Public Transportation',
+                  'Average Income', 'Population Density']
+    fig = go.Figure()
+    fig.add_trace(go.Scatterpolar(r=radar_value(old_code),
+                  theta=categories, fill='toself', name='Current location'))
+    fig.add_trace(go.Scatterpolar(r=radar_value(new_code),
+                  theta=categories, fill='toself', name='New location'))
+    fig.update_layout(polar=dict(radialaxis=dict(range=[0, 1])),
+                      margin={"r": 20, "t": 50, "l": 20, "b": 20})
 
-    table = make_dash_table(old_code, new_code)
-    return text + table
+    return html.Div(
+        children=[
+            html.H1(location_string),
+            html.H2(
+                f"🛈 Last 12 months sell price: {sell_price_string} €/m²", id="sell_12"),
+            html.H2(
+                f"🛈 Last 12 months rent price: {rent_ara_price_string} €/m² (including ARA), {rent_noara_price_string} €/m² (private only)", id="rent_12"),
+            html.H3(f"Trend of price: {trend_near_future_string}"),
+            html.H3(f"Average age: {average_age_string} years"),
+            # html.H3(percentage_degree + "% of the people has a higher university degree"),
+            make_dash_table(old_code, new_code),
+            dcc.Graph(figure=fig, id="polar_graph",
+                      config={'displayModeBar': False})
+        ],
+        id="analysis_info"
+    )
 
 
 def get_map_html():
     map_plot = go.Choroplethmapbox(geojson=polygons,
-                                   text=paavo_df.text,
+                                   hovertemplate=paavo_df.text,
                                    locations=paavo_df['Postal code'],
                                    z=paavo_df['Trend near future'],
                                    colorscale="Viridis",
@@ -114,10 +97,10 @@ def get_map_html():
     graph = dcc.Graph(id='main_plot',
                       config={'displayModeBar': False},
                       figure={'layout': map_layout, 'data': [map_plot]},
-                      style={'display': 'inline-block'},
-                      className="left_zone"
+                      className="map_main_plot"
                       )
-    text_block = html.Div(children=get_side_analysis(), className="side_analysis", id="side_info")
+    text_block = html.Div(children=get_side_analysis(),
+                          className="side_analysis", id="side_info")
     map_html = html.Div(children=[graph, text_block], id="map_html")
     return map_html
 
@@ -130,25 +113,51 @@ def get_pie(code):
 
 
 print("Loading app...")
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
-server = app.server
-app.title = "Kodimpi - Data Science Project"
+app = Dash(__name__,
+           suppress_callback_exceptions=True,
+           compress=True,
+           serve_locally=False,
+           title="Kodimpi - Data Science Project",
+           meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1.0, viewport-fit=cover"},
+                      {"name": "theme-color", "content": "rgb(78,112,138)"}])
+app.server.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000
+app.index_string = '''
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            {%metas%}
+            <title>{%title%}</title>
+            {%favicon%}
+            {%css%}
+        </head>
+        <body>
+            {%app_entry%}
+            <footer>
+                {%config%}
+                {%scripts%}
+                {%renderer%}
+            </footer>
+        </body>
+    </html>
+    '''
+server = app.server  # Required by Heroku
+
 app.layout = html.Div(
     children=[
         html.Div(
             [
                 html.Img(src=app.get_asset_url('Kodimpi.png'),
-                         style={"height": "113px", "width": "200px", "margin-left": "50px"}),
+                         id="logo", alt="Kodimpi logo"),
                 get_instructions(),
                 html.Div(
                     [
                         html.A(
                             html.Button(
-                                "PRESENTATION", className="button_instruction", id="learn-more-button"
+                                "PRESENTATION", className="button_instruction"
                             ), href="https://docs.google.com/presentation/d/1UxK_5VFOWXF3Ni_3pTustceeMWMWMBmiT3ZiNMB7xNs/edit?usp=sharing"),
                         html.A(
                             html.Button(
-                                "GITHUB", className="github_button", id="demo"
+                                "GITHUB", className="github_button"
                             ), href="https://github.com/xiaoxiaobt/Reaktor-Data-Science-project")
                     ],
                     className="mobile_buttons"
@@ -157,7 +166,7 @@ app.layout = html.Div(
                     [
                         html.Div(
                             [
-                                html.Label("Yearly income"),
+                                html.Label("Yearly income", htmlFor="income"),
                                 dcc.Input(
                                     id="income",
                                     type="number",
@@ -169,18 +178,19 @@ app.layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Age"),
+                                html.Label("Age", htmlFor="age"),
                                 dcc.Input(
                                     id="age",
                                     type="number",
                                     value=22,
                                     min=1
-                                ),
+                                )
                             ]
                         ),
                         html.Div(
                             [
-                                html.Label("Current Location"),
+                                html.Label("Current Location",
+                                           htmlFor="location"),
                                 dcc.Dropdown(
                                     id="location",
                                     clearable=False,
@@ -192,64 +202,68 @@ app.layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Occupation"),
+                                html.Label("Occupation", htmlFor="occupation"),
                                 dcc.Dropdown(
                                     id="occupation",
                                     clearable=False,
                                     value="Student",
                                     options=occupation_dropdown,
                                     className='dropdown'
-                                ),
+                                )
                             ]
                         ),
                         html.Div(
                             [
-                                html.Label("Household Size"),
+                                html.Label("Household Size",
+                                           htmlFor="household_type"),
                                 dcc.Dropdown(
                                     id="household_type",
                                     clearable=False,
                                     value=1,
                                     options=household_type_dropdown,
                                     className='dropdown'
-                                ),
+                                )
                             ]
                         ),
                         html.Div([
-                            html.Label("Moving options"),
+                            html.Label("Moving options",
+                                       htmlFor="selection_radio"),
                             dcc.RadioItems(
                                 options=[
-                                    {'label': 'Faraway from current location', 'value': 'change'},
-                                    {'label': 'Close to current location', 'value': 'nochange'},
+                                    {'label': 'Faraway from current location',
+                                        'value': 'change'},
+                                    {'label': 'Close to current location',
+                                        'value': 'nochange'},
                                     {'label': 'Whatever', 'value': 'whatever'}
                                 ],
                                 value='whatever',
                                 id="selection_radio"
                             )
-                        ])
+                        ]),
+                        html.Br(),
+                        html.Div(id="counter", className="0"),
+                        html.Button("Recommend", id="button-stitch",
+                                    className="button_submit")
                     ],
                     className="mobile_forms"
-                ),
-                html.Br(),
-                html.Div(id="counter", className="0"),
-                html.Button("Recommend", id="button-stitch", className="button_submit")
+                )
             ],
             className="four columns instruction"
         ),
         html.Div(
-            [
-                dcc.Tabs(
-                    id="stitching-tabs",
-                    value="canvas-tab",
-                    children=[
-                        dcc.Tab(label="MAP", value="canvas-tab", children=[get_map_html()]),
-                        dcc.Tab(label="ANALYSIS", value="result-tab", children=[get_polar_html()]),
-                        dcc.Tab(label="ABOUT", value="help-tab", children=[get_about_html()]),
-                        dcc.Tab(label="TEAM", value="team-tab",
-                                children=[html.Div("Roope, Trang, Thong, Letizia, Taige")])
-                    ],
-                    className="tabs"
-                )
-            ],
+            dcc.Tabs(
+                children=[
+                    dcc.Tab(label="MAP", value="canvas-tab",
+                            children=[get_map_html()]),
+                    dcc.Tab(label="ANALYSIS", value="result-tab",
+                            children=[get_polar_html()]),
+                    dcc.Tab(label="ABOUT", value="about-tab",
+                            children=[get_about_html()])
+                ],
+                id="stitching-tabs",
+                value="canvas-tab",
+                className="tabs"
+            ),
             className="eight columns result"
         )
     ],
@@ -257,13 +271,17 @@ app.layout = html.Div(
 )
 
 
-@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value"), Output("counter", "className")],
-              [Input("button-stitch", "n_clicks"), Input("main_plot", "clickData")],
+@app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value"),
+               Output("counter", "className")],
+              [Input("button-stitch", "n_clicks"),
+               Input("main_plot", "clickData")],
               [State('income', 'value'), State('age', 'value'), State('location', 'value'),
-               State('occupation', 'value'), State('household_type', 'value'), State('selection_radio', 'value'),
-               State("analysis_info", "children"), State("stitching-tabs", "value"), State("counter", "className")])
-def change_focus(button_click, map_click, income, age, location, occupation, household_size, selection_radio,
-                 analysis_old, tab_old, button_counter):
+               State('occupation', 'value'), State('household_type', 'value'),
+               State('selection_radio', 'value'), State(
+                   "analysis_info", "children"),
+               State("stitching-tabs", "value"), State("counter", "className")])
+def change_focus(button_click, map_click, income, age, location, occupation, household_size,
+                 selection_radio, analysis_old, tab_old, button_counter):
     if button_click is None:
         button_click = 0
     if int(button_counter) + 1 == button_click:
@@ -279,16 +297,17 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_size not in list_of_household_type:
             household_size = 1
-        prediction = str(apply_input(income, age, location, occupation, household_size, selection_radio))
+        prediction = str(apply_input(income, age, location,
+                         occupation, household_size, selection_radio))
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
             prediction = "00120"
             print("WARNING: NO PREDICTION GIVEN")
-        print("Prediction: " + prediction)
-        return get_polar_html(location, prediction), "result-tab", str(int(button_counter) + 1)
+        print(f"Prediction: {prediction}")
+        return get_polar_html(location, prediction).children, "result-tab", str(int(button_counter) + 1)
     elif map_click is not None:
         pc = map_click['points'][0]['location']
-        return get_polar_html("02150", pc), "result-tab", button_counter
+        return get_polar_html("02150", pc).children, "result-tab", button_counter
     else:
         return analysis_old, tab_old, button_counter
 

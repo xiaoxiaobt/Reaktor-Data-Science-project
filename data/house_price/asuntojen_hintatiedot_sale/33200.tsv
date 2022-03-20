@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h,kk	kt	2500	152601	6104	1962	4/6	on		G2013
+Kaakinmaa	1h,kk	kt	3550	138000	3887	1967	2/3	ei	tyyd.	
+Keskusta	1h,kt	kt	3200	193000	6031	2018	8/8	on	hyvä	C2013
+Keskusta	1h,kk,kph,p	kt	2600	142000	5462	1965	7/7	on		F2013
+Keskusta	1h, kk, wc/kph,	kt	2410	138000	5726	1965	6/8	on	hyvä	F2013
+Keskusta	1h,kt	kt	3200	189000	5906	2018	6/8	on	hyvä	C2013
+Keskusta	et, oh, kk, kh/...	kt	2900	162000	5586	1962	4/7	on	hyvä	E2013
+Pyynikki	Autohallipaikka	kt	1300	30000	2308	2018	1/10	on	hyvä	
+Pyynikki	Autohallipaikka	kt	1300	30000	2308	2018	1/10	on	hyvä	
+Kaakinmaa	Autohalli	kt	1300	30000	2308	2018	-1/10	on	hyvä	C
+Pyynikki	1h, kt, rp	kt	3550	192000	5408	2018	4/8	on	hyvä	C
+Hämeenpuisto	1h,avokeitti...	kt	4900	170000	3469	1938	5/6	on	hyvä	E2013
+Pyynikki	1h, kt, vh, rp	kt	3200	191000	5969	2018	5/8	on	hyvä	C
+Kaakinmaa	Autohalli	kt	1300	30000	2308	2018	-1/10	on	hyvä	C
+Hämeenpuisto	1h,kk,kph,vh	kt	3550	131000	3690	1967	2/3	on	hyvä	D2013
+Keskusta	1h,kt,parvi	kt	3500	234000	6686	2019	5/6	on	hyvä	C2013
+Keskusta	2h,kt	kt	3600	240000	6667	2018	6/8	on	hyvä	C2018
+Hämeenpuisto	2h, k, kph, wc,...	kt	5850	204000	3487	1966	4/8	on	tyyd.	
+Hämeenpuisto	2h,k,p,s	kt	5900	214000	3627	1966	2/8	on		C2007
+Keskusta	2h,k,lasitettup...	kt	5500	201942	3672	1975	5/7	on	tyyd.	F2013
+Keskusta	2h, kt, s, vihe...	kt	5500	203000	3691	2006	2/7	on	hyvä	
+Hämeenpuisto	2h+kk+kph+vth	kt	4450	177000	3978	1963	7/8	on	hyvä	
+Kaakinmaa	2h+kk+parveke	kt	5350	145000	2710	1969	6/7	on	huono	
+Pyynikki	2h,k,p	kt	5200	167000	3212	1972	1/7	on	tyyd.	G2007
+Keskusta	2h, kk, kph, la...	kt	4750	179000	3768	1959	4/6	on	tyyd.	G
+Keskusta	2h, k, kph/wc, vh	kt	5120	180000	3516	1964	6/7	on	hyvä	
+Pyynikki	2h,k	kt	5600	177000	3161	1940	2/3	ei		E2013
+Hämeenpuisto	2h, k, kph, p	kt	5050	197942	3920	1965	2/6	on	hyvä	F
+Keskusta	2h,k,s	kt	5000	250000	5000	2018	6/8	on	hyvä	
+Keskusta	2h,k,s	kt	5200	259000	4981	2018	4/8	on	hyvä	
+Keskusta	2h,k,kph,vh,las...	kt	5800	151000	2603	1973	4/7	on		G2013
+Keskusta	2h,kt,kph,vh	kt	5100	180000	3529	1965	6/7	on	hyvä	F2013
+Kaakinmaa	2h, k, kh, las.p	kt	4950	200000	4040	1959	4/6	on	hyvä	
+Pyynikki	2h,kk,kph	kt	4500	173000	3844	1963	2/6	on	hyvä	F2013
+Keskusta	2h+k+kph	kt	4300	175000	4070	1963	7/7	on	hyvä	
+Keskusta	2h,k,s	kt	5200	260000	5000	2018	5/8	on	hyvä	
+Kaakinmaa	2h, kk, kph, vh...	kt	5300	190000	3585	1967	2/7	on	hyvä	
+Keskusta	2h, k, kph, s, ...	kt	5650	225000	3982	1998	4/7	on	hyvä	F2013
+Hämeenpuisto	2h,k,kph,lasite...	kt	5900	205000	3475	1966	2/8	on	hyvä	C2007
+Hämeenpuisto	2h,k	kt	5800	200000	3448	1952	1/7	on		G2013
+Keskusta	2h, k, kph	kt	5610	170000	3030	1963	5/7	on	tyyd.	D2013
+Keskusta	2h,k,s	kt	5200	269000	5173	2018	6/8	on	hyvä	
+Pyynikki	2h+k+kph+vth+la...	kt	4850	200000	4124	1969	4/7	on	hyvä	F2013
+Pyynikki	2h, k, kph, vh	kt	4500	165000	3667	1962	6/6	on	hyvä	F
+Pyynikki	2h, k, vh, kph	kt	5100	189000	3706	1972	2/7	on	hyvä	G2013
+Hämeenpuisto	3h, k, s, kph, ...	kt	8250	260000	3152	1985	2/5	on	hyvä	F2013
+Hämeenpuisto	3h, k, kph	kt	7900	225000	2848	1952	2/7	on	tyyd.	G
+Keskusta	3h, k, s, erill...	kt	7900	225000	2848	1980	3/7	on	hyvä	F2013
+Hämeenpuisto	3h, k, s, ph, k...	kt	8250	330000	4000	1985	3/5	on	hyvä	F2013
+Keskusta	3h,kk,lasit p	kt	6400	208500	3258	1962	5/7	on		D2007
+Pyynikki	3h, k, kph, eri...	kt	10700	240000	2243	1922		ei	hyvä	
+Pyynikki	2-3h,k,ph,wc,p	kt	6840	210500	3077	1941	3/6	on	tyyd.	

@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Keskusta	1h, kk	kt	3400	85000	2500	1970	3/3	ei	hyvä	D
+Kaukola	1h,k	kt	3300	75200	2279	1967	2/3	ei	hyvä	F2007
+Urpola	1h, kk	kt	2800	50000	1786	1963	1/3	ei	tyyd.	C2013
+Keskusta	1h,kk	kt	2800	59000	2107	1978	4/6	on	tyyd.	F2013
+Nuijamies	1h, kk	kt	3000	44000	1467	1970	2/2	ei	hyvä	
+Kaukola	1h, kk, alkovi	kt	2950	74000	2508	1965	3/3	ei	hyvä	C2007
+Keskusta	1h, k	kt	3800	69000	1816	1973	5/6	on	tyyd.	B2007
+Kaukola	2h,kk	kt	4400	57000	1295	1970	3/3	ei	hyvä	D2007
+Keskusta	1h, kk	kt	2750	42000	1527	1972	1/2	ei	hyvä	F2013
+Keskusta	1 h, avok	kt	4300	113000	2628	1960	1/6	on	hyvä	C2007
+Keskusta	1h, kk	kt	3150	75000	2381	1963	4/5	on	hyvä	C2007
+Urpola	1h, kk	kt	2600	37000	1423	1971	2/3	ei	tyyd.	E2013
+Keskusta	2h,k,s	kt	5300	123000	2321	1986	2/3	on	hyvä	F2013
+Kaukola	2h, k	kt	5800	120334	2075	1970	2/3	ei	hyvä	D2007
+Keskusta	2h,k,s	kt	6000	178000	2967	2014	1/3	on	hyvä	C2013
+Rokkala	2h, kk	kt	4600	78000	1696	1963	1/6	on	hyvä	E2013
+Maunuksela	2h, k, s	kt	4950	125000	2525	1985	1/2	ei	hyvä	D2007
+Maunuksela	2h, k, s	kt	5100	95000	1863	1986	1/3	on	tyyd.	C
+Keskusta	2h, k, s	rt	7350	146500	1993	1986	1/1	ei	hyvä	E2007
+Kaukola	2h, k, s	kt	4950	122000	2465	1985	2/2	ei	hyvä	D2007
+Rokkala	2h, k	kt	5600	120000	2143	1964	6/6	on	hyvä	C2007
+Keskusta	2h,k	kt	6500	150000	2308	1973	6/6	on	hyvä	F2013
+Emola	2h, kk, s	kt	4200	83500	1988	1994	2/2	ei	hyvä	F
+Maunuksela	2h, k, kph	kt	5950	113000	1899	1955	1/3	ei	hyvä	E2007
+Rokkala	2h, k	kt	5700	45000	789	1970	3/3	ei	tyyd.	D2007
+Keskusta	2h,k,s	kt	6600	132000	2000	1980	5/5	on	tyyd.	D2007
+Maunuksela	2h, k	kt	5800	67000	1155	1972	2/5	on	tyyd.	D2007
+Kaukola	2h, k	kt	4750	67000	1411	1970	1/3	on	hyvä	E2007
+Emola	2h,k,s	kt	5900	73000	1237	1980	1/2	ei	tyyd.	E2007
+Lehmuskylä	2h, kk, s	kt	4900	141500	2888	2015	4/4	on	hyvä	B2013
+Savisilta	2h,k,s	kt	5800	123000	2121	2009	4/4	on	hyvä	A2013
+Keskusta	2h,kk,s	kt	5300	215000	4057	2016	3/5	on	hyvä	C2018
+Nuijamies	2h, k, halli, s	kt	5450	124000	2275	1941	2/3	ei	hyvä	C2007
+Kaukola	2h,kk,s	kt	4900	125500	2561	1998	3/3	on	hyvä	D2007
+Keskusta	2h,k	kt	5600	123000	2196	1963	2/5	on	hyvä	C2013
+Keskusta	2h, k, s, vh	kt	5400	114000	2111	1978	5/6	on	tyyd.	F2013
+Keskusta	2h,k	kt	5500	110000	2000	1972	1/6	on	hyvä	D2013
+Kaukola	2h	kt	6100	158000	2590	1999	2/3	on	hyvä	E2007
+Kaukola	2h, kk, s	kt	4500	96000	2133	1986	1/3	on	hyvä	E
+Urpola	2h,k,ph,parv	kt	5200	35001	673	1964	2/3	ei	huono	
+Keskusta	3 h, k, s	kt	7900	145000	1835	1967	3/3	ei	hyvä	F2007
+Kaukola	3h, k	kt	7650	70000	915	1976	3/3	ei	hyvä	D2007
+Nuijamies	3h,k,s	rt	8100	94000	1160	1980	1/2	ei	huono	E2013
+Rokkala	3h,k	kt	5900	123500	2093	1963	4/6	on	hyvä	E2013
+Kaukola	3h, k, s	kt	7300	91000	1247	1981	1/3	ei	hyvä	D
+Kaukola	3h.k	kt	6800	48000	706	1970	2/4	on	huono	E2007
+Keskusta	3h, k	kt	6700	105000	1567	1960	3/6	on	tyyd.	C2007
+Keskusta	3h,k,s	kt	8600	247000	2872	2009	1/4	on	hyvä	B2013
+Keskusta	3h, k,kph,p	kt	8100	164000	2025	1960	4/6	on	hyvä	C2007
+Keskusta	3h, k	kt	6600	149500	2265	1967	3/3	ei	hyvä	F2007
+Keskusta	3h,k,ph,pvk	kt	9100	185000	2033	1952	6/6	on	hyvä	
+Emola	3h, k, s	rt	8200	146500	1787	1995	2/2	ei	hyvä	D

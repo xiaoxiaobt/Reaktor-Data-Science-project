@@ -1,0 +1,17 @@
+numpy
+pandas
+matplotlib
+plotly
+dash
+statsmodels
+scipy
+geopy
+shapely
+scikit-learn
+beautifulsoup4
+tabulate
+triangle
+pyglet
+utm
+gunicorn
+orjson

@@ -1,0 +1,36 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Mukkula	1h, kk, kph/s, lp	kt	3800	85000	2237	2013	4/6	on	hyvä	
+Mukkula	1h, kk, kph, p	kt	3000	21640	721	1969	2/3	ei	hyvä	
+Mukkula	1h,kk,kph,p	kt	3500	47000	1343	1984	1/3	ei	tyyd.	D2013
+Mukkula	2h,k,kph,las.p	kt	5000	44000	880	1966	3/5	on	tyyd.	F2013
+Mukkula	2h, k, kph, vh,...	kt	5800	83800	1445	1967	6/6	on	hyvä	F2007
+Mukkula	2h,k,kph,vh,p	kt	5500	79000	1436	1971	3/7	on	hyvä	E2013
+Mukkula	2h, kk, kph, vh...	kt	4050	42000	1037	1967	1/7	on	tyyd.	D2007
+Kilpiäinen	2h,k,s,kph,2xter.	rt	6700	150500	2246	2006	1/1	ei	hyvä	
+Kilpiäinen	2h,k,vh,ph,s,wc	rt	6400	144000	2250	2008	1/1	ei	hyvä	B2013
+Mukkula	2h,k,kph,p	kt	5200	35000	673	1966	1/3	ei	hyvä	F2013
+Mukkula	2h, k, kph, p	kt	4950	28500	576	1969	6/7	ei	tyyd.	F
+Mukkula	2h,k,kph/wc,las...	kt	5150	33500	650	1967	3/3	ei	tyyd.	
+Mukkula	2h,k,kph/wc,p	kt	5500	83500	1518	1971	4/7	ei	hyvä	
+Mukkula	2h, k, kph, p	kt	5900	60000	1017	1966	3/6	ei	hyvä	
+Mukkula	2h, k, kph/wc	kt	4950	44000	889	1968	2/3	ei	hyvä	D2007
+Mukkula	2h, k, kph, vh,...	kt	5500	72500	1318	1971	6/7	on	hyvä	E2013
+Mukkula	2h,k,kph/wc,las.p	kt	5300	64000	1208	1967	2/3	ei	hyvä	F2013
+Kilpiäinen	3h, k, parveke	kt	7100	66609	938	1968	2/3	ei	hyvä	
+Mukkula	3h,k,rt,p,kph,w...	kt	7200	94500	1313	1971	2/7	ei	hyvä	
+Mukkula	3h, k	kt	7750	73000	942	1965	3/5	on	hyvä	
+Kilpiäinen	3h, k, kph, s, ...	rt	7500	138000	1840	1988	1/1	ei	hyvä	
+Mukkula	3h, k, p	kt	7600	40000	526	1966	1/6	on	huono	D
+Mukkula	3h,k,kph,wc,vh,p	kt	7800	67000	859	1966	5/6	on	tyyd.	F2013
+Mukkula	3h,k,s	rt	8000	133000	1663	1980		ei	tyyd.	C2007
+Mukkula	3h, k, kph, vh, p	kt	7300	59000	808	1967	3/5	on	tyyd.	G2013
+Mukkula	Oh,3 mh,k,kph,w...	kt	9050	9770	108	1969	6/6	on	hyvä	F2007
+Kilpiäinen	5h,k,th,kph,pkh...	ok	22000	160000	727	1982		ei	tyyd.	
+Kilpiäinen	4h, k, erill. w...	ok	11600	130000	1121	1976	1/1	ei	hyvä	C2018
+Kilpiäinen	4h,k,kph,s,eril...	rt	8750	115000	1314	1981	2/2	ei	hyvä	D2018
+Kilpiäinen	5h,k,takkah.,kh...	ok	13500	225000	1667	1981	-1/1	ei	hyvä	
+Mukkula	3mh+oh+k+rt+kir...	rt	14850	117000	788	1972	2/2	ei	tyyd.	
+Mukkula	6h,k,s,kph,2wc,...	rt	15900	200000	1258	1967	2/2	ei	hyvä	D2013
+Kilpiäinen	5 h, k, kh/s, 2...	ok	10600	127500	1203	1979	1/2	ei	tyyd.	
+Kilpiäinen	5h, k, s, ph, w...	rt	11300	190000	1681	2006	1/1	ei	hyvä	E2007
+Kilpiäinen	4h, k, s-osasto...	ok	11100	110000	991	1979	1/1	ei	tyyd.	

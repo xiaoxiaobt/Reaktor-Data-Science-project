@@ -1,0 +1,53 @@
+Kaupunginosa	Huoneisto	Talot	m2	Vh	m21	Rv	Krs	Hissi	Kunto	Energial
+Saarijärvi a	1h,kk	kt	3600	40000	1111	1970	1/4	ei		D2007
+Maljalahti	1h, kt	kt	2500	137100	5484	2020	2/4	on	hyvä	
+Maljalahti	1h, kt	kt	3200	170800	5338	2020	2/4	on	hyvä	
+Männistö	1h,kt	kt	2750	128000	4655	2019	5/10	on	hyvä	C2013
+Saarijärvi a	1h,k	kt	3900	41000	1051	1971	8/9	on	tyyd.	G2013
+Maljalahti	1h, kt	kt	3200	175800	5494	2020	3/4	on	hyvä	
+Männistö	1h,kk,kh,p	kt	3000	70000	2333	1972	3/6	on	hyvä	F2013
+Männistö	1h, kk, alk, kp...	kt	3900	95000	2436	1960	5/6	on	hyvä	D2007
+Männistö	1h,kt	kt	2750	124500	4527	2019	6/10	on	hyvä	C2013
+Saarijärvi	1h, k	kt	3850	68500	1779	1972	6/9	on	hyvä	
+Maljalahti	2h, kt, s	kt	4700	213500	4543	2020	2/4	on	hyvä	
+Linnanpelto	2h+k+kph	kt	5900	115000	1949	1955	1/6	on	huono	F2013
+Saarijärvi a	2h, kk, kh, las...	kt	5550	68000	1225	1970	3/3	ei	hyvä	D2013
+Männistö	2h,kt,s	kt	5200	175420	3373	2019	3/10	on	hyvä	C2013
+Maljalahti	2h,kt,s	kt	6250	132000	2112	2018	3/4	ei	hyvä	
+Männistö	2h,kt,s	kt	4250	174000	4094	2019	8/10	on	hyvä	C2013
+Maljalahti	2h, kt, s	kt	5300	290200	5475	2020	3/4	on	hyvä	
+Männistö	2h,k	kt	6100	77000	1262	1971	2/5	on	hyvä	D2007
+Männistö	2h, k	kt	5000	60000	1200	1975	3/5	on	tyyd.	D2007
+Saarijärvi a	2h,k	kt	5200	47000	904	1974	1/4	on	hyvä	D2007
+Männistö	2h, k	kt	5050	84000	1663	1977	6/6	on	hyvä	C2007
+Männistö	2h+k	kt	5950	45000	756	1971	6/6	on	hyvä	D2007
+Männistö	2h,k (yht.j...	kt	7100	85000	1197	1976	1/6	on	hyvä	D2007
+Männistö	2h, k	kt	6000	44217	737	1970	3/7	on	tyyd.	F2013
+Männistö	2h, k, parv	kt	6100	65000	1066	1971	2/4	on	tyyd.	D2007
+Männistö	2h, kk, s	kt	4500	118000	2622	1984	2/2	ei	hyvä	D
+Linnanpelto	2h, kk	rt	4000	45000	1125	1963	1/1	ei	huono	
+Saarijärvi a	2h,k,kph	kt	4900	40000	816	1972	1/5	on	tyyd.	D2007
+Männistö	2h, k	kt	4300	65000	1512	1962	2/6	on	tyyd.	D2007
+Männistö	2 h, kk	kt	3100	90500	2919	1960	1/6	on	hyvä	F2013
+Linnanpelto	2h, k, las.parveke	kt	5200	110000	2115	1958	6/6	on	hyvä	D2013
+Männistö	2h, k	kt	4300	84746	1971	1962	1/6	on	hyvä	D2007
+Männistö	2h, k	kt	5900	62000	1051	1969	2/3	ei	hyvä	E
+Itkonniemi	2h,k	kt	5700	73000	1281	1967	4/4	on	hyvä	D2007
+Itkonniemi	2h,kt,s	kt	5100	162000	3176	2011	1/5	on	hyvä	B2013
+Männistö	2 h, k, kph, p	kt	5100	67000	1314	1972	6/6	on	tyyd.	F2013
+Männistö	2h, k	kt	6000	62000	1033	1978	1/6	on	hyvä	
+Maljalahti	2h+kt+s	kt	5950	245000	4118	2016	4/4	on	hyvä	C
+Männistö	2h, k	kt	5050	72000	1426	1969	1/2	ei	hyvä	E
+Saarijärvi a	2 h, k	kt	5900	64000	1085	1970	3/5	on	tyyd.	C2007
+Männistö	2h,k	kt	4900	47000	959	1959	2/2	ei	tyyd.	D2013
+Maljalahti	3h+kt+s	kt	6600	330000	5000	2018	2/4	ei	hyvä	
+Saarijärvi a	3h,k	kt	7100	50000	704	1974	3/4	on	hyvä	D2007
+Maljalahti	3h, kt, khh, wc, s	kt	10500	615000	5857	2020	2/4	on	hyvä	
+Maljalahti	3h, kt, khh, wc, s	kt	10500	625000	5952	2020	3/4	on	hyvä	
+Maljalahti	3h, kt, s, wc	kt	6550	326950	4992	2020	4/4	on	hyvä	
+Männistö	3h,k	kt	7100	69000	972	1976	6/6	on	tyyd.	D
+Linnanpelto	3h, k, p	kt	7350	121900	1659	1961	1/2	ei	hyvä	F
+Linnanpelto	3h, k	kt	6600	50000	758	1955	1/6	on	tyyd.	F2013
+Männistö	3 h, k, s, p	kt	7800	68000	872	1971	5/6	on	hyvä	D2007
+Männistö	3h,k	kt	7100	78000	1099	1976	1/6	on	hyvä	D2013
+Maljalahti	3h+k+s	kt	7450	295000	3960	2016	2/4	on	hyvä	C

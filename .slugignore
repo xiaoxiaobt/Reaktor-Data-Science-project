@@ -6,6 +6,7 @@ LICENSE
 /tests
 /requirements
 assets/base.css
+assets/screenshots
 data/demographic
 data/environment
 data/geographic/finland_2019_p4_utf8_simp.geojson

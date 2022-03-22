@@ -2,6 +2,8 @@
 
 ## Table of Contents
 
+- [General information](#general-information)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Test](#tests)
@@ -11,6 +13,15 @@
 - [License](#license)
 
 ---
+
+## General information
+
+Kodimpi is a web application that provides suggestions for relocation in Finland through data-driven approaches. After users input their income, age, current location, occupation, household size, as well as their preference of relocation, near or far away from their current one, the recommendation system provides a recommendation of the best place to relocate. Alternatively, users can also interact with the map to find out some key insights about the location.
+
+## Screenshots
+
+![Navigation](assets/screenshots/navigation.png)
+![Recommendation](assets/screenshots/prediction.png)
 
 ## Installation
 
@@ -57,7 +68,7 @@ Now the application can be accessed from <http://127.0.0.1:8050/>
 
 ## Usage
 
-- Start the application, and enter the required data into the left panel. Then, click "Estimate" to see your recommendation.
+- Start the application, and enter the required data into the left panel. Then, click `Estimate` to see your recommendation.
 - Alternatively, explore the map with the mouse and click on one area that is interesting for you.
 
 ---

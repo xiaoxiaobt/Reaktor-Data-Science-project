@@ -1071,6 +1071,7 @@ td img {
     overflow: hidden;
     padding-left: 3%;
     padding-right: 3%;
+    margin-left: 360px;
 }
 
 .eight.columns.result {

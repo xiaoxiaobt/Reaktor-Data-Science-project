@@ -1,7 +1,7 @@
 numpy
 pandas
 plotly
-dash
+dash[compress]
 scipy
 geopy
 gunicorn

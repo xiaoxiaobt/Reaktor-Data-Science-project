@@ -25,7 +25,10 @@ Kodimpi is a web application that provides suggestions for relocation in Finland
 
 ## Installation
 
-The service can be directly accessed from <https://kodimpi.herokuapp.com/>.
+The service can be directly accessed from:
+
+- [Heroku](https://kodimpi.herokuapp.com/)
+- [Backup Server](https://kodimpi.web.taige.wang/)
 
 To run the application on a local machine, follow steps below:
 
@@ -91,9 +94,9 @@ The full source code of the service can be found from [here](https://github.com/
 
 ## Team
 
-| **Letizia** | **Taige** | **Roope** | **Trang** | **Thong** |
-| :---: |:---:| :---:| :---:| :---:|
-| [![Letizia](https://avatars1.githubusercontent.com/u/45148109?s=200&v=4)](https://github.com/letiziaia)    | [![Taige](https://avatars2.githubusercontent.com/u/16875716?s=200&v=4)](https://github.com/xiaoxiaobt) | [![Roope](https://avatars2.githubusercontent.com/u/43811718?s=200&v=4)](https://github.com/rooperuu)  |[![Trang](https://avatars3.githubusercontent.com/u/55182434?s=200&v=4)](https://github.com/trangmng) | [![Thong](https://avatars0.githubusercontent.com/u/32213097?s=200&v=4)](https://github.com/trananhthong)  |
+|**Letizia**                           |**Taige**                       |**Roope**                       |**Trang**                       |**Thong**                       |
+|:---:                                 |:---:                           |:---:                           |:---:                           |:---:                           |
+|[![Letizia][Letizia-avatar]][Letizia] |[![Taige][Taige-avatar]][Taige] |[![Roope][Roope-avatar]][Roope] |[![Trang][Trang-avatar]][Trang] |[![Thong][Thong-avatar]][Thong] |
 
 ---
 
@@ -107,3 +110,14 @@ The project was supervised by Jorma Laaksonen from Aalto University and Jaakko S
 
 - **[MIT license](https://opensource.org/licenses/mit-license.php)**
 - Copyright 2019 © Letizia, Taige, Roope, Trang, Thong
+
+[Letizia]: https://github.com/letiziaia
+[Taige]: https://github.com/xiaoxiaobt
+[Roope]: https://github.com/rooperuu
+[Trang]: https://github.com/trangmng
+[Thong]: https://github.com/trananhthong
+[Letizia-avatar]: https://avatars1.githubusercontent.com/u/45148109?s=200&v=4
+[Taige-avatar]: https://avatars2.githubusercontent.com/u/16875716?s=200&v=4
+[Roope-avatar]: https://avatars2.githubusercontent.com/u/43811718?s=200&v=4
+[Trang-avatar]: https://avatars3.githubusercontent.com/u/55182434?s=200&v=4
+[Thong-avatar]: https://avatars0.githubusercontent.com/u/32213097?s=200&v=4

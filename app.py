@@ -14,7 +14,7 @@ polygons = json.load(open(name_geojson, "r"))
 # paavo_df = pd.read_table("./dataframes/final_dataframe.tsv",
 #                          dtype={"Postal code": object})  # Read in reference_function
 
-dcc._js_dist[0]['external_url'] = 'https://cdn.plot.ly/plotly-geo-2.11.0.min.js'
+dcc._js_dist[0]['external_url'] = 'https://cdn.plot.ly/plotly-geo-2.18.2.min.js'
 
 
 def get_side_analysis(zip="02150"):
@@ -270,6 +270,9 @@ app.layout = html.Div(
     className="row twelve columns"
 )
 
+@server.route("/robots.txt")
+def robots_dot_txt():
+    return "User-agent: *\nDisallow: /"
 
 @app.callback([Output("analysis_info", "children"), Output("stitching-tabs", "value"),
                Output("counter", "className")],

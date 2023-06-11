@@ -14,7 +14,7 @@ polygons = json.load(open(name_geojson, "r"))
 # paavo_df = pd.read_table("./dataframes/final_dataframe.tsv",
 #                          dtype={"Postal code": object})  # Read in reference_function
 
-dcc._js_dist[0]['external_url'] = 'https://cdn.plot.ly/plotly-geo-2.18.2.min.js'
+dcc._js_dist[0]['external_url'] = 'https://cdn.plot.ly/plotly-geo-2.23.2.min.js'
 
 
 def get_side_analysis(zip="02150"):
@@ -300,8 +300,7 @@ def change_focus(button_click, map_click, income, age, location, occupation, hou
             occupation = "Student"
         if household_size not in list_of_household_type:
             household_size = 1
-        prediction = str(apply_input(income, age, location,
-                         occupation, household_size, selection_radio))
+        prediction = apply_input(income, age, location, occupation, household_size, selection_radio)
         # This should return a postal code ↑↑↑↑↑↑
         if prediction is None:
             prediction = "00120"

@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import geopy.distance
 from pathlib import Path
-from scipy.spatial import distance
-
+import heapq
 
 column_list = ['Postal code',
                'Area',
@@ -113,6 +112,7 @@ def find_neighbor_of(df=None, weights=None, placename=None, postalcode=None):
     :param postalcode: str, the postal code of the starting area
     :return: str, a postal code
     """
+
     if placename is None and postalcode is None:
         raise Exception
     elif placename is not None:
@@ -124,18 +124,16 @@ def find_neighbor_of(df=None, weights=None, placename=None, postalcode=None):
 
     # Compute the distance between places in the feature space, sort it and return the second one
     # (because the first one is always the starting place)
-    dist = {}
-    for _, row in df.iterrows():
-        dist[row['Postal code']] = distance.euclidean(np.ndarray.flatten(myrow[3:]), np.ndarray.flatten(row.values[3:]),
-                                                      w=weights)
+    s = np.multiply(myrow[3:]-df.iloc[:, 3:].to_numpy(), weights, dtype=np.float32, casting='unsafe')
 
-    dist = sorted(dist.items(), key=lambda x: x[1], reverse=False)
+    dist = zip(df['Postal code'], np.linalg.norm(s, axis=1))
+    dist = heapq.nsmallest(10, dist, key=lambda x: x[1])
+
     # print(len(dist))
-    
     # Print the first 10 suggestions
-    for elm in dist[:10]:
-        i = elm[0]
-        print("\t".join(df[df['Postal code'] == i][['Postal code', 'Area']].values[0]) + "\t" + str(elm[1]))
+    for k, v in dist:
+        print("\t".join(df[df['Postal code'] == k][['Postal code', 'Area']].values[0]) + "\t" + str(v))
+
     return str(dist[1][0])
 
 

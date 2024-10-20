@@ -28,7 +28,7 @@ Kodimpi is a web application that provides suggestions for relocation in Finland
 The service can be directly accessed from:
 
 - [Heroku](https://kodimpi.herokuapp.com/)
-- [Backup Server](https://kodimpi.web.taige.wang/)
+- [Backup Server](https://kodimpi.taige.wang/)
 
 To run the application on a local machine, follow steps below:
 
